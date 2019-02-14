@@ -1,9 +1,20 @@
 package com.github.rougsig.filetemplateloader
 
-import com.intellij.testFramework.fixtures.LightCodeInsightFixtureTestCase
+import com.intellij.openapi.util.io.FileUtil
+import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
+import java.io.File
 
-class MyTest : LightCodeInsightFixtureTestCase() {
+class MyTest : LightPlatformCodeInsightFixtureTestCase() {
+  override fun getTestDataPath(): String {
+    val userDir = System.getProperty("user.dir")
+    val dir = File(userDir ?: ".")
+    return FileUtil.toCanonicalPath(dir.absolutePath) + "/testData"
+  }
+
   fun testNothing() {
-    assertTrue(true)
+    val copied = myFixture.copyDirectoryToProject(".fileTemplates", "")
+    val templates = myFixture.psiManager.findDirectory(copied)!!
+
+    templates.children.forEach(::println)
   }
 }
