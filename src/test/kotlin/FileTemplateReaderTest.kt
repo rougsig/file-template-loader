@@ -1,5 +1,9 @@
 package com.github.rougsig.filetemplateloader
 
+import com.github.rougsig.filetemplateloader.entity.FileTemplate
+import com.github.rougsig.filetemplateloader.entity.FileTemplateGroup
+import com.github.rougsig.filetemplateloader.reader.readFileTemplateGroups
+import com.github.rougsig.filetemplateloader.reader.readFileTemplates
 import com.google.gson.Gson
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
 

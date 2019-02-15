@@ -1,4 +1,4 @@
-package com.github.rougsig.filetemplateloader
+package com.github.rougsig.filetemplateloader.extension
 
 import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.fileTypes.FileTypeRegistry

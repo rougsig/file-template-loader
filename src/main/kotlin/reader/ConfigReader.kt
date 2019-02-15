@@ -1,4 +1,4 @@
-package com.github.rougsig.filetemplateloader
+package com.github.rougsig.filetemplateloader.reader
 
 import com.intellij.openapi.vfs.VirtualFile
 import java.util.*

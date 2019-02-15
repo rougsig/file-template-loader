@@ -1,5 +1,15 @@
 package com.github.rougsig.filetemplateloader
 
+import com.github.rougsig.filetemplateloader.constant.PROPS_CLASS_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_SIMPLE_NAME
+import com.github.rougsig.filetemplateloader.creator.create
+import com.github.rougsig.filetemplateloader.extension.calculatePackageName
+import com.github.rougsig.filetemplateloader.extension.writeAction
+import com.github.rougsig.filetemplateloader.reader.readConfig
+import com.github.rougsig.filetemplateloader.reader.readFileTemplateGroups
+import com.github.rougsig.filetemplateloader.reader.readFileTemplates
 import com.google.gson.Gson
 import com.intellij.psi.PsiFile
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase

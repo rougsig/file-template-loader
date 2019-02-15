@@ -1,5 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
+import com.github.rougsig.filetemplateloader.constant.PROJECT_NAME
+import com.github.rougsig.filetemplateloader.reader.readConfig
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
 import java.util.*
 
@@ -13,7 +15,7 @@ class ConfigReaderTest : LightPlatformCodeInsightFixtureTestCase() {
 
     assertEquals(
       Properties().apply {
-        setProperty("MODULE_PREFIX", "prefix")
+        setProperty(PROJECT_NAME, "file-template-loader")
       },
       config
     )

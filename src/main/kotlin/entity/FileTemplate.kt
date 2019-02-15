@@ -1,4 +1,4 @@
-package com.github.rougsig.filetemplateloader
+package com.github.rougsig.filetemplateloader.entity
 
 data class FileTemplate(
   val name: String,

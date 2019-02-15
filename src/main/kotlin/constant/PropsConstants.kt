@@ -1,4 +1,6 @@
-package com.github.rougsig.filetemplateloader
+package com.github.rougsig.filetemplateloader.constant
+
+import com.github.rougsig.filetemplateloader.extension.toSnakeUpperCase
 
 const val PROPS_NAME = "NAME"
 const val PROPS_PACKAGE_NAME = "PACKAGE_NAME"

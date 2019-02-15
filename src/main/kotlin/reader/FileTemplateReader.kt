@@ -1,5 +1,7 @@
-package com.github.rougsig.filetemplateloader
+package com.github.rougsig.filetemplateloader.reader
 
+import com.github.rougsig.filetemplateloader.entity.FileTemplate
+import com.github.rougsig.filetemplateloader.entity.FileTemplateGroup
 import com.google.gson.Gson
 import com.intellij.openapi.vfs.VirtualFile
 

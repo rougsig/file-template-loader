@@ -1,7 +1,12 @@
-package com.github.rougsig.filetemplateloader
+package com.github.rougsig.filetemplateloader.creator
 
-import com.intellij.ide.fileTemplates.FileTemplateUtil
-import com.intellij.openapi.util.text.StringUtil
+import com.github.rougsig.filetemplateloader.constant.PROPS_CLASS_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_SIMPLE_NAME
+import com.github.rougsig.filetemplateloader.entity.FileTemplate
+import com.github.rougsig.filetemplateloader.extension.createPsiFile
+import com.github.rougsig.filetemplateloader.extension.mergeTemplate
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiFile
@@ -22,9 +27,3 @@ fun FileTemplate.create(dir: PsiDirectory, props: Properties): PsiElement {
   val template = text.mergeTemplate(props)
   return dir.add(project.createPsiFile(fileName, template)) as PsiFile
 }
-
-fun String.mergeTemplate(props: Properties): String {
-  val merged = FileTemplateUtil.mergeTemplate(props, this, true)
-  return StringUtil.convertLineSeparators(merged)
-}
-
