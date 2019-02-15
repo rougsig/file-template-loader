@@ -1,0 +1,18 @@
+{
+  "name": "Repository",
+  "templates": [
+    {
+      "template": "Repository.kt",
+      "fileName": "${FLOW_NAME}Repository"
+    },
+    {
+      "template": "RepositoryImpl.kt",
+      "fileName": "${FLOW_NAME}RepositoryImpl"
+    },
+    {
+      "template": "RepositoryBindings.kt",
+      "fileName": "${FLOW_NAME}RepositoryBindings",
+      "directory": "di"
+    }
+  ]
+}

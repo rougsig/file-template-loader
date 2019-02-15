@@ -17,17 +17,17 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
         FileTemplate(
           name = "Repository",
           extension = "kt",
-          text = "Repository.kt.ft"
+          text = ""
         ),
         FileTemplate(
           name = "RepositoryImpl",
           extension = "kt",
-          text = "RepositoryImpl.kt.ft"
+          text = ""
         ),
         FileTemplate(
           name = "RepositoryBindings",
           extension = "kt",
-          text = "RepositoryBindings.kt.ft"
+          text = ""
         )
       )
     )
@@ -49,17 +49,17 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
             FileTemplate(
               name = "\${FLOW_NAME}Repository",
               extension = "kt",
-              text = "Repository.kt.ft"
+              text = ""
             ),
             FileTemplate(
               name = "\${FLOW_NAME}RepositoryImpl",
               extension = "kt",
-              text = "RepositoryImpl.kt.ft"
+              text = ""
             ),
             FileTemplate(
               name = "\${FLOW_NAME}RepositoryBindings",
               extension = "kt",
-              text = "RepositoryBindings.kt.ft",
+              text = "",
               directory = "di"
             )
           )

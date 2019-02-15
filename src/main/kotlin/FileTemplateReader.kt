@@ -11,7 +11,7 @@ fun readFileTemplates(dir: VirtualFile): List<FileTemplate> {
       FileTemplate(
         name = slittedName.first(),
         extension = slittedName.last(),
-        text = String(file.inputStream.readBytes()).trim()
+        text = String(file.inputStream.readBytes())
       )
     }
 }
