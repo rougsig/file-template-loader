@@ -14,7 +14,7 @@ fun String.toCamelCase(): String {
   }
 }
 
-fun String.toSnakeCase(): String {
+fun String.toSnakeLowerCase(): String {
   val builder = StringBuilder()
   var isFirst = true
   forEach {
@@ -30,11 +30,11 @@ fun String.toSnakeCase(): String {
 }
 
 fun String.toSnakeUpperCase(): String {
-  return toSnakeCase().toUpperCase()
+  return toSnakeLowerCase().toUpperCase()
 }
 
 fun String.toPackageCase(): String {
-  return toCamelCase().toSnakeCase()
+  return toCamelCase().toSnakeLowerCase()
     .split('-', '_', '/', '\\')
     .joinToString(".") { it }
 }

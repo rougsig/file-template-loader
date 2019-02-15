@@ -1,9 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_CLASS_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
-import com.github.rougsig.filetemplateloader.constant.PROPS_SIMPLE_NAME
 import com.github.rougsig.filetemplateloader.creator.create
 import com.github.rougsig.filetemplateloader.extension.calculatePackageName
 import com.github.rougsig.filetemplateloader.extension.writeAction
@@ -12,7 +10,6 @@ import com.github.rougsig.filetemplateloader.reader.readFileTemplateGroups
 import com.github.rougsig.filetemplateloader.reader.readFileTemplates
 import com.google.gson.Gson
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
-import junit.framework.TestCase
 import org.jetbrains.kotlin.idea.util.sourceRoots
 import java.util.*
 
@@ -51,17 +48,14 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     val template = project.writeAction {
       repositoryFileTemplate.create(dir, props)
     }
-    assertSameLinesWithFile(
-      "$testDataPath/file-template-result/repository/FileTemplateRepository.kt",
-      template.text
-    )
-    assertEquals(
+    assertFileTemplate(
+      "repository/FileTemplateRepository.kt",
+      "Repository",
+      "",
+      props,
+      template,
       "FileTemplateRepository",
-      props.getProperty(PROPS_SIMPLE_NAME("Repository"))
-    )
-    assertEquals(
-      "com.github.rougsig.filetemplateloader.FileTemplateRepository",
-      props.getProperty(PROPS_CLASS_NAME("Repository"))
+      "com.github.rougsig.filetemplateloader.FileTemplateRepository"
     )
   }
 
@@ -86,49 +80,37 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     }
 
     val repository = group.find { it.name == "FileTemplateRepository.kt" }!!
-    assertSameLinesWithFile(
-      "$testDataPath/file-template-result/repository/FileTemplateRepository.kt",
-      repository.text
-    )
-    assertEquals(
+    assertFileTemplate(
+      "repository/FileTemplateRepository.kt",
+      "Repository",
+      "",
+      props,
+      repository,
       "FileTemplateRepository",
-      props.getProperty(PROPS_SIMPLE_NAME("Repository"))
-    )
-    assertEquals(
-      "com.github.rougsig.filetemplateloader.FileTemplateRepository",
-      props.getProperty(PROPS_CLASS_NAME("Repository"))
+      "com.github.rougsig.filetemplateloader.FileTemplateRepository"
     )
 
     val repositoryImpl = group.find { it.name == "FileTemplateRepositoryImpl.kt" }!!
-    assertSameLinesWithFile(
-      "$testDataPath/file-template-result/repository/FileTemplateRepositoryImpl.kt",
-      repositoryImpl.text
-    )
-    assertEquals(
+    assertFileTemplate(
+      "repository/FileTemplateRepositoryImpl.kt",
+      "RepositoryImpl",
+      "",
+      props,
+      repositoryImpl,
       "FileTemplateRepositoryImpl",
-      props.getProperty(PROPS_SIMPLE_NAME("RepositoryImpl"))
-    )
-    assertEquals(
-      "com.github.rougsig.filetemplateloader.FileTemplateRepositoryImpl",
-      props.getProperty(PROPS_CLASS_NAME("RepositoryImpl"))
+      "com.github.rougsig.filetemplateloader.FileTemplateRepositoryImpl"
     )
 
     val repositoryBindings = group.find { it.name == "FileTemplateRepositoryBindings.kt" }!!
-    assertSameLinesWithFile(
-      "$testDataPath/file-template-result/repository/di/FileTemplateRepositoryBindings.kt",
-      repositoryBindings.text
-    )
-    TestCase.assertEquals(
+
+    assertFileTemplate(
+      "repository/di/FileTemplateRepositoryBindings.kt",
+      "RepositoryBindings",
       "di",
-      repositoryBindings.parent!!.name
-    )
-    assertEquals(
+      props,
+      repositoryBindings,
       "FileTemplateRepositoryBindings",
-      props.getProperty(PROPS_SIMPLE_NAME("RepositoryBindings"))
-    )
-    assertEquals(
-      "com.github.rougsig.filetemplateloader.di.FileTemplateRepositoryBindings",
-      props.getProperty(PROPS_CLASS_NAME("RepositoryBindings"))
+      "com.github.rougsig.filetemplateloader.di.FileTemplateRepositoryBindings"
     )
   }
 }

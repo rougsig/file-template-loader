@@ -1,0 +1,5 @@
+package ${PACKAGE_NAME}
+
+class ${NAME} : View() {
+    val layout = Layouts.${LAYOUT_NAME_SHAKE_LOWER_CASE}
+}
