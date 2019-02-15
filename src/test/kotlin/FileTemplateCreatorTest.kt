@@ -8,12 +8,17 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
   override fun getTestDataPath(): String = calculateTestDataPath()
 
   fun testCalculatePackageName() {
+    val projectDirectory = myFixture.copyDirectoryToProject("file-template-creator", "")
+    val fileTemplateDirectory = projectDirectory.findChild(".fileTemplates")!!
+
+    val config = readConfig(fileTemplateDirectory)
+
     val src = myModule.sourceRoots.first()
     val dir = psiManager.findDirectory(src)!!
 
-    val packageName = dir.calculatePackageName()
+    val packageName = dir.calculatePackageName(config)
 
-    assertEquals("com.github.rougsig.filetemplateloader", packageName)
+    assertEquals("com.github.rougsig.light.idea.test.case", packageName)
   }
 
   fun testCreateFileTemplate() {
@@ -30,6 +35,7 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
 
     val props = Properties(config)
     props.setProperty(PROPS_FILE_NAME, "FileTemplateRepository")
+    props.setProperty(PROPS_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
     val template = repositoryFileTemplate.create(dir, props)
 
     assertSameLinesWithFile(
