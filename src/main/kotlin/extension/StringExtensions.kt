@@ -9,7 +9,7 @@ fun String.beginWithUpperCase(): String {
 }
 
 fun String.toCamelCase(): String {
-  return split('_', '-').joinToString("") {
+  return split('_').joinToString("") {
     it.beginWithUpperCase()
   }
 }
@@ -34,5 +34,7 @@ fun String.toSnakeUpperCase(): String {
 }
 
 fun String.toPackageCase(): String {
-  return toCamelCase().toSnakeCase().replace('_', '.')
+  return toCamelCase().toSnakeCase()
+    .split('-', '_', '/', '\\')
+    .joinToString(".") { it }
 }

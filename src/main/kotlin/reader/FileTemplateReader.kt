@@ -12,6 +12,7 @@ fun readFileTemplates(dir: VirtualFile): List<FileTemplate> {
       val slittedName = file.nameWithoutExtension.split(FILE_NAME_DELIMITER)
       FileTemplate(
         name = slittedName.first(),
+        fileName = slittedName.first(),
         extension = slittedName.last(),
         text = String(file.inputStream.readBytes())
       )
@@ -33,7 +34,7 @@ fun readFileTemplateGroups(templates: List<FileTemplate>, dir: VirtualFile, gson
         name = fileTemplateGroup.name,
         templates = fileTemplateGroup.templates.map { template ->
           templateMap[template.template]!!.copy(
-            name = template.fileName,
+            fileName = template.fileName,
             directory = template.directory
           )
         }

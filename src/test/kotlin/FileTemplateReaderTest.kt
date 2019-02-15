@@ -20,16 +20,19 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
       listOf(
         FileTemplate(
           name = "Repository",
+          fileName = "Repository",
           extension = "kt",
           text = ""
         ),
         FileTemplate(
           name = "RepositoryImpl",
+          fileName = "RepositoryImpl",
           extension = "kt",
           text = ""
         ),
         FileTemplate(
           name = "RepositoryBindings",
+          fileName = "RepositoryBindings",
           extension = "kt",
           text = ""
         )
@@ -51,17 +54,20 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
           name = "Repository",
           templates = listOf(
             FileTemplate(
-              name = "\${FLOW_NAME}Repository",
+              name = "Repository",
+              fileName = "\${FLOW_NAME}Repository",
               extension = "kt",
               text = ""
             ),
             FileTemplate(
-              name = "\${FLOW_NAME}RepositoryImpl",
+              name = "RepositoryImpl",
+              fileName = "\${FLOW_NAME}RepositoryImpl",
               extension = "kt",
               text = ""
             ),
             FileTemplate(
-              name = "\${FLOW_NAME}RepositoryBindings",
+              name = "RepositoryBindings",
+              fileName = "\${FLOW_NAME}RepositoryBindings",
               extension = "kt",
               text = "",
               directory = "di"
