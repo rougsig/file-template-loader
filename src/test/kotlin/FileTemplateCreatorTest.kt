@@ -4,6 +4,7 @@ import com.github.rougsig.filetemplateloader.constant.PROPS_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.creator.create
 import com.github.rougsig.filetemplateloader.extension.calculatePackageName
+import com.github.rougsig.filetemplateloader.extension.createSubDirs
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.reader.readConfig
 import com.github.rougsig.filetemplateloader.reader.readFileTemplateGroups
@@ -102,7 +103,49 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     )
 
     val repositoryBindings = group.find { it.name == "FileTemplateRepositoryBindings.kt" }!!
+    assertFileTemplate(
+      "repository/di/FileTemplateRepositoryBindings.kt",
+      "RepositoryBindings",
+      "di",
+      props,
+      repositoryBindings,
+      "FileTemplateRepositoryBindings",
+      "com.github.rougsig.filetemplateloader.di.FileTemplateRepositoryBindings"
+    )
+  }
 
+  fun testCreateFileTemplateGroupWithRootDirectory() {
+    val projectDirectory = myFixture.copyDirectoryToProject("file-template-creator", "")
+    val fileTemplateDirectory = projectDirectory.findChild(".fileTemplates")!!
+
+    val templates = readFileTemplates(fileTemplateDirectory)
+    val templateGroups = readFileTemplateGroups(templates, fileTemplateDirectory, Gson())
+    val config = readConfig(fileTemplateDirectory)
+
+    val src = psiManager.findDirectory(myModule.sourceRoots.first())!!
+
+    val viewFileTemplateGroup = templateGroups.find { it.name == "View" }!!
+
+    val props = Properties(config)
+    props.setProperty("VIEW_NAME", "FileTemplate")
+    props.setProperty(PROPS_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
+    val group = project.writeAction {
+      val kotlin = src.createSubDirs("src/main/kotlin")
+      viewFileTemplateGroup.create(kotlin, props)
+    }
+
+    val repositoryImpl = group.find { it.name == "FileTemplateView.kt" }!!
+    assertFileTemplate(
+      "repository/FileTemplateRepositoryImpl.kt",
+      "RepositoryImpl",
+      "",
+      props,
+      repositoryImpl,
+      "FileTemplateRepositoryImpl",
+      "com.github.rougsig.filetemplateloader.FileTemplateRepositoryImpl"
+    )
+
+    val repositoryBindings = group.find { it.name == "FileTemplateLayout.xml" }!!
     assertFileTemplate(
       "repository/di/FileTemplateRepositoryBindings.kt",
       "RepositoryBindings",
