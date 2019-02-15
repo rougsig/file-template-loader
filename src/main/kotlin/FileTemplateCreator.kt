@@ -1,41 +1,30 @@
 package com.github.rougsig.filetemplateloader
 
 import com.intellij.ide.fileTemplates.FileTemplateUtil
+import com.intellij.openapi.util.text.StringUtil
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiElement
-import org.jetbrains.kotlin.idea.refactoring.fqName.getKotlinFqName
-import org.jetbrains.kotlin.idea.util.projectStructure.module
+import com.intellij.psi.PsiFile
 import java.util.*
 
 fun FileTemplate.create(dir: PsiDirectory, props: Properties): PsiElement {
-  if (props.getProperty(PROPS_PACKAGE_NAME).isNullOrBlank()) {
-    props.setProperty(PROPS_PACKAGE_NAME, dir.calculatePackageName(props))
-  }
+  val templateName = props.getProperty(PROPS_NAME)
+  val packageName = props.getProperty(PROPS_PACKAGE_NAME)
 
-  val fileName = props.getProperty(PROPS_FILE_NAME)
-  val createdTemplate = FileTemplateUtil.createFromTemplate(
-    template,
-    fileName,
-    props,
-    dir
-  )
+  val fileName = "$templateName.$extension"
 
-  props.setProperty(PROPS_SIMPLE_NAME(name), fileName)
-  props.setProperty(PROPS_CLASS_NAME(name), "${props.getProperty(PROPS_PACKAGE_NAME)}.$fileName")
+  props.setProperty(PROPS_SIMPLE_NAME(name), templateName)
+  props.setProperty(PROPS_CLASS_NAME(name), "$packageName.$templateName")
 
-  return createdTemplate
+  dir.checkCreateFile(fileName)
+
+  val project = dir.project
+  val template = text.mergeTemplate(props)
+  return dir.add(project.createPsiFile(fileName, template)) as PsiFile
 }
 
-fun PsiDirectory.calculatePackageName(props: Properties): String {
-  val builder = StringBuilder()
-  getKotlinFqName()
-    ?.let { builder.append(it.toString()) }
-    ?: { builder.append(props.getProperty(PACKAGE_BASE)) }()
-
-  module?.name?.toPackageCase()?.let {
-    builder.append(".")
-    builder.append(it)
-  }
-
-  return builder.toString()
+fun String.mergeTemplate(props: Properties): String {
+  val merged = FileTemplateUtil.mergeTemplate(props, this, true)
+  return StringUtil.convertLineSeparators(merged)
 }
+

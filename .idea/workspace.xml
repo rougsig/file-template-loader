@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36cf2490-0c19-4623-a0ad-2ad49083424c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ProjectExtenstion.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/PsiDirectoryExtenstions.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/FileTemplate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/FileTemplate.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/FileTemplateCreator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/FileTemplateCreator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/PropsConstants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/PropsConstants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/StringExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/StringExtensions.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/FileTemplateCreatorTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/FileTemplateCreatorTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/FileTemplateReaderTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/FileTemplateReaderTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -44,52 +49,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/FileTemplateCreator.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-              <folding>
-                <element signature="e#47#260#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="286">
+              <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.kt">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/FileTemplate.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="45" selection-start-column="45" selection-end-column="45" />
+            <state relative-caret-position="78">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/StringExtensions.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
-              <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/PropsConstants.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTemplateCreatorTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="37" column="80" selection-start-line="37" selection-start-column="80" selection-end-line="37" selection-end-column="80" />
+            <state relative-caret-position="260">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
-                <element signature="e#47#198#0" expanded="true" />
+                <element signature="e#47#258#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,6 +98,9 @@
       <find>collectE</find>
       <find>trim</find>
       <find>ATTRIBUTE_PACKAGE_NAME</find>
+      <find>MergeTe</find>
+      <find>createT</find>
+      <find>createTe</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,7 +115,6 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/test/kotlin/FileTemplateProviderTest.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/MyTest.kt" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/testData/file-template-reader/repository/Repository.group.json" />
         <option value="$PROJECT_DIR$/src/test/kotlin/UnitTestUtils.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/FileTemplateGroup.kt" />
@@ -141,7 +127,6 @@
         <option value="$PROJECT_DIR$/testData/file-template-reader/repository/di/RepositoryBindings.kt.ft" />
         <option value="$PROJECT_DIR$/testData/file-template-reader/repository/Repository.kt.ft" />
         <option value="$PROJECT_DIR$/testData/file-template-reader/repository/RepositoryImpl.kt.ft" />
-        <option value="$PROJECT_DIR$/src/test/kotlin/FileTemplateReaderTest.kt" />
         <option value="$PROJECT_DIR$/testData/file-template-creator/repository/Repository.kt.ft" />
         <option value="$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/config.properties" />
         <option value="$PROJECT_DIR$/testData/file-template-reader/config.properties" />
@@ -149,17 +134,21 @@
         <option value="$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/RepositoryBindings.kt.ft" />
         <option value="$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/RepositoryImpl.kt.ft" />
         <option value="$PROJECT_DIR$/src/main/kotlin/FileTeplateCreator.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/FileTemplate.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/PropsConstants.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/StringExtensions.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/FileTemplateReaderTest.kt" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/FileTemplate.kt" />
         <option value="$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/FileTemplateCreator.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/FileTemplateCreatorTest.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/PropsConstants.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/PsiDirectoryExtenstions.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/ProjectExtenstion.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/FileTemplateCreator.kt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="286" />
+    <option name="x" value="857" />
     <option name="y" value="-8" />
     <option name="width" value="943" />
     <option name="height" value="1087" />
@@ -171,8 +160,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,21 +184,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="file-template-loader" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="file-template-loader" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
@@ -265,54 +237,38 @@
             <path>
               <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="reflect" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
               <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="gson-2.8.5.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="extensions.jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="gson-2.8.5.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="gson" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="junit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="junit" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="kotlin-stdlib.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="kotlin-stdlib.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="extensions.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="extensions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
@@ -325,146 +281,98 @@
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
               <item name="platform-api.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="intellij" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="platform-api.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="intellij" type="462c0819:PsiDirectoryNode" />
-              <item name="openapi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="platform-api.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="intellij" type="462c0819:PsiDirectoryNode" />
-              <item name="openapi" type="462c0819:PsiDirectoryNode" />
-              <item name="module" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="platform-api.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="intellij" type="462c0819:PsiDirectoryNode" />
-              <item name="openapi" type="462c0819:PsiDirectoryNode" />
-              <item name="vfs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="platform-api.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="intellij" type="462c0819:PsiDirectoryNode" />
-              <item name="psi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="platform-api.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="intellij" type="462c0819:PsiDirectoryNode" />
-              <item name="psi" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="platform-impl.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="platform-impl.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="platform-impl.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="intellij" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="platform-impl.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="intellij" type="462c0819:PsiDirectoryNode" />
-              <item name="ide" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
-              <item name="platform-impl.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="intellij" type="462c0819:PsiDirectoryNode" />
-              <item name="ide" type="462c0819:PsiDirectoryNode" />
               <item name="fileTemplates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: unzipped.com.jetbrains.plugins:Kotlin:unzipped.com.jetbrains.plugins:ideaIC-IC-183.5429.30-withSources" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: unzipped.com.jetbrains.plugins:Kotlin:unzipped.com.jetbrains.plugins:ideaIC-IC-183.5429.30-withSources" type="70bed36:NamedLibraryElementNode" />
-              <item name="kotlin-plugin.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: unzipped.com.jetbrains.plugins:Kotlin:unzipped.com.jetbrains.plugins:ideaIC-IC-183.5429.30-withSources" type="70bed36:NamedLibraryElementNode" />
-              <item name="kotlin-plugin.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="jetbrains" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: unzipped.com.jetbrains.plugins:Kotlin:unzipped.com.jetbrains.plugins:ideaIC-IC-183.5429.30-withSources" type="70bed36:NamedLibraryElementNode" />
-              <item name="kotlin-plugin.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="jetbrains" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: unzipped.com.jetbrains.plugins:Kotlin:unzipped.com.jetbrains.plugins:ideaIC-IC-183.5429.30-withSources" type="70bed36:NamedLibraryElementNode" />
-              <item name="kotlin-plugin.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="jetbrains" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
+              <item name="platform-api.jar" type="462c0819:PsiDirectoryNode" />
               <item name="psi" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
+              <item name="platform-impl.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
+              <item name="platform-impl.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="fileTemplates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
+              <item name="util.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
+              <item name="util.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="text" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
+              <item name="velocity-1.7.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
+              <item name="velocity-1.7.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="velocity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
+              <item name="velocity-1.7.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: com.jetbrains:ideaIC:2018.3.4" type="70bed36:NamedLibraryElementNode" />
+              <item name="velocity-1.7.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: unzipped.com.jetbrains.plugins:Kotlin:unzipped.com.jetbrains.plugins:ideaIC-IC-183.5429.30-withSources" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Gradle: unzipped.com.jetbrains.plugins:Kotlin:unzipped.com.jetbrains.plugins:ideaIC-IC-183.5429.30-withSources" type="70bed36:NamedLibraryElementNode" />
               <item name="kotlin-plugin.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="jetbrains" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="psi" type="462c0819:PsiDirectoryNode" />
-              <item name="psiUtil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: unzipped.com.jetbrains.plugins:Kotlin:unzipped.com.jetbrains.plugins:ideaIC-IC-183.5429.30-withSources" type="70bed36:NamedLibraryElementNode" />
+              <item name="kotlin-plugin.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ToolWindowDebug.ShowToolbar" value="false" />
     <property name="android.sdk.path" value="C:/androidSDK" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550251557035" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550260079904" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -496,7 +404,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FileTemplateCreatorTest.testCreateFileTemplate">
+  <component name="RunManager" selected="JUnit.FileTemplateCreatorTest">
     <configuration name="Plugin" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -516,19 +424,13 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FileTemplateCreatorTest.testCalculatePackageName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileTemplateCreatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="com.github.rougsig.file-template-loader.test" />
       <shortenClasspath name="CLASSPATH_FILE" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.rougsig.filetemplateloader.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="com.github.rougsig.filetemplateloader.FileTemplateCreatorTest" />
-      <option name="METHOD_NAME" value="testCalculatePackageName" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -537,15 +439,21 @@
     <configuration name="FileTemplateCreatorTest.testCreateFileTemplate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="com.github.rougsig.file-template-loader.test" />
       <shortenClasspath name="CLASSPATH_FILE" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.rougsig.filetemplateloader.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="com.github.rougsig.filetemplateloader.FileTemplateCreatorTest" />
       <option name="METHOD_NAME" value="testCreateFileTemplate" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileTemplateReaderTest.testReadFileTemplateGroups" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.github.rougsig.file-template-loader.test" />
+      <shortenClasspath name="CLASSPATH_FILE" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="com.github.rougsig.filetemplateloader.FileTemplateReaderTest" />
+      <option name="METHOD_NAME" value="testReadFileTemplateGroups" />
       <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
       <method v="2">
@@ -564,13 +472,15 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.Plugin" />
-      <item itemvalue="JUnit.FileTemplateCreatorTest.testCalculatePackageName" />
+      <item itemvalue="JUnit.FileTemplateReaderTest.testReadFileTemplateGroups" />
       <item itemvalue="JUnit.FileTemplateCreatorTest.testCreateFileTemplate" />
+      <item itemvalue="JUnit.FileTemplateCreatorTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FileTemplateCreatorTest" />
         <item itemvalue="JUnit.FileTemplateCreatorTest.testCreateFileTemplate" />
-        <item itemvalue="JUnit.FileTemplateCreatorTest.testCalculatePackageName" />
+        <item itemvalue="JUnit.FileTemplateReaderTest.testReadFileTemplateGroups" />
       </list>
     </recent_temporary>
   </component>
@@ -610,35 +520,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FileTemplateCreatorTest_testCalculatePackageName - 2019.02.15 at 18h 59m 45s.xml">
-      <configuration name="FileTemplateCreatorTest.testCalculatePackageName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileTemplateCreatorTest_testCalculatePackageName - 2019.02.15 at 19h 00m 34s.xml">
-      <configuration name="FileTemplateCreatorTest.testCalculatePackageName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileTemplateCreatorTest_testCalculatePackageName - 2019.02.15 at 19h 04m 20s.xml">
-      <configuration name="FileTemplateCreatorTest.testCalculatePackageName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileTemplateCreatorTest_testCalculatePackageName - 2019.02.15 at 19h 05m 33s.xml">
-      <configuration name="FileTemplateCreatorTest.testCalculatePackageName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileTemplateCreatorTest_testCalculatePackageName - 2019.02.15 at 19h 09m 17s.xml">
-      <configuration name="FileTemplateCreatorTest.testCalculatePackageName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileTemplateCreatorTest_testCalculatePackageName - 2019.02.15 at 19h 10m 19s.xml">
-      <configuration name="FileTemplateCreatorTest.testCalculatePackageName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileTemplateCreatorTest_testCalculatePackageName - 2019.02.15 at 19h 16m 49s.xml">
-      <configuration name="FileTemplateCreatorTest.testCalculatePackageName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileTemplateCreatorTest_testCalculatePackageName - 2019.02.15 at 19h 17m 33s.xml">
-      <configuration name="FileTemplateCreatorTest.testCalculatePackageName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileTemplateCreatorTest_testCalculatePackageName - 2019.02.15 at 19h 24m 51s.xml">
-      <configuration name="FileTemplateCreatorTest.testCalculatePackageName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileTemplateCreatorTest_testCreateFileTemplate - 2019.02.15 at 19h 25m 29s.xml">
+    <history-entry file="FileTemplateCreatorTest_testCreateFileTemplate - 2019.02.15 at 21h 28m 41s.xml">
       <configuration name="FileTemplateCreatorTest.testCreateFileTemplate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileTemplateCreatorTest_testCreateFileTemplate - 2019.02.15 at 21h 30m 07s.xml">
+      <configuration name="FileTemplateCreatorTest.testCreateFileTemplate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileTemplateCreatorTest_testCreateFileTemplate - 2019.02.15 at 21h 30m 43s.xml">
+      <configuration name="FileTemplateCreatorTest.testCreateFileTemplate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileTemplateCreatorTest_testCreateFileTemplate - 2019.02.15 at 21h 32m 42s.xml">
+      <configuration name="FileTemplateCreatorTest.testCreateFileTemplate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileTemplateCreatorTest_testCreateFileTemplate - 2019.02.15 at 21h 33m 27s.xml">
+      <configuration name="FileTemplateCreatorTest.testCreateFileTemplate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileTemplateCreatorTest_testCreateFileTemplate - 2019.02.15 at 21h 33m 57s.xml">
+      <configuration name="FileTemplateCreatorTest.testCreateFileTemplate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileTemplateCreatorTest_testCreateFileTemplate - 2019.02.15 at 21h 42m 00s.xml">
+      <configuration name="FileTemplateCreatorTest.testCreateFileTemplate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileTemplateCreatorTest_testCreateFileTemplate - 2019.02.15 at 21h 44m 03s.xml">
+      <configuration name="FileTemplateCreatorTest.testCreateFileTemplate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileTemplateCreatorTest_testCreateFileTemplate - 2019.02.15 at 21h 44m 54s.xml">
+      <configuration name="FileTemplateCreatorTest.testCreateFileTemplate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileTemplateCreatorTest - 2019.02.15 at 21h 45m 14s.xml">
+      <configuration name="FileTemplateCreatorTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -651,10 +561,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="58" y="-8" width="1870" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25469613" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -663,25 +573,25 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.42946708" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4200627" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.56008357" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3291536" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3291536" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3291536" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.33124346" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.3291536" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3291536" />
-      <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Gradle" order="5" weight="0.32983425" />
+      <window_info anchor="right" id="Gradle" order="5" weight="0.32942432" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven" order="8" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2552486" />
@@ -713,6 +623,9 @@
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout-to-restore>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.ft" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -762,6 +675,16 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/FileTemplateCreatorTest.kt</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="((MyTest)this).myTempDir" custom="com.github.rougsig.filetemplateloader.MyTest" />
@@ -769,109 +692,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="121" column="19" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/openapi/vfs/LocalFileSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/testFramework/fixtures/impl/LightTempDirTestFixtureImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31">
-          <caret line="83" column="18" selection-start-line="83" selection-start-column="11" selection-end-line="83" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/testFramework/fixtures/TempDirTestFixture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="128" selection-start-line="128" selection-end-line="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="104" column="27" lean-forward="true" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/testFramework/fixtures/IdeaProjectTestFixture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/testFramework/fixtures/impl/CodeInsightTestFixtureImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5359">
-          <caret line="371" selection-start-line="371" selection-end-line="371" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTemplateProviderTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/552bc3047e83510a6a589cee03a6f1a5de11316f/ideaIC-2018.3.4/lib/junit-4.12.jar!/org/junit/Assert.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="293" column="23" selection-start-line="293" selection-start-column="23" selection-end-line="293" selection-end-column="23" />
-          <folding>
-            <element signature="e#10264#10265#0" expanded="true" />
-            <element signature="e#10322#10323#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="37" column="66" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/552bc3047e83510a6a589cee03a6f1a5de11316f/ideaIC-2018.3.4/plugins/Kotlin/lib/kotlin-plugin.jar!/org/jetbrains/kotlin/psi/psiUtil/PsiUtilsKt.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="91" lean-forward="true" selection-start-line="5" selection-start-column="91" selection-end-line="5" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/552bc3047e83510a6a589cee03a6f1a5de11316f/ideaIC-2018.3.4/plugins/Kotlin/lib/kotlin-plugin.jar!/org/jetbrains/kotlin/psi/psiUtil/PsiChildRange.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/psi/util/PsiTreeUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -911,19 +731,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/FileTemplateGroupReader.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="9" selection-start-line="9" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testData/file-template-create/repository/di/RepositoryBindings.kt.ft">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testData/file-template-create/config.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/FileTemplateGroupReader.kt" />
+    <entry file="file://$PROJECT_DIR$/testData/file-template-create/repository/di/RepositoryBindings.kt.ft" />
+    <entry file="file://$PROJECT_DIR$/testData/file-template-create/config.properties" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -964,16 +774,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.fileTemplates/repository/Repository.kt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/ide/fileTemplates/FileTemplateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-400">
-          <caret line="415" column="54" selection-start-line="415" selection-start-column="32" selection-end-line="415" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.fileTemplates/repository/Repository.kt" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/ide/fileTemplates/FileTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -988,67 +789,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/RepositoryImpl.kt.ft">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/RepositoryBindings.kt.ft">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.kt.ft">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/ConfigReader.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
           <folding>
             <element signature="e#47#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/FileTemplate.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/FileTemplateReader.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/FileTemplateGroup.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.group.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTemplateReaderTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <element signature="e#47#157#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1063,41 +809,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="12" selection-start-line="1" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/openapi/module/Module.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="45" selection-start-column="45" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/FileTemplateCreator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-          <folding>
-            <element signature="e#47#260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/PropsConstants.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -1108,13 +823,238 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.group.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/ide/fileTemplates/VelocityWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="108" column="25" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/552bc3047e83510a6a589cee03a6f1a5de11316f/ideaIC-2018.3.4/lib/velocity-1.7.jar!/org/apache/velocity/app/Velocity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/FileTemplateReader.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-713">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/FileTemplateGroup.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/ide/fileTemplates/DefaultTemplatePropertiesProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/openapi/extensions/ExtensionPointName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+          <folding>
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#958#959#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTemplateReaderTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+          <folding>
+            <element signature="e#47#189#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/552bc3047e83510a6a589cee03a6f1a5de11316f/ideaIC-2018.3.4/lib/velocity-1.7.jar!/org/apache/velocity/util/StringUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/552bc3047e83510a6a589cee03a6f1a5de11316f/ideaIC-2018.3.4/lib/velocity-1.7.jar!/org/apache/velocity/VelocityContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding>
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#529#530#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/552bc3047e83510a6a589cee03a6f1a5de11316f/ideaIC-2018.3.4/plugins/Kotlin/lib/kotlin-plugin.jar!/org/jetbrains/kotlin/idea/actions/KotlinCreateFromTemplateHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/ide/fileTemplates/CreateFromTemplateHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/psi/PsiDirectory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="133" column="7" selection-start-line="133" selection-start-column="7" selection-end-line="133" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/ide/fileTemplates/DefaultCreateFromTemplateHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+          <folding>
+            <element signature="e#1393#1394#0" expanded="true" />
+            <element signature="e#1414#1415#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.kt.ft">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/RepositoryBindings.kt.ft">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/RepositoryImpl.kt.ft">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/ide/fileTemplates/FileTemplateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="689">
+          <caret line="325" column="46" lean-forward="true" selection-start-line="325" selection-start-column="46" selection-end-line="325" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/openapi/util/text/StringUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="3072" column="33" selection-start-line="3072" selection-start-column="33" selection-end-line="3072" selection-end-column="33" />
+          <folding>
+            <element signature="e#93507#93508#0" expanded="true" />
+            <element signature="e#93564#93565#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/openapi/util/text/StringUtilRt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+          <folding>
+            <element signature="e#1902#1903#0" expanded="true" />
+            <element signature="e#1953#1954#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/PropsConstants.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/ProjectExtenstion.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#47#271#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/PsiDirectoryExtenstions.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <element signature="e#47#232#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTemplateCreatorTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="37" column="80" selection-start-line="37" selection-start-column="80" selection-end-line="37" selection-end-column="80" />
+        <state relative-caret-position="260">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
-            <element signature="e#47#198#0" expanded="true" />
+            <element signature="e#47#258#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/FileTemplate.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/FileTemplateCreator.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
         </state>
       </provider>
     </entry>

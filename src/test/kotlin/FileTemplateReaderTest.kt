@@ -40,7 +40,7 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
     val templates = readFileTemplates(templateDirectory)
     val groups = readFileTemplateGroups(templates, templateDirectory, gson)
 
-    assertSameElements(
+    assertEquals(
       groups,
       listOf(
         FileTemplateGroup(
