@@ -6,4 +6,6 @@ data class FileTemplate(
   val extension: String,
   val text: String,
   val directory: String? = null
-)
+) {
+  val isSourceCode = extension == "kt"
+}

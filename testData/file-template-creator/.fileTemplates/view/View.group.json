@@ -7,7 +7,7 @@
     },
     {
       "template": "Layout.xml",
-      "fileName": "${VIEW_NAME_SHAKE_LOWER_CASE}_view",
+      "fileName": "${VIEW_NAME_LOWER_SNAKE_CASE}_view",
       "directory": "./src/main/view"
     }
   ]

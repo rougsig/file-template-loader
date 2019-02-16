@@ -31,11 +31,11 @@ fun assertFileTemplate(
   )
   LightPlatformCodeInsightFixtureTestCase.assertEquals(
     actualFileName,
-    props.getProperty(PROPS_SIMPLE_NAME(templateName))
+    props.getProperty(PROPS_SIMPLE_NAME(templateName)) ?: ""
   )
   LightPlatformCodeInsightFixtureTestCase.assertEquals(
     actualPackageName,
-    props.getProperty(PROPS_CLASS_NAME(templateName))
+    props.getProperty(PROPS_CLASS_NAME(templateName)) ?: ""
   )
   TestCase.assertEquals(
     "\\src$directory",

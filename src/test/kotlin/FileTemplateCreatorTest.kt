@@ -138,22 +138,22 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     assertFileTemplate(
       "view/FileTemplateView.kt",
       "View",
-      "\\main/kotlin",
+      "\\main\\kotlin",
       props,
       repositoryImpl,
       "FileTemplateView",
       "com.github.rougsig.filetemplateloader.FileTemplateView"
     )
 
-    val repositoryBindings = group.find { it.name == "file_repository_view.xml" }!!
+    val repositoryBindings = group.find { it.name == "file_template_view.xml" }!!
     assertFileTemplate(
-      "view/file_repository_view.xml",
+      "view/file_template_view.xml",
       "Layout",
-      "main/view",
+      "\\main\\view",
       props,
       repositoryBindings,
-      "file_repository_view.xml",
-      "com.github.rougsig.filetemplateloader.di.FileTemplateTemplateBindings"
+      "file_template_view",
+      ""
     )
   }
 }
