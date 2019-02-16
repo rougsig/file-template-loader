@@ -1,13 +1,18 @@
 package com.github.rougsig.filetemplateloader.extension
 
 import com.github.rougsig.filetemplateloader.entity.FileTemplate
+import com.github.rougsig.filetemplateloader.entity.PropGenerator
 import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.util.text.StringUtil
-import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.psi.PsiDirectory
-import org.jetbrains.kotlin.idea.util.module
-import org.jetbrains.kotlin.idea.util.projectStructure.getModuleDir
+import com.intellij.psi.util.parents
+import org.apache.velocity.VelocityContext
+import org.apache.velocity.app.Velocity
+import org.apache.velocity.app.event.EventCartridge
+import org.apache.velocity.app.event.ReferenceInsertionEventHandler
+import java.io.StringWriter
 import java.util.*
+
 
 fun String.mergeTemplate(props: Properties): String {
   val merged = FileTemplateUtil.mergeTemplate(props, this, true)
@@ -17,8 +22,7 @@ fun String.mergeTemplate(props: Properties): String {
 // FIXME Move "./" logic to separate function
 fun PsiDirectory.createSubDirs(directory: String): PsiDirectory {
   val startDirectory = if (directory.startsWith("./")) {
-    val moduleRoot = LocalFileSystem.getInstance().findFileByPath(module!!.getModuleDir())!!
-    manager.findDirectory(moduleRoot)!!
+    parents().last() as PsiDirectory
   } else {
     this
   }
@@ -43,4 +47,42 @@ fun FileTemplate.createSubDirs(initialDir: PsiDirectory): PsiDirectory {
 fun FileTemplate.getPackageNameWithSubDirs(initialPackageName: String): String {
   val subDirs = directory ?: return initialPackageName
   return initialPackageName + "." + subDirs.toPackageCase()
+}
+
+private fun String.getReferences(): Set<String> {
+  val names = HashSet<String>()
+
+  val velocityContext = VelocityContext()
+  val ec = EventCartridge()
+  ec.addEventHandler(ReferenceInsertionEventHandler { reference, _ -> names.add(reference) })
+  ec.attachToContext(velocityContext)
+  Velocity.evaluate(velocityContext, StringWriter(), "velocity", this)
+  return names
+}
+
+fun String.getAllProps(): List<String> {
+  return getReferences().map {
+    it.replace("{", "")
+      .replace("}", "")
+      .replace("\$", "")
+  }
+}
+
+fun String.getGeneratedProps(generators: List<PropGenerator>): List<String> {
+  val generatorPostfixes = generators.map(PropGenerator::name)
+  return getAllProps()
+    .filter { prop -> generatorPostfixes.any { prop.endsWith(it) } }
+}
+
+fun String.getGeneratedPropsBase(generators: List<PropGenerator>): List<String> {
+  val generatorPostfixes = generators.map(PropGenerator::name)
+  val matcher = generatorPostfixes.joinToString("|_") { it }.toRegex()
+  return getGeneratedProps(generators)
+    .map { prop -> matcher.replace(prop) { "" } }
+}
+
+fun String.getProps(generators: List<PropGenerator>): List<String> {
+  return getAllProps()
+    .minus(getGeneratedProps(generators))
+    .plus(getGeneratedPropsBase(generators))
 }

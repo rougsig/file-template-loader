@@ -130,30 +130,30 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     props.setProperty("VIEW_NAME", "FileTemplate")
     props.setProperty(PROPS_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
     val group = project.writeAction {
-      val kotlin = src.createSubDirs("src/main/kotlin")
+      val kotlin = src.createSubDirs("./src/main/kotlin")
       viewFileTemplateGroup.create(kotlin, props)
     }
 
     val repositoryImpl = group.find { it.name == "FileTemplateView.kt" }!!
     assertFileTemplate(
-      "repository/FileTemplateRepositoryImpl.kt",
-      "RepositoryImpl",
-      "",
+      "view/FileTemplateView.kt",
+      "View",
+      "main/kotlin",
       props,
       repositoryImpl,
-      "FileTemplateRepositoryImpl",
-      "com.github.rougsig.filetemplateloader.FileTemplateRepositoryImpl"
+      "FileTemplateView",
+      "com.github.rougsig.filetemplateloader.FileTemplateView"
     )
 
-    val repositoryBindings = group.find { it.name == "FileTemplateLayout.xml" }!!
+    val repositoryBindings = group.find { it.name == "file_repository_view.xml" }!!
     assertFileTemplate(
-      "repository/di/FileTemplateRepositoryBindings.kt",
-      "RepositoryBindings",
-      "di",
+      "view/file_repository_view.xml",
+      "Layout",
+      "main/view",
       props,
       repositoryBindings,
-      "FileTemplateRepositoryBindings",
-      "com.github.rougsig.filetemplateloader.di.FileTemplateRepositoryBindings"
+      "file_repository_view.xml",
+      "com.github.rougsig.filetemplateloader.di.FileTemplateTemplateBindings"
     )
   }
 }

@@ -38,7 +38,7 @@ fun assertFileTemplate(
     props.getProperty(PROPS_CLASS_NAME(templateName))
   )
   TestCase.assertEquals(
-    directory,
+    "/src/$directory",
     if (actualFile.getFqNameByDirectory().isRoot) ""
     else actualFile.getFqNameByDirectory().toString()
   )

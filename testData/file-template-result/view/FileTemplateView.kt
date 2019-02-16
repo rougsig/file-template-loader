@@ -1,5 +1,5 @@
 package com.github.rougsig.filetemplateloader
 
-class FileRepositoryView : View() {
+class FileTemplateView : View() {
   val layout = Layouts.file_repository_view
 }

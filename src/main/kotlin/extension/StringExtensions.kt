@@ -8,13 +8,26 @@ fun String.beginWithUpperCase(): String {
   }
 }
 
-fun String.toCamelCase(): String {
+fun String.beginWithLowerCase(): String {
+  return when (length) {
+    0 -> ""
+    1 -> toLowerCase()
+    else -> first().toLowerCase() + substring(1)
+  }
+}
+
+fun String.toUpperCamelCase(): String {
   return split('_').joinToString("") {
     it.beginWithUpperCase()
   }
 }
 
-fun String.toSnakeLowerCase(): String {
+
+fun String.toLowerCamelCase(): String {
+  return toUpperCamelCase().beginWithLowerCase()
+}
+
+fun String.toLowerSnakeCase(): String {
   val builder = StringBuilder()
   var isFirst = true
   forEach {
@@ -29,12 +42,12 @@ fun String.toSnakeLowerCase(): String {
   return builder.toString()
 }
 
-fun String.toSnakeUpperCase(): String {
-  return toSnakeLowerCase().toUpperCase()
+fun String.toUpperSnakeCase(): String {
+  return toLowerSnakeCase().toUpperCase()
 }
 
 fun String.toPackageCase(): String {
-  return toCamelCase().toSnakeLowerCase()
+  return toUpperCamelCase().toLowerSnakeCase()
     .split('-', '_', '/', '\\')
     .joinToString(".") { it }
 }
