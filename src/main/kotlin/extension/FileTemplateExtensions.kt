@@ -13,7 +13,6 @@ import org.apache.velocity.app.event.ReferenceInsertionEventHandler
 import java.io.StringWriter
 import java.util.*
 
-
 fun String.mergeTemplate(props: Properties): String {
   val merged = FileTemplateUtil.mergeTemplate(props, this, true)
   return StringUtil.convertLineSeparators(merged)
@@ -68,21 +67,24 @@ fun String.getAllProps(): List<String> {
   }
 }
 
-fun String.getGeneratedProps(generators: List<PropGenerator>): List<String> {
+fun String.getGeneratedProps(generators: List<PropGenerator>): Set<String> {
   val generatorPostfixes = generators.map(PropGenerator::name)
   return getAllProps()
     .filter { prop -> generatorPostfixes.any { prop.endsWith(it) } }
+    .toSet()
 }
 
-fun String.getGeneratedPropsBase(generators: List<PropGenerator>): List<String> {
+fun String.getGeneratedPropsBase(generators: List<PropGenerator>): Set<String> {
   val generatorPostfixes = generators.map(PropGenerator::name)
   val matcher = generatorPostfixes.joinToString("|_") { it }.toRegex()
   return getGeneratedProps(generators)
     .map { prop -> matcher.replace(prop) { "" } }
+    .toSet()
 }
 
-fun String.getProps(generators: List<PropGenerator>): List<String> {
+fun String.getProps(generators: List<PropGenerator>): Set<String> {
   return getAllProps()
     .minus(getGeneratedProps(generators))
     .plus(getGeneratedPropsBase(generators))
+    .toSet()
 }

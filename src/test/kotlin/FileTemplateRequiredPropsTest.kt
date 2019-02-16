@@ -22,7 +22,7 @@ class FileTemplateRequiredPropsTest : LightPlatformCodeInsightFixtureTestCase() 
 
     assertSameElements(
       requiredProps,
-      listOf("PACKAGE_NAME", "NAME", "LAYOUT_SIMPLE_NAME_LOWER_SHAKE_CASE")
+      setOf("PACKAGE_NAME", "NAME", "LAYOUT_SIMPLE_NAME_LOWER_SHAKE_CASE")
     )
   }
 
@@ -37,7 +37,7 @@ class FileTemplateRequiredPropsTest : LightPlatformCodeInsightFixtureTestCase() 
 
     assertSameElements(
       requiredProps,
-      listOf("LAYOUT_SIMPLE_NAME_LOWER_SHAKE_CASE")
+      setOf("LAYOUT_SIMPLE_NAME_LOWER_SHAKE_CASE")
     )
   }
 
@@ -52,7 +52,7 @@ class FileTemplateRequiredPropsTest : LightPlatformCodeInsightFixtureTestCase() 
 
     assertSameElements(
       requiredProps,
-      listOf("LAYOUT_SIMPLE_NAME")
+      setOf("LAYOUT_SIMPLE_NAME")
     )
   }
 
@@ -67,7 +67,7 @@ class FileTemplateRequiredPropsTest : LightPlatformCodeInsightFixtureTestCase() 
 
     assertSameElements(
       requiredProps,
-      listOf("PACKAGE_NAME", "NAME", "LAYOUT_SIMPLE_NAME")
+      setOf("PACKAGE_NAME", "NAME", "LAYOUT_SIMPLE_NAME")
     )
   }
 }
