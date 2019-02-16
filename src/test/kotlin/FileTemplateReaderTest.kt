@@ -77,4 +77,73 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
       )
     )
   }
+
+  fun testProjectReadFileTemplates() {
+    myFixture.copyDirectoryToProject("file-template-reader", "")
+
+    val templates = project.readFileTemplates()
+
+    assertSameElements(
+      templates,
+      listOf(
+        FileTemplateSingle(
+          name = "Repository",
+          fileName = "Repository",
+          extension = "kt",
+          text = ""
+        ),
+        FileTemplateSingle(
+          name = "RepositoryImpl",
+          fileName = "RepositoryImpl",
+          extension = "kt",
+          text = ""
+        ),
+        FileTemplateSingle(
+          name = "RepositoryBindings",
+          fileName = "RepositoryBindings",
+          extension = "kt",
+          text = ""
+        )
+      )
+    )
+  }
+
+  fun testProjectReadFileTemplateGroups() {
+    myFixture.copyDirectoryToProject("file-template-reader", "")
+    val gson = Gson()
+
+    val templates = project.readFileTemplates()
+    val groups = project.readFileTemplateGroups(templates, gson)
+
+    assertEquals(
+      groups,
+      listOf(
+        FileTemplateGroup(
+          name = "Repository",
+          templates = listOf(
+            FileTemplateSingle(
+              name = "Repository",
+              fileName = "\${FLOW_NAME}Repository",
+              extension = "kt",
+              text = ""
+            ),
+            FileTemplateSingle(
+              name = "RepositoryImpl",
+              fileName = "\${FLOW_NAME}RepositoryImpl",
+              extension = "kt",
+              text = ""
+            ),
+            FileTemplateSingle(
+              name = "RepositoryBindings",
+              fileName = "\${FLOW_NAME}RepositoryBindings",
+              extension = "kt",
+              text = "",
+              directory = "di"
+            )
+          )
+        )
+      )
+    )
+  }
+
 }

@@ -18,9 +18,8 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
 
   fun testCalculatePackageName() {
     val projectDirectory = myFixture.copyDirectoryToProject("file-template-creator", "")
-    val fileTemplateDirectory = projectDirectory.findChild(".fileTemplates")!!
 
-    val config = readConfig(fileTemplateDirectory)
+    val config = project.readConfig()
 
     val src = myModule.sourceRoots.first()
     val dir = psiManager.findDirectory(src)!!
@@ -35,7 +34,7 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     val fileTemplateDirectory = projectDirectory.findChild(".fileTemplates")!!
 
     val templates = readFileTemplates(fileTemplateDirectory)
-    val config = readConfig(fileTemplateDirectory)
+    val config = project.readConfig()
 
     val src = myModule.sourceRoots.first()
     val dir = psiManager.findDirectory(src)!!
@@ -133,7 +132,7 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     viewFileTemplateGroup.generateProps(props)
 
     val group = project.writeAction {
-      val kotlin = src.createSubDirs("./src/main/kotlin")
+      val kotlin = src.createSubDirs("./main/kotlin")
       viewFileTemplateGroup.create(kotlin, props)
     }
 

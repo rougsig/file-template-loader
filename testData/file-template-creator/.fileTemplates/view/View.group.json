@@ -8,7 +8,7 @@
     {
       "template": "Layout.xml",
       "fileName": "${VIEW_NAME_LOWER_SNAKE_CASE}_view",
-      "directory": "./src/main/view"
+      "directory": "./main/view"
     }
   ]
 }

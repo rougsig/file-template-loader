@@ -1,17 +1,39 @@
 <idea-plugin>
-    <id>com.github.rougsig.file-template-loader</id>
-    <name>FileTemplate Loader</name>
-    <vendor email="rougsig@gmail.com" url="https://github.com/rougsig/file-template-loader">Andrey Stepankov</vendor>
+  <id>com.github.rougsig.file-template-loader</id>
+  <name>FileTemplate Loader</name>
+  <vendor email="rougsig@gmail.com" url="https://github.com/rougsig/file-template-loader">Andrey Stepankov</vendor>
+  <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquid at autem dolore, ea,
+    esse est illo minima, minus nisi odit quaerat qui quis quo recusandae repellat temporibus voluptate.
+  </description>
+  <idea-version since-build="171.0"/>
+  <depends>org.jetbrains.kotlin</depends>
+  <depends>org.intellij.groovy</depends>
+  <depends>com.intellij.properties</depends>
+  <depends>com.intellij.modules.lang</depends>
 
-    <idea-version since-build="171.0"/>
-    <depends>org.jetbrains.kotlin</depends>
-    <depends>org.intellij.groovy</depends>
-    <depends>com.intellij.properties</depends>
-    <depends>com.intellij.modules.lang</depends>
+  <extensions defaultExtensionNs="com.intellij">
+  </extensions>
 
-    <extensions defaultExtensionNs="com.intellij">
-    </extensions>
+  <actions>
+    <action id="com.github.rougsig.filetemplateloader.ReloadTemplates"
+            class="com.github.rougsig.filetemplateloader.ui.ReloadTemplatesAnAction"
+            text="Reload Project Templates"
+            description="Reload Project Templates">
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+    </action>
+    <group id="com.github.rougsig.filetemplateloader.CreateFromProjectTemplate"
+           class="com.github.rougsig.filetemplateloader.ui.CreateFromProjectTemplateAnAction"
+           text="From Project Template"
+           popup="true"
+           description="Create From Project Template">
+      <add-to-group group-id="NewGroup" anchor="first"/>
+    </group>
+  </actions>
 
-    <actions>
-    </actions>
+  <project-components>
+    <component>
+      <implementation-class>com.github.rougsig.filetemplateloader.ui.FileTemplateLoaderProjectComponent
+      </implementation-class>
+    </component>
+  </project-components>
 </idea-plugin>

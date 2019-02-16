@@ -12,11 +12,12 @@ import org.apache.velocity.app.event.ReferenceInsertionEventHandler
 import java.util.*
 
 interface FileTemplate {
+  val name: String
   val isSourceCode: Boolean
   fun create(dir: PsiDirectory, props: Properties): List<PsiFile>
 
   fun getAllProps(): Set<String>
-  fun getRequiredProps(props: Properties): Set<String>
+  fun getRequiredProps(props: Properties, ignoreGenerated: Boolean = false): Set<String>
 
   fun generateProps(props: Properties)
 }

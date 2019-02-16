@@ -7,7 +7,7 @@ import com.intellij.psi.PsiFile
 import java.util.*
 
 data class FileTemplateSingle(
-  val name: String,
+  override val name: String,
   val extension: String,
   val text: String,
   val fileName: String? = null,
@@ -33,11 +33,23 @@ data class FileTemplateSingle(
       ?: templateProps
   }
 
-  override fun getRequiredProps(props: Properties): Set<String> {
+  override fun getRequiredProps(props: Properties, ignoreGenerated: Boolean): Set<String> {
     val allProps = getAllProps()
     val existedProps = props.keys as Set<String>
 
-    return allProps.minus(existedProps)
+    val allRequiredProps = allProps.minus(existedProps)
+    return if (ignoreGenerated) {
+      allRequiredProps
+        .filterNot {
+          GENERATED_PROP_MATCHER.containsMatchIn(it)
+              || it.contains(PROPS_SIMPLE_NAME(""))
+              || it.contains(PROPS_CLASS_NAME(""))
+        }
+        .toSet()
+    } else {
+      allRequiredProps
+        .toSet()
+    }
   }
 
   override fun generateProps(props: Properties) {

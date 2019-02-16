@@ -3,9 +3,26 @@ package com.github.rougsig.filetemplateloader.reader
 import com.github.rougsig.filetemplateloader.entity.FileTemplateGroup
 import com.github.rougsig.filetemplateloader.entity.FileTemplateSingle
 import com.google.gson.Gson
+import com.intellij.openapi.project.Project
+import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.vfs.VirtualFile
 
+fun Project.readFileTemplates(): List<FileTemplateSingle> {
+  val dir = guessProjectDir()?.findChild(FILE_TEMPLATE_FOLDER_NAME) ?: return emptyList()
+  return readFileTemplates(dir)
+}
+
+fun Project.readFileTemplateGroups(
+  templates: List<FileTemplateSingle>,
+  gson: Gson
+): List<FileTemplateGroup> {
+  val dir = guessProjectDir()?.findChild(FILE_TEMPLATE_FOLDER_NAME) ?: return emptyList()
+  return readFileTemplateGroups(templates, dir, gson)
+}
+
 fun readFileTemplates(dir: VirtualFile): List<FileTemplateSingle> {
+  println("Read FileTemplates from: $dir")
+
   return dir.fileRec
     .filter { it.name.endsWith(FILE_TEMPLATE_EXTENSION) }
     .map { file ->
@@ -20,6 +37,8 @@ fun readFileTemplates(dir: VirtualFile): List<FileTemplateSingle> {
 }
 
 fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile, gson: Gson): List<FileTemplateGroup> {
+  println("Read FileTemplateGroups from: $dir")
+
   val templateMap = HashMap<String, FileTemplateSingle>()
   templates.map { templateMap["${it.name}.${it.extension}"] = it }
 
@@ -42,9 +61,10 @@ fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile
     }
 }
 
-private const val FILE_TEMPLATE_EXTENSION = "ft"
-private const val FILE_TEMPLATE_GROUP_EXTENSION = "group.json"
-private const val FILE_NAME_DELIMITER = "."
+const val FILE_TEMPLATE_FOLDER_NAME = ".fileTemplates"
+const val FILE_TEMPLATE_EXTENSION = "ft"
+const val FILE_TEMPLATE_GROUP_EXTENSION = "group.json"
+const val FILE_NAME_DELIMITER = "."
 
 private val VirtualFile.fileRec: List<VirtualFile>
   get() {

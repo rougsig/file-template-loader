@@ -9,9 +9,9 @@ class ConfigReaderTest : LightPlatformCodeInsightFixtureTestCase() {
   override fun getTestDataPath(): String = calculateTestDataPath()
 
   fun testReadConfig() {
-    val templateDirectory = myFixture.copyDirectoryToProject("file-template-reader", "")
+    myFixture.copyDirectoryToProject("file-template-reader", "")
 
-    val config = readConfig(templateDirectory)
+    val config = project.readConfig()
 
     assertEquals(
       Properties().apply {

@@ -1,13 +1,18 @@
 package com.github.rougsig.filetemplateloader.extension
 
 import com.github.rougsig.filetemplateloader.entity.FileTemplateSingle
+import com.intellij.openapi.project.guessProjectDir
 import com.intellij.psi.PsiDirectory
-import com.intellij.psi.util.parents
+import org.jetbrains.kotlin.idea.util.projectStructure.module
 
 // FIXME Move "./" logic to separate function
 fun PsiDirectory.createSubDirs(directory: String): PsiDirectory {
   val startDirectory = if (directory.startsWith("./")) {
-    parents().last() as PsiDirectory
+    val projectDir = project.guessProjectDir()!!
+    val moduleDir = projectDir.findChild(module!!.name)
+    moduleDir
+      ?.let { manager.findDirectory(it)!! }
+      ?: manager.findDirectory(projectDir)!!
   } else {
     this
   }

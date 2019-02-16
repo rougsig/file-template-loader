@@ -9,7 +9,7 @@ import com.intellij.psi.PsiFile
 import java.util.*
 
 data class FileTemplateGroup(
-  val name: String,
+  override val name: String,
   val templates: List<FileTemplateSingle>
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
@@ -23,7 +23,12 @@ data class FileTemplateGroup(
       props.setProperty(PROPS_NAME, fileName)
       props.setProperty(PROPS_PACKAGE_NAME, packageName)
 
-      val subDirs = template.createSubDirs(dir)
+      val subDirs = try {
+        template.createSubDirs(dir)
+      } catch (e: Exception) {
+        e.printStackTrace()
+        throw e
+      }
       template.create(subDirs, props)
     }
   }
@@ -34,9 +39,10 @@ data class FileTemplateGroup(
       .toSet()
   }
 
-  override fun getRequiredProps(props: Properties): Set<String> {
+  override fun getRequiredProps(props: Properties, ignoreGenerated: Boolean): Set<String> {
     return templates
-      .flatMap { it.getRequiredProps(props) }
+      .flatMap { it.getRequiredProps(props, ignoreGenerated) }
+      .filter { it != PROPS_NAME }
       .toSet()
   }
 
