@@ -106,7 +106,7 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     assertFileTemplate(
       "repository/di/FileTemplateRepositoryBindings.kt",
       "RepositoryBindings",
-      "di",
+      "\\di",
       props,
       repositoryBindings,
       "FileTemplateRepositoryBindings",
@@ -138,7 +138,7 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     assertFileTemplate(
       "view/FileTemplateView.kt",
       "View",
-      "main/kotlin",
+      "\\main/kotlin",
       props,
       repositoryImpl,
       "FileTemplateView",

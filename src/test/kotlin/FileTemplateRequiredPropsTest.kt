@@ -18,11 +18,11 @@ class FileTemplateRequiredPropsTest : LightPlatformCodeInsightFixtureTestCase() 
     val templates = readFileTemplates(fileTemplateDirectory)
     val viewFileTemplate = templates.find { it.fileName == "View" }!!
 
-    val requiredProps = viewFileTemplate.text.getAllProps()
+    val requiredProps = viewFileTemplate.getAllProps()
 
     assertSameElements(
       requiredProps,
-      setOf("PACKAGE_NAME", "NAME", "LAYOUT_SIMPLE_NAME_LOWER_SHAKE_CASE")
+      setOf("PACKAGE_NAME", "NAME", "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE")
     )
   }
 
@@ -33,11 +33,11 @@ class FileTemplateRequiredPropsTest : LightPlatformCodeInsightFixtureTestCase() 
     val templates = readFileTemplates(fileTemplateDirectory)
     val viewFileTemplate = templates.find { it.fileName == "View" }!!
 
-    val requiredProps = viewFileTemplate.text.getGeneratedProps(PROPS_GENERATORS)
+    val requiredProps = viewFileTemplate.getGeneratedProps(PROPS_GENERATORS)
 
     assertSameElements(
       requiredProps,
-      setOf("LAYOUT_SIMPLE_NAME_LOWER_SHAKE_CASE")
+      setOf("LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE")
     )
   }
 
@@ -48,7 +48,7 @@ class FileTemplateRequiredPropsTest : LightPlatformCodeInsightFixtureTestCase() 
     val templates = readFileTemplates(fileTemplateDirectory)
     val viewFileTemplate = templates.find { it.fileName == "View" }!!
 
-    val requiredProps = viewFileTemplate.text.getGeneratedPropsBase(PROPS_GENERATORS)
+    val requiredProps = viewFileTemplate.getGeneratedPropsBase(PROPS_GENERATORS)
 
     assertSameElements(
       requiredProps,
@@ -63,7 +63,7 @@ class FileTemplateRequiredPropsTest : LightPlatformCodeInsightFixtureTestCase() 
     val templates = readFileTemplates(fileTemplateDirectory)
     val viewFileTemplate = templates.find { it.fileName == "View" }!!
 
-    val requiredProps = viewFileTemplate.text.getProps(PROPS_GENERATORS)
+    val requiredProps = viewFileTemplate.getProps(PROPS_GENERATORS)
 
     assertSameElements(
       requiredProps,

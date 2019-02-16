@@ -23,7 +23,7 @@ val PROPS_GENERATORS = listOf(
     generator = String::toUpperCamelCase
   ),
   PropGenerator(
-    name = "LOWER_SHAKE_CASE",
+    name = "LOWER_SNAKE_CASE",
     generator = String::toLowerSnakeCase
   ),
   PropGenerator(

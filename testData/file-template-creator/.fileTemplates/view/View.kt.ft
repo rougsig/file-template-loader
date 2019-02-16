@@ -1,5 +1,5 @@
 package ${PACKAGE_NAME}
 
 class ${NAME} : View() {
-  val layout = Layouts.${LAYOUT_SIMPLE_NAME_LOWER_SHAKE_CASE}
+  val layout = Layouts.${LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE}
 }

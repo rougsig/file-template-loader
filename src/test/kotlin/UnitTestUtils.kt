@@ -4,9 +4,9 @@ import com.github.rougsig.filetemplateloader.constant.PROPS_CLASS_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_SIMPLE_NAME
 import com.intellij.openapi.util.io.FileUtil
 import com.intellij.psi.PsiFile
+import com.intellij.psi.util.parents
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
 import junit.framework.TestCase
-import org.jetbrains.kotlin.idea.core.getFqNameByDirectory
 import java.io.File
 import java.util.*
 
@@ -38,8 +38,8 @@ fun assertFileTemplate(
     props.getProperty(PROPS_CLASS_NAME(templateName))
   )
   TestCase.assertEquals(
-    "/src/$directory",
-    if (actualFile.getFqNameByDirectory().isRoot) ""
-    else actualFile.getFqNameByDirectory().toString()
+    "\\src$directory",
+    // FIXME PLEASE!!!
+    actualFile.containingDirectory.parents().first().toString().replace("PsiDirectory:", "")
   )
 }

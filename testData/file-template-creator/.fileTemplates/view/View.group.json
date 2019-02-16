@@ -2,13 +2,13 @@
   "name": "View",
   "templates": [
     {
+      "template": "View.kt",
+      "fileName": "${VIEW_NAME}View"
+    },
+    {
       "template": "Layout.xml",
       "fileName": "${VIEW_NAME_SHAKE_LOWER_CASE}_view",
       "directory": "./src/main/view"
-    },
-    {
-      "template": "View.kt",
-      "fileName": "${VIEW_NAME}View"
     }
   ]
 }
