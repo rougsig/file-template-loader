@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
-import com.github.rougsig.filetemplateloader.entity.FileTemplate
 import com.github.rougsig.filetemplateloader.entity.FileTemplateGroup
+import com.github.rougsig.filetemplateloader.entity.FileTemplateSingle
 import com.github.rougsig.filetemplateloader.reader.readFileTemplateGroups
 import com.github.rougsig.filetemplateloader.reader.readFileTemplates
 import com.google.gson.Gson
@@ -18,19 +18,19 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
     assertSameElements(
       templates,
       listOf(
-        FileTemplate(
+        FileTemplateSingle(
           name = "Repository",
           fileName = "Repository",
           extension = "kt",
           text = ""
         ),
-        FileTemplate(
+        FileTemplateSingle(
           name = "RepositoryImpl",
           fileName = "RepositoryImpl",
           extension = "kt",
           text = ""
         ),
-        FileTemplate(
+        FileTemplateSingle(
           name = "RepositoryBindings",
           fileName = "RepositoryBindings",
           extension = "kt",
@@ -53,19 +53,19 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
         FileTemplateGroup(
           name = "Repository",
           templates = listOf(
-            FileTemplate(
+            FileTemplateSingle(
               name = "Repository",
               fileName = "\${FLOW_NAME}Repository",
               extension = "kt",
               text = ""
             ),
-            FileTemplate(
+            FileTemplateSingle(
               name = "RepositoryImpl",
               fileName = "\${FLOW_NAME}RepositoryImpl",
               extension = "kt",
               text = ""
             ),
-            FileTemplate(
+            FileTemplateSingle(
               name = "RepositoryBindings",
               fileName = "\${FLOW_NAME}RepositoryBindings",
               extension = "kt",

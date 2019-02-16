@@ -1,14 +1,13 @@
 package com.github.rougsig.filetemplateloader
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_GENERATORS
-import com.github.rougsig.filetemplateloader.extension.getAllProps
-import com.github.rougsig.filetemplateloader.extension.getGeneratedProps
-import com.github.rougsig.filetemplateloader.extension.getGeneratedPropsBase
-import com.github.rougsig.filetemplateloader.extension.getProps
+import com.github.rougsig.filetemplateloader.constant.PROPS_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.entity.Props
 import com.github.rougsig.filetemplateloader.reader.readFileTemplates
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
+import java.util.*
 
-class FileTemplateRequiredPropsTest : LightPlatformCodeInsightFixtureTestCase() {
+class FileTemplatePropsTest : LightPlatformCodeInsightFixtureTestCase() {
   override fun getTestDataPath(): String = calculateTestDataPath()
 
   fun testGetAllProps() {
@@ -22,18 +21,22 @@ class FileTemplateRequiredPropsTest : LightPlatformCodeInsightFixtureTestCase() 
 
     assertSameElements(
       requiredProps,
-      setOf("PACKAGE_NAME", "NAME", "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE")
+      setOf(PROPS_PACKAGE_NAME, PROPS_NAME, "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE")
     )
   }
 
-  fun testGetGeneratedProps() {
+  fun testGetRequiredProps() {
     val projectDirectory = myFixture.copyDirectoryToProject("file-template-creator", "")
     val fileTemplateDirectory = projectDirectory.findChild(".fileTemplates")!!
 
     val templates = readFileTemplates(fileTemplateDirectory)
     val viewFileTemplate = templates.find { it.fileName == "View" }!!
 
-    val requiredProps = viewFileTemplate.getGeneratedProps(PROPS_GENERATORS)
+    val props = Props().apply {
+      setProperty(PROPS_PACKAGE_NAME, PROPS_PACKAGE_NAME)
+      setProperty(PROPS_NAME, PROPS_NAME)
+    }
+    val requiredProps = viewFileTemplate.getRequiredProps(props)
 
     assertSameElements(
       requiredProps,
@@ -41,33 +44,23 @@ class FileTemplateRequiredPropsTest : LightPlatformCodeInsightFixtureTestCase() 
     )
   }
 
-  fun testGetGeneratedPropsBase() {
+  fun testGenerateProps() {
     val projectDirectory = myFixture.copyDirectoryToProject("file-template-creator", "")
     val fileTemplateDirectory = projectDirectory.findChild(".fileTemplates")!!
 
     val templates = readFileTemplates(fileTemplateDirectory)
     val viewFileTemplate = templates.find { it.fileName == "View" }!!
 
-    val requiredProps = viewFileTemplate.getGeneratedPropsBase(PROPS_GENERATORS)
-
-    assertSameElements(
-      requiredProps,
-      setOf("LAYOUT_SIMPLE_NAME")
-    )
-  }
-
-  fun testGetProps() {
-    val projectDirectory = myFixture.copyDirectoryToProject("file-template-creator", "")
-    val fileTemplateDirectory = projectDirectory.findChild(".fileTemplates")!!
-
-    val templates = readFileTemplates(fileTemplateDirectory)
-    val viewFileTemplate = templates.find { it.fileName == "View" }!!
-
-    val requiredProps = viewFileTemplate.getProps(PROPS_GENERATORS)
-
-    assertSameElements(
-      requiredProps,
-      setOf("PACKAGE_NAME", "NAME", "LAYOUT_SIMPLE_NAME")
+    val props = Props().apply {
+      setProperty("LAYOUT_SIMPLE_NAME", "FileTemplate")
+    }
+    viewFileTemplate.generateProps(props)
+    assertEquals(
+      Properties().apply {
+        setProperty("LAYOUT_SIMPLE_NAME", "FileTemplate")
+        setProperty("LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE", "file_template")
+      },
+      props
     )
   }
 }

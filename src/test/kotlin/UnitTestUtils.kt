@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_CLASS_NAME
-import com.github.rougsig.filetemplateloader.constant.PROPS_SIMPLE_NAME
+import com.github.rougsig.filetemplateloader.entity.PROPS_CLASS_NAME
+import com.github.rougsig.filetemplateloader.entity.PROPS_SIMPLE_NAME
 import com.intellij.openapi.util.io.FileUtil
 import com.intellij.psi.PsiFile
 import com.intellij.psi.util.parents

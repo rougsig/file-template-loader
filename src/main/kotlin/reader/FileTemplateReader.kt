@@ -1,16 +1,16 @@
 package com.github.rougsig.filetemplateloader.reader
 
-import com.github.rougsig.filetemplateloader.entity.FileTemplate
 import com.github.rougsig.filetemplateloader.entity.FileTemplateGroup
+import com.github.rougsig.filetemplateloader.entity.FileTemplateSingle
 import com.google.gson.Gson
 import com.intellij.openapi.vfs.VirtualFile
 
-fun readFileTemplates(dir: VirtualFile): List<FileTemplate> {
+fun readFileTemplates(dir: VirtualFile): List<FileTemplateSingle> {
   return dir.fileRec
     .filter { it.name.endsWith(FILE_TEMPLATE_EXTENSION) }
     .map { file ->
       val slittedName = file.nameWithoutExtension.split(FILE_NAME_DELIMITER)
-      FileTemplate(
+      FileTemplateSingle(
         name = slittedName.first(),
         fileName = slittedName.first(),
         extension = slittedName.last(),
@@ -19,8 +19,8 @@ fun readFileTemplates(dir: VirtualFile): List<FileTemplate> {
     }
 }
 
-fun readFileTemplateGroups(templates: List<FileTemplate>, dir: VirtualFile, gson: Gson): List<FileTemplateGroup> {
-  val templateMap = HashMap<String, FileTemplate>()
+fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile, gson: Gson): List<FileTemplateGroup> {
+  val templateMap = HashMap<String, FileTemplateSingle>()
   templates.map { templateMap["${it.name}.${it.extension}"] = it }
 
   return dir.fileRec

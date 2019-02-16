@@ -2,7 +2,6 @@ package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.constant.PROPS_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
-import com.github.rougsig.filetemplateloader.creator.create
 import com.github.rougsig.filetemplateloader.extension.calculatePackageName
 import com.github.rougsig.filetemplateloader.extension.createSubDirs
 import com.github.rougsig.filetemplateloader.extension.writeAction
@@ -48,15 +47,15 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     props.setProperty(PROPS_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
     val template = project.writeAction {
       repositoryFileTemplate.create(dir, props)
-    }
+    }.first()
     assertFileTemplate(
       "repository/FileTemplateRepository.kt",
       "Repository",
       "",
       props,
       template,
-      "FileTemplateRepository",
-      "com.github.rougsig.filetemplateloader.FileTemplateRepository"
+      "",
+      ""
     )
   }
 
@@ -76,6 +75,8 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     val props = Properties(config)
     props.setProperty("FLOW_NAME", "FileTemplate")
     props.setProperty(PROPS_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
+    repositoryFileTemplateGroup.generateProps(props)
+
     val group = project.writeAction {
       repositoryFileTemplateGroup.create(dir, props)
     }
@@ -129,6 +130,8 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     val props = Properties(config)
     props.setProperty("VIEW_NAME", "FileTemplate")
     props.setProperty(PROPS_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
+    viewFileTemplateGroup.generateProps(props)
+
     val group = project.writeAction {
       val kotlin = src.createSubDirs("./src/main/kotlin")
       viewFileTemplateGroup.create(kotlin, props)
