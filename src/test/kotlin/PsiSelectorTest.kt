@@ -6,6 +6,7 @@ import com.github.rougsig.filetemplateloader.selector.select
 import com.intellij.openapi.fileTypes.FileTypeManager
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
+import org.jetbrains.kotlin.idea.KotlinFileType
 import org.jetbrains.plugins.groovy.GroovyFileType
 
 class PsiSelectorTest : LightPlatformCodeInsightFixtureTestCase() {
@@ -21,10 +22,10 @@ class PsiSelectorTest : LightPlatformCodeInsightFixtureTestCase() {
     val settingsGradleFile = project.guessProjectDir()!!.findChild("settings.gradle")!!
     val settingsGradle = myFixture.psiManager.findFile(settingsGradleFile)!!
 
-    val selected = settingsGradle.select("Call Command", ElementSelector.FirstChild)
-    val index = selected.select("Literal", ElementSelector.Index(4))
-    val first = selected.select("Literal", ElementSelector.FirstChild)
-    val last = selected.select("Literal", ElementSelector.LastChild)
+    val selected = settingsGradle.select("CALL COMMAND", ElementSelector.FirstChild)
+    val index = selected.select("LITERAL", ElementSelector.Index(4))
+    val first = selected.select("LITERAL", ElementSelector.FirstChild)
+    val last = selected.select("LITERAL", ElementSelector.LastChild)
 
     assertEquals(
       "':lib-domain-core'",
@@ -37,6 +38,24 @@ class PsiSelectorTest : LightPlatformCodeInsightFixtureTestCase() {
     assertEquals(
       "':jwt-ui-routing-otp'",
       last.text
+    )
+  }
+
+  fun testKotlinWhenSelect() {
+    project.writeAction {
+      FileTypeManager.getInstance().associatePattern(KotlinFileType.INSTANCE, "*.kt")
+    }
+
+    myFixture.copyDirectoryToProject("file-template-selector", "")
+
+    val whenSelectFile = project.guessProjectDir()!!.findChild("WhenSelect.kt")!!
+    val whenSelect = myFixture.psiManager.findFile(whenSelectFile)!!
+
+    val selected = whenSelect.select("CLASS CLASS_BODY FUN BLOCK RETURN WHEN WHEN_ENTRY", ElementSelector.LastChild)
+
+    assertEquals(
+      "is Route.Key3 -> ScreenKey3()",
+      selected.text
     )
   }
 }
