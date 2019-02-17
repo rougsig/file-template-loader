@@ -5,8 +5,10 @@ import com.github.rougsig.filetemplateloader.selector.ElementSelector
 import com.github.rougsig.filetemplateloader.selector.select
 import com.intellij.openapi.fileTypes.FileTypeManager
 import com.intellij.openapi.project.guessProjectDir
+import com.intellij.psi.codeStyle.CodeStyleManager
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
 import org.jetbrains.kotlin.idea.KotlinFileType
+import org.jetbrains.kotlin.psi.KtPsiFactory
 import org.jetbrains.plugins.groovy.GroovyFileType
 
 class PsiSelectorTest : LightPlatformCodeInsightFixtureTestCase() {
@@ -22,10 +24,10 @@ class PsiSelectorTest : LightPlatformCodeInsightFixtureTestCase() {
     val settingsGradleFile = project.guessProjectDir()!!.findChild("settings.gradle")!!
     val settingsGradle = myFixture.psiManager.findFile(settingsGradleFile)!!
 
-    val selected = settingsGradle.select("CALL COMMAND", ElementSelector.FirstChild)
-    val index = selected.select("LITERAL", ElementSelector.Index(4))
-    val first = selected.select("LITERAL", ElementSelector.FirstChild)
-    val last = selected.select("LITERAL", ElementSelector.LastChild)
+    val selected = settingsGradle.select("CALL COMMAND", ElementSelector.FirstChild)!!
+    val index = selected.select("LITERAL", ElementSelector.Index(4))!!
+    val first = selected.select("LITERAL", ElementSelector.FirstChild)!!
+    val last = selected.select("LITERAL", ElementSelector.LastChild)!!
 
     assertEquals(
       "':lib-domain-core'",
@@ -48,14 +50,43 @@ class PsiSelectorTest : LightPlatformCodeInsightFixtureTestCase() {
 
     myFixture.copyDirectoryToProject("file-template-selector", "")
 
-    val whenSelectFile = project.guessProjectDir()!!.findChild("WhenSelect.kt")!!
+    val whenSelectFile = project.guessProjectDir()!!.findFileByRelativePath("src/kotlin/ScreenFactory.kt")!!
     val whenSelect = myFixture.psiManager.findFile(whenSelectFile)!!
 
-    val selected = whenSelect.select("CLASS CLASS_BODY FUN BLOCK RETURN WHEN WHEN_ENTRY", ElementSelector.LastChild)
+    val selected = whenSelect.select("fun+invoke WHEN_ENTRY", ElementSelector.LastChild)!!
 
     assertEquals(
       "is Route.Key3 -> ScreenKey3()",
       selected.text
+    )
+  }
+
+  fun testScreenKeyFactoryInsert() {
+    project.writeAction {
+      FileTypeManager.getInstance().associatePattern(KotlinFileType.INSTANCE, "*.kt")
+    }
+
+    myFixture.copyDirectoryToProject("file-template-selector", "")
+
+    val whenSelectFile = project.guessProjectDir()!!.findFileByRelativePath("src/kotlin/ScreenFactory.kt")!!
+    val whenSelectFileResult = project.guessProjectDir()!!.findFileByRelativePath("src/kotlin/ScreenFactoryResult.kt")!!
+    val whenSelectResult = myFixture.psiManager.findFile(whenSelectFileResult)!!
+    val whenSelect = myFixture.psiManager.findFile(whenSelectFile)!!
+
+    val selected = whenSelect.select("fun+invoke WHEN_ENTRY", ElementSelector.LastChild)!!
+
+    val factory = KtPsiFactory(selected)
+    val exp = factory.createWhenEntry("is Route.Key4 -> ScreenKey4()")
+    project.writeAction {
+      selected.navigationElement.add(exp)
+    }
+    project.writeAction {
+      CodeStyleManager.getInstance(project).reformat(whenSelectResult)
+      CodeStyleManager.getInstance(project).reformat(whenSelect)
+    }
+    assertSameLines(
+      whenSelectResult.text,
+      whenSelect.text
     )
   }
 }

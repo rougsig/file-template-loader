@@ -1,0 +1,29 @@
+{
+  "name": "Route",
+  "templates": [
+    {
+      "template": "Key.kt",
+      "fileName": "${ROUTE_NAME}Key"
+    },
+    {
+      "template": "Screen.kt",
+      "fileName": "${ROUTE_NAME}Screen"
+    }
+  ],
+  "entries": [
+    {
+      "template": "RouteEntry.kt",
+      "insertTo": "${APP_ROUTE_CLASS_NAME}",
+      "query": "CLASS CLASS_BODY FUN BLOCK RETURN WHEN WHEN_ENTRY",
+      "elementSelector": "LastChild",
+      "append": "After"
+    },
+    {
+      "template": "RouteWhenEntry.kt",
+      "insertTo": "${SCREEN_FACTORY_CLASS_NAME}",
+      "query": "CLASS CLASS_BODY FUN BLOCK RETURN WHEN WHEN_ENTRY",
+      "elementSelector": "LastChild",
+      "append": "After"
+    }
+  ]
+}

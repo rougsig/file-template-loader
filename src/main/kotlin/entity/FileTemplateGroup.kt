@@ -23,12 +23,7 @@ data class FileTemplateGroup(
       props.setProperty(PROPS_NAME, fileName)
       props.setProperty(PROPS_PACKAGE_NAME, packageName)
 
-      val subDirs = try {
-        template.createSubDirs(dir)
-      } catch (e: Exception) {
-        e.printStackTrace()
-        throw e
-      }
+      val subDirs = template.createSubDirs(dir)
       template.create(subDirs, props)
     }
   }

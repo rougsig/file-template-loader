@@ -49,14 +49,16 @@ fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile
         String(file.inputStream.readBytes()),
         FileTemplateGroupJson::class.java
       )
+      val groups = fileTemplateGroup.templates.map { template ->
+        templateMap[template.template]!!.copy(
+          fileName = template.fileName,
+          directory = template.directory
+        )
+      }
+      val entries = emptyList<FileTemplateSingle>()
       FileTemplateGroup(
         name = fileTemplateGroup.name,
-        templates = fileTemplateGroup.templates.map { template ->
-          templateMap[template.template]!!.copy(
-            fileName = template.fileName,
-            directory = template.directory
-          )
-        }
+        templates = groups.plus(entries)
       )
     }
 }
@@ -74,11 +76,20 @@ private val VirtualFile.fileRec: List<VirtualFile>
 
 private data class FileTemplateGroupJson(
   val name: String,
-  val templates: List<FileTemplate>
+  val templates: List<FileTemplate>,
+  val entries: List<FileTemplateEntry>
 ) {
   data class FileTemplate(
     val template: String,
     val fileName: String,
     val directory: String?
+  )
+
+  data class FileTemplateEntry(
+    val template: String,
+    val insertTo: String,
+    val query: String,
+    val elementSelector: String,
+    val append: String
   )
 }

@@ -14,6 +14,8 @@ val PROP_GENERATORS: PropGenerators = HashMap<String, (String) -> String>().appl
   put("UPPER_CAMEL_CASE", String::toUpperCamelCase)
   put("LOWER_SNAKE_CASE", String::toLowerSnakeCase)
   put("UPPER_SNAKE_CASE", String::toUpperSnakeCase)
+  put("UPPER_CASE", String::toUpperCase)
+  put("LOWER_CASE", String::toLowerCase)
 }
 
 val GENERATED_PROP_MATCHER = PROP_GENERATORS.keys.joinToString("|") { it }.toRegex()
