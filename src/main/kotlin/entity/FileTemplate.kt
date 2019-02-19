@@ -17,7 +17,25 @@ interface FileTemplate {
   fun create(dir: PsiDirectory, props: Properties): List<PsiFile>
 
   fun getAllProps(): Set<String>
-  fun getRequiredProps(props: Properties, ignoreGenerated: Boolean = false): Set<String>
+
+  fun getRequiredProps(props: Properties, ignoreGenerated: Boolean = false): Set<String> {
+    val allProps = getAllProps()
+    val existedProps = props.keys as Set<String>
+
+    val allRequiredProps = allProps.minus(existedProps)
+    return if (ignoreGenerated) {
+      allRequiredProps
+        .filterNot {
+          GENERATED_PROP_MATCHER.containsMatchIn(it)
+              || it.contains(PROPS_SIMPLE_NAME(""))
+              || it.contains(PROPS_CLASS_NAME(""))
+        }
+        .toSet()
+    } else {
+      allRequiredProps
+        .toSet()
+    }
+  }
 
   fun generateProps(props: Properties)
 }

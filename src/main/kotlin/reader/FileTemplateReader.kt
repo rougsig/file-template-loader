@@ -1,5 +1,6 @@
 package com.github.rougsig.filetemplateloader.reader
 
+import com.github.rougsig.filetemplateloader.entity.FileTemplateEntry
 import com.github.rougsig.filetemplateloader.entity.FileTemplateGroup
 import com.github.rougsig.filetemplateloader.entity.FileTemplateSingle
 import com.google.gson.Gson
@@ -55,10 +56,18 @@ fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile
           directory = template.directory
         )
       }
-      val entries = emptyList<FileTemplateSingle>()
+      val entries = fileTemplateGroup.entries.map { entry ->
+        FileTemplateEntry(
+          text = entry.text,
+          selector = entry.selector,
+          className = entry.className,
+          pathName = entry.pathName
+        )
+      }
       FileTemplateGroup(
         name = fileTemplateGroup.name,
-        templates = groups.plus(entries)
+        templates = groups,
+        entries = entries
       )
     }
 }
@@ -86,10 +95,9 @@ private data class FileTemplateGroupJson(
   )
 
   data class FileTemplateEntry(
-    val template: String,
-    val insertTo: String,
-    val query: String,
-    val elementSelector: String,
-    val append: String
+    val text: String,
+    val className: String?,
+    val pathName: String?,
+    val selector: String
   )
 }

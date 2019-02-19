@@ -1,7 +1,6 @@
 package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.extension.writeAction
-import com.github.rougsig.filetemplateloader.selector.ElementSelector
 import com.github.rougsig.filetemplateloader.selector.select
 import com.intellij.openapi.fileTypes.FileTypeManager
 import com.intellij.openapi.project.guessProjectDir
@@ -24,22 +23,11 @@ class PsiSelectorTest : LightPlatformCodeInsightFixtureTestCase() {
     val settingsGradleFile = project.guessProjectDir()!!.findChild("settings.gradle")!!
     val settingsGradle = myFixture.psiManager.findFile(settingsGradleFile)!!
 
-    val selected = settingsGradle.select("CALL COMMAND", ElementSelector.FirstChild)!!
-    val index = selected.select("LITERAL", ElementSelector.Index(4))!!
-    val first = selected.select("LITERAL", ElementSelector.FirstChild)!!
-    val last = selected.select("LITERAL", ElementSelector.LastChild)!!
+    val selected = settingsGradle.select("CALL COMMAND LITERAL")!!
 
     assertEquals(
-      "':lib-domain-core'",
-      index.text
-    )
-    assertEquals(
-      "':app'",
-      first.text
-    )
-    assertEquals(
       "':jwt-ui-routing-otp'",
-      last.text
+      selected.text
     )
   }
 
@@ -53,7 +41,7 @@ class PsiSelectorTest : LightPlatformCodeInsightFixtureTestCase() {
     val whenSelectFile = project.guessProjectDir()!!.findFileByRelativePath("src/kotlin/ScreenFactory.kt")!!
     val whenSelect = myFixture.psiManager.findFile(whenSelectFile)!!
 
-    val selected = whenSelect.select("fun+invoke WHEN_ENTRY", ElementSelector.LastChild)!!
+    val selected = whenSelect.select("fun+invoke WHEN_ENTRY")!!
 
     assertEquals(
       "is Route.Key3 -> ScreenKey3()",
@@ -73,7 +61,7 @@ class PsiSelectorTest : LightPlatformCodeInsightFixtureTestCase() {
     val whenSelectResult = myFixture.psiManager.findFile(whenSelectFileResult)!!
     val whenSelect = myFixture.psiManager.findFile(whenSelectFile)!!
 
-    val selected = whenSelect.select("fun+invoke WHEN_ENTRY", ElementSelector.LastChild)!!
+    val selected = whenSelect.select("fun+invoke WHEN_ENTRY")!!
 
     val factory = KtPsiFactory(selected)
     val exp = factory.createWhenEntry("is Route.Key4 -> ScreenKey4()")

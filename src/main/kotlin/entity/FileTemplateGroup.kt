@@ -10,14 +10,15 @@ import java.util.*
 
 data class FileTemplateGroup(
   override val name: String,
-  val templates: List<FileTemplateSingle>
+  val templates: List<FileTemplateSingle>,
+  val entries: List<FileTemplateEntry>
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
     println("Create FileTemplateGroup: \n name: $name \n dir: $dir \n props: $props \n")
 
     val initialPackageName = props.getProperty(PROPS_PACKAGE_NAME)
 
-    return templates.flatMap { template ->
+    val createdTemplates = templates.flatMap { template ->
       val packageName = mergeTemplate(template.getPackageNameWithSubDirs(initialPackageName), props)
       val fileName = mergeTemplate(template.fileName!!, props)
       props.setProperty(PROPS_NAME, fileName)
@@ -26,6 +27,12 @@ data class FileTemplateGroup(
       val subDirs = template.createSubDirs(dir)
       template.create(subDirs, props)
     }
+
+    val createdEntries = entries.flatMap { entry ->
+      entry.create(dir, props)
+    }
+
+    return createdTemplates.plus(createdEntries)
   }
 
   override fun getAllProps(): Set<String> {

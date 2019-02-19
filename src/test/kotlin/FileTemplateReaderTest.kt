@@ -1,5 +1,6 @@
 package com.github.rougsig.filetemplateloader
 
+import com.github.rougsig.filetemplateloader.entity.FileTemplateEntry
 import com.github.rougsig.filetemplateloader.entity.FileTemplateGroup
 import com.github.rougsig.filetemplateloader.entity.FileTemplateSingle
 import com.github.rougsig.filetemplateloader.reader.readFileTemplateGroups
@@ -72,6 +73,13 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
               text = "",
               directory = "di"
             )
+          ),
+          entries = listOf(
+            FileTemplateEntry(
+              text = "is \${FLOW_NAME}Key -> \${FLOW_NAME}Screen()",
+              className = "\${APP_ROUTE_CLASS_NAME}",
+              selector = "CLASS INVOKE WHEN WHEN_ENTRY"
+            )
           )
         )
       )
@@ -139,6 +147,13 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
               extension = "kt",
               text = "",
               directory = "di"
+            )
+          ),
+          entries = listOf(
+            FileTemplateEntry(
+              text = "is \${FLOW_NAME}Key -> \${FLOW_NAME}Screen()",
+              className = "\${APP_ROUTE_CLASS_NAME}",
+              selector = "CLASS INVOKE WHEN WHEN_ENTRY"
             )
           )
         )

@@ -33,25 +33,6 @@ data class FileTemplateSingle(
       ?: templateProps
   }
 
-  override fun getRequiredProps(props: Properties, ignoreGenerated: Boolean): Set<String> {
-    val allProps = getAllProps()
-    val existedProps = props.keys as Set<String>
-
-    val allRequiredProps = allProps.minus(existedProps)
-    return if (ignoreGenerated) {
-      allRequiredProps
-        .filterNot {
-          GENERATED_PROP_MATCHER.containsMatchIn(it)
-              || it.contains(PROPS_SIMPLE_NAME(""))
-              || it.contains(PROPS_CLASS_NAME(""))
-        }
-        .toSet()
-    } else {
-      allRequiredProps
-        .toSet()
-    }
-  }
-
   override fun generateProps(props: Properties) {
     generateProps(getRequiredProps(props), props)
   }

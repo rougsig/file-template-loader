@@ -14,5 +14,6 @@
       "fileName": "${FLOW_NAME}RepositoryBindings",
       "directory": "di"
     }
-  ]
+  ],
+  "entries": []
 }

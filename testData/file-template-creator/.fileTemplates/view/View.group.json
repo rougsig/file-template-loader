@@ -10,5 +10,6 @@
       "fileName": "${VIEW_NAME_LOWER_SNAKE_CASE}_view",
       "directory": "./main/view"
     }
-  ]
+  ],
+  "entries": []
 }
