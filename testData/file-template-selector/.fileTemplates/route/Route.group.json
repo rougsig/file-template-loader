@@ -12,18 +12,19 @@
   ],
   "entries": [
     {
-      "template": "RouteEntry.kt",
-      "insertTo": "${APP_ROUTE_CLASS_NAME}",
-      "query": "CLASS CLASS_BODY FUN BLOCK RETURN WHEN WHEN_ENTRY",
-      "elementSelector": "LastChild",
-      "append": "After"
+      "text": "\nis ${APP_ROUTE_SIMPLE_NAME}.${ROUTE_NAME} -> ${SCREEN_SIMPLE_NAME}()",
+      "className": "${SCREEN_FACTORY_CLASS_NAME}",
+      "selector": "INVOKE WHEN WHEN_ENTRY"
     },
     {
-      "template": "RouteWhenEntry.kt",
-      "insertTo": "${SCREEN_FACTORY_CLASS_NAME}",
-      "query": "CLASS CLASS_BODY FUN BLOCK RETURN WHEN WHEN_ENTRY",
-      "elementSelector": "LastChild",
-      "append": "After"
+      "text": "\nimport ${KEY_CLASS_NAME}",
+      "className": "${SCREEN_FACTORY_CLASS_NAME}",
+      "selector": "IMPORT_DIRECTIVE"
+    },
+    {
+      "text": ",\n':module-name'",
+      "pathName": "settings.gradle",
+      "selector": "Literal"
     }
   ]
 }

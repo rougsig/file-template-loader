@@ -9,8 +9,10 @@ import com.github.rougsig.filetemplateloader.reader.readConfig
 import com.github.rougsig.filetemplateloader.reader.readFileTemplateGroups
 import com.github.rougsig.filetemplateloader.reader.readFileTemplates
 import com.google.gson.Gson
+import com.intellij.openapi.fileTypes.FileTypeManager
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
 import org.jetbrains.kotlin.idea.util.sourceRoots
+import org.jetbrains.plugins.groovy.GroovyFileType
 import java.util.*
 
 class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
@@ -156,6 +158,42 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
       repositoryBindings,
       "file_template_view",
       ""
+    )
+  }
+
+  fun testCreateFileTemplateGroupWithEntries() {
+    project.writeAction {
+      FileTypeManager.getInstance().associatePattern(GroovyFileType.GROOVY_FILE_TYPE, "*.gradle")
+    }
+
+    myFixture.copyDirectoryToProject("file-template-selector", "")
+
+    val templates = project.readFileTemplates()
+    val templateGroups = project.readFileTemplateGroups(templates, Gson())
+    val config = project.readConfig()
+
+    val src = psiManager.findDirectory(myModule.sourceRoots.first())!!
+
+    val routeFileTemplateGroup = templateGroups.find { it.name == "Route" }!!
+
+    val props = Properties(config)
+    props.setProperty("ROUTE_NAME", "FileTemplate")
+    props.setProperty(PROPS_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
+    routeFileTemplateGroup.generateProps(props)
+
+    project.writeAction {
+      val kotlin = src.createSubDirs("./src/kotlin")
+      routeFileTemplateGroup.create(kotlin, props)
+    }
+
+    assertSameLinesWithFile(
+      "${calculateTestDataPath()}/file-template-result/route/ScreenFactory.txt",
+      src.createSubDirs("./src/kotlin").findFile("ScreenFactory.kt")!!.text
+    )
+
+    assertSameLinesWithFile(
+      "${calculateTestDataPath()}/file-template-result/route/settings.txt",
+      src.findFile("settings.gradle")!!.text
     )
   }
 }

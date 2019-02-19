@@ -1,7 +1,12 @@
 package com.github.rougsig.filetemplateloader.entity
 
-import com.intellij.psi.PsiDirectory
-import com.intellij.psi.PsiFile
+import com.github.rougsig.filetemplateloader.selector.select
+import com.intellij.openapi.project.Project
+import com.intellij.openapi.project.guessProjectDir
+import com.intellij.psi.*
+import com.intellij.psi.codeStyle.CodeStyleManager
+import com.intellij.psi.search.GlobalSearchScope
+import org.jetbrains.kotlin.psi.psiUtil.endOffset
 import java.util.*
 
 data class FileTemplateEntry(
@@ -11,10 +16,22 @@ data class FileTemplateEntry(
   val pathName: String? = null,
   override val name: String = ""
 ) : FileTemplate {
-  override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
-    println("Create FileTemplateEntry: \n text: $text \n dir: $dir \n props: $props \n")
+  override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
+    println("Create FileTemplateEntry: \n text: $text \n dir: $dir \n props: $props \n selector: $selector \n")
 
-    return emptyList()
+    val insertTo = getInsertTo(dir.project, props).containingFile
+    val selected = insertTo.select(selector)!!
+    val ext = mergeTemplate(text, props)
+
+    val doc = PsiDocumentManager.getInstance(dir.project).getDocument(insertTo)!!
+    doc.insertString(selected.endOffset, ext)
+    PsiDocumentManager.getInstance(dir.project).commitDocument(doc)
+
+    val resultFile = CodeStyleManager.getInstance(dir.manager)
+      .reformat(PsiDocumentManager.getInstance(dir.project).getPsiFile(doc)!!)
+      .containingFile
+
+    return listOf(resultFile)
   }
 
   override fun getAllProps(): Set<String> {
@@ -26,4 +43,19 @@ data class FileTemplateEntry(
   }
 
   override val isSourceCode: Boolean = false
+
+  private fun getInsertTo(project: Project, props: Props): PsiElement {
+    if (className != null) {
+      return JavaPsiFacade.getInstance(project)
+        .findClass(mergeTemplate(className, props), GlobalSearchScope.allScope(project))!!
+        .containingFile
+    }
+
+    if (pathName != null) {
+      val file = project.guessProjectDir()!!.findFileByRelativePath(mergeTemplate(pathName, props))!!
+      return PsiManager.getInstance(project).findFile(file)!!
+    }
+
+    throw IllegalStateException("can't create entry: className == null && pathName == null")
+  }
 }

@@ -14,7 +14,7 @@ fun PsiElement.select(selector: String): PsiElement? {
     }
 
   return selectors
-    .fold(listOf(this)) { acc, query ->
+    .fold(listOf(this.navigationElement)) { acc, query ->
       acc.flatMap { parent ->
         PsiTreeUtil.collectElements(parent) {
           val str = when (it) {
