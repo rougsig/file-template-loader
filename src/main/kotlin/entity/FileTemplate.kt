@@ -13,7 +13,7 @@ import java.util.*
 
 interface FileTemplate {
   val name: String
-  val isSourceCode: Boolean
+  val hasClassName: Boolean
   fun create(dir: PsiDirectory, props: Properties): List<PsiFile>
 
   fun getAllProps(): Set<String>

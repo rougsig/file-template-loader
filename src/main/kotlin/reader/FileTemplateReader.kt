@@ -1,12 +1,11 @@
 package com.github.rougsig.filetemplateloader.reader
 
-import com.github.rougsig.filetemplateloader.entity.FileTemplateEntry
-import com.github.rougsig.filetemplateloader.entity.FileTemplateGroup
-import com.github.rougsig.filetemplateloader.entity.FileTemplateSingle
+import com.github.rougsig.filetemplateloader.entity.*
 import com.google.gson.Gson
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.vfs.VirtualFile
+
 
 fun Project.readFileTemplates(): List<FileTemplateSingle> {
   val dir = guessProjectDir()?.findChild(FILE_TEMPLATE_FOLDER_NAME) ?: return emptyList()
@@ -19,6 +18,14 @@ fun Project.readFileTemplateGroups(
 ): List<FileTemplateGroup> {
   val dir = guessProjectDir()?.findChild(FILE_TEMPLATE_FOLDER_NAME) ?: return emptyList()
   return readFileTemplateGroups(templates, dir, gson)
+}
+
+fun Project.readFileTemplateModules(
+  templates: List<FileTemplateSingle>,
+  gson: Gson
+): List<FileTemplateModule> {
+  val dir = guessProjectDir()?.findChild(FILE_TEMPLATE_FOLDER_NAME) ?: return emptyList()
+  return readFileTemplateModules(templates, dir, gson)
 }
 
 fun readFileTemplates(dir: VirtualFile): List<FileTemplateSingle> {
@@ -72,10 +79,50 @@ fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile
     }
 }
 
-const val FILE_TEMPLATE_FOLDER_NAME = ".fileTemplates"
-const val FILE_TEMPLATE_EXTENSION = "ft"
-const val FILE_TEMPLATE_GROUP_EXTENSION = "group.json"
-const val FILE_NAME_DELIMITER = "."
+fun readFileTemplateModules(
+  templates: List<FileTemplateSingle>,
+  dir: VirtualFile,
+  gson: Gson
+): List<FileTemplateModule> {
+  println("Read FileTemplateModules from: $dir")
+
+  val templateMap = HashMap<String, FileTemplateSingle>()
+  templates.map { templateMap["${it.name}.${it.extension}"] = it }
+
+  return dir.fileRec
+    .filter { it.name.endsWith(FILE_TEMPLATE_MODULE_EXTENSION) }
+    .map { file ->
+      val fileTemplateModule = gson.fromJson(
+        String(file.inputStream.readBytes()),
+        FileTemplateModuleJson::class.java
+      )
+      val folders = fileTemplateModule.folders.map { folder ->
+        FileTemplateFolder(
+          pathName = folder.pathName,
+          templates = folder.templates.map { template ->
+            templateMap[template.template]!!.copy(
+              fileName = template.fileName,
+              directory = template.directory
+            )
+          }
+        )
+      }
+      val entries = fileTemplateModule.entries.map { entry ->
+        FileTemplateEntry(
+          text = entry.text,
+          selector = entry.selector,
+          className = entry.className,
+          pathName = entry.pathName
+        )
+      }
+      FileTemplateModule(
+        name = fileTemplateModule.name,
+        moduleName = fileTemplateModule.moduleName,
+        folders = folders,
+        entries = entries
+      )
+    }
+}
 
 private val VirtualFile.fileRec: List<VirtualFile>
   get() {
@@ -83,21 +130,3 @@ private val VirtualFile.fileRec: List<VirtualFile>
     else listOf(this)
   }
 
-private data class FileTemplateGroupJson(
-  val name: String,
-  val templates: List<FileTemplate>,
-  val entries: List<FileTemplateEntry>
-) {
-  data class FileTemplate(
-    val template: String,
-    val fileName: String,
-    val directory: String?
-  )
-
-  data class FileTemplateEntry(
-    val text: String,
-    val className: String?,
-    val pathName: String?,
-    val selector: String
-  )
-}

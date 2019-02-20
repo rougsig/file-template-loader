@@ -37,5 +37,5 @@ data class FileTemplateSingle(
     generateProps(getRequiredProps(props), props)
   }
 
-  override val isSourceCode: Boolean = extension == "kt"
+  override val hasClassName: Boolean = extension == "kt"
 }

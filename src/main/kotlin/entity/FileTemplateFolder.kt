@@ -4,25 +4,21 @@ import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
 import java.util.*
 
-data class FileTemplateEntry(
-  val text: String,
-  val selector: String,
-  val className: String? = null,
-  val pathName: String? = null,
+data class FileTemplateFolder(
+  val pathName: String,
+  val templates: List<FileTemplateSingle>,
   override val name: String = ""
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
-    println("Create FileTemplateEntry: \n text: $text \n dir: $dir \n props: $props \n")
-
-    return emptyList()
+    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun getAllProps(): Set<String> {
-    return getTemplateProps(text)
+    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun generateProps(props: Properties) {
-    generateProps(getRequiredProps(props), props)
+    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override val hasClassName: Boolean = false

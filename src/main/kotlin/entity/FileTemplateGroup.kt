@@ -94,12 +94,12 @@ data class FileTemplateGroup(
     templates.forEach { template ->
       val packageName = mergeTemplate(template.getPackageNameWithSubDirs(initialPackageName), props)
       val fileName = mergeTemplate(template.fileName!!, props)
-      if (template.isSourceCode) props.setProperty(
+      if (template.hasClassName) props.setProperty(
         PROPS_CLASS_NAME(template.name),
         mergeTemplate("$packageName.$fileName", props)
       )
     }
   }
 
-  override val isSourceCode: Boolean = false
+  override val hasClassName: Boolean = false
 }
