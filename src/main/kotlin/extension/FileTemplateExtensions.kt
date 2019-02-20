@@ -7,7 +7,8 @@ import org.jetbrains.kotlin.idea.util.projectStructure.module
 
 // FIXME Move "./" logic to separate function
 fun PsiDirectory.createSubDirs(directory: String): PsiDirectory {
-  val startDirectory = if (directory.startsWith("./")) {
+  val dir = directory.replace("\\", "/")
+  val startDirectory = if (dir.startsWith("./")) {
     val projectDir = project.guessProjectDir()!!
     val moduleDir = projectDir.findChild(module!!.name)
     moduleDir
@@ -16,7 +17,7 @@ fun PsiDirectory.createSubDirs(directory: String): PsiDirectory {
   } else {
     this
   }
-  val subDirs = directory.replace("./", "").split("/")
+  val subDirs = dir.replace("./", "").split("/")
   return subDirs.fold(startDirectory) { acc, dirName ->
     acc.findSubdirectory(dirName) ?: acc.createSubdirectory(dirName)
   }
