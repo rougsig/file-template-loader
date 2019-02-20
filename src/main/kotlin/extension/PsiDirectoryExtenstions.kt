@@ -1,21 +1,30 @@
 package com.github.rougsig.filetemplateloader.extension
 
-import com.github.rougsig.filetemplateloader.constant.PACKAGE_BASE
+import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_SIMPLE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME_TEMPLATE
+import com.github.rougsig.filetemplateloader.entity.Props
+import com.github.rougsig.filetemplateloader.entity.generateProps
+import com.github.rougsig.filetemplateloader.entity.getTemplateProps
+import com.github.rougsig.filetemplateloader.entity.mergeTemplate
+import com.intellij.openapi.module.ModuleUtil
 import com.intellij.psi.PsiDirectory
-import org.jetbrains.kotlin.idea.refactoring.fqName.getKotlinFqName
 import org.jetbrains.kotlin.idea.util.projectStructure.module
-import java.util.*
 
-fun PsiDirectory.calculatePackageName(props: Properties): String {
-  val builder = StringBuilder()
-  getKotlinFqName()
-    ?.let { builder.append(it.toString()) }
-    ?: { builder.append(props.getProperty(PACKAGE_BASE)) }()
+fun Props.generatePackageName() {
+  val props = this
+  val packageNameTemplate = props.getProperty(PROPS_PACKAGE_NAME_TEMPLATE)
+  val templateProps = getTemplateProps(packageNameTemplate)
+  generateProps(templateProps, props)
 
-  module?.name?.toPackageCase()?.let {
-    builder.append(".")
-    builder.append(it)
-  }
+  val moduleName = mergeTemplate(packageNameTemplate, props)
+  props.setProperty(PROPS_PACKAGE_NAME, moduleName)
+}
 
-  return builder.toString()
+fun PsiDirectory.generateModuleSimpleName(props: Props) {
+  val moduleName = ModuleUtil.getModuleDirPath(module!!)
+    .replace("\\", "/")
+    .split("/")
+    .last()
+  props.setProperty(PROPS_MODULE_SIMPLE_NAME, moduleName)
 }

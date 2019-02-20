@@ -13,7 +13,6 @@ import com.intellij.openapi.fileTypes.FileTypeManager
 import com.intellij.openapi.fileTypes.PlainTextFileType
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.ProjectManager
-import com.intellij.openapi.ui.Messages
 
 class FileTemplateLoaderProjectComponent : ProjectComponent {
 
@@ -29,7 +28,6 @@ class FileTemplateLoaderProjectComponent : ProjectComponent {
         ActionManager.getInstance().getAction(CreateFromProjectTemplateAnAction.ID) as DefaultActionGroup
       templatesGroup.removeAll()
 
-      try {
         projects.forEach { project ->
           val templates = project.readFileTemplates()
           val templateGroups = project.readFileTemplateGroups(templates, gson)
@@ -61,10 +59,6 @@ class FileTemplateLoaderProjectComponent : ProjectComponent {
 
           templatesGroup.add(projectGroup)
         }
-      } catch (e: Exception) {
-        val stackTrace = e.stackTrace.take(8).joinToString(separator = "\n") { "$it" }
-        Messages.showErrorDialog("Load Failed \n $e \n\n $stackTrace", "File Templates")
-      }
     }
   }
 

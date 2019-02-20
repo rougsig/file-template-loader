@@ -1,6 +1,6 @@
 package com.github.rougsig.filetemplateloader.entity
 
-import com.github.rougsig.filetemplateloader.constant.PACKAGE_BASE
+import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_BASE
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.extension.toPackageCase
 import com.intellij.openapi.project.guessProjectDir
@@ -29,7 +29,7 @@ data class FileTemplateModule(
     generateProps(props, templates) { getRequiredProps(props) }
 
     val builder = StringBuilder()
-    builder.append(props.getProperty(PACKAGE_BASE))
+    builder.append(props.getProperty(PROPS_PACKAGE_BASE))
     builder.append(".")
     builder.append(mergeTemplate(moduleName, props).toPackageCase())
     props.setProperty(PROPS_PACKAGE_NAME, builder.toString())

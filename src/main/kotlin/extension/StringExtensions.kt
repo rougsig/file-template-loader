@@ -58,3 +58,9 @@ fun String.toPackageCase(): String {
     .split('-', '_', '/', '\\')
     .joinToString(".") { it }
 }
+
+fun String.toSolidCase(): String {
+  return toUpperCamelCase().toLowerSnakeCase()
+    .split('-', '_', '/', '\\')
+    .joinToString("") { it }
+}

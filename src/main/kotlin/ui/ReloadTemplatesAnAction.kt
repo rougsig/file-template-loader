@@ -6,7 +6,11 @@ import com.intellij.openapi.ui.Messages
 
 class ReloadTemplatesAnAction : AnAction() {
   override fun actionPerformed(event: AnActionEvent) {
-    FileTemplateLoaderProjectComponent.reloadTemplates()
-    Messages.showInfoMessage("Reloaded Successfully", "File Templates")
+    try {
+      FileTemplateLoaderProjectComponent.reloadTemplates()
+      Messages.showInfoMessage("Reloaded Successfully", "File Templates")
+    } catch (e: Exception) {
+      Messages.showErrorDialog("Load Failed \n${e.message}", "File Templates")
+    }
   }
 }

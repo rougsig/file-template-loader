@@ -1,6 +1,8 @@
 package com.github.rougsig.filetemplateloader.ui
 
 import com.github.rougsig.filetemplateloader.entity.FileTemplate
+import com.github.rougsig.filetemplateloader.extension.generateModuleSimpleName
+import com.github.rougsig.filetemplateloader.extension.generatePackageName
 import com.github.rougsig.filetemplateloader.extension.getDirectory
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.reader.readConfig
@@ -19,9 +21,9 @@ class CreateFileTemplateAnAction(
     val project = event.project ?: return
     val dir = event.getDirectory() ?: return
 
-//    val defaultProperties = getDefaultFileTemplateProperties(project, directory)
-
     val config = project.readConfig()
+    dir.generateModuleSimpleName(config)
+    config.generatePackageName()
     val requiredProps = template.getRequiredProps(config, true)
 
     CrateTemplateGroupDialog(

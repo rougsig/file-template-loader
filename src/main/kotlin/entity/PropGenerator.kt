@@ -13,6 +13,8 @@ val PROP_GENERATORS: PropGenerators = HashMap<String, (String) -> String>().appl
   put("UPPER_SNAKE_CASE", String::toUpperSnakeCase)
   put("LOWER_KEBAB_CASE", String::toLowerKebabCase)
   put("UPPER_KEBAB_CASE", String::toUpperKebabCase)
+  put("PACKAGE_CASE", String::toPackageCase)
+  put("SOLID_CASE", String::toSolidCase)
   put("UPPER_CASE", String::toUpperCase)
   put("LOWER_CASE", String::toLowerCase)
 }

@@ -58,9 +58,12 @@ fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile
         FileTemplateGroupJson::class.java
       )
       val groups = fileTemplateGroup.templates.map { template ->
-        templateMap[template.template]!!.copy(
+        templateMap[template.template]?.copy(
           fileName = template.fileName,
           directory = template.directory
+        ) ?: throw KotlinNullPointerException(
+          "template with name ${template.template} not found." +
+              " Requested by Group: ${fileTemplateGroup.name}"
         )
       }
       val entries = fileTemplateGroup.entries?.map { entry ->
@@ -100,9 +103,12 @@ fun readFileTemplateModules(
         FileTemplateFolder(
           pathName = folder.pathName,
           templates = folder.templates.map { template ->
-            templateMap[template.template]!!.copy(
+            templateMap[template.template]?.copy(
               fileName = template.fileName,
               directory = template.directory
+            ) ?: throw KotlinNullPointerException(
+              "template with name ${template.template} not found." +
+                  " Requested by Module: ${fileTemplateModule.name}"
             )
           }
         )

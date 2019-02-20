@@ -10,9 +10,9 @@ fun Project.readConfig(): Props {
 }
 
 fun readConfig(dir: VirtualFile): Props {
-  println("Read Config from: $dir")
   val config = Props()
   val fileTemplates = dir.findChild(FILE_TEMPLATE_FOLDER_NAME) ?: return config
+  println("Read Config from: $fileTemplates")
   fileTemplates.findChild(CONFIG_FILE_NAME)?.let { config.load(it.inputStream) }
   return config
 }
