@@ -1,6 +1,7 @@
 package com.github.rougsig.filetemplateloader.extension
 
 import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME_TEMPLATE
 import com.github.rougsig.filetemplateloader.entity.Props
@@ -20,6 +21,8 @@ fun Props.generatePackageName(dir: PsiDirectory? = null) {
 
   val packageName = StringBuilder()
   packageName.append(mergeTemplate(packageNameTemplate, props))
+  props.setProperty(PROPS_MODULE_PACKAGE_NAME, packageName.toString())
+
   val subPackage = dir?.getPackage()?.qualifiedName
   if (!subPackage.isNullOrBlank()) {
     packageName.append(".")
