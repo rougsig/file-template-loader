@@ -20,7 +20,6 @@ class CreateFileTemplateAnAction(
     val dir = event.getDirectory() ?: return
 
 //    val defaultProperties = getDefaultFileTemplateProperties(project, directory)
-//    val unsetProperties = defaultProperties.getUnsetProperties(templates)
 
     val config = project.readConfig()
     val requiredProps = template.getRequiredProps(config, true)

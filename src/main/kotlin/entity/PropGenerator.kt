@@ -1,9 +1,6 @@
 package com.github.rougsig.filetemplateloader.entity
 
-import com.github.rougsig.filetemplateloader.extension.toLowerCamelCase
-import com.github.rougsig.filetemplateloader.extension.toLowerSnakeCase
-import com.github.rougsig.filetemplateloader.extension.toUpperCamelCase
-import com.github.rougsig.filetemplateloader.extension.toUpperSnakeCase
+import com.github.rougsig.filetemplateloader.extension.*
 import java.util.*
 
 typealias Props = Properties
@@ -14,6 +11,8 @@ val PROP_GENERATORS: PropGenerators = HashMap<String, (String) -> String>().appl
   put("UPPER_CAMEL_CASE", String::toUpperCamelCase)
   put("LOWER_SNAKE_CASE", String::toLowerSnakeCase)
   put("UPPER_SNAKE_CASE", String::toUpperSnakeCase)
+  put("LOWER_KEBAB_CASE", String::toLowerKebabCase)
+  put("UPPER_KEBAB_CASE", String::toUpperKebabCase)
   put("UPPER_CASE", String::toUpperCase)
   put("LOWER_CASE", String::toLowerCase)
 }

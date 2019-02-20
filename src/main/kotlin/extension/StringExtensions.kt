@@ -22,7 +22,6 @@ fun String.toUpperCamelCase(): String {
   }
 }
 
-
 fun String.toLowerCamelCase(): String {
   return toUpperCamelCase().beginWithLowerCase()
 }
@@ -44,6 +43,14 @@ fun String.toLowerSnakeCase(): String {
 
 fun String.toUpperSnakeCase(): String {
   return toLowerSnakeCase().toUpperCase()
+}
+
+fun String.toLowerKebabCase(): String {
+  return toLowerSnakeCase().replace("_", "-")
+}
+
+fun String.toUpperKebabCase(): String {
+  return toUpperSnakeCase().replace("_", "-")
 }
 
 fun String.toPackageCase(): String {

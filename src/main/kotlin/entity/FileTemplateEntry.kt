@@ -42,8 +42,6 @@ data class FileTemplateEntry(
     generateProps(getRequiredProps(props), props)
   }
 
-  override val isSourceCode: Boolean = false
-
   private fun getInsertTo(project: Project, props: Props): PsiElement {
     if (className != null) {
       return JavaPsiFacade.getInstance(project)
@@ -58,4 +56,6 @@ data class FileTemplateEntry(
 
     throw IllegalStateException("can't create entry: className == null && pathName == null")
   }
+
+  override val hasClassName: Boolean = false
 }

@@ -38,8 +38,10 @@ fun assertFileTemplate(
     props.getProperty(PROPS_CLASS_NAME(templateName)) ?: ""
   )
   TestCase.assertEquals(
-    "\\src$directory",
+    "\\src$directory".replace("/", "\\"),
     // FIXME PLEASE!!!
-    actualFile.containingDirectory.parents().first().toString().replace("PsiDirectory:", "")
+    actualFile.containingDirectory.parents().first().toString()
+      .replace("PsiDirectory:", "")
+      .replace("/", "\\")
   )
 }

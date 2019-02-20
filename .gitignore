@@ -1,3 +1,6 @@
 out/
 build/
 .gradle/
+.idea/*
+!.idea/misc.xml
+!.idea/vsc.xml

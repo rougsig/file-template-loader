@@ -1,5 +1,6 @@
 package com.github.rougsig.filetemplateloader.entity
 
+import com.github.rougsig.filetemplateloader.extension.getPackageNameWithSubDirs
 import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.util.text.StringUtil
 import com.intellij.psi.PsiDirectory
@@ -13,7 +14,7 @@ import java.util.*
 
 interface FileTemplate {
   val name: String
-  val isSourceCode: Boolean
+  val hasClassName: Boolean
   fun create(dir: PsiDirectory, props: Properties): List<PsiFile>
 
   fun getAllProps(): Set<String>
@@ -68,6 +69,45 @@ fun generateProps(propsToGenerate: Set<String>, props: Props) {
 
       props.setProperty(fullPropName, generatedProp)
     }
+}
+
+fun generateProps(props: Props, templates: List<FileTemplateSingle>, getRequiredProps: (Props) -> Set<String>) {
+  //
+  // Generate props without _SIMPLE_NAME, _CLASS_NAME
+  //
+  val firstIteration = getRequiredProps(props)
+    .filterNot { it.contains(PROPS_SIMPLE_NAME("")) || it.contains(PROPS_CLASS_NAME("")) }
+    .toSet()
+  generateProps(firstIteration, props)
+
+  //
+  // Generate _SIMPLE_NAME, _CLASS_NAME
+  //
+  templates.forEach { template ->
+    props.setProperty(PROPS_SIMPLE_NAME(template.name), mergeTemplate(template.fileName!!, props))
+  }
+
+  //
+  // Generate _SIMPLE_NAME_LOWER_CASE, _CLASS_NAME_UPPER_CASE etc
+  //
+  val secondIteration = getRequiredProps(props)
+  generateProps(secondIteration, props)
+
+  //
+  // Generate other props
+  //
+  templates.forEach { it.generateProps(props) }
+}
+
+fun generateClassNameProps(props: Props, templates: List<FileTemplateSingle>, packageName: String) {
+  templates.forEach { template ->
+    val mergedPackageName = mergeTemplate(template.getPackageNameWithSubDirs(packageName), props)
+    val fileName = mergeTemplate(template.fileName!!, props)
+    if (template.hasClassName) props.setProperty(
+      PROPS_CLASS_NAME(template.name),
+      mergeTemplate("$mergedPackageName.$fileName", props)
+    )
+  }
 }
 
 private fun String.getReferences(): Set<String> {

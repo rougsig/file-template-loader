@@ -22,10 +22,6 @@ fun PsiDirectory.createSubDirs(directory: String): PsiDirectory {
   }
 }
 
-fun FileTemplateSingle.createSubDirs(initialDir: PsiDirectory): PsiDirectory {
-  return directory?.let { initialDir.createSubDirs(it) } ?: initialDir
-}
-
 fun FileTemplateSingle.getPackageNameWithSubDirs(initialPackageName: String): String {
   val subDirs = directory ?: return initialPackageName
   return initialPackageName + "." + subDirs.toPackageCase()
