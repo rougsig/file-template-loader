@@ -37,7 +37,7 @@ fun readFileTemplates(dir: VirtualFile): List<FileTemplateSingle> {
       val slittedName = file.nameWithoutExtension.split(FILE_NAME_DELIMITER)
       FileTemplateSingle(
         name = slittedName.first(),
-        fileName = slittedName.first(),
+        fileName = null,
         extension = slittedName.last(),
         text = String(file.inputStream.readBytes())
       )
@@ -96,13 +96,16 @@ fun readFileTemplateModules(
         String(file.inputStream.readBytes()),
         FileTemplateModuleJson::class.java
       )
-      val folders = fileTemplateModule.folders.flatMap { folder ->
-        folder.templates.map { template ->
-          templateMap[template.template]!!.copy(
-            fileName = template.fileName,
-            directory = template.directory?.let { "${folder.pathName}/$it" } ?: folder.pathName
-          )
-        }
+      val folders = fileTemplateModule.folders.map { folder ->
+        FileTemplateFolder(
+          pathName = folder.pathName,
+          templates = folder.templates.map { template ->
+            templateMap[template.template]!!.copy(
+              fileName = template.fileName,
+              directory = template.directory
+            )
+          }
+        )
       }
       val entries = fileTemplateModule.entries.map { entry ->
         FileTemplateEntry(
@@ -115,11 +118,8 @@ fun readFileTemplateModules(
       FileTemplateModule(
         name = fileTemplateModule.name,
         moduleName = fileTemplateModule.moduleName,
-        group = FileTemplateGroup(
-          name = "Module(${fileTemplateModule.name})",
-          templates = folders,
-          entries = entries
-        )
+        folders = folders,
+        entries = entries
       )
     }
 }

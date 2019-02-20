@@ -1,7 +1,10 @@
 package com.github.rougsig.filetemplateloader.entity
 
 import com.github.rougsig.filetemplateloader.constant.PROPS_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.extension.createPsiFile
+import com.github.rougsig.filetemplateloader.extension.createSubDirs
+import com.github.rougsig.filetemplateloader.extension.getPackageNameWithSubDirs
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
 import java.util.*
@@ -14,14 +17,23 @@ data class FileTemplateSingle(
   val directory: String? = null
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
-    println("Create FileTemplateSingle: \n name: $name \n dir: $dir \n props: $props \n")
+    val subDir = if (!directory.isNullOrBlank()) {
+      dir.createSubDirs(mergeTemplate(directory, props))
+    } else {
+      dir
+    }
+    val packageName = mergeTemplate(getPackageNameWithSubDirs(props.getProperty(PROPS_PACKAGE_NAME)), props)
+    if (fileName != null) props.setProperty(PROPS_NAME, mergeTemplate(fileName, props))
+    props.setProperty(PROPS_PACKAGE_NAME, packageName)
+
+    println("Create FileTemplateSingle: \n name: $name \n dir: $subDir \n props: $props \n")
 
     val fileName = props.getProperty(PROPS_NAME)
     val fileNameWithExtension = "$fileName.$extension"
-    dir.checkCreateFile(fileNameWithExtension)
+    subDir.checkCreateFile(fileNameWithExtension)
 
     val templateResult = mergeTemplate(text, props)
-    val file = dir.add(dir.project.createPsiFile(fileNameWithExtension, templateResult)) as PsiFile
+    val file = subDir.add(subDir.project.createPsiFile(fileNameWithExtension, templateResult)) as PsiFile
 
     return listOf(file)
   }

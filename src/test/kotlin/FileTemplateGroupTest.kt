@@ -1,8 +1,6 @@
 package com.github.rougsig.filetemplateloader
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
-import com.github.rougsig.filetemplateloader.extension.calculatePackageName
 import com.github.rougsig.filetemplateloader.extension.createSubDirs
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.reader.readConfig
@@ -13,50 +11,8 @@ import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCa
 import org.jetbrains.kotlin.idea.util.sourceRoots
 import java.util.*
 
-class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
+class FileTemplateGroupTest : LightPlatformCodeInsightFixtureTestCase() {
   override fun getTestDataPath(): String = calculateTestDataPath()
-
-  fun testCalculatePackageName() {
-    myFixture.copyDirectoryToProject("file-template-creator", "")
-
-    val config = project.readConfig()
-
-    val src = myModule.sourceRoots.first()
-    val dir = psiManager.findDirectory(src)!!
-
-    val packageName = dir.calculatePackageName(config)
-
-    assertEquals("com.github.rougsig.light.idea.test.case", packageName)
-  }
-
-  fun testCreateFileTemplate() {
-    val projectDirectory = myFixture.copyDirectoryToProject("file-template-creator", "")
-    val fileTemplateDirectory = projectDirectory.findChild(".fileTemplates")!!
-
-    val templates = readFileTemplates(fileTemplateDirectory)
-    val config = project.readConfig()
-
-    val src = myModule.sourceRoots.first()
-    val dir = psiManager.findDirectory(src)!!
-
-    val repositoryFileTemplate = templates.find { it.fileName == "Repository" }!!
-
-    val props = Properties(config)
-    props.setProperty(PROPS_NAME, "FileTemplateRepository")
-    props.setProperty(PROPS_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
-    val template = project.writeAction {
-      repositoryFileTemplate.create(dir, props)
-    }.first()
-    assertFileTemplate(
-      "repository/FileTemplateRepository.kt",
-      "Repository",
-      "",
-      props,
-      template,
-      "",
-      ""
-    )
-  }
 
   fun testCreateFileTemplateGroup() {
     val projectDirectory = myFixture.copyDirectoryToProject("file-template-creator", "")
@@ -136,24 +92,24 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
       viewFileTemplateGroup.create(kotlin, props)
     }
 
-    val repositoryImpl = group.find { it.name == "FileTemplateView.kt" }!!
+    val view = group.find { it.name == "FileTemplateView.kt" }!!
     assertFileTemplate(
       "view/FileTemplateView.kt",
       "View",
       "\\main\\kotlin",
       props,
-      repositoryImpl,
+      view,
       "FileTemplateView",
       "com.github.rougsig.filetemplateloader.FileTemplateView"
     )
 
-    val repositoryBindings = group.find { it.name == "file_template_view.xml" }!!
+    val layout = group.find { it.name == "file_template_view.xml" }!!
     assertFileTemplate(
       "view/file_template_view.xml",
       "Layout",
       "\\main\\view",
       props,
-      repositoryBindings,
+      layout,
       "file_template_view",
       ""
     )

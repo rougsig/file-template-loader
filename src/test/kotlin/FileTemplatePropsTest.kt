@@ -16,7 +16,7 @@ class FileTemplatePropsTest : LightPlatformCodeInsightFixtureTestCase() {
     myFixture.copyDirectoryToProject("file-template-creator", "")
 
     val templates = project.readFileTemplates()
-    val viewFileTemplate = templates.find { it.fileName == "View" }!!
+    val viewFileTemplate = templates.find { it.name == "View" }!!
 
     val requiredProps = viewFileTemplate.getAllProps()
 
@@ -30,7 +30,7 @@ class FileTemplatePropsTest : LightPlatformCodeInsightFixtureTestCase() {
     myFixture.copyDirectoryToProject("file-template-creator", "")
 
     val templates = project.readFileTemplates()
-    val viewFileTemplate = templates.find { it.fileName == "View" }!!
+    val viewFileTemplate = templates.find { it.name == "View" }!!
 
     val props = Props().apply {
       setProperty(PROPS_PACKAGE_NAME, PROPS_PACKAGE_NAME)
@@ -70,7 +70,7 @@ class FileTemplatePropsTest : LightPlatformCodeInsightFixtureTestCase() {
     myFixture.copyDirectoryToProject("file-template-creator", "")
 
     val templates = project.readFileTemplates()
-    val viewFileTemplate = templates.find { it.fileName == "View" }!!
+    val viewFileTemplate = templates.find { it.name == "View" }!!
 
     val props = Props().apply {
       setProperty("LAYOUT_SIMPLE_NAME", "FileTemplate")
