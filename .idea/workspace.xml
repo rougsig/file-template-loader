@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36cf2490-0c19-4623-a0ad-2ad49083424c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateFolder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/FileTemplateModuleTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/FileTemplateSingleTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.module.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateGroup.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateSingle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateSingle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/extension/FileTemplateExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/extension/FileTemplateExtensions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/FileTemplateLoaderProjectComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ui/FileTemplateLoaderProjectComponent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/FileTemplateCreatorTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/FileTemplateGroupTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/FileTemplatePropsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/FileTemplatePropsTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/FileTemplateReaderTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/FileTemplateReaderTest.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -61,32 +49,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTemplateModuleTest.kt">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
-              <folding>
-                <element signature="e#47#617#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testData/file-template-result/module/EpicRepository.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.module.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+            <state relative-caret-position="272">
+              <caret line="116" column="22" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -178,7 +154,6 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/ui/CreateFileTemplateAnAction.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/reader/ReaderConstants.kt" />
         <option value="$PROJECT_DIR$/testData/file-template-reader/.fileTemplates/repository/Repository.module.json" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/extension/StringExtensions.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/entity/PropGenerator.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateEntry.kt" />
@@ -190,13 +165,14 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateModule.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateSingle.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateGroup.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/FileTemplateSingleTest.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/FileTemplatePropsTest.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/FileTemplateReaderTest.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateFolder.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/FileTemplateGroupTest.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/FileTemplateModuleTest.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt" />
       </list>
     </option>
   </component>
@@ -352,6 +328,14 @@
               <item name="file-template-result" type="462c0819:PsiDirectoryNode" />
               <item name="module" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="file-template-loader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="file-template-loader" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="testData" type="462c0819:PsiDirectoryNode" />
+              <item name="file-template-result" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="di" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -362,7 +346,7 @@
   <component name="PropertiesComponent">
     <property name="ToolWindowDebug.ShowToolbar" value="false" />
     <property name="android.sdk.path" value="C:/androidSDK" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550682123213" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550682391569" />
     <property name="last_opened_file_path" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/552bc3047e83510a6a589cee03a6f1a5de11316f/ideaIC-2018.3.4/plugins/Kotlin/lib/kotlin-plugin.jar!/" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -404,7 +388,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FileTemplateModuleTest.testCreateFileTemplateModule">
+  <component name="RunManager" selected="JUnit.All in com.github.rougsig.file-template-loader.test">
     <configuration name="Plugin" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -528,8 +512,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FileTemplateModuleTest.testCreateFileTemplateModule" />
         <item itemvalue="JUnit.All in com.github.rougsig.file-template-loader.test" />
+        <item itemvalue="JUnit.FileTemplateModuleTest.testCreateFileTemplateModule" />
         <item itemvalue="JUnit.FileTemplateSingleTest.testCreateFileTemplateSingle" />
         <item itemvalue="JUnit.FileTemplateReaderTest.testReadFileTemplateModule" />
         <item itemvalue="JUnit.FileTemplateReaderTest.testProjectReadFileTemplateModule" />
@@ -750,22 +734,17 @@
       <option name="project" value="LOCAL" />
       <updated>1550675824088</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Add Module Creator">
+      <created>1550682166724</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1550682166724</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_com_github_rougsig_file-template-loader_test - 2019.02.20 at 18h 52m 57s.xml">
-      <configuration name="All in com.github.rougsig.file-template-loader.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_com_github_rougsig_file-template-loader_test - 2019.02.20 at 18h 54m 39s.xml">
-      <configuration name="All in com.github.rougsig.file-template-loader.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileTemplateModuleTest_testCreateFileTemplateModule - 2019.02.20 at 18h 56m 51s.xml">
-      <configuration name="FileTemplateModuleTest.testCreateFileTemplateModule" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileTemplateModuleTest_testCreateFileTemplateModule - 2019.02.20 at 18h 57m 21s.xml">
-      <configuration name="FileTemplateModuleTest.testCreateFileTemplateModule" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="FileTemplateModuleTest_testCreateFileTemplateModule - 2019.02.20 at 18h 57m 57s.xml">
       <configuration name="FileTemplateModuleTest.testCreateFileTemplateModule" configurationId="JUnit" />
     </history-entry>
@@ -784,6 +763,18 @@
     <history-entry file="FileTemplateModuleTest_testCreateFileTemplateModule - 2019.02.20 at 19h 01m 22s.xml">
       <configuration name="FileTemplateModuleTest.testCreateFileTemplateModule" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FileTemplateModuleTest_testCreateFileTemplateModule - 2019.02.20 at 19h 01m 40s.xml">
+      <configuration name="FileTemplateModuleTest.testCreateFileTemplateModule" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileTemplateModuleTest_testCreateFileTemplateModule - 2019.02.20 at 19h 01m 56s.xml">
+      <configuration name="FileTemplateModuleTest.testCreateFileTemplateModule" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileTemplateModuleTest_testCreateFileTemplateModule - 2019.02.20 at 19h 02m 10s.xml">
+      <configuration name="FileTemplateModuleTest.testCreateFileTemplateModule" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_com_github_rougsig_file-template-loader_test - 2019.02.20 at 19h 06m 25s.xml">
+      <configuration name="All in com.github.rougsig.file-template-loader.test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -796,7 +787,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="-8" width="1870" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49881235" visible="true" weight="0.26243094" />
       <window_info id="Structure" order="1" sideWeight="0.5011876" side_tool="true" weight="0.2675906" />
@@ -927,7 +917,8 @@
     <MESSAGE value="Add readFileTemplateModules" />
     <MESSAGE value="Add KebabCase prop generators" />
     <MESSAGE value="Update FileTemplateModule reader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update FileTemplateModule reader" />
+    <MESSAGE value="Add Module Creator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Module Creator" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -939,24 +930,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/openapi/util/text/StringUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1084">
-          <caret line="1578" column="29" selection-start-line="1578" selection-start-column="29" selection-end-line="1578" selection-end-column="29" />
-          <folding>
-            <element signature="e#93507#93508#0" expanded="true" />
-            <element signature="e#93564#93565#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/psi/codeStyle/ChangedRangesInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/psi/codeStyle/CodeStyleManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3989">
@@ -1082,20 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testData/file-template-reader/.fileTemplates/repository/Repository.group.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testData/file-template-reader/.fileTemplates/repository/Repository.module.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/constant/PropsConstants.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -1176,37 +1135,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateEntry.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding>
-            <element signature="e#54#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/extension/FileTemplateExtensions.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateModule.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="34" column="61" lean-forward="true" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
-          <folding>
-            <element signature="e#54#402#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1231,13 +1163,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1282,7 +1207,7 @@
     <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.module.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
-          <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1293,13 +1218,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testData/file-template-result/module/EpicRepositoryImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testData/file-template-result/module/di/EpicRepositoryBindings.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testData/file-template-reader/.fileTemplates/repository/Repository.group.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testData/file-template-reader/.fileTemplates/repository/Repository.module.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateModule.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="34" column="61" lean-forward="true" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
+          <folding>
+            <element signature="e#54#402#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateEntry.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#54#141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTemplateModuleTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
+        <state relative-caret-position="713">
+          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
           <folding>
             <element signature="e#47#617#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="116" column="22" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
         </state>
       </provider>
     </entry>

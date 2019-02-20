@@ -3,14 +3,14 @@ package com.github.rougsig.filetemplateloader.entity
 data class FileTemplateGroupJson(
   val name: String,
   val templates: List<FileTemplateJson>,
-  val entries: List<FileTemplateEntryJson>
+  val entries: List<FileTemplateEntryJson>?
 )
 
 data class FileTemplateModuleJson(
   val name: String,
   val moduleName: String,
   val folders: List<FileTemplateFolderJson>,
-  val entries: List<FileTemplateEntryJson>
+  val entries: List<FileTemplateEntryJson>?
 )
 
 data class FileTemplateFolderJson(

@@ -63,14 +63,14 @@ fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile
           directory = template.directory
         )
       }
-      val entries = fileTemplateGroup.entries.map { entry ->
+      val entries = fileTemplateGroup.entries?.map { entry ->
         FileTemplateEntry(
           text = entry.text,
           selector = entry.selector,
           className = entry.className,
           pathName = entry.pathName
         )
-      }
+      } ?: emptyList()
       FileTemplateGroup(
         name = fileTemplateGroup.name,
         templates = groups,
@@ -107,14 +107,14 @@ fun readFileTemplateModules(
           }
         )
       }
-      val entries = fileTemplateModule.entries.map { entry ->
+      val entries = fileTemplateModule.entries?.map { entry ->
         FileTemplateEntry(
           text = entry.text,
           selector = entry.selector,
           className = entry.className,
           pathName = entry.pathName
         )
-      }
+      } ?: emptyList()
       FileTemplateModule(
         name = fileTemplateModule.name,
         moduleName = fileTemplateModule.moduleName,
