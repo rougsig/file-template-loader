@@ -11,5 +11,5 @@
       "directory": "./main/view"
     }
   ],
-  "entries": []
+  "injectors": []
 }

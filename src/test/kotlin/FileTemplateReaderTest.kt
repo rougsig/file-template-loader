@@ -73,8 +73,8 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
               directory = "di"
             )
           ),
-          entries = listOf(
-            FileTemplateEntry(
+          injectors = listOf(
+            FileTemplateInjector(
               text = "is \${FLOW_NAME}Key -> \${FLOW_NAME}Screen()",
               className = "\${APP_ROUTE_CLASS_NAME}",
               selector = "CLASS INVOKE WHEN WHEN_ENTRY"
@@ -124,8 +124,8 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
               )
             )
           ),
-          entries = listOf(
-            FileTemplateEntry(
+          injectors = listOf(
+            FileTemplateInjector(
               text = "is \${FLOW_NAME}Key -> \${FLOW_NAME}Screen()",
               className = "\${APP_ROUTE_CLASS_NAME}",
               selector = "CLASS INVOKE WHEN WHEN_ENTRY"
@@ -199,8 +199,8 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
               directory = "di"
             )
           ),
-          entries = listOf(
-            FileTemplateEntry(
+          injectors = listOf(
+            FileTemplateInjector(
               text = "is \${FLOW_NAME}Key -> \${FLOW_NAME}Screen()",
               className = "\${APP_ROUTE_CLASS_NAME}",
               selector = "CLASS INVOKE WHEN WHEN_ENTRY"
@@ -250,8 +250,8 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
               )
             )
           ),
-          entries = listOf(
-            FileTemplateEntry(
+          injectors = listOf(
+            FileTemplateInjector(
               text = "is \${FLOW_NAME}Key -> \${FLOW_NAME}Screen()",
               className = "\${APP_ROUTE_CLASS_NAME}",
               selector = "CLASS INVOKE WHEN WHEN_ENTRY"

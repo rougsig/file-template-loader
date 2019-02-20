@@ -66,8 +66,8 @@ fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile
               " Requested by Group: ${fileTemplateGroup.name}"
         )
       }
-      val entries = fileTemplateGroup.entries?.map { entry ->
-        FileTemplateEntry(
+      val injectors = fileTemplateGroup.injectors?.map { entry ->
+        FileTemplateInjector(
           text = entry.text,
           selector = entry.selector,
           className = entry.className,
@@ -77,7 +77,7 @@ fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile
       FileTemplateGroup(
         name = fileTemplateGroup.name,
         templates = groups,
-        entries = entries
+        injectors = injectors
       )
     }
 }
@@ -113,8 +113,8 @@ fun readFileTemplateModules(
           }
         )
       }
-      val entries = fileTemplateModule.entries?.map { entry ->
-        FileTemplateEntry(
+      val injectors = fileTemplateModule.injectors?.map { entry ->
+        FileTemplateInjector(
           text = entry.text,
           selector = entry.selector,
           className = entry.className,
@@ -125,7 +125,7 @@ fun readFileTemplateModules(
         name = fileTemplateModule.name,
         moduleName = fileTemplateModule.moduleName,
         folders = folders,
-        entries = entries
+        injectors = injectors
       )
     }
 }

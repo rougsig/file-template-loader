@@ -12,7 +12,7 @@ data class FileTemplateModule(
   val moduleName: String,
   override val name: String,
   val folders: List<FileTemplateFolder>,
-  val entries: List<FileTemplateEntry>
+  val injectors: List<FileTemplateInjector>
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
     println("Create FileTemplateModule: \n name: $name \n dir: $dir \n props: $props \n")
@@ -22,9 +22,9 @@ data class FileTemplateModule(
     val moduleDir = projectDir.createSubdirectory(moduleMergedNamed)
 
     val folders = folders.flatMap { it.create(moduleDir, props) }
-    val entries = entries.flatMap { it.create(moduleDir, props) }
+    val injectors = injectors.flatMap { it.create(moduleDir, props) }
 
-    return folders.plus(entries)
+    return folders.plus(injectors)
   }
 
   override fun generateProps(props: Properties) {
@@ -44,7 +44,7 @@ data class FileTemplateModule(
       .flatMap { it.getAllProps() }
       .toTypedArray()
 
-    val entryProps = entries
+    val entryProps = injectors
       .flatMap { it.getAllProps() }
       .toTypedArray()
 

@@ -9,7 +9,7 @@ import com.intellij.psi.search.GlobalSearchScope
 import org.jetbrains.kotlin.psi.psiUtil.endOffset
 import java.util.*
 
-data class FileTemplateEntry(
+data class FileTemplateInjector(
   val text: String,
   val selector: String,
   val className: String? = null,
@@ -17,7 +17,7 @@ data class FileTemplateEntry(
   override val name: String = ""
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
-    println("Create FileTemplateEntry: \n text: $text \n dir: $dir \n props: $props \n selector: $selector \n")
+    println("Create FileTemplateInjector: \n text: $text \n dir: $dir \n props: $props \n selector: $selector \n")
 
     val insertTo = getInsertTo(dir.project, props).containingFile
     val selected = insertTo.select(selector)!!

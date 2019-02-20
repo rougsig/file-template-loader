@@ -10,7 +10,7 @@
       "fileName": "${ROUTE_NAME}Screen"
     }
   ],
-  "entries": [
+  "injectors": [
     {
       "text": "\nis ${APP_ROUTE_SIMPLE_NAME}.${ROUTE_NAME} -> ${SCREEN_SIMPLE_NAME}()",
       "className": "${SCREEN_FACTORY_CLASS_NAME}",

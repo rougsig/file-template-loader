@@ -8,7 +8,7 @@ import java.util.*
 data class FileTemplateGroup(
   override val name: String,
   val templates: List<FileTemplateSingle>,
-  val entries: List<FileTemplateEntry>
+  val injectors: List<FileTemplateInjector>
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
     println("Create FileTemplateGroup: \n name: $name \n dir: $dir \n props: $props \n")
@@ -20,7 +20,7 @@ data class FileTemplateGroup(
       template.create(dir, props)
     }
 
-    val createdEntries = entries.flatMap { entry ->
+    val createdEntries = injectors.flatMap { entry ->
       props.setProperty(PROPS_PACKAGE_NAME, initialPackageName)
       entry.create(dir, props)
     }
@@ -33,7 +33,7 @@ data class FileTemplateGroup(
       .flatMap { it.getAllProps() }
       .toTypedArray()
 
-    val entryProps = entries
+    val entryProps = injectors
       .flatMap { it.getAllProps() }
       .toTypedArray()
 
