@@ -5,7 +5,7 @@ import toothpick.config.ModuleBindings
 import ${REPOSITORY_CLASS_NAME}
 import ${REPOSITORY_IMPL_CLASS_NAME}
 
-object ${NAME} : ModuleBindings {
+object ${FILE_NAME} : ModuleBindings {
   override fun bindInto(module: Module) {
     module
       .bind(${REPOSITORY_SIMPLE_NAME}::class.java)

@@ -1,6 +1,6 @@
 package com.github.rougsig.filetemplateloader
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_FILE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.entity.Props
 import com.github.rougsig.filetemplateloader.entity.filterNotGenerated
@@ -23,7 +23,7 @@ class FileTemplatePropsTest : LightPlatformCodeInsightFixtureTestCase() {
 
     assertSameElements(
       requiredProps,
-      setOf(PROPS_PACKAGE_NAME, PROPS_NAME, "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE")
+      setOf(PROPS_PACKAGE_NAME, PROPS_FILE_NAME, "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE")
     )
   }
 
@@ -40,7 +40,7 @@ class FileTemplatePropsTest : LightPlatformCodeInsightFixtureTestCase() {
 
     assertSameElements(
       requiredProps,
-      setOf("LAYOUT_SIMPLE_NAME", "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE")
+      setOf("LAYOUT_SIMPLE_NAME", "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE", PROPS_FILE_NAME)
     )
   }
 

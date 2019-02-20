@@ -1,6 +1,6 @@
 package com.github.rougsig.filetemplateloader.entity
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_FILE_NAME
 import com.github.rougsig.filetemplateloader.extension.getPackageNameWithSubDirs
 import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.util.text.StringUtil
@@ -27,7 +27,7 @@ interface FileTemplate {
 
     val allRequiredProps = allProps.plus(propsBase).toSet().minus(existedProps)
 
-    return allRequiredProps.filter { it != PROPS_NAME || it.isBlank() }.toSet()
+    return allRequiredProps.filter { it != PROPS_FILE_NAME || it.isBlank() }.toSet()
   }
 
   fun generateProps(props: Properties)

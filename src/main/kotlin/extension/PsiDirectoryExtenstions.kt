@@ -9,16 +9,23 @@ import com.github.rougsig.filetemplateloader.entity.getTemplateProps
 import com.github.rougsig.filetemplateloader.entity.mergeTemplate
 import com.intellij.openapi.module.ModuleUtil
 import com.intellij.psi.PsiDirectory
+import org.jetbrains.kotlin.idea.core.getPackage
 import org.jetbrains.kotlin.idea.util.projectStructure.module
 
-fun Props.generatePackageName() {
+fun Props.generatePackageName(dir: PsiDirectory? = null) {
   val props = this
   val packageNameTemplate = props.getProperty(PROPS_PACKAGE_NAME_TEMPLATE)
   val templateProps = getTemplateProps(packageNameTemplate)
   generateProps(templateProps, props)
 
-  val moduleName = mergeTemplate(packageNameTemplate, props)
-  props.setProperty(PROPS_PACKAGE_NAME, moduleName)
+  val packageName = StringBuilder()
+  packageName.append(mergeTemplate(packageNameTemplate, props))
+  val subPackage = dir?.getPackage()?.qualifiedName
+  if (!subPackage.isNullOrBlank()) {
+    packageName.append(".")
+    packageName.append(subPackage)
+  }
+  props.setProperty(PROPS_PACKAGE_NAME, packageName.toString())
 }
 
 fun PsiDirectory.generateModuleSimpleName(props: Props) {
