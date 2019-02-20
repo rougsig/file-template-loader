@@ -58,7 +58,7 @@ fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile
         FileTemplateGroupJson::class.java
       )
       val groups = fileTemplateGroup.templates.map { template ->
-        templateMap[template.template]?.copy(
+        templateMap[template.template.replace(".$FILE_TEMPLATE_EXTENSION", "")]?.copy(
           fileName = template.fileName,
           directory = template.directory
         ) ?: throw KotlinNullPointerException(
@@ -103,7 +103,7 @@ fun readFileTemplateModules(
         FileTemplateSourceSet(
           directory = sourceSet.directory,
           templates = sourceSet.templates.map { template ->
-            templateMap[template.template]?.copy(
+            templateMap[template.template.replace(".$FILE_TEMPLATE_EXTENSION", "")]?.copy(
               fileName = template.fileName,
               directory = template.directory
             ) ?: throw KotlinNullPointerException(

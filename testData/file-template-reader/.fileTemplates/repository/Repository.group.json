@@ -2,7 +2,7 @@
   "name": "Repository",
   "templates": [
     {
-      "template": "Repository.kt",
+      "template": "Repository.kt.ft",
       "fileName": "${FLOW_NAME}Repository"
     },
     {
@@ -10,7 +10,7 @@
       "fileName": "${FLOW_NAME}RepositoryImpl"
     },
     {
-      "template": "RepositoryBindings.kt",
+      "template": "RepositoryBindings.kt.ft",
       "fileName": "${FLOW_NAME}RepositoryBindings",
       "directory": "di"
     }
