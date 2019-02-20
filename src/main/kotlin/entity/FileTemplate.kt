@@ -58,6 +58,13 @@ fun getPropsBase(fullNameProps: Iterable<String>): Set<String> {
   }.toSet()
 }
 
+fun Set<String>.filterNotGenerated(): Set<String> {
+  return filterNot {
+    GENERATED_PROP_MATCHER.containsMatchIn(it)
+        || it.contains(PROPS_SIMPLE_NAME(""))
+        || it.contains(PROPS_CLASS_NAME(""))
+  }.toSet()
+}
 
 fun generateProps(propsToGenerate: Set<String>, props: Props) {
   propsToGenerate.filter { GENERATED_PROP_MATCHER.containsMatchIn(it) }
