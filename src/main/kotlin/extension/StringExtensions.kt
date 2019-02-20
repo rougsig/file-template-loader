@@ -45,6 +45,14 @@ fun String.toUpperSnakeCase(): String {
   return toLowerSnakeCase().toUpperCase()
 }
 
+fun String.toLowerKebabCase(): String {
+  return toLowerSnakeCase().replace("_", "-")
+}
+
+fun String.toUpperKebabCase(): String {
+  return toUpperSnakeCase().replace("_", "-")
+}
+
 fun String.toPackageCase(): String {
   return toUpperCamelCase().toLowerSnakeCase()
     .split('-', '_', '/', '\\')
