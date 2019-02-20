@@ -1,9 +1,9 @@
 {
   "name": "Repository",
   "moduleName": "${PROJECT_NAME_LOWER_KEBAB_CASE}-${FLOW_NAME_LOWER_KEBAB_CASE}-repository",
-  "folders": [
+  "sourceSets": [
     {
-      "pathName": "src/main/kotlin/repositories",
+      "directory": "src/main/kotlin/repositories",
       "templates": [
         {
           "template": "Repository.kt",

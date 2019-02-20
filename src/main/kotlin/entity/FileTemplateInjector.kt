@@ -54,7 +54,7 @@ data class FileTemplateInjector(
       return PsiManager.getInstance(project).findFile(file)!!
     }
 
-    throw IllegalStateException("can't create entry: className == null && pathName == null")
+    throw IllegalStateException("can't create entry: className == null && directory == null")
   }
 
   override val hasClassName: Boolean = false

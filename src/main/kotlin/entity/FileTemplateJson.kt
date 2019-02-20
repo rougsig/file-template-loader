@@ -9,12 +9,12 @@ data class FileTemplateGroupJson(
 data class FileTemplateModuleJson(
   val name: String,
   val moduleName: String,
-  val folders: List<FileTemplateFolderJson>,
+  val sourceSets: List<FileTemplateSourceSetJson>,
   val injectors: List<FileTemplateInjectorJson>?
 )
 
-data class FileTemplateFolderJson(
-  val pathName: String?,
+data class FileTemplateSourceSetJson(
+  val directory: String?,
   val templates: List<FileTemplateJson>
 )
 

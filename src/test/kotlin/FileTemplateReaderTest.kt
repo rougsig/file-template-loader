@@ -93,14 +93,13 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
     val modules = readFileTemplateModules(templates, templateDirectory, gson)
 
     assertEquals(
-      modules,
       listOf(
         FileTemplateModule(
           name = "Repository",
           moduleName = "\${PROJECT_NAME_LOWER_KEBAB_CASE}-\${FLOW_NAME_LOWER_KEBAB_CASE}-repository",
-          folders = listOf(
-            FileTemplateFolder(
-              pathName = "src/main/kotlin/repositories",
+          sourceSets = listOf(
+            FileTemplateSourceSet(
+              directory = "src/main/kotlin/repositories",
               templates = listOf(
                 FileTemplateSingle(
                   name = "Repository",
@@ -132,7 +131,8 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
             )
           )
         )
-      )
+      ),
+      modules
     )
   }
 
@@ -224,9 +224,9 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
         FileTemplateModule(
           name = "Repository",
           moduleName = "\${PROJECT_NAME_LOWER_KEBAB_CASE}-\${FLOW_NAME_LOWER_KEBAB_CASE}-repository",
-          folders = listOf(
-            FileTemplateFolder(
-              pathName = "src/main/kotlin/repositories",
+          sourceSets = listOf(
+            FileTemplateSourceSet(
+              directory = "src/main/kotlin/repositories",
               templates = listOf(
                 FileTemplateSingle(
                   name = "Repository",

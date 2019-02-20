@@ -11,7 +11,7 @@ import java.util.*
 data class FileTemplateModule(
   val moduleName: String,
   override val name: String,
-  val folders: List<FileTemplateFolder>,
+  val sourceSets: List<FileTemplateSourceSet>,
   val injectors: List<FileTemplateInjector>
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
@@ -21,14 +21,14 @@ data class FileTemplateModule(
     val moduleMergedNamed = mergeTemplate(moduleName, props)
     val moduleDir = projectDir.createSubdirectory(moduleMergedNamed)
 
-    val folders = folders.flatMap { it.create(moduleDir, props) }
+    val sourceSets = sourceSets.flatMap { it.create(moduleDir, props) }
     val injectors = injectors.flatMap { it.create(moduleDir, props) }
 
-    return folders.plus(injectors)
+    return sourceSets.plus(injectors)
   }
 
   override fun generateProps(props: Properties) {
-    val templates = folders.flatMap { it.templates }
+    val templates = sourceSets.flatMap { it.templates }
     generateProps(props, templates) { getRequiredProps(props) }
 
     props.setProperty(PROPS_MODULE_NAME, mergeTemplate(moduleName, props))
@@ -40,7 +40,7 @@ data class FileTemplateModule(
   override val hasClassName: Boolean = false
 
   override fun getAllProps(): Set<String> {
-    val templateProps = folders
+    val templateProps = sourceSets
       .flatMap { it.getAllProps() }
       .toTypedArray()
 

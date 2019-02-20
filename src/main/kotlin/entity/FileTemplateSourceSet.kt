@@ -6,16 +6,16 @@ import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
 import java.util.*
 
-data class FileTemplateFolder(
-  val pathName: String?,
+data class FileTemplateSourceSet(
+  val directory: String?,
   val templates: List<FileTemplateSingle>,
   override val name: String = ""
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
-    println("Create FileTemplateFolder: \n name: $name \n dir: $dir \n props: $props \n")
+    println("Create FileTemplateSourceSet: \n name: $name \n dir: $dir \n props: $props \n")
 
     val initialPackageName = props.getProperty(PROPS_PACKAGE_NAME)
-    val folder = pathName?.let { dir.createSubDirs(it) } ?: dir
+    val folder = directory?.let { dir.createSubDirs(it) } ?: dir
 
     return templates.flatMap { template ->
       props.setProperty(PROPS_PACKAGE_NAME, initialPackageName)
@@ -28,7 +28,7 @@ data class FileTemplateFolder(
       .flatMap { it.getAllProps() }
       .toTypedArray()
 
-    val pathNameProps = pathName?.let { getTemplateProps(it).toTypedArray() } ?: emptyArray()
+    val pathNameProps = directory?.let { getTemplateProps(it).toTypedArray() } ?: emptyArray()
 
     return setOf(*templateProps, *pathNameProps)
   }

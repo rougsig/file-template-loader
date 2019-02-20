@@ -99,10 +99,10 @@ fun readFileTemplateModules(
         String(file.inputStream.readBytes()),
         FileTemplateModuleJson::class.java
       )
-      val folders = fileTemplateModule.folders.map { folder ->
-        FileTemplateFolder(
-          pathName = folder.pathName,
-          templates = folder.templates.map { template ->
+      val sourceSets = fileTemplateModule.sourceSets.map { sourceSet ->
+        FileTemplateSourceSet(
+          directory = sourceSet.directory,
+          templates = sourceSet.templates.map { template ->
             templateMap[template.template]?.copy(
               fileName = template.fileName,
               directory = template.directory
@@ -124,7 +124,7 @@ fun readFileTemplateModules(
       FileTemplateModule(
         name = fileTemplateModule.name,
         moduleName = fileTemplateModule.moduleName,
-        folders = folders,
+        sourceSets = sourceSets,
         injectors = injectors
       )
     }
