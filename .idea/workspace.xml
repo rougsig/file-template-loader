@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="36cf2490-0c19-4623-a0ad-2ad49083424c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/UnitTestUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/UnitTestUtils.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -58,11 +57,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="116" column="22" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
+            <state relative-caret-position="529">
+              <caret line="129" column="21" lean-forward="true" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/UnitTestUtils.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -80,7 +88,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>trim</find>
       <find>ATTRIBUTE_PACKAGE_NAME</find>
       <find>MergeTe</find>
       <find>createT</find>
@@ -110,6 +117,7 @@
       <find>Document</find>
       <find>directory</find>
       <find>generateP</find>
+      <find>separ</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -122,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/kotlin/reader/ConfigReader.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/ui/CrateTemplateGroupDialog.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/ConfigReaderTest.kt" />
         <option value="$PROJECT_DIR$/testData/file-template-selector/settings.gradle" />
@@ -173,6 +180,7 @@
         <option value="$PROJECT_DIR$/src/test/kotlin/FileTemplateModuleTest.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/UnitTestUtils.kt" />
       </list>
     </option>
   </component>
@@ -346,7 +354,7 @@
   <component name="PropertiesComponent">
     <property name="ToolWindowDebug.ShowToolbar" value="false" />
     <property name="android.sdk.path" value="C:/androidSDK" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550682391569" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550682658804" />
     <property name="last_opened_file_path" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/552bc3047e83510a6a589cee03a6f1a5de11316f/ideaIC-2018.3.4/plugins/Kotlin/lib/kotlin-plugin.jar!/" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -741,7 +749,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550682166724</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Add entities to nullable">
+      <created>1550682415340</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1550682415340</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -787,8 +802,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="-8" width="1870" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49881235" visible="true" weight="0.26243094" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49881235" visible="true" weight="0.26243094" />
       <window_info id="Structure" order="1" sideWeight="0.5011876" side_tool="true" weight="0.2675906" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -797,7 +813,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.5011876" side_tool="true" weight="0.2675906" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.43469176" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.43469176" />
       <window_info anchor="bottom" x="22" y="272" width="1876" height="536" id="Debug" order="3" sideWeight="0.49946696" weight="0.56008357" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -918,7 +934,8 @@
     <MESSAGE value="Add KebabCase prop generators" />
     <MESSAGE value="Update FileTemplateModule reader" />
     <MESSAGE value="Add Module Creator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Module Creator" />
+    <MESSAGE value="Add entities to nullable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add entities to nullable" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -993,13 +1010,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/UnitTestUtils.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1285,8 +1295,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="116" column="22" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
+        <state relative-caret-position="529">
+          <caret line="129" column="21" lean-forward="true" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/UnitTestUtils.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
         </state>
       </provider>
     </entry>
