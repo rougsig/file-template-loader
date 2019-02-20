@@ -54,7 +54,6 @@ data class FileTemplateGroup(
       .toTypedArray()
 
     val entryProps = entries
-
       .flatMap { it.getRequiredProps(props, ignoreGenerated) }
       .filter { it != PROPS_NAME }
       .toTypedArray()

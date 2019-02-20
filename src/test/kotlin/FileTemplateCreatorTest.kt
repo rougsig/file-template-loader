@@ -17,7 +17,7 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
   override fun getTestDataPath(): String = calculateTestDataPath()
 
   fun testCalculatePackageName() {
-    val projectDirectory = myFixture.copyDirectoryToProject("file-template-creator", "")
+    myFixture.copyDirectoryToProject("file-template-creator", "")
 
     val config = project.readConfig()
 
