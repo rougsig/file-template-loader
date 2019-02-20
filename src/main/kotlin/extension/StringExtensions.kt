@@ -22,7 +22,6 @@ fun String.toUpperCamelCase(): String {
   }
 }
 
-
 fun String.toLowerCamelCase(): String {
   return toUpperCamelCase().beginWithLowerCase()
 }

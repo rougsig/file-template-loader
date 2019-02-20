@@ -36,16 +36,30 @@ data class FileTemplateGroup(
   }
 
   override fun getAllProps(): Set<String> {
-    return templates
+    val templateProps = templates
       .flatMap { it.getAllProps() }
-      .toSet()
+      .toTypedArray()
+
+    val entryProps = entries
+      .flatMap { it.getAllProps() }
+      .toTypedArray()
+
+    return setOf(*templateProps, *entryProps)
   }
 
   override fun getRequiredProps(props: Properties, ignoreGenerated: Boolean): Set<String> {
-    return templates
+    val templateProps = templates
       .flatMap { it.getRequiredProps(props, ignoreGenerated) }
       .filter { it != PROPS_NAME }
-      .toSet()
+      .toTypedArray()
+
+    val entryProps = entries
+
+      .flatMap { it.getRequiredProps(props, ignoreGenerated) }
+      .filter { it != PROPS_NAME }
+      .toTypedArray()
+
+    return setOf(*templateProps, *entryProps)
   }
 
   override fun generateProps(props: Properties) {

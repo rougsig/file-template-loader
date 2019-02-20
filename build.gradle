@@ -25,7 +25,7 @@ version '0.1.0'
 intellij {
     version '2018.3.4'
     pluginName 'FileTemplate Loader'
-    plugins 'kotlin', 'groovy', 'properties'
+    plugins 'Kotlin', 'Groovy', 'properties'
 }
 
 repositories {
