@@ -24,13 +24,13 @@ class CreateFileTemplateAnAction(
     val config = project.readConfig()
     dir.generateModuleSimpleName(config)
     config.generatePackageName()
-    val requiredProps = template.getRequiredProps(config, true)
+    val requiredProps = template.getRequiredProps(config)
 
     CrateTemplateGroupDialog(
       config,
       requiredProps,
       { props ->
-        project.writeAction {
+        project.writeAction("Create ${template.name}") {
           template.generateProps(props)
           template.create(dir, props)
         }

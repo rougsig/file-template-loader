@@ -1,6 +1,6 @@
 package com.github.rougsig.filetemplateloader
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_SIMPLE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.entity.Props
 import com.github.rougsig.filetemplateloader.extension.generatePackageName
@@ -19,10 +19,10 @@ class FileTemplateModuleTest : LightPlatformCodeInsightFixtureTestCase() {
     myFixture.copyDirectoryToProject("file-template-creator", "")
 
     val config = project.readConfig()
-    config.setProperty(PROPS_MODULE_SIMPLE_NAME, "E-p_Ic")
+    config.setProperty(PROPS_MODULE_NAME, "epic")
     config.generatePackageName()
 
-    assertEquals("com.github.rougsig.filetemplateloader.epic", config.getProperty(PROPS_PACKAGE_NAME))
+    assertEquals("com.github.rougsig.epic", config.getProperty(PROPS_PACKAGE_NAME))
   }
 
   fun testCreateFileTemplateModule() {

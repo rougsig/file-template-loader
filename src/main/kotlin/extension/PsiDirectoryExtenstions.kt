@@ -1,6 +1,6 @@
 package com.github.rougsig.filetemplateloader.extension
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_SIMPLE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME_TEMPLATE
 import com.github.rougsig.filetemplateloader.entity.Props
@@ -26,5 +26,5 @@ fun PsiDirectory.generateModuleSimpleName(props: Props) {
     .replace("\\", "/")
     .split("/")
     .last()
-  props.setProperty(PROPS_MODULE_SIMPLE_NAME, moduleName)
+  props.setProperty(PROPS_MODULE_NAME, moduleName)
 }

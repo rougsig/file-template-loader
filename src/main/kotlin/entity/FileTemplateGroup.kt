@@ -1,6 +1,5 @@
 package com.github.rougsig.filetemplateloader.entity
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
@@ -46,12 +45,6 @@ data class FileTemplateGroup(
   override fun generateProps(props: Properties) {
     generateProps(props, templates) { getRequiredProps(it) }
     generateClassNameProps(props, templates, props.getProperty(PROPS_PACKAGE_NAME))
-  }
-
-  override fun getRequiredProps(props: Properties, ignoreGenerated: Boolean): Set<String> {
-    return super.getRequiredProps(props, ignoreGenerated)
-      .filter { it != PROPS_NAME }
-      .toSet()
   }
 
   override val hasClassName: Boolean = false

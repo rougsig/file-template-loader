@@ -1,8 +1,8 @@
 package com.github.rougsig.filetemplateloader.entity
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_BASE
+import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
-import com.github.rougsig.filetemplateloader.extension.toPackageCase
+import com.github.rougsig.filetemplateloader.extension.generatePackageName
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
@@ -21,18 +21,18 @@ data class FileTemplateModule(
     val moduleMergedNamed = mergeTemplate(moduleName, props)
     val moduleDir = projectDir.createSubdirectory(moduleMergedNamed)
 
-    return folders.flatMap { it.create(moduleDir, props) }
+    val folders = folders.flatMap { it.create(moduleDir, props) }
+    val entries = entries.flatMap { it.create(moduleDir, props) }
+
+    return folders.plus(entries)
   }
 
   override fun generateProps(props: Properties) {
     val templates = folders.flatMap { it.templates }
     generateProps(props, templates) { getRequiredProps(props) }
 
-    val builder = StringBuilder()
-    builder.append(props.getProperty(PROPS_PACKAGE_BASE))
-    builder.append(".")
-    builder.append(mergeTemplate(moduleName, props).toPackageCase())
-    props.setProperty(PROPS_PACKAGE_NAME, builder.toString())
+    props.setProperty(PROPS_MODULE_NAME, mergeTemplate(moduleName, props))
+    props.generatePackageName()
 
     generateClassNameProps(props, templates, props.getProperty(PROPS_PACKAGE_NAME))
   }

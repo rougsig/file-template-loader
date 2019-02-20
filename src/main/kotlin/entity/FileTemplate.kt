@@ -1,5 +1,6 @@
 package com.github.rougsig.filetemplateloader.entity
 
+import com.github.rougsig.filetemplateloader.constant.PROPS_NAME
 import com.github.rougsig.filetemplateloader.extension.getPackageNameWithSubDirs
 import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.util.text.StringUtil
@@ -19,23 +20,14 @@ interface FileTemplate {
 
   fun getAllProps(): Set<String>
 
-  fun getRequiredProps(props: Properties, ignoreGenerated: Boolean = false): Set<String> {
+  fun getRequiredProps(props: Properties): Set<String> {
     val allProps = getAllProps()
     val existedProps = props.keys as Set<String>
 
     val allRequiredProps = allProps.minus(existedProps)
-    return if (ignoreGenerated) {
-      allRequiredProps
-        .filterNot {
-          GENERATED_PROP_MATCHER.containsMatchIn(it)
-              || it.contains(PROPS_SIMPLE_NAME(""))
-              || it.contains(PROPS_CLASS_NAME(""))
-        }
-        .toSet()
-    } else {
-      allRequiredProps
-        .toSet()
-    }
+    val propsBase = getPropsBase(allRequiredProps)
+
+    return allRequiredProps.plus(propsBase).filter { it != PROPS_NAME || it.isBlank() }.toSet()
   }
 
   fun generateProps(props: Properties)
@@ -55,6 +47,17 @@ fun getTemplateProps(templateText: String): Set<String> {
     }
     .toSet()
 }
+
+fun getPropsBase(fullNameProps: Iterable<String>): Set<String> {
+  return fullNameProps.mapNotNull { prop ->
+    GENERATED_PROP_MATCHER.find(prop)?.value?.let {
+      GENERATED_PROP_MATCHER.replace(prop) { "" }
+        // Remove last `_` from prop name
+        .dropLast(1)
+    }
+  }.toSet()
+}
+
 
 fun generateProps(propsToGenerate: Set<String>, props: Props) {
   propsToGenerate.filter { GENERATED_PROP_MATCHER.containsMatchIn(it) }
