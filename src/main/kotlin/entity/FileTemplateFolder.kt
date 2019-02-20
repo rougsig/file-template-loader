@@ -7,7 +7,7 @@ import com.intellij.psi.PsiFile
 import java.util.*
 
 data class FileTemplateFolder(
-  val pathName: String,
+  val pathName: String?,
   val templates: List<FileTemplateSingle>,
   override val name: String = ""
 ) : FileTemplate {
@@ -15,7 +15,7 @@ data class FileTemplateFolder(
     println("Create FileTemplateFolder: \n name: $name \n dir: $dir \n props: $props \n")
 
     val initialPackageName = props.getProperty(PROPS_PACKAGE_NAME)
-    val folder = dir.createSubDirs(pathName)
+    val folder = pathName?.let { dir.createSubDirs(it) } ?: dir
 
     return templates.flatMap { template ->
       props.setProperty(PROPS_PACKAGE_NAME, initialPackageName)
@@ -28,7 +28,7 @@ data class FileTemplateFolder(
       .flatMap { it.getAllProps() }
       .toTypedArray()
 
-    val pathNameProps = getTemplateProps(pathName).toTypedArray()
+    val pathNameProps = pathName?.let { getTemplateProps(it).toTypedArray() } ?: emptyArray()
 
     return setOf(*templateProps, *pathNameProps)
   }

@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="36cf2490-0c19-4623-a0ad-2ad49083424c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/constant/PropsConstants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/constant/PropsConstants.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateGroup.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/extension/PsiDirectoryExtenstions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/extension/PsiDirectoryExtenstions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/CreateFileTemplateAnAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ui/CreateFileTemplateAnAction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/FileTemplateModuleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/FileTemplateModuleTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/FileTemplatePropsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/FileTemplatePropsTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateFolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateFolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -53,20 +47,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTemplatePropsTest.kt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/ui/CrateTemplateGroupDialog.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="-141">
+              <caret line="16" column="47" lean-forward="true" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplate.kt">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/ui/CreateFromProjectTemplateAnAction.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+            <state relative-caret-position="104">
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/ui/FileTemplateLoaderProjectComponent.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="870">
+              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateSingle.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26">
+              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -126,8 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testData/file-template-selector/settings.gradle" />
-        <option value="$PROJECT_DIR$/testData/file-template-selector/ScreenKeyFactory.kt" />
         <option value="$PROJECT_DIR$/testData/file-template-selector/WhenSelect.kt.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/selector/ElementSelector.kt" />
         <option value="$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/route/Key.kt" />
@@ -174,9 +184,11 @@
         <option value="$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/config.properties" />
         <option value="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateModule.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateGroup.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/FileTemplatePropsTest.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/ui/CreateFileTemplateAnAction.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplate.kt" />
-        <option value="$PROJECT_DIR$/src/test/kotlin/FileTemplatePropsTest.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateFolder.kt" />
       </list>
     </option>
   </component>
@@ -412,7 +424,7 @@
   <component name="PropertiesComponent">
     <property name="ToolWindowDebug.ShowToolbar" value="false" />
     <property name="android.sdk.path" value="C:/androidSDK" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550694476825" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550695506913" />
     <property name="last_opened_file_path" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/552bc3047e83510a6a589cee03a6f1a5de11316f/ideaIC-2018.3.4/plugins/Kotlin/lib/kotlin-plugin.jar!/" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -485,18 +497,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileTemplateModuleTest.testCalculatePackageName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="com.github.rougsig.file-template-loader.test" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="com.github.rougsig.filetemplateloader.FileTemplateModuleTest" />
-      <option name="METHOD_NAME" value="testCalculatePackageName" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FileTemplateModuleTest.testCreateFileTemplateModule" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="com.github.rougsig.file-template-loader.test" />
       <shortenClasspath name="CLASSPATH_FILE" />
@@ -516,6 +516,18 @@
       <option name="MAIN_CLASS_NAME" value="com.github.rougsig.filetemplateloader.FileTemplatePropsTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileTemplatePropsTest.testGetGroupRequiredPropsFilterNotGenerated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.github.rougsig.file-template-loader.test" />
+      <shortenClasspath name="CLASSPATH_FILE" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="com.github.rougsig.filetemplateloader.FileTemplatePropsTest" />
+      <option name="METHOD_NAME" value="testGetGroupRequiredPropsFilterNotGenerated" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -546,18 +558,18 @@
     <list>
       <item itemvalue="Gradle.Plugin" />
       <item itemvalue="JUnit.All in com.github.rougsig.file-template-loader.test" />
-      <item itemvalue="JUnit.FileTemplateModuleTest.testCalculatePackageName" />
       <item itemvalue="JUnit.FileTemplateModuleTest.testCreateFileTemplateModule" />
       <item itemvalue="JUnit.FileTemplatePropsTest" />
       <item itemvalue="JUnit.FileTemplatePropsTest.testGetRequiredProps" />
+      <item itemvalue="JUnit.FileTemplatePropsTest.testGetGroupRequiredPropsFilterNotGenerated" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in com.github.rougsig.file-template-loader.test" />
+        <item itemvalue="JUnit.FileTemplatePropsTest.testGetGroupRequiredPropsFilterNotGenerated" />
         <item itemvalue="JUnit.FileTemplatePropsTest.testGetRequiredProps" />
         <item itemvalue="JUnit.FileTemplatePropsTest" />
         <item itemvalue="JUnit.FileTemplateModuleTest.testCreateFileTemplateModule" />
-        <item itemvalue="JUnit.FileTemplateModuleTest.testCalculatePackageName" />
       </list>
     </recent_temporary>
   </component>
@@ -775,22 +787,24 @@
       <option name="project" value="LOCAL" />
       <updated>1550691970619</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Fix testGetAllProps">
+      <created>1550694490991</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1550694490991</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Add filterNotGenerated">
+      <created>1550694782416</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1550694782416</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_com_github_rougsig_file-template-loader_test - 2019.02.20 at 22h 00m 34s.xml">
-      <configuration name="All in com.github.rougsig.file-template-loader.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_com_github_rougsig_file-template-loader_test - 2019.02.20 at 22h 01m 00s.xml">
-      <configuration name="All in com.github.rougsig.file-template-loader.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_com_github_rougsig_file-template-loader_test - 2019.02.20 at 22h 16m 47s.xml">
-      <configuration name="All in com.github.rougsig.file-template-loader.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileTemplatePropsTest - 2019.02.20 at 22h 17m 55s.xml">
-      <configuration name="FileTemplatePropsTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="FileTemplatePropsTest - 2019.02.20 at 22h 18m 43s.xml">
       <configuration name="FileTemplatePropsTest" configurationId="JUnit" />
     </history-entry>
@@ -809,6 +823,18 @@
     <history-entry file="All_in_com_github_rougsig_file-template-loader_test - 2019.02.20 at 22h 27m 37s.xml">
       <configuration name="All in com.github.rougsig.file-template-loader.test" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FileTemplatePropsTest_testGetGroupRequiredPropsFilterNotGenerated - 2019.02.20 at 22h 31m 39s.xml">
+      <configuration name="FileTemplatePropsTest.testGetGroupRequiredPropsFilterNotGenerated" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileTemplatePropsTest_testGetGroupRequiredPropsFilterNotGenerated - 2019.02.20 at 22h 32m 39s.xml">
+      <configuration name="FileTemplatePropsTest.testGetGroupRequiredPropsFilterNotGenerated" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_com_github_rougsig_file-template-loader_test - 2019.02.20 at 22h 32m 55s.xml">
+      <configuration name="All in com.github.rougsig.file-template-loader.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_com_github_rougsig_file-template-loader_test - 2019.02.20 at 22h 40m 28s.xml">
+      <configuration name="All in com.github.rougsig.file-template-loader.test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -823,7 +849,7 @@
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49881235" visible="true" weight="0.2793177" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49881235" visible="true" weight="0.2793177" />
       <window_info id="Structure" order="1" sideWeight="0.5011876" side_tool="true" weight="0.2675906" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -950,7 +976,9 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/rougsig/file-template-loader&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/kotlin/entity/FileTemplateEntry.kt" />
     <MESSAGE value="Fix createSubDirs for linux user" />
     <MESSAGE value="Add PACKAGE_NAME_TEMPLATE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add PACKAGE_NAME_TEMPLATE" />
+    <MESSAGE value="Fix testGetAllProps" />
+    <MESSAGE value="Add filterNotGenerated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add filterNotGenerated" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -963,13 +991,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.4/9a7e6602c25ef01717676a30dcfde05c07d7b95c/ideaIC-2018.3.4-sources.jar!/com/intellij/psi/impl/source/codeStyle/CodeStyleManagerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="374" column="52" selection-start-line="374" selection-start-column="52" selection-end-line="374" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testData/file-template-result/route/ScreenFactory.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1046,13 +1067,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/ui/FileTemplateLoaderProjectComponent.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1133">
-          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testData/file-template-selector/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="584">
@@ -1081,13 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1063">
-          <caret line="84" column="8" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/extension/ProjectExtenstion.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-205" />
@@ -1103,13 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/ui/ReloadTemplatesAnAction.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTemplateGroupTest.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -1121,13 +1121,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-109">
           <caret line="249" column="60" selection-start-line="249" selection-start-column="60" selection-end-line="249" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/extension/StringExtensions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1176,13 +1169,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTemplateModuleTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/config.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -1195,20 +1181,6 @@
         <state relative-caret-position="-287" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.module.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-78">
-          <caret line="5" column="49" lean-forward="true" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/ui/CrateTemplateGroupDialog.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-468">
-          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/reader/ReaderConstants.kt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1219,22 +1191,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateFolder.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateGroup.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1144">
           <caret line="47" column="3" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateModule.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -1243,38 +1205,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateSingle.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/ui/ReloadTemplatesAnAction.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/PropGenerator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        <state relative-caret-position="234">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/ui/CreateFileTemplateAnAction.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+        <state relative-caret-position="468">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplate.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+        <state relative-caret-position="442">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTemplatePropsTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="1495">
+          <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateJson.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/reader/FileTemplateReader.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="102" column="16" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTemplateModuleTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-739">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testData/file-template-creator/.fileTemplates/repository/Repository.module.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/PropGenerator.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/extension/StringExtensions.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="63" column="31" lean-forward="true" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateFolder.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/entity/FileTemplateSingle.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/ui/CrateTemplateGroupDialog.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-141">
+          <caret line="16" column="47" lean-forward="true" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/ui/CreateFromProjectTemplateAnAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/ui/FileTemplateLoaderProjectComponent.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
         </state>
       </provider>
     </entry>

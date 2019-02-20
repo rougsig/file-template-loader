@@ -14,7 +14,7 @@ data class FileTemplateModuleJson(
 )
 
 data class FileTemplateFolderJson(
-  val pathName: String,
+  val pathName: String?,
   val templates: List<FileTemplateJson>
 )
 

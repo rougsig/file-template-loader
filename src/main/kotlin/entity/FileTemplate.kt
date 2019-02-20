@@ -22,12 +22,12 @@ interface FileTemplate {
 
   fun getRequiredProps(props: Properties): Set<String> {
     val allProps = getAllProps()
+    val propsBase = getPropsBase(allProps)
     val existedProps = props.keys as Set<String>
 
-    val allRequiredProps = allProps.minus(existedProps)
-    val propsBase = getPropsBase(allRequiredProps)
+    val allRequiredProps = allProps.plus(propsBase).toSet().minus(existedProps)
 
-    return allRequiredProps.plus(propsBase).filter { it != PROPS_NAME || it.isBlank() }.toSet()
+    return allRequiredProps.filter { it != PROPS_NAME || it.isBlank() }.toSet()
   }
 
   fun generateProps(props: Properties)
