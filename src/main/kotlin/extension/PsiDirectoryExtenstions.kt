@@ -4,10 +4,10 @@ import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME_TEMPLATE
-import com.github.rougsig.filetemplateloader.entity.extractProps
 import com.github.rougsig.filetemplateloader.entity.generateProps
 import com.github.rougsig.filetemplateloader.entity.mergeTemplate
 import com.github.rougsig.filetemplateloader.generator.Props
+import com.github.rougsig.filetemplateloader.generator.extractProps
 import com.intellij.openapi.module.ModuleUtil
 import com.intellij.psi.PsiDirectory
 import org.jetbrains.kotlin.idea.core.getPackage

@@ -5,6 +5,7 @@ import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.extension.createDirectoriesByRelativePath
 import com.github.rougsig.filetemplateloader.extension.createPsiFile
 import com.github.rougsig.filetemplateloader.extension.getPackageNameWithSubDirs
+import com.github.rougsig.filetemplateloader.generator.extractProps
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
 import java.util.*

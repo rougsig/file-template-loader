@@ -3,6 +3,7 @@ package com.github.rougsig.filetemplateloader.entity
 import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.extension.generatePackageName
+import com.github.rougsig.filetemplateloader.generator.extractProps
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile

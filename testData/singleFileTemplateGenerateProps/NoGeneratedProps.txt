@@ -1,0 +1,3 @@
+ONE_PROP=OneProp
+THREE_PROP=ThreeProp
+TWO_PROP=TwoProp

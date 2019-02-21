@@ -1,6 +1,7 @@
 package com.github.rougsig.filetemplateloader.entity
 
 import com.github.rougsig.filetemplateloader.generator.Props
+import com.github.rougsig.filetemplateloader.generator.extractProps
 import com.github.rougsig.filetemplateloader.selector.select
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessProjectDir

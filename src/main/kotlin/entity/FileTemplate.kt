@@ -7,11 +7,6 @@ import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.util.text.StringUtil
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
-import org.apache.commons.io.output.NullWriter
-import org.apache.velocity.VelocityContext
-import org.apache.velocity.app.Velocity
-import org.apache.velocity.app.event.EventCartridge
-import org.apache.velocity.app.event.ReferenceInsertionEventHandler
 import java.util.*
 
 interface FileTemplate {
@@ -23,7 +18,7 @@ interface FileTemplate {
 
   fun getRequiredProps(props: Properties): Set<String> {
     val allProps = getAllProps()
-    val propsBase = getPropsBase(allProps)
+    val propsBase = allProps.extractPropsBase()
     val existedProps = props.keys as Set<String>
 
     val allRequiredProps = allProps.plus(propsBase).toSet().minus(existedProps)
@@ -39,33 +34,6 @@ fun mergeTemplate(templateText: String, props: Properties): String {
   return StringUtil.convertLineSeparators(merged)
 }
 
-fun extractProps(text: String): Set<String> {
-  val props = text.getReferences()
-    .map {
-      it.replace("{", "")
-        .replace("}", "")
-        .replace("\$", "")
-    }
-    .toSet()
-  val propsBase = getPropsBase(props)
-
-  return propsBase.plus(props)
-}
-
-fun Set<String>.filterProps(props: Props): Set<String> {
-  return this.minus(props.keys as Set<String>)
-}
-
-fun getPropsBase(fullNameProps: Set<String>): Set<String> {
-  return fullNameProps.mapNotNull { prop ->
-    GENERATED_PROP_MATCHER.find(prop)?.value?.let {
-      GENERATED_PROP_MATCHER.replace(prop) { "" }
-        // Remove last `_` from prop name
-        .dropLast(1)
-    }
-  }.toSet()
-}
-
 fun Set<String>.filterNotGenerated(): Set<String> {
   return filterNot {
     GENERATED_PROP_MATCHER.containsMatchIn(it)
@@ -79,8 +47,6 @@ fun generateProps(propsToGenerate: Set<String>, props: Props) {
     .map { fullPropName ->
       val generatorName = GENERATED_PROP_MATCHER.find(fullPropName)!!.value
       val basePropName = GENERATED_PROP_MATCHER.replace(fullPropName) { "" }
-        // Remove last `_` from prop name
-        .dropLast(1)
 
       val propGenerator = PROP_GENERATORS.getValue(generatorName)
       val generatedProp = propGenerator(props.getProperty(basePropName))
@@ -126,14 +92,4 @@ fun generateClassNameProps(props: Props, templates: List<FileTemplateSingle>, pa
       mergeTemplate("$mergedPackageName.$fileName", props)
     )
   }
-}
-
-private fun String.getReferences(): Set<String> {
-  val names = HashSet<String>()
-  val velocityContext = VelocityContext()
-  val ec = EventCartridge()
-  ec.addEventHandler(ReferenceInsertionEventHandler { reference, _ -> names.add(reference) })
-  ec.attachToContext(velocityContext)
-  Velocity.evaluate(velocityContext, NullWriter.NULL_WRITER, "", this)
-  return names
 }

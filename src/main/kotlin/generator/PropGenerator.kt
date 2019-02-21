@@ -19,9 +19,22 @@ val PROP_GENERATORS: PropGenerators = HashMap<String, (String) -> String>().appl
   put("LOWER_CASE", String::toLowerCase)
 }
 
-val PROP_MATCHER = """\$\{([^]]+)}""".toRegex()
-val GENERATED_PROP_MATCHER = PROP_GENERATORS.keys.joinToString("|") { it }.toRegex()
+val GENERATED_PROP_MATCHER = PROP_GENERATORS.keys.joinToString("|") { "_$it" }.toRegex()
 
 val PROPS_SIMPLE_NAME = { it: String -> "${it.toUpperSnakeCase()}_SIMPLE_NAME" }
 val PROPS_CLASS_NAME = { it: String -> "${it.toUpperSnakeCase()}_CLASS_NAME" }
 
+fun Set<String>.generateProps(props: Props): Props {
+  filter { GENERATED_PROP_MATCHER.containsMatchIn(it) }
+    .map { fullPropName ->
+      val generatorName = GENERATED_PROP_MATCHER.find(fullPropName)!!.value.removePrefix("_")
+      val propBase = fullPropName.extractPropBase()
+
+      val propGenerator = PROP_GENERATORS.getValue(generatorName)
+      val generatedProp = propGenerator(props.getProperty(propBase))
+
+      props.setProperty(fullPropName, generatedProp)
+    }
+
+  return props
+}
