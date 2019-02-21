@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader.entity
 
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
-import com.github.rougsig.filetemplateloader.extension.createSubDirs
+import com.github.rougsig.filetemplateloader.extension.createDirectoriesByRelativePath
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
 import java.util.*
@@ -15,7 +15,7 @@ data class FileTemplateSourceSet(
     println("Create FileTemplateSourceSet: \n name: $name \n dir: $dir \n props: $props \n")
 
     val initialPackageName = props.getProperty(PROPS_PACKAGE_NAME)
-    val folder = directory?.let { dir.createSubDirs(it) } ?: dir
+    val folder = directory?.let { dir.createDirectoriesByRelativePath(it) } ?: dir
 
     return templates.flatMap { template ->
       props.setProperty(PROPS_PACKAGE_NAME, initialPackageName)

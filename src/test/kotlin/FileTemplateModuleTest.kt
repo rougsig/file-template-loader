@@ -3,7 +3,7 @@ package com.github.rougsig.filetemplateloader
 import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.entity.Props
-import com.github.rougsig.filetemplateloader.extension.createSubDirs
+import com.github.rougsig.filetemplateloader.extension.createDirectoriesByRelativePath
 import com.github.rougsig.filetemplateloader.extension.generatePackageName
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.reader.readConfig
@@ -24,7 +24,7 @@ class FileTemplateModuleTest : LightPlatformCodeInsightFixtureTestCase() {
     config.generatePackageName()
 
     val src = psiManager.findDirectory(myModule.sourceRoots.first())!!
-    val kotlin = project.writeAction { src.createSubDirs("kotlin/main") }
+    val kotlin = project.writeAction { src.createDirectoriesByRelativePath("kotlin/main") }
 
     assertEquals("com.github.rougsig.epic", config.getProperty(PROPS_PACKAGE_NAME))
 

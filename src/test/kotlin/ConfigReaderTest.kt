@@ -7,9 +7,13 @@ import java.util.*
 class ConfigReaderTest : LightPlatformCodeInsightFixtureTestCase() {
   override fun getTestDataPath(): String = calculateTestDataPath()
 
-  fun testReadConfig() {
-    myFixture.copyDirectoryToProject("file-template-reader", "")
+  override fun setUp() {
+    super.setUp()
 
+    myFixture.copyDirectoryToProject("file-template-reader", "")
+  }
+
+  fun testReadConfig() {
     val config = project.readConfig()
 
     assertEquals(

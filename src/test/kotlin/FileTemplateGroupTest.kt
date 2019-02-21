@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
-import com.github.rougsig.filetemplateloader.extension.createSubDirs
+import com.github.rougsig.filetemplateloader.extension.createDirectoriesByRelativePath
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.reader.readConfig
 import com.github.rougsig.filetemplateloader.reader.readFileTemplateGroups
@@ -90,7 +90,7 @@ class FileTemplateGroupTest : LightPlatformCodeInsightFixtureTestCase() {
     viewFileTemplateGroup.generateProps(props)
 
     val group = project.writeAction {
-      val kotlin = src.createSubDirs("./main/kotlin")
+      val kotlin = src.createDirectoriesByRelativePath("./main/kotlin")
       viewFileTemplateGroup.create(kotlin, props)
     }
 
@@ -138,13 +138,13 @@ class FileTemplateGroupTest : LightPlatformCodeInsightFixtureTestCase() {
     routeFileTemplateGroup.generateProps(props)
 
     project.writeAction {
-      val kotlin = src.createSubDirs("./src/kotlin")
+      val kotlin = src.createDirectoriesByRelativePath("./src/kotlin")
       routeFileTemplateGroup.create(kotlin, props)
     }
 
     assertSameLinesWithFile(
       "${calculateTestDataPath()}/file-template-result/route/ScreenFactory.txt",
-      src.createSubDirs("./src/kotlin").findFile("ScreenFactory.kt")!!.text
+      src.createDirectoriesByRelativePath("./src/kotlin").findFile("ScreenFactory.kt")!!.text
     )
 
     assertSameLinesWithFile(

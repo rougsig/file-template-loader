@@ -2,8 +2,8 @@ package com.github.rougsig.filetemplateloader.entity
 
 import com.github.rougsig.filetemplateloader.constant.PROPS_FILE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.extension.createDirectoriesByRelativePath
 import com.github.rougsig.filetemplateloader.extension.createPsiFile
-import com.github.rougsig.filetemplateloader.extension.createSubDirs
 import com.github.rougsig.filetemplateloader.extension.getPackageNameWithSubDirs
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
@@ -18,7 +18,7 @@ data class FileTemplateSingle(
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
     val subDir = if (!directory.isNullOrBlank()) {
-      dir.createSubDirs(mergeTemplate(directory, props))
+      dir.createDirectoriesByRelativePath(mergeTemplate(directory, props))
     } else {
       dir
     }
