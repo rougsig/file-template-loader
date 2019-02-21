@@ -12,7 +12,7 @@ data class FileTemplateSourceSet(
   override val name: String = ""
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
-    println("Create FileTemplateSourceSet: \n name: $name \n dir: $dir \n props: $props \n")
+    println("Create FileTemplateSourceSet: \n name: $name \n dir: $dir \n extractedProps: $props \n")
 
     val initialPackageName = props.getProperty(PROPS_PACKAGE_NAME)
     val folder = directory?.let { dir.createDirectoriesByRelativePath(it) } ?: dir
@@ -28,7 +28,7 @@ data class FileTemplateSourceSet(
       .flatMap { it.getAllProps() }
       .toTypedArray()
 
-    val pathNameProps = directory?.let { getTemplateProps(it).toTypedArray() } ?: emptyArray()
+    val pathNameProps = directory?.let { extractProps(it).toTypedArray() } ?: emptyArray()
 
     return setOf(*templateProps, *pathNameProps)
   }

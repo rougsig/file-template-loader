@@ -1,5 +1,6 @@
 package com.github.rougsig.filetemplateloader.entity
 
+import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.selector.select
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessProjectDir
@@ -17,7 +18,7 @@ data class FileTemplateInjector(
   override val name: String = ""
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
-    println("Create FileTemplateInjector: \n text: $text \n dir: $dir \n props: $props \n selector: $selector \n")
+    println("Create FileTemplateInjector: \n text: $text \n dir: $dir \n extractedProps: $props \n selector: $selector \n")
 
     val insertTo = getInsertTo(dir.project, props).containingFile
     val selected = insertTo.select(selector)!!
@@ -35,7 +36,7 @@ data class FileTemplateInjector(
   }
 
   override fun getAllProps(): Set<String> {
-    return getTemplateProps(text)
+    return extractProps(text)
   }
 
   override fun generateProps(props: Properties) {

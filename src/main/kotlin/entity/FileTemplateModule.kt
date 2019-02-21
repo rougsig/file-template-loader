@@ -15,7 +15,7 @@ data class FileTemplateModule(
   val injectors: List<FileTemplateInjector>
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
-    println("Create FileTemplateModule: \n name: $name \n dir: $dir \n props: $props \n")
+    println("Create FileTemplateModule: \n name: $name \n dir: $dir \n extractedProps: $props \n")
 
     val projectDir = dir.manager.findDirectory(dir.project.guessProjectDir()!!)!!
     val moduleMergedNamed = mergeTemplate(moduleName, props)
@@ -48,7 +48,7 @@ data class FileTemplateModule(
       .flatMap { it.getAllProps() }
       .toTypedArray()
 
-    val nameProps = getTemplateProps(moduleName).toTypedArray()
+    val nameProps = extractProps(moduleName).toTypedArray()
 
     return setOf(*templateProps, *entryProps, *nameProps)
   }

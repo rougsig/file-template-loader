@@ -11,7 +11,7 @@ data class FileTemplateGroup(
   val injectors: List<FileTemplateInjector>
 ) : FileTemplate {
   override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
-    println("Create FileTemplateGroup: \n name: $name \n dir: $dir \n props: $props \n")
+    println("Create FileTemplateGroup: \n name: $name \n dir: $dir \n extractedProps: $props \n")
 
     val initialPackageName = props.getProperty(PROPS_PACKAGE_NAME)
 
@@ -37,7 +37,7 @@ data class FileTemplateGroup(
       .flatMap { it.getAllProps() }
       .toTypedArray()
 
-    val nameProps = getTemplateProps(name).toTypedArray()
+    val nameProps = extractProps(name).toTypedArray()
 
     return setOf(*templateProps, *entryProps, *nameProps)
   }

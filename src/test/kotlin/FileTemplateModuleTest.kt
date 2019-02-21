@@ -2,10 +2,10 @@ package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
-import com.github.rougsig.filetemplateloader.entity.Props
 import com.github.rougsig.filetemplateloader.extension.createDirectoriesByRelativePath
 import com.github.rougsig.filetemplateloader.extension.generatePackageName
 import com.github.rougsig.filetemplateloader.extension.writeAction
+import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.reader.readConfig
 import com.github.rougsig.filetemplateloader.reader.readFileTemplateModules
 import com.github.rougsig.filetemplateloader.reader.readFileTemplates

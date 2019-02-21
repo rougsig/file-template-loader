@@ -26,7 +26,7 @@ data class FileTemplateSingle(
     if (fileName != null) props.setProperty(PROPS_FILE_NAME, mergeTemplate(fileName, props))
     props.setProperty(PROPS_PACKAGE_NAME, packageName)
 
-    println("Create FileTemplateSingle: \n name: $name \n dir: $subDir \n props: $props \n")
+    println("Create FileTemplateSingle: \n name: $name \n dir: $subDir \n extractedProps: $props \n")
 
     val fileName = props.getProperty(PROPS_FILE_NAME)
     val fileNameWithExtension = "$fileName.$extension"
@@ -39,9 +39,9 @@ data class FileTemplateSingle(
   }
 
   override fun getAllProps(): Set<String> {
-    val templateProps = getTemplateProps(text)
+    val templateProps = extractProps(text)
     return fileName
-      ?.let { templateProps.plus(getTemplateProps(it)) }
+      ?.let { templateProps.plus(extractProps(it)) }
       ?: templateProps
   }
 

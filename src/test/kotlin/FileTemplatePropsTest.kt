@@ -2,8 +2,8 @@ package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.constant.PROPS_FILE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
-import com.github.rougsig.filetemplateloader.entity.Props
 import com.github.rougsig.filetemplateloader.entity.filterNotGenerated
+import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.reader.readFileTemplateGroups
 import com.github.rougsig.filetemplateloader.reader.readFileTemplates
 import com.google.gson.Gson

@@ -2,6 +2,7 @@ package com.github.rougsig.filetemplateloader.entity
 
 import com.github.rougsig.filetemplateloader.constant.PROPS_FILE_NAME
 import com.github.rougsig.filetemplateloader.extension.getPackageNameWithSubDirs
+import com.github.rougsig.filetemplateloader.generator.*
 import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.util.text.StringUtil
 import com.intellij.psi.PsiDirectory
@@ -38,17 +39,24 @@ fun mergeTemplate(templateText: String, props: Properties): String {
   return StringUtil.convertLineSeparators(merged)
 }
 
-fun getTemplateProps(templateText: String): Set<String> {
-  return templateText.getReferences()
+fun extractProps(text: String): Set<String> {
+  val props = text.getReferences()
     .map {
       it.replace("{", "")
         .replace("}", "")
         .replace("\$", "")
     }
     .toSet()
+  val propsBase = getPropsBase(props)
+
+  return propsBase.plus(props)
 }
 
-fun getPropsBase(fullNameProps: Iterable<String>): Set<String> {
+fun Set<String>.filterProps(props: Props): Set<String> {
+  return this.minus(props.keys as Set<String>)
+}
+
+fun getPropsBase(fullNameProps: Set<String>): Set<String> {
   return fullNameProps.mapNotNull { prop ->
     GENERATED_PROP_MATCHER.find(prop)?.value?.let {
       GENERATED_PROP_MATCHER.replace(prop) { "" }
@@ -83,7 +91,7 @@ fun generateProps(propsToGenerate: Set<String>, props: Props) {
 
 fun generateProps(props: Props, templates: List<FileTemplateSingle>, getRequiredProps: (Props) -> Set<String>) {
   //
-  // Generate props without _SIMPLE_NAME, _CLASS_NAME
+  // Generate extractedProps without _SIMPLE_NAME, _CLASS_NAME
   //
   val firstIteration = getRequiredProps(props)
     .filterNot { it.contains(PROPS_SIMPLE_NAME("")) || it.contains(PROPS_CLASS_NAME("")) }
@@ -104,7 +112,7 @@ fun generateProps(props: Props, templates: List<FileTemplateSingle>, getRequired
   generateProps(secondIteration, props)
 
   //
-  // Generate other props
+  // Generate other extractedProps
   //
   templates.forEach { it.generateProps(props) }
 }

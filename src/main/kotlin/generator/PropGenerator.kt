@@ -1,4 +1,4 @@
-package com.github.rougsig.filetemplateloader.entity
+package com.github.rougsig.filetemplateloader.generator
 
 import com.github.rougsig.filetemplateloader.extension.*
 import java.util.*
@@ -13,13 +13,15 @@ val PROP_GENERATORS: PropGenerators = HashMap<String, (String) -> String>().appl
   put("UPPER_SNAKE_CASE", String::toUpperSnakeCase)
   put("LOWER_KEBAB_CASE", String::toLowerKebabCase)
   put("UPPER_KEBAB_CASE", String::toUpperKebabCase)
-  put("PACKAGE_CASE", String::toPackageCase)
+  put("DOT_CASE", String::toDotCase)
   put("SOLID_CASE", String::toSolidCase)
   put("UPPER_CASE", String::toUpperCase)
   put("LOWER_CASE", String::toLowerCase)
 }
 
+val PROP_MATCHER = """\$\{([^]]+)}""".toRegex()
 val GENERATED_PROP_MATCHER = PROP_GENERATORS.keys.joinToString("|") { it }.toRegex()
 
 val PROPS_SIMPLE_NAME = { it: String -> "${it.toUpperSnakeCase()}_SIMPLE_NAME" }
 val PROPS_CLASS_NAME = { it: String -> "${it.toUpperSnakeCase()}_CLASS_NAME" }
+

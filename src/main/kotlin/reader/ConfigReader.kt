@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader.reader
 
 import com.github.rougsig.filetemplateloader.constant.REQUIRED_CONFIG_PROPS
-import com.github.rougsig.filetemplateloader.entity.Props
+import com.github.rougsig.filetemplateloader.generator.Props
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.vfs.VirtualFile

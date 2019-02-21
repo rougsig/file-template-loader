@@ -32,15 +32,17 @@ fun readFileTemplates(dir: VirtualFile): List<FileTemplateSingle> {
 
   return dir.fileRec
     .filter { it.name.endsWith(FILE_TEMPLATE_EXTENSION) }
-    .map { file ->
-      val slittedName = file.nameWithoutExtension.split(FILE_NAME_DELIMITER)
-      FileTemplateSingle(
-        name = slittedName.first(),
-        fileName = null,
-        extension = slittedName.last(),
-        text = String(file.inputStream.readBytes())
-      )
-    }
+    .map(::readFileTemplate)
+}
+
+fun readFileTemplate(file: VirtualFile): FileTemplateSingle {
+  val slittedName = file.nameWithoutExtension.split(FILE_NAME_DELIMITER)
+  return FileTemplateSingle(
+    name = slittedName.first(),
+    fileName = null,
+    extension = slittedName.last(),
+    text = String(file.inputStream.readBytes())
+  )
 }
 
 fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile, gson: Gson): List<FileTemplateGroup> {
