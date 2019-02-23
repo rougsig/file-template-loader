@@ -1,0 +1,3 @@
+class Duck : Animal("${DUCK_VOICE_UPPER_CASE}")
+
+class Cat : Animal("${CAT_VOICE_LOWER_CASE}")

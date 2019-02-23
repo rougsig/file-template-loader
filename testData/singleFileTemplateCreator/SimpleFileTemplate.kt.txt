@@ -1,0 +1,3 @@
+class Duck : Animal("QUACK QUACK")
+
+class Cat : Animal("meow meow")
