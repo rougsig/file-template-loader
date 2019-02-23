@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_FILE_NAME
-import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.entity.filterNotGenerated
 import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.reader.readFileTemplateGroups
@@ -23,7 +23,7 @@ class FileTemplatePropsTest : LightPlatformCodeInsightFixtureTestCase() {
 
     assertSameElements(
       requiredProps,
-      setOf(PROPS_PACKAGE_NAME, PROPS_FILE_NAME, "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE")
+      setOf(PROP_PACKAGE_NAME, PROP_FILE_NAME, "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE")
     )
   }
 
@@ -34,13 +34,13 @@ class FileTemplatePropsTest : LightPlatformCodeInsightFixtureTestCase() {
     val viewFileTemplate = templates.find { it.name == "View" }!!
 
     val props = Props().apply {
-      setProperty(PROPS_PACKAGE_NAME, PROPS_PACKAGE_NAME)
+      setProperty(PROP_PACKAGE_NAME, PROP_PACKAGE_NAME)
     }
     val requiredProps = viewFileTemplate.getRequiredProps(props)
 
     assertSameElements(
       requiredProps,
-      setOf("LAYOUT_SIMPLE_NAME", "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE", PROPS_FILE_NAME)
+      setOf("LAYOUT_SIMPLE_NAME", "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE", PROP_FILE_NAME)
     )
   }
 
@@ -52,7 +52,7 @@ class FileTemplatePropsTest : LightPlatformCodeInsightFixtureTestCase() {
     val viewFileTemplate = groups.find { it.name == "View" }!!
 
     val props = Props().apply {
-      setProperty(PROPS_PACKAGE_NAME, PROPS_PACKAGE_NAME)
+      setProperty(PROP_PACKAGE_NAME, PROP_PACKAGE_NAME)
     }
     val requiredProps = viewFileTemplate.getRequiredProps(props)
 
@@ -76,7 +76,7 @@ class FileTemplatePropsTest : LightPlatformCodeInsightFixtureTestCase() {
     val viewFileTemplate = groups.find { it.name == "View" }!!
 
     val props = Props().apply {
-      setProperty(PROPS_PACKAGE_NAME, PROPS_PACKAGE_NAME)
+      setProperty(PROP_PACKAGE_NAME, PROP_PACKAGE_NAME)
     }
     val requiredProps = viewFileTemplate.getRequiredProps(props).filterNotGenerated()
 

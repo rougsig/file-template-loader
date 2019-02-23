@@ -1,6 +1,6 @@
 package com.github.rougsig.filetemplateloader
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.extension.createDirectoriesByRelativePath
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.reader.readConfig
@@ -31,7 +31,7 @@ class FileTemplateGroupTest : LightPlatformCodeInsightFixtureTestCase() {
 
     val props = Properties(config)
     props.setProperty("FLOW_NAME", "FileTemplate")
-    props.setProperty(PROPS_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
+    props.setProperty(PROP_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
     repositoryFileTemplateGroup.generateProps(props)
 
     val group = project.writeAction {
@@ -86,7 +86,7 @@ class FileTemplateGroupTest : LightPlatformCodeInsightFixtureTestCase() {
 
     val props = Properties(config)
     props.setProperty("VIEW_NAME", "FileTemplate")
-    props.setProperty(PROPS_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
+    props.setProperty(PROP_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
     viewFileTemplateGroup.generateProps(props)
 
     val group = project.writeAction {
@@ -134,7 +134,7 @@ class FileTemplateGroupTest : LightPlatformCodeInsightFixtureTestCase() {
 
     val props = Properties(config)
     props.setProperty("ROUTE_NAME", "FileTemplate")
-    props.setProperty(PROPS_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
+    props.setProperty(PROP_PACKAGE_NAME, "com.github.rougsig.filetemplateloader")
     routeFileTemplateGroup.generateProps(props)
 
     project.writeAction {

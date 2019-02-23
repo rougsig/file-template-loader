@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader.entity
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_NAME
-import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_MODULE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.extension.generatePackageName
 import com.github.rougsig.filetemplateloader.generator.extractProps
 import com.intellij.openapi.project.guessProjectDir
@@ -32,10 +32,10 @@ data class FileTemplateModule(
     val templates = sourceSets.flatMap { it.templates }
     generateProps(props, templates) { getRequiredProps(props) }
 
-    props.setProperty(PROPS_MODULE_NAME, mergeTemplate(moduleName, props))
+    props.setProperty(PROP_MODULE_NAME, mergeTemplate(moduleName, props))
     props.generatePackageName()
 
-    generateClassNameProps(props, templates, props.getProperty(PROPS_PACKAGE_NAME))
+    generateClassNameProps(props, templates, props.getProperty(PROP_PACKAGE_NAME))
   }
 
   override val hasClassName: Boolean = false

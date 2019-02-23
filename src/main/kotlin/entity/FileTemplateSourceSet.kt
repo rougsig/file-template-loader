@@ -1,6 +1,6 @@
 package com.github.rougsig.filetemplateloader.entity
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.extension.createDirectoriesByRelativePath
 import com.github.rougsig.filetemplateloader.generator.extractProps
 import com.intellij.psi.PsiDirectory
@@ -15,11 +15,11 @@ data class FileTemplateSourceSet(
   override fun create(dir: PsiDirectory, props: Properties): List<PsiFile> {
     println("Create FileTemplateSourceSet: \n name: $name \n dir: $dir \n extractedProps: $props \n")
 
-    val initialPackageName = props.getProperty(PROPS_PACKAGE_NAME)
+    val initialPackageName = props.getProperty(PROP_PACKAGE_NAME)
     val folder = directory?.let { dir.createDirectoriesByRelativePath(it) } ?: dir
 
     return templates.flatMap { template ->
-      props.setProperty(PROPS_PACKAGE_NAME, initialPackageName)
+      props.setProperty(PROP_PACKAGE_NAME, initialPackageName)
       template.create(folder, props)
     }
   }
@@ -36,7 +36,7 @@ data class FileTemplateSourceSet(
 
   override fun generateProps(props: Properties) {
     generateProps(props, templates) { getRequiredProps(it) }
-    generateClassNameProps(props, templates, props.getProperty(PROPS_PACKAGE_NAME))
+    generateClassNameProps(props, templates, props.getProperty(PROP_PACKAGE_NAME))
   }
 
   override val hasClassName: Boolean = false

@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader.entity
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_FILE_NAME
-import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.extension.createDirectoriesByRelativePath
 import com.github.rougsig.filetemplateloader.extension.createPsiFile
 import com.github.rougsig.filetemplateloader.extension.getPackageNameWithSubDirs
@@ -23,13 +23,13 @@ data class FileTemplateSingle(
     } else {
       dir
     }
-    val packageName = mergeTemplate(getPackageNameWithSubDirs(props.getProperty(PROPS_PACKAGE_NAME)), props)
-    if (fileName != null) props.setProperty(PROPS_FILE_NAME, mergeTemplate(fileName, props))
-    props.setProperty(PROPS_PACKAGE_NAME, packageName)
+    val packageName = mergeTemplate(getPackageNameWithSubDirs(props.getProperty(PROP_PACKAGE_NAME)), props)
+    if (fileName != null) props.setProperty(PROP_FILE_NAME, mergeTemplate(fileName, props))
+    props.setProperty(PROP_PACKAGE_NAME, packageName)
 
     println("Create FileTemplateSingle: \n name: $name \n dir: $subDir \n extractedProps: $props \n")
 
-    val fileName = props.getProperty(PROPS_FILE_NAME)
+    val fileName = props.getProperty(PROP_FILE_NAME)
     val fileNameWithExtension = "$fileName.$extension"
     subDir.checkCreateFile(fileNameWithExtension)
 
@@ -51,7 +51,7 @@ data class FileTemplateSingle(
   }
 
   override fun getRequiredProps(props: Properties): Set<String> {
-    return super.getRequiredProps(props).plus(PROPS_FILE_NAME).toSet()
+    return super.getRequiredProps(props).plus(PROP_FILE_NAME).toSet()
   }
 
   override val hasClassName: Boolean = extension == "kt"

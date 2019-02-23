@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_MODULE_NAME
-import com.github.rougsig.filetemplateloader.constant.PROPS_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_MODULE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.extension.createDirectoriesByRelativePath
 import com.github.rougsig.filetemplateloader.extension.generatePackageName
 import com.github.rougsig.filetemplateloader.extension.writeAction
@@ -20,16 +20,16 @@ class FileTemplateModuleTest : LightPlatformCodeInsightFixtureTestCase() {
     val projectDir = myFixture.copyDirectoryToProject("file-template-creator", "")
 
     val config = project.readConfig()
-    config.setProperty(PROPS_MODULE_NAME, "epic")
+    config.setProperty(PROP_MODULE_NAME, "epic")
     config.generatePackageName()
 
     val src = psiManager.findDirectory(myModule.sourceRoots.first())!!
     val kotlin = project.writeAction { src.createDirectoriesByRelativePath("kotlin/main") }
 
-    assertEquals("com.github.rougsig.epic", config.getProperty(PROPS_PACKAGE_NAME))
+    assertEquals("com.github.rougsig.epic", config.getProperty(PROP_PACKAGE_NAME))
 
     config.generatePackageName(kotlin)
-    assertEquals("com.github.rougsig.epic.kotlin.main", config.getProperty(PROPS_PACKAGE_NAME))
+    assertEquals("com.github.rougsig.epic.kotlin.main", config.getProperty(PROP_PACKAGE_NAME))
   }
 
   fun testCreateFileTemplateModule() {

@@ -1,11 +1,11 @@
 package com.github.rougsig.filetemplateloader.generator
 
-import com.github.rougsig.filetemplateloader.constant.PROPS_FILE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
 import com.github.rougsig.filetemplateloader.entity.FileTemplateSingle
 import com.github.rougsig.filetemplateloader.entity.mergeTemplate
 
 fun generateFileName(props: Props, template: FileTemplateSingle): String {
-  val fileNameTemplate = template.fileName ?: props.getProperty(PROPS_FILE_NAME)
+  val fileNameTemplate = template.fileName ?: props.getProperty(PROP_FILE_NAME)
   return mergeTemplate(fileNameTemplate, props)
 }
 

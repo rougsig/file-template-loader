@@ -30,7 +30,7 @@ fun String.extractPropBase(): String? {
 }
 
 fun Set<String>.filterProps(props: Props): Set<String> {
-  return this.minus((props.keys as Set<String>).filter(String::isBlank))
+  return this.minus(props.keys as Set<String>)
 }
 
 private fun String.getReferences(): Set<String> {
