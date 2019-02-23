@@ -23,17 +23,17 @@ class SingleFileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() 
       setProperty("CAT_VOICE", "Meow Meow")
     }
 
-  private fun doTest(testFileName: String, defaultProps: Props) {
+  private fun doTest(testFileName: String, props: Props = Props()) {  
     val testFile = myFixture.project
       .guessProjectDir()!!
       .findFileByRelativePath(testFileName)!!
 
     val template = readSingleFileTemplate(testFile)
 
-    fillPropsBySingleFileTemplate(template, defaultProps)
+    fillPropsBySingleFileTemplate(template, props)
     val generatedProps = template.extractedProps
-      .filterProps(defaultProps)
-      .generateProps(defaultProps)
+      .filterProps(props)
+      .generateProps(props)
 
     val createdFileTemplateFile = createSingleFileTemplate(project, generatedProps, template)
 
@@ -54,4 +54,6 @@ class SingleFileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() 
   }
 
   fun testNoProps() = doTest("EmptyFileTemplate.kt.ft", Props())
+
+  fun testGitignore() = doTest(".gitignore.ft", Props())
 }

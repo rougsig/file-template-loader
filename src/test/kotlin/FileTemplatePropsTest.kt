@@ -23,7 +23,7 @@ class FileTemplatePropsTest : LightPlatformCodeInsightFixtureTestCase() {
 
     assertSameElements(
       requiredProps,
-      setOf(PROP_PACKAGE_NAME, PROP_FILE_NAME, "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE")
+      setOf(PROP_PACKAGE_NAME, PROP_FILE_NAME, "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE", "LAYOUT_SIMPLE_NAME")
     )
   }
 

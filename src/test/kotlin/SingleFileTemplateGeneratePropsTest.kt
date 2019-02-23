@@ -22,7 +22,7 @@ class SingleFileTemplateGeneratePropsTest : LightPlatformCodeInsightFixtureTestC
       setProperty("THREE_PROP", "ThreeProp")
     }
 
-  private fun doTest(testFileName: String, defaultProps: Props) {
+  private fun doTest(testFileName: String, props: Props) {
     val testFile = myFixture.project
       .guessProjectDir()!!
       .findFileByRelativePath(testFileName)!!
@@ -30,8 +30,8 @@ class SingleFileTemplateGeneratePropsTest : LightPlatformCodeInsightFixtureTestC
     val template = readSingleFileTemplate(testFile)
 
     val generatedProps = template.extractedProps
-      .filterProps(defaultProps)
-      .generateProps(defaultProps)
+      .filterProps(props)
+      .generateProps(props)
       .map { (key, value) -> "$key=$value" }
       .sorted()
       .joinToString("\n") { it }

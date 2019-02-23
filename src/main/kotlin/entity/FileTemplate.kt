@@ -42,10 +42,11 @@ fun Set<String>.filterNotGenerated(): Set<String> {
   }.toSet()
 }
 
+@Deprecated("use com.github.rougsig.filetemplateloader.generator.PropGeneratorKt.generateProps")
 fun generateProps(propsToGenerate: Set<String>, props: Props) {
   propsToGenerate.filter { GENERATED_PROP_MATCHER.containsMatchIn(it) }
     .map { fullPropName ->
-      val generatorName = GENERATED_PROP_MATCHER.find(fullPropName)!!.value
+      val generatorName = GENERATED_PROP_MATCHER.find(fullPropName)!!.value.removePrefix("_")
       val basePropName = GENERATED_PROP_MATCHER.replace(fullPropName) { "" }
 
       val propGenerator = PROP_GENERATORS.getValue(generatorName)
