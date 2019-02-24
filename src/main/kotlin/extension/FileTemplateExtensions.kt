@@ -1,12 +1,11 @@
 package com.github.rougsig.filetemplateloader.extension
 
-import com.github.rougsig.filetemplateloader.entity.FileTemplateSingle
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.psi.PsiDirectory
 import org.jetbrains.kotlin.idea.util.projectStructure.module
 
 // FIXME Move "./" logic to separate function
-fun PsiDirectory.createDirectoriesByRelativePath(path: String): PsiDirectory {
+fun PsiDirectory.createSubDirectoriesByRelativePath(path: String): PsiDirectory {
   val dir = path.replace("\\", "/")
   if (dir.isBlank() || dir == "/") return this
 
@@ -23,9 +22,4 @@ fun PsiDirectory.createDirectoriesByRelativePath(path: String): PsiDirectory {
   return subDirs.fold(startDirectory) { acc, dirName ->
     acc.findSubdirectory(dirName) ?: acc.createSubdirectory(dirName)
   }
-}
-
-fun FileTemplateSingle.getPackageNameWithSubDirs(initialPackageName: String): String {
-  val subDirs = directory ?: return initialPackageName
-  return initialPackageName + "." + subDirs.toDotCase()
 }

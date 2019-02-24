@@ -29,7 +29,7 @@ class SingleFileTemplateGeneratePropsTest : LightPlatformCodeInsightFixtureTestC
 
     val template = readSingleFileTemplate(testFile)
 
-    val generatedProps = template.extractedProps
+    val generatedProps = template.requiredProps
       .filterProps(props)
       .generateProps(props)
       .map { (key, value) -> "$key=$value" }

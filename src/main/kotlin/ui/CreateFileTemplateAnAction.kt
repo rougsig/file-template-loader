@@ -1,12 +1,11 @@
 package com.github.rougsig.filetemplateloader.ui
 
 import com.github.rougsig.filetemplateloader.entity.FileTemplate
-import com.github.rougsig.filetemplateloader.entity.FileTemplateModule
-import com.github.rougsig.filetemplateloader.entity.filterNotGenerated
 import com.github.rougsig.filetemplateloader.extension.generateModuleSimpleName
 import com.github.rougsig.filetemplateloader.extension.generatePackageName
 import com.github.rougsig.filetemplateloader.extension.getDirectory
 import com.github.rougsig.filetemplateloader.extension.writeAction
+import com.github.rougsig.filetemplateloader.generator.calculateUnsettedProps
 import com.github.rougsig.filetemplateloader.reader.readConfig
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -25,13 +24,8 @@ class CreateFileTemplateAnAction(
 
     val config = project.readConfig()
     dir.generateModuleSimpleName(config)
-    if (template is FileTemplateModule) {
-      config.generatePackageName()
-    } else {
-      config.generatePackageName(dir)
-    }
-    val requiredProps = template.getRequiredProps(config).filterNotGenerated()
-
+    config.generatePackageName(dir)
+    val requiredProps = calculateUnsettedProps(template.requiredProps, config)
     CrateTemplateGroupDialog(
       config,
       requiredProps,

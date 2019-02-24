@@ -21,7 +21,7 @@ class SingleFileTemplateExtractPropsTest : LightPlatformCodeInsightFixtureTestCa
 
     val template = readSingleFileTemplate(testFile)
 
-    val extractedProps = template.extractedProps
+    val extractedProps = template.requiredProps
       .filterProps(defaultProps)
       .sorted()
       .joinToString("\n") { it }

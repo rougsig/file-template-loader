@@ -1,13 +1,13 @@
 package com.github.rougsig.filetemplateloader.extension
 
 import com.github.rougsig.filetemplateloader.constant.PROP_MODULE_NAME
-import com.github.rougsig.filetemplateloader.constant.PROP_MODULE_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME_TEMPLATE
-import com.github.rougsig.filetemplateloader.entity.generateProps
+import com.github.rougsig.filetemplateloader.constant.PROP_ROOT_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.entity.mergeTemplate
 import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.generator.extractProps
+import com.github.rougsig.filetemplateloader.generator.generateProps
 import com.intellij.openapi.module.ModuleUtil
 import com.intellij.psi.PsiDirectory
 import org.jetbrains.kotlin.idea.core.getPackage
@@ -16,12 +16,11 @@ import org.jetbrains.kotlin.idea.util.projectStructure.module
 fun Props.generatePackageName(dir: PsiDirectory? = null) {
   val props = this
   val packageNameTemplate = props.getProperty(PROP_PACKAGE_NAME_TEMPLATE)
-  val templateProps = extractProps(packageNameTemplate)
-  generateProps(templateProps, props)
+  extractProps(packageNameTemplate).generateProps(props)
 
   val packageName = StringBuilder()
   packageName.append(mergeTemplate(packageNameTemplate, props))
-  props.setProperty(PROP_MODULE_PACKAGE_NAME, packageName.toString())
+  props.setProperty(PROP_ROOT_PACKAGE_NAME, packageName.toString())
 
   val subPackage = dir?.getPackage()?.qualifiedName
   if (!subPackage.isNullOrBlank()) {

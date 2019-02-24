@@ -8,6 +8,8 @@ fun readSingleFileTemplate(file: VirtualFile): SingleFileTemplate {
   return SingleFileTemplate(
     name = slittedName.first(),
     extension = slittedName.last(),
-    text = String(file.inputStream.readBytes())
+    text = String(file.inputStream.readBytes()),
+    directory = "",
+    props = emptyList()
   )
 }

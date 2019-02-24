@@ -31,7 +31,7 @@ class SingleFileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() 
     val template = readSingleFileTemplate(testFile)
 
     fillPropsBySingleFileTemplate(template, props)
-    val generatedProps = template.extractedProps
+    val generatedProps = template.requiredProps
       .filterProps(props)
       .generateProps(props)
 
