@@ -53,7 +53,7 @@ fun String.toUpperKebabCase(): String {
   return toUpperSnakeCase().replace("_", "-")
 }
 
-fun String.toPackageCase(): String {
+fun String.toDotCase(): String {
   return toUpperCamelCase().toLowerSnakeCase()
     .split('-', '_', '/', '\\')
     .joinToString(".") { it }

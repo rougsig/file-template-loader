@@ -2,11 +2,11 @@
   "name": "Route",
   "templates": [
     {
-      "template": "Key.kt",
+      "template": "Key.kt.ft",
       "fileName": "${ROUTE_NAME}Key"
     },
     {
-      "template": "Screen.kt",
+      "template": "Screen.kt.ft",
       "fileName": "${ROUTE_NAME}Screen"
     }
   ],

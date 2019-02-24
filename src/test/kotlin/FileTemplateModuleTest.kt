@@ -84,5 +84,16 @@ class FileTemplateModuleTest : LightPlatformCodeInsightFixtureTestCase() {
       "EpicRepositoryBindings",
       "com.github.rougsig.filetemplateloader.epic.repository.di.EpicRepositoryBindings"
     )
+
+    val gitignore = module.find { it.name == ".gitignore" }!!
+    assertFileTemplate(
+      "module/.gitignore",
+      ".gitignore",
+      "\\filetemplateloader-epic-repository",
+      props,
+      gitignore,
+      "",
+      ""
+    )
   }
 }

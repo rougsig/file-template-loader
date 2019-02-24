@@ -13,7 +13,8 @@ val PROP_GENERATORS: PropGenerators = HashMap<String, (String) -> String>().appl
   put("UPPER_SNAKE_CASE", String::toUpperSnakeCase)
   put("LOWER_KEBAB_CASE", String::toLowerKebabCase)
   put("UPPER_KEBAB_CASE", String::toUpperKebabCase)
-  put("PACKAGE_CASE", String::toPackageCase)
+  put("PACKAGE_CASE", String::toDotCase)
+  put("DOR_CASE", String::toDotCase)
   put("SOLID_CASE", String::toSolidCase)
   put("UPPER_CASE", String::toUpperCase)
   put("LOWER_CASE", String::toLowerCase)
@@ -21,5 +22,17 @@ val PROP_GENERATORS: PropGenerators = HashMap<String, (String) -> String>().appl
 
 val GENERATED_PROP_MATCHER = PROP_GENERATORS.keys.joinToString("|") { it }.toRegex()
 
-val PROPS_SIMPLE_NAME = { it: String -> "${it.toUpperSnakeCase()}_SIMPLE_NAME" }
-val PROPS_CLASS_NAME = { it: String -> "${it.toUpperSnakeCase()}_CLASS_NAME" }
+private fun calculatePropName(templateName: String): String {
+  return when {
+    templateName == "" -> ""
+    templateName.startsWith(".") -> templateName.split(".")[1]
+    else -> templateName.split(".").firstOrNull() ?: ""
+  }.toUpperSnakeCase()
+}
+
+val PROPS_SIMPLE_NAME = { it: String ->
+  "${calculatePropName(it)}_SIMPLE_NAME"
+}
+val PROPS_CLASS_NAME = { it: String ->
+  "${calculatePropName(it)}_CLASS_NAME"
+}

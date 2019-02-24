@@ -2,18 +2,17 @@
   "name": "Repository",
   "templates": [
     {
-      "template": "Repository.kt",
+      "template": "Repository.kt.ft",
       "fileName": "${FLOW_NAME}Repository"
     },
     {
-      "template": "RepositoryImpl.kt",
+      "template": "RepositoryImpl.kt.ft",
       "fileName": "${FLOW_NAME}RepositoryImpl"
     },
     {
-      "template": "RepositoryBindings.kt",
+      "template": "RepositoryBindings.kt.ft",
       "fileName": "${FLOW_NAME}RepositoryBindings",
       "directory": "di"
     }
-  ],
-  "injectors": []
+  ]
 }

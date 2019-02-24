@@ -6,7 +6,6 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.vfs.VirtualFile
 
-
 fun Project.readFileTemplates(): List<FileTemplateSingle> {
   val dir = guessProjectDir()?.findChild(FILE_TEMPLATE_FOLDER_NAME) ?: return emptyList()
   return readFileTemplates(dir)
@@ -33,22 +32,29 @@ fun readFileTemplates(dir: VirtualFile): List<FileTemplateSingle> {
 
   return dir.fileRec
     .filter { it.name.endsWith(FILE_TEMPLATE_EXTENSION) }
-    .map { file ->
-      val slittedName = file.nameWithoutExtension.split(FILE_NAME_DELIMITER)
-      FileTemplateSingle(
-        name = slittedName.first(),
-        fileName = null,
-        extension = slittedName.last(),
-        text = String(file.inputStream.readBytes())
-      )
-    }
+    .map(::readFileTemplate)
+}
+
+fun readFileTemplate(file: VirtualFile): FileTemplateSingle {
+  val slittedName = file.nameWithoutExtension.split(FILE_NAME_DELIMITER)
+  return FileTemplateSingle(
+    name = file.name,
+    fileName = null,
+    extension = slittedName.last(),
+    text = String(file.inputStream.readBytes())
+  )
+}
+
+fun createTemplateMap(templates: List<FileTemplateSingle>): Map<String, FileTemplateSingle> {
+  val templateMap = HashMap<String, FileTemplateSingle>()
+  templates.map { templateMap[it.name] = it }
+  return templateMap
 }
 
 fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile, gson: Gson): List<FileTemplateGroup> {
   println("Read FileTemplateGroups from: $dir")
 
-  val templateMap = HashMap<String, FileTemplateSingle>()
-  templates.map { templateMap["${it.name}.${it.extension}"] = it }
+  val templateMap = createTemplateMap(templates)
 
   return dir.fileRec
     .filter { it.name.endsWith(FILE_TEMPLATE_GROUP_EXTENSION) }
@@ -58,7 +64,7 @@ fun readFileTemplateGroups(templates: List<FileTemplateSingle>, dir: VirtualFile
         FileTemplateGroupJson::class.java
       )
       val groups = fileTemplateGroup.templates.map { template ->
-        templateMap[template.template.replace(".$FILE_TEMPLATE_EXTENSION", "")]?.copy(
+        templateMap[template.template]?.copy(
           fileName = template.fileName,
           directory = template.directory
         ) ?: throw KotlinNullPointerException(
@@ -89,8 +95,7 @@ fun readFileTemplateModules(
 ): List<FileTemplateModule> {
   println("Read FileTemplateModules from: $dir")
 
-  val templateMap = HashMap<String, FileTemplateSingle>()
-  templates.map { templateMap["${it.name}.${it.extension}"] = it }
+  val templateMap = createTemplateMap(templates)
 
   return dir.fileRec
     .filter { it.name.endsWith(FILE_TEMPLATE_MODULE_EXTENSION) }
@@ -103,7 +108,7 @@ fun readFileTemplateModules(
         FileTemplateSourceSet(
           directory = sourceSet.directory,
           templates = sourceSet.templates.map { template ->
-            templateMap[template.template.replace(".$FILE_TEMPLATE_EXTENSION", "")]?.copy(
+            templateMap[template.template]?.copy(
               fileName = template.fileName,
               directory = template.directory
             ) ?: throw KotlinNullPointerException(

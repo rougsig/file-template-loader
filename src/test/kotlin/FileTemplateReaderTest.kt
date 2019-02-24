@@ -19,21 +19,27 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
       templates,
       listOf(
         FileTemplateSingle(
-          name = "Repository",
+          name = "Repository.kt.ft",
           fileName = null,
           extension = "kt",
           text = ""
         ),
         FileTemplateSingle(
-          name = "RepositoryImpl",
+          name = "RepositoryImpl.kt.ft",
           fileName = null,
           extension = "kt",
           text = ""
         ),
         FileTemplateSingle(
-          name = "RepositoryBindings",
+          name = "RepositoryBindings.kt.ft",
           fileName = null,
           extension = "kt",
+          text = ""
+        ),
+        FileTemplateSingle(
+          name = ".gitignore.ft",
+          fileName = null,
+          extension = "gitignore",
           text = ""
         )
       )
@@ -54,19 +60,19 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
           name = "Repository",
           templates = listOf(
             FileTemplateSingle(
-              name = "Repository",
+              name = "Repository.kt.ft",
               fileName = "\${FLOW_NAME}Repository",
               extension = "kt",
               text = ""
             ),
             FileTemplateSingle(
-              name = "RepositoryImpl",
+              name = "RepositoryImpl.kt.ft",
               fileName = "\${FLOW_NAME}RepositoryImpl",
               extension = "kt",
               text = ""
             ),
             FileTemplateSingle(
-              name = "RepositoryBindings",
+              name = "RepositoryBindings.kt.ft",
               fileName = "\${FLOW_NAME}RepositoryBindings",
               extension = "kt",
               text = "",
@@ -102,23 +108,33 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
               directory = "src/main/kotlin/repositories",
               templates = listOf(
                 FileTemplateSingle(
-                  name = "Repository",
+                  name = "Repository.kt.ft",
                   fileName = "\${FLOW_NAME}Repository",
                   extension = "kt",
                   text = ""
                 ),
                 FileTemplateSingle(
-                  name = "RepositoryImpl",
+                  name = "RepositoryImpl.kt.ft",
                   fileName = "\${FLOW_NAME}RepositoryImpl",
                   extension = "kt",
                   text = ""
                 ),
                 FileTemplateSingle(
-                  name = "RepositoryBindings",
+                  name = "RepositoryBindings.kt.ft",
                   fileName = "\${FLOW_NAME}RepositoryBindings",
                   extension = "kt",
                   text = "",
                   directory = "di"
+                )
+              )
+            ),
+            FileTemplateSourceSet(
+              templates = listOf(
+                FileTemplateSingle(
+                  name = ".gitignore.ft",
+                  fileName = "",
+                  extension = "gitignore",
+                  text = ""
                 )
               )
             )
@@ -145,21 +161,27 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
       templates,
       listOf(
         FileTemplateSingle(
-          name = "Repository",
+          name = "Repository.kt.ft",
           fileName = null,
           extension = "kt",
           text = ""
         ),
         FileTemplateSingle(
-          name = "RepositoryImpl",
+          name = "RepositoryImpl.kt.ft",
           fileName = null,
           extension = "kt",
           text = ""
         ),
         FileTemplateSingle(
-          name = "RepositoryBindings",
+          name = "RepositoryBindings.kt.ft",
           fileName = null,
           extension = "kt",
+          text = ""
+        ),
+        FileTemplateSingle(
+          name = ".gitignore.ft",
+          fileName = null,
+          extension = "gitignore",
           text = ""
         )
       )
@@ -180,19 +202,19 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
           name = "Repository",
           templates = listOf(
             FileTemplateSingle(
-              name = "Repository",
+              name = "Repository.kt.ft",
               fileName = "\${FLOW_NAME}Repository",
               extension = "kt",
               text = ""
             ),
             FileTemplateSingle(
-              name = "RepositoryImpl",
+              name = "RepositoryImpl.kt.ft",
               fileName = "\${FLOW_NAME}RepositoryImpl",
               extension = "kt",
               text = ""
             ),
             FileTemplateSingle(
-              name = "RepositoryBindings",
+              name = "RepositoryBindings.kt.ft",
               fileName = "\${FLOW_NAME}RepositoryBindings",
               extension = "kt",
               text = "",
@@ -229,23 +251,33 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
               directory = "src/main/kotlin/repositories",
               templates = listOf(
                 FileTemplateSingle(
-                  name = "Repository",
+                  name = "Repository.kt.ft",
                   fileName = "\${FLOW_NAME}Repository",
                   extension = "kt",
                   text = ""
                 ),
                 FileTemplateSingle(
-                  name = "RepositoryImpl",
+                  name = "RepositoryImpl.kt.ft",
                   fileName = "\${FLOW_NAME}RepositoryImpl",
                   extension = "kt",
                   text = ""
                 ),
                 FileTemplateSingle(
-                  name = "RepositoryBindings",
+                  name = "RepositoryBindings.kt.ft",
                   fileName = "\${FLOW_NAME}RepositoryBindings",
                   extension = "kt",
                   text = "",
                   directory = "di"
+                )
+              )
+            ),
+            FileTemplateSourceSet(
+              templates = listOf(
+                FileTemplateSingle(
+                  name = ".gitignore.ft",
+                  fileName = "",
+                  extension = "gitignore",
+                  text = ""
                 )
               )
             )

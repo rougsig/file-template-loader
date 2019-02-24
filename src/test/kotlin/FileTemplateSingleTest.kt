@@ -22,7 +22,7 @@ class FileTemplateSingleTest : LightPlatformCodeInsightFixtureTestCase() {
     val src = myModule.sourceRoots.first()
     val dir = psiManager.findDirectory(src)!!
 
-    val repositoryFileTemplate = templates.find { it.name == "Repository" }!!
+    val repositoryFileTemplate = templates.find { it.name == "Repository.kt.ft" }!!
 
     val props = Properties(config)
     props.setProperty(PROPS_FILE_NAME, "FileTemplateRepository")

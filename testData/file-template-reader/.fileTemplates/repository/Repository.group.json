@@ -6,7 +6,7 @@
       "fileName": "${FLOW_NAME}Repository"
     },
     {
-      "template": "RepositoryImpl.kt",
+      "template": "RepositoryImpl.kt.ft",
       "fileName": "${FLOW_NAME}RepositoryImpl"
     },
     {

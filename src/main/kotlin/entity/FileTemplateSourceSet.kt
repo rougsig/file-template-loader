@@ -7,7 +7,7 @@ import com.intellij.psi.PsiFile
 import java.util.*
 
 data class FileTemplateSourceSet(
-  val directory: String?,
+  val directory: String? = null,
   val templates: List<FileTemplateSingle>,
   override val name: String = ""
 ) : FileTemplate {
