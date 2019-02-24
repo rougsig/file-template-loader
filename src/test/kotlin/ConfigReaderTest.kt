@@ -15,6 +15,7 @@ class ConfigReaderTest : LightPlatformCodeInsightFixtureTestCase() {
     assertEquals(
       Properties().apply {
         setProperty("PROJECT_NAME", "file-template-loader")
+        setProperty("PACKAGE_NAME_TEMPLATE", "\${PROJECT_NAME}")
       },
       config
     )

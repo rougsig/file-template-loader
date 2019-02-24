@@ -2,5 +2,8 @@ out/
 build/
 .gradle/
 .idea/*
+.idea/workspace.xml
 !.idea/misc.xml
 !.idea/vsc.xml
+!.idea/gradle.xml
+!.idea/codeStyles/*
