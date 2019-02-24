@@ -1,9 +1,5 @@
 package com.github.rougsig.filetemplateloader.generator
 
-import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
-import com.github.rougsig.filetemplateloader.constant.PROP_TEMPLATE_EXTENSION
-import com.github.rougsig.filetemplateloader.constant.PROP_TEMPLATE_NAME
-import com.github.rougsig.filetemplateloader.entity.SingleFileTemplate
 import com.github.rougsig.filetemplateloader.extension.*
 import java.util.*
 
@@ -25,9 +21,6 @@ val PROP_GENERATORS: PropGenerators = HashMap<String, (String) -> String>().appl
 
 val GENERATED_PROP_MATCHER = PROP_GENERATORS.keys.joinToString("|") { "_$it" }.toRegex()
 
-val PROPS_SIMPLE_NAME = { it: String -> "${it.toUpperSnakeCase()}_SIMPLE_NAME" }
-val PROPS_CLASS_NAME = { it: String -> "${it.toUpperSnakeCase()}_CLASS_NAME" }
-
 fun Set<String>.generateProps(props: Props): Props {
   filter { GENERATED_PROP_MATCHER.containsMatchIn(it) }
     .map { fullPropName ->
@@ -39,14 +32,6 @@ fun Set<String>.generateProps(props: Props): Props {
 
       props.setProperty(fullPropName, generatedProp)
     }
-
-  return props
-}
-
-fun fillPropsBySingleFileTemplate(template: SingleFileTemplate, props: Props): Props {
-  props.setProperty(PROP_FILE_NAME, template.name)
-  props.setProperty(PROP_TEMPLATE_NAME, template.name)
-  props.setProperty(PROP_TEMPLATE_EXTENSION, template.extension)
 
   return props
 }

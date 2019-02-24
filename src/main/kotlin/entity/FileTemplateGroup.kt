@@ -6,7 +6,7 @@ import com.github.rougsig.filetemplateloader.generator.Props
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
 
-data class GroupFileTemplate(
+data class FileTemplateGroup(
   override val name: String,
   val templates: List<FileTemplate>,
   val directory: String,
