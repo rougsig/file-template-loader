@@ -18,7 +18,7 @@ data class FileTemplateGroup(
     .plus(customProps.flatMap(FileTemplateProp::requiredProps))
 
   override fun generateProps(dir: PsiDirectory, props: Props) {
-    props.setProperty(PROP_GROUP_NAME, name)
+    props.setProperty("${simpleName}_$PROP_GROUP_NAME", name)
     super.generateProps(dir, props)
     templates.forEach { it.generateProps(dir, props) }
   }

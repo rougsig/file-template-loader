@@ -2,7 +2,7 @@ package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.generator.filterProps
-import com.github.rougsig.filetemplateloader.reader.readSingleFileTemplate
+import com.github.rougsig.filetemplateloader.reader.readFileTemplate
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
 
@@ -15,11 +15,7 @@ class FileTemplateSingleExtractPropsTest : LightPlatformCodeInsightFixtureTestCa
   }
 
   private fun doTest(testFileName: String, defaultProps: Props = Props()) {
-    val testFile = myFixture.project
-      .guessProjectDir()!!
-      .findFileByRelativePath(testFileName)!!
-
-    val template = readSingleFileTemplate(testFile)
+    val template = project.guessProjectDir()!!.readFileTemplate(testFileName)
 
     val extractedProps = template.requiredProps
       .filterProps(defaultProps)

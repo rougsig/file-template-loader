@@ -1,3 +1,0 @@
-<View>
-  <Text text="Hello ${LAYOUT_SIMPLE_NAME_UPPER_CAMEL_CASE} World"/>
-</View>

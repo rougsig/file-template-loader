@@ -1,0 +1,6 @@
+{
+  "name": "EmptyFileTemplate.kt",
+  "text": "",
+  "directory": "",
+  "customProps": []
+}

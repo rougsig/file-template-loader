@@ -1,5 +1,0 @@
-package ${PACKAGE_NAME}
-
-class ${FILE_NAME} : View() {
-  val layout = Layouts.${LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE}
-}

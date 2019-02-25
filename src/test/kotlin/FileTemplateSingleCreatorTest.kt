@@ -3,7 +3,7 @@ package com.github.rougsig.filetemplateloader
 import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.generator.Props
-import com.github.rougsig.filetemplateloader.reader.readSingleFileTemplate
+import com.github.rougsig.filetemplateloader.reader.readFileTemplate
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
 
@@ -22,12 +22,8 @@ class FileTemplateSingleCreatorTest : LightPlatformCodeInsightFixtureTestCase() 
     }
 
   private fun doTest(testFileName: String, props: Props) {
-    val testFile = project
-      .guessProjectDir()!!
-      .findFileByRelativePath(testFileName)!!
-
     val fileName = testFileName.replace(".ft", "")
-    val template = readSingleFileTemplate(testFile)
+    val template = project.guessProjectDir()!!.readFileTemplate(testFileName)
     val dir = psiManager.findDirectory(project.guessProjectDir()!!)!!
 
     props.setProperty(PROP_FILE_NAME, fileName)
@@ -54,7 +50,7 @@ class FileTemplateSingleCreatorTest : LightPlatformCodeInsightFixtureTestCase() 
     )
   }
 
-  fun testNoProps() = doTest("EmptyFileTemplate.kt.ft", Props())
+  fun testEmptyFileTemplate() = doTest("EmptyFileTemplate.kt.ft", Props())
 
   fun testGitignore() = doTest(".gitignore.ft", Props())
 

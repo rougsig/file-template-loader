@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.generator.Props
-import com.github.rougsig.filetemplateloader.reader.readSingleFileTemplate
+import com.github.rougsig.filetemplateloader.reader.readFileTemplate
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
 
@@ -21,11 +21,7 @@ class FileTemplateSingleGeneratePropsTest : LightPlatformCodeInsightFixtureTestC
     }
 
   private fun doTest(testFileName: String, props: Props) {
-    val testFile = myFixture.project
-      .guessProjectDir()!!
-      .findFileByRelativePath(testFileName)!!
-
-    val template = readSingleFileTemplate(testFile)
+    val template = project.guessProjectDir()!!.readFileTemplate(testFileName)
     val dir = psiManager.findDirectory(project.guessProjectDir()!!)!!
 
     template.generateProps(dir, props)
@@ -34,7 +30,7 @@ class FileTemplateSingleGeneratePropsTest : LightPlatformCodeInsightFixtureTestC
       .sorted()
       .joinToString("\n") { it }
 
-    val expectedProps = myFixture.project
+    val expectedProps = project
       .guessProjectDir()!!
       .findFileByRelativePath("${template.name}.txt")!!
 

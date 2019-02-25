@@ -20,7 +20,7 @@ data class FileTemplateSingle(
     .plus(customProps.flatMap(FileTemplateProp::requiredProps))
 
   override fun generateProps(dir: PsiDirectory, props: Props) {
-    props.setProperty(PROP_TEMPLATE_NAME, name)
+    props.setProperty("${simpleName}_$PROP_TEMPLATE_NAME", name)
     props.setProperty("${simpleName}_$PROP_PACKAGE_NAME", generatePackageName(props, directory))
     super.generateProps(dir, props)
   }

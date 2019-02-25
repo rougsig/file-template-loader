@@ -30,10 +30,6 @@ abstract class FileTemplate {
         "${simpleName}_${prop.name}",
         merged
       )
-      props.setProperty(
-        prop.name,
-        merged
-      )
     }
     requiredProps.generateProps(props)
   }
