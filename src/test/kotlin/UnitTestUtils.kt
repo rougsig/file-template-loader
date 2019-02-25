@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
-import com.google.gson.ExclusionStrategy
-import com.google.gson.FieldAttributes
+import com.github.rougsig.filetemplateloader.entity.FileTemplateSingle
+import com.github.rougsig.filetemplateloader.reader.FileTemplateSingleAdapter
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.intellij.openapi.util.io.FileUtil
@@ -17,14 +17,6 @@ fun createGson(): Gson {
   return GsonBuilder()
     .serializeNulls()
     .setPrettyPrinting()
-    .setExclusionStrategies(object : ExclusionStrategy {
-      override fun shouldSkipField(p0: FieldAttributes): Boolean {
-        return p0.name == "simpleName\$delegate" || p0.name == "requiredProps"
-      }
-
-      override fun shouldSkipClass(p0: Class<*>?): Boolean {
-        return false
-      }
-    })
+    .registerTypeAdapter(FileTemplateSingle::class.java, FileTemplateSingleAdapter())
     .create()
 }

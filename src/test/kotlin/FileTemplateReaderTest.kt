@@ -34,4 +34,6 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
   }
 
   fun testEmptyFileTemplate() = doTest("EmptyFileTemplate.kt.ft")
+
+  fun testSimpleFileTemplate() = doTest("SimpleFileTemplate.kt.ft")
 }

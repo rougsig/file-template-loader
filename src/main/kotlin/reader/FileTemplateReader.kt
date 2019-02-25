@@ -14,8 +14,9 @@ fun VirtualFile.readFileTemplate(templateName: String): FileTemplate {
 }
 
 private fun readSingleFileTemplate(file: VirtualFile): FileTemplateSingle {
+  val nameWithoutExtension = FILE_TEMPLATE_EXTENSION_MATCHER.replace(file.name) { "" }
   return FileTemplateSingle(
-    name = file.nameWithoutExtension,
+    name = nameWithoutExtension,
     text = String(file.inputStream.readBytes())
   )
 }
