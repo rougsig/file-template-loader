@@ -1,8 +1,6 @@
 package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.generator.Props
-import com.github.rougsig.filetemplateloader.generator.filterProps
-import com.github.rougsig.filetemplateloader.generator.generateProps
 import com.github.rougsig.filetemplateloader.reader.readSingleFileTemplate
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
@@ -28,10 +26,10 @@ class FileTemplateSingleGeneratePropsTest : LightPlatformCodeInsightFixtureTestC
       .findFileByRelativePath(testFileName)!!
 
     val template = readSingleFileTemplate(testFile)
+    val dir = psiManager.findDirectory(project.guessProjectDir()!!)!!
 
-    val generatedProps = template.requiredProps
-      .filterProps(props)
-      .generateProps(props)
+    template.generateProps(dir, props)
+    val generatedProps = props
       .map { (key, value) -> "$key=$value" }
       .sorted()
       .joinToString("\n") { it }

@@ -14,10 +14,12 @@ abstract class FileTemplate {
   abstract val name: String
   abstract val requiredProps: Set<String>
   abstract val customProps: List<FileTemplateProp>
-  protected val simpleName = name
-    .split(FILE_NAME_DELIMITER)
-    .find { it.isNotBlank() && it != FILE_NAME_DELIMITER }!!
-    .toUpperSnakeCase()
+  protected val simpleName by lazy(LazyThreadSafetyMode.NONE) {
+    (name
+      .split(FILE_NAME_DELIMITER)
+      .find { it.isNotBlank() && it != FILE_NAME_DELIMITER } ?: name)
+      .toUpperSnakeCase()
+  }
 
   abstract fun create(dir: PsiDirectory, props: Props): List<PsiFile>
 
