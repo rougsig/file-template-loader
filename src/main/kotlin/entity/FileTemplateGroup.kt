@@ -17,10 +17,10 @@ data class FileTemplateGroup(
     .toSet()
     .plus(props.flatMap(FileTemplateProp::requiredProps))
 
-  override fun generateProps(props: Props) {
+  override fun generateProps(dir: PsiDirectory, props: Props) {
     props.setProperty(PROP_GROUP_NAME, name)
-    super.generateProps(props)
-    templates.forEach { it.generateProps(props) }
+    super.generateProps(dir, props)
+    templates.forEach { it.generateProps(dir, props) }
   }
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {

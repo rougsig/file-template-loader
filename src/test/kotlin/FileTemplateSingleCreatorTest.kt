@@ -28,12 +28,14 @@ class FileTemplateSingleCreatorTest : LightPlatformCodeInsightFixtureTestCase() 
 
     val fileName = testFileName.replace(".ft", "")
     val template = readSingleFileTemplate(testFile)
+    val dir = psiManager.findDirectory(project.guessProjectDir()!!)!!
+
     props.setProperty(PROP_FILE_NAME, fileName)
-    template.generateProps(props)
+    template.generateProps(dir, props)
 
     val createdFileTemplateFile = project.writeAction {
       template
-        .create(psiManager.findDirectory(project.guessProjectDir()!!)!!, props)
+        .create(dir, props)
         .first()
     }
 

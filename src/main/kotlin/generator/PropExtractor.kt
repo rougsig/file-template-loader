@@ -42,7 +42,3 @@ private fun String.getReferences(): Set<String> {
   Velocity.evaluate(velocityContext, NullWriter.NULL_WRITER, "", this)
   return names
 }
-
-fun calculateUnsettedProps(requiredProps: Set<String>, props: Props): Set<String> {
-  return requiredProps.minus(props.keys as Set<String>)
-}

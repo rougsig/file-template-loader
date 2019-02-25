@@ -16,7 +16,7 @@ abstract class FileTemplate {
 
   abstract fun create(dir: PsiDirectory, props: Props): List<PsiFile>
 
-  open fun generateProps(props: Props) {
+  open fun generateProps(dir: PsiDirectory, props: Props) {
     this.props.forEach { prop ->
       val merged = mergeTemplate(prop.text, props)
       props.setProperty(
