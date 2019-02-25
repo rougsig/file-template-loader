@@ -1,5 +1,6 @@
 package com.github.rougsig.filetemplateloader.entity
 
+import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROP_TEMPLATE_NAME
 import com.github.rougsig.filetemplateloader.creator.createSingleFileTemplate
 import com.github.rougsig.filetemplateloader.extension.createSubDirectoriesByRelativePath
@@ -13,14 +14,14 @@ data class FileTemplateSingle(
   override val name: String,
   val text: String,
   val directory: String = "",
-  override val props: List<FileTemplateProp> = emptyList()
+  override val customProps: List<FileTemplateProp> = emptyList()
 ) : FileTemplate() {
   override val requiredProps = extractProps(text)
-    .plus(props.flatMap(FileTemplateProp::requiredProps))
+    .plus(customProps.flatMap(FileTemplateProp::requiredProps))
 
   override fun generateProps(dir: PsiDirectory, props: Props) {
     props.setProperty(PROP_TEMPLATE_NAME, name)
-    generatePackageName(props, directory)
+    props.setProperty("${simpleName}_$PROP_PACKAGE_NAME", generatePackageName(props, directory))
     super.generateProps(dir, props)
   }
 

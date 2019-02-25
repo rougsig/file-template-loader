@@ -10,12 +10,12 @@ data class FileTemplateGroup(
   override val name: String,
   val templates: List<FileTemplate>,
   val directory: String,
-  override val props: List<FileTemplateProp>
+  override val customProps: List<FileTemplateProp>
 ) : FileTemplate() {
   override val requiredProps = templates
     .flatMap(FileTemplate::requiredProps)
     .toSet()
-    .plus(props.flatMap(FileTemplateProp::requiredProps))
+    .plus(customProps.flatMap(FileTemplateProp::requiredProps))
 
   override fun generateProps(dir: PsiDirectory, props: Props) {
     props.setProperty(PROP_GROUP_NAME, name)

@@ -3,6 +3,7 @@ package com.github.rougsig.filetemplateloader.entity
 import com.github.rougsig.filetemplateloader.extension.toUpperSnakeCase
 import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.generator.generateProps
+import com.github.rougsig.filetemplateloader.reader.FILE_NAME_DELIMITER
 import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.util.text.StringUtil
 import com.intellij.psi.PsiDirectory
@@ -12,15 +13,19 @@ import java.util.*
 abstract class FileTemplate {
   abstract val name: String
   abstract val requiredProps: Set<String>
-  abstract val props: List<FileTemplateProp>
+  abstract val customProps: List<FileTemplateProp>
+  protected val simpleName = name
+    .split(FILE_NAME_DELIMITER)
+    .find { it.isNotBlank() && it != FILE_NAME_DELIMITER }!!
+    .toUpperSnakeCase()
 
   abstract fun create(dir: PsiDirectory, props: Props): List<PsiFile>
 
   open fun generateProps(dir: PsiDirectory, props: Props) {
-    this.props.forEach { prop ->
+    this.customProps.forEach { prop ->
       val merged = mergeTemplate(prop.text, props)
       props.setProperty(
-        "${this.name.toUpperSnakeCase()}_${prop.name}",
+        "${simpleName}_${prop.name}",
         merged
       )
       props.setProperty(
