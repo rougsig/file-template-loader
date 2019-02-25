@@ -1,5 +1,6 @@
 package com.github.rougsig.filetemplateloader.entity
 
+import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROP_GROUP_NAME
 import com.github.rougsig.filetemplateloader.extension.createSubDirectoriesByRelativePath
 import com.github.rougsig.filetemplateloader.generator.Props
@@ -9,13 +10,14 @@ import com.intellij.psi.PsiFile
 data class FileTemplateGroup(
   override val name: String,
   val templates: List<FileTemplate>,
-  val directory: String,
-  override val customProps: List<FileTemplateProp>
+  override val directory: String = "",
+  override val customProps: List<FileTemplateCustomProp> = emptyList()
 ) : FileTemplate() {
   override val requiredProps = templates
     .flatMap(FileTemplate::requiredProps)
+    .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
+    .filter { it != PROP_FILE_NAME }
     .toSet()
-    .plus(customProps.flatMap(FileTemplateProp::requiredProps))
 
   override fun generateProps(dir: PsiDirectory, props: Props) {
     props.setProperty("${simpleName}_$PROP_GROUP_NAME", name)

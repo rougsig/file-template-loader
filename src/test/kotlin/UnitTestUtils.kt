@@ -1,9 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
-import com.github.rougsig.filetemplateloader.entity.FileTemplateSingle
-import com.github.rougsig.filetemplateloader.reader.FileTemplateSingleAdapter
+import com.github.rougsig.filetemplateloader.reader.createGson
 import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import com.intellij.openapi.util.io.FileUtil
 import java.io.File
 
@@ -13,10 +11,10 @@ fun calculateTestDataPath(): String {
   return FileUtil.toCanonicalPath(dir.absolutePath) + "/testData"
 }
 
-fun createGson(): Gson {
-  return GsonBuilder()
+fun createUnitTestGson(): Gson {
+  return createGson()
+    .newBuilder()
     .serializeNulls()
     .setPrettyPrinting()
-    .registerTypeAdapter(FileTemplateSingle::class.java, FileTemplateSingleAdapter())
     .create()
 }

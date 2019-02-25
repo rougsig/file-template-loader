@@ -6,7 +6,7 @@ import com.intellij.openapi.project.guessProjectDir
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
 
 class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
-  private val gson = createGson()
+  private val gson = createUnitTestGson()
 
   override fun getTestDataPath(): String = calculateTestDataPath()
 
@@ -36,4 +36,6 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
   fun testEmptyFileTemplate() = doTest("EmptyFileTemplate.kt.ft")
 
   fun testSimpleFileTemplate() = doTest("SimpleFileTemplate.kt.ft")
+
+  fun testRepositoryGroup() = doTest("Repository.group.json")
 }

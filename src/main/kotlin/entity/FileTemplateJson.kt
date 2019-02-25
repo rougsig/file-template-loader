@@ -1,8 +1,9 @@
 package com.github.rougsig.filetemplateloader.entity
 
 data class FileTemplateGroupJson(
-  val name: String,
+  val name: String?,
   val templates: List<FileTemplateJson>,
+  val customProps: List<FileTemplateCustomProp>?,
   val injectors: List<FileTemplateInjectorJson>?
 )
 
@@ -19,7 +20,8 @@ data class FileTemplateSourceSetJson(
 )
 
 data class FileTemplateJson(
-  val template: String,
+  val text: String?,
+  val textFrom: String?,
   val fileName: String,
   val directory: String?
 )

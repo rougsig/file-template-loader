@@ -13,11 +13,11 @@ import com.intellij.psi.PsiFile
 data class FileTemplateSingle(
   override val name: String,
   val text: String,
-  val directory: String = "",
-  override val customProps: List<FileTemplateProp> = emptyList()
+  override val directory: String = "",
+  override val customProps: List<FileTemplateCustomProp> = emptyList()
 ) : FileTemplate() {
   override val requiredProps = extractProps(text)
-    .plus(customProps.flatMap(FileTemplateProp::requiredProps))
+    .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
 
   override fun generateProps(dir: PsiDirectory, props: Props) {
     props.setProperty("${simpleName}_$PROP_TEMPLATE_NAME", name)

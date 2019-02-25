@@ -12,14 +12,19 @@ import java.util.*
 
 abstract class FileTemplate {
   abstract val name: String
+  abstract val directory: String
   abstract val requiredProps: Set<String>
-  abstract val customProps: List<FileTemplateProp>
-  protected val simpleName by lazy(LazyThreadSafetyMode.NONE) {
+  abstract val customProps: List<FileTemplateCustomProp>
+
+  val simpleName by lazy(LazyThreadSafetyMode.NONE) {
     (name
       .split(FILE_NAME_DELIMITER)
       .find { it.isNotBlank() && it != FILE_NAME_DELIMITER } ?: name)
       .toUpperSnakeCase()
   }
+
+  val isAnonimus: Boolean
+    get() = name.isBlank()
 
   abstract fun create(dir: PsiDirectory, props: Props): List<PsiFile>
 

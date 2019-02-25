@@ -2,7 +2,7 @@ package com.github.rougsig.filetemplateloader.entity
 
 import com.github.rougsig.filetemplateloader.generator.extractProps
 
-data class FileTemplateProp(
+data class FileTemplateCustomProp(
   val name: String,
   val text: String
 ) {

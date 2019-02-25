@@ -1,0 +1,77 @@
+{
+  "name": "Repository",
+  "templates": [
+    {
+      "name": "Repository.kt",
+      "text": "${PACKAGE_NAME}\r\n${FILE_NAME}\r\n",
+      "directory": "",
+      "customProps": [
+        {
+          "requiredProps": [
+            "FLOW_NAME"
+          ],
+          "name": "FILE_NAME",
+          "text": "${FLOW_NAME}Repository.kt"
+        }
+      ],
+      "requiredProps": [
+        "FILE_NAME",
+        "PACKAGE_NAME",
+        "FLOW_NAME"
+      ]
+    },
+    {
+      "name": "RepositoryImpl.kt",
+      "text": "${PACKAGE_NAME}\r\n${FILE_NAME}\r\n${REPOSITORY_SIMPLE_NAME}\r\n",
+      "directory": "",
+      "customProps": [
+        {
+          "requiredProps": [
+            "FLOW_NAME"
+          ],
+          "name": "FILE_NAME",
+          "text": "${FLOW_NAME}RepositoryImpl.kt"
+        }
+      ],
+      "requiredProps": [
+        "REPOSITORY_SIMPLE_NAME",
+        "FILE_NAME",
+        "PACKAGE_NAME",
+        "FLOW_NAME"
+      ]
+    },
+    {
+      "name": "RepositoryBindings.kt",
+      "text": "${PACKAGE_NAME}\r\n${REPOSITORY_CLASS_NAME}\r\n${REPOSITORY_IMPL_CLASS_NAME}\r\n${FILE_NAME}\r\n${REPOSITORY_SIMPLE_NAME}\r\n${REPOSITORY_IMPL_SIMPLE_NAME}\r\n",
+      "directory": "di",
+      "customProps": [
+        {
+          "requiredProps": [
+            "FLOW_NAME"
+          ],
+          "name": "FILE_NAME",
+          "text": "${FLOW_NAME}RepositoryBindings.kt"
+        }
+      ],
+      "requiredProps": [
+        "REPOSITORY_CLASS_NAME",
+        "REPOSITORY_SIMPLE_NAME",
+        "FILE_NAME",
+        "REPOSITORY_IMPL_CLASS_NAME",
+        "PACKAGE_NAME",
+        "REPOSITORY_IMPL_SIMPLE_NAME",
+        "FLOW_NAME"
+      ]
+    }
+  ],
+  "directory": "",
+  "customProps": [],
+  "requiredProps": [
+    "PACKAGE_NAME",
+    "FLOW_NAME",
+    "REPOSITORY_SIMPLE_NAME",
+    "REPOSITORY_CLASS_NAME",
+    "REPOSITORY_IMPL_CLASS_NAME",
+    "REPOSITORY_IMPL_SIMPLE_NAME"
+  ]
+}

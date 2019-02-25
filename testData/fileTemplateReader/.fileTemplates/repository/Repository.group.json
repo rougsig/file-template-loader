@@ -1,0 +1,17 @@
+{
+  "templates": [
+    {
+      "textFrom": "Repository.kt.ft",
+      "fileName": "${FLOW_NAME}Repository.kt"
+    },
+    {
+      "textFrom": "RepositoryImpl.kt.ft",
+      "fileName": "${FLOW_NAME}RepositoryImpl.kt"
+    },
+    {
+      "textFrom": "RepositoryBindings.kt.ft",
+      "fileName": "${FLOW_NAME}RepositoryBindings.kt",
+      "directory": "di"
+    }
+  ]
+}
