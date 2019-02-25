@@ -32,7 +32,7 @@ class FileTemplateGeneratePropsTest : LightPlatformCodeInsightFixtureTestCase() 
 
     val expectedProps = project
       .guessProjectDir()!!
-      .findFileByRelativePath("${template.name}.txt")!!
+      .findFileByRelativePath("$testFileName.txt")!!
 
     assertSameLines(
       String(expectedProps.inputStream.readBytes()),

@@ -37,7 +37,7 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
 
     val expectedMergedTemplate = myFixture.project
       .guessProjectDir()!!
-      .findFileByRelativePath("$fileName.txt")!!
+      .findFileByRelativePath("$testFileName.txt")!!
 
     assertSameLines(
       String(expectedMergedTemplate.inputStream.readBytes()),

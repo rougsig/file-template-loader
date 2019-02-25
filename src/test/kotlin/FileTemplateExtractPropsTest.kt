@@ -24,7 +24,7 @@ class FileTemplateExtractPropsTest : LightPlatformCodeInsightFixtureTestCase() {
 
     val expectedProps = myFixture.project
       .guessProjectDir()!!
-      .findFileByRelativePath("${template.name}.txt")!!
+      .findFileByRelativePath("$testFileName.txt")!!
 
     assertSameLines(
       String(expectedProps.inputStream.readBytes()),
