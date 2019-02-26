@@ -1,5 +1,6 @@
 package com.github.rougsig.filetemplateloader.entity
 
+import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROP_TEMPLATE_NAME
 import com.github.rougsig.filetemplateloader.creator.createSingleFileTemplate
@@ -18,6 +19,9 @@ data class FileTemplateSingle(
 ) : FileTemplate() {
   override val requiredProps = extractProps(text)
     .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
+    .plus(PROP_FILE_NAME)
+    .minus(customProps.map(FileTemplateCustomProp::name))
+    .toSet()
 
   override fun generateProps(dir: PsiDirectory, props: Props) {
     props.setProperty("${simpleName}_$PROP_TEMPLATE_NAME", name)

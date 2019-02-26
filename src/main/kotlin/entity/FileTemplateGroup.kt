@@ -1,6 +1,5 @@
 package com.github.rougsig.filetemplateloader.entity
 
-import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROP_GROUP_NAME
 import com.github.rougsig.filetemplateloader.extension.createSubDirectoriesByRelativePath
 import com.github.rougsig.filetemplateloader.generator.Props
@@ -16,7 +15,8 @@ data class FileTemplateGroup(
   override val requiredProps = templates
     .flatMap(FileTemplate::requiredProps)
     .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
-    .filter { it != PROP_FILE_NAME }
+    .minus(customProps.map(FileTemplateCustomProp::name))
+    .minus(templates.flatMap(FileTemplate::customProps).map(FileTemplateCustomProp::name))
     .toSet()
 
   override fun generateProps(dir: PsiDirectory, props: Props) {
