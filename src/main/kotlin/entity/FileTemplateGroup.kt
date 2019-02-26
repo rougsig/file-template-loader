@@ -13,12 +13,13 @@ data class FileTemplateGroup(
   override val customProps: List<FileTemplateCustomProp> = emptyList()
 ) : FileTemplate() {
   override val requiredProps = templates
-    .flatMap(FileTemplate::requiredProps)
-    .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
-    .minus(customProps.map(FileTemplateCustomProp::name))
-    .minus(templates.flatMap(FileTemplate::customProps).map(FileTemplateCustomProp::name))
-    .minus(templates.flatMap { template -> template.customProps.map { "${template.simpleName}_${it.name}" } })
-    .toSet()
+    .requiredProps()
+    .plusCustomProps()
+    .minusGeneratedProps()
+
+  override val initialGeneratedProps = setOf(
+    "${simpleName}_$PROP_GROUP_NAME"
+  ).plus(templates.flatMap(FileTemplate::generatedProps))
 
   override fun generateProps(dir: PsiDirectory, props: Props) {
     props.setProperty("${simpleName}_$PROP_GROUP_NAME", name)
@@ -29,5 +30,9 @@ data class FileTemplateGroup(
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
     val subDir = dir.createSubDirectoriesByRelativePath(directory)
     return templates.flatMap { it.create(subDir, props) }
+  }
+
+  private fun Set<String>.minusGeneratedProps(): Set<String> {
+    return minus(templates.flatMap(FileTemplate::generatedProps))
   }
 }

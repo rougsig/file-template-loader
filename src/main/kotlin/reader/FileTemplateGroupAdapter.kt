@@ -11,10 +11,12 @@ class FileTemplateGroupAdapter : JsonSerializer<FileTemplateGroup> {
   override fun serialize(template: FileTemplateGroup, type: Type, context: JsonSerializationContext): JsonElement {
     return JsonObject().apply {
       add("name", context.serialize(template.name))
+      add("simpleName", context.serialize(template.simpleName))
       add("templates", context.serialize(template.templates))
       add("directory", context.serialize(template.directory))
       add("customProps", context.serialize(template.customProps))
       add("requiredProps", context.serialize(template.requiredProps))
+      add("generatedProps", context.serialize(template.generatedProps))
     }
   }
 }

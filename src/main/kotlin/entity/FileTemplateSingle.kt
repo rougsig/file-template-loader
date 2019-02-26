@@ -18,10 +18,13 @@ data class FileTemplateSingle(
   override val customProps: List<FileTemplateCustomProp> = emptyList()
 ) : FileTemplate() {
   override val requiredProps = extractProps(text)
-    .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
     .plus(PROP_FILE_NAME)
-    .minus(customProps.map(FileTemplateCustomProp::name))
-    .toSet()
+    .plusCustomProps()
+
+  override val initialGeneratedProps = setOf(
+    "${simpleName}_$PROP_TEMPLATE_NAME",
+    "${simpleName}_$PROP_PACKAGE_NAME"
+  )
 
   override fun generateProps(dir: PsiDirectory, props: Props) {
     props.setProperty("${simpleName}_$PROP_TEMPLATE_NAME", name)

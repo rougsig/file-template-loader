@@ -1,7 +1,14 @@
 {
   "name": "EmptyFileTemplate.kt",
+  "simpleName": "EMPTY_FILE_TEMPLATE",
   "text": "",
   "directory": "",
   "customProps": [],
-  "requiredProps": []
+  "requiredProps": [
+    "FILE_NAME"
+  ],
+  "generatedProps": [
+    "EMPTY_FILE_TEMPLATE_TEMPLATE_NAME",
+    "EMPTY_FILE_TEMPLATE_PACKAGE_NAME"
+  ]
 }

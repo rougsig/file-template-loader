@@ -1,0 +1,14 @@
+{
+  "name": ".gitignore",
+  "simpleName": "GITIGNORE",
+  "text": "",
+  "directory": "",
+  "customProps": [],
+  "requiredProps": [
+    "FILE_NAME"
+  ],
+  "generatedProps": [
+    "GITIGNORE_TEMPLATE_NAME",
+    "GITIGNORE_PACKAGE_NAME"
+  ]
+}

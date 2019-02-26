@@ -15,6 +15,11 @@ abstract class FileTemplate {
   abstract val directory: String
   abstract val requiredProps: Set<String>
   abstract val customProps: List<FileTemplateCustomProp>
+  protected abstract val initialGeneratedProps: Set<String>
+
+  val generatedProps by lazy(LazyThreadSafetyMode.NONE) {
+    initialGeneratedProps.plus(customProps.map { "${simpleName}_${it.name}" })
+  }
 
   val simpleName by lazy(LazyThreadSafetyMode.NONE) {
     (name
@@ -38,6 +43,12 @@ abstract class FileTemplate {
     }
     requiredProps.generateProps(props)
   }
+
+  protected fun Set<String>.plusCustomProps(): Set<String> {
+    return this
+      .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
+      .minus(customProps.map(FileTemplateCustomProp::name))
+  }
 }
 
 fun mergeTemplate(templateText: String, props: Properties): String {
@@ -45,3 +56,6 @@ fun mergeTemplate(templateText: String, props: Properties): String {
   return StringUtil.convertLineSeparators(merged)
 }
 
+fun List<FileTemplate>.requiredProps(): Set<String> {
+  return flatMap(FileTemplate::requiredProps).toSet()
+}

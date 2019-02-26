@@ -1,9 +1,15 @@
 {
   "name": "SimpleFileTemplate.kt",
+  "simpleName": "SIMPLE_FILE_TEMPLATE",
   "text": "My name is ${TEMPLATE_NAME}\r\n",
   "directory": "",
   "customProps": [],
   "requiredProps": [
-    "TEMPLATE_NAME"
+    "TEMPLATE_NAME",
+    "FILE_NAME"
+  ],
+  "generatedProps": [
+    "SIMPLE_FILE_TEMPLATE_TEMPLATE_NAME",
+    "SIMPLE_FILE_TEMPLATE_PACKAGE_NAME"
   ]
 }

@@ -1,8 +1,10 @@
 {
   "name": "Repository",
+  "simpleName": "REPOSITORY",
   "templates": [
     {
       "name": "Repository.kt",
+      "simpleName": "REPOSITORY",
       "text": "${PACKAGE_NAME}\r\n${FILE_NAME}\r\n",
       "directory": "",
       "customProps": [
@@ -32,10 +34,18 @@
       "requiredProps": [
         "PACKAGE_NAME",
         "FLOW_NAME"
+      ],
+      "generatedProps": [
+        "REPOSITORY_TEMPLATE_NAME",
+        "REPOSITORY_PACKAGE_NAME",
+        "REPOSITORY_FILE_NAME",
+        "REPOSITORY_SIMPLE_NAME",
+        "REPOSITORY_CLASS_NAME"
       ]
     },
     {
       "name": "RepositoryImpl.kt",
+      "simpleName": "REPOSITORY_IMPL",
       "text": "${PACKAGE_NAME}\r\n${FILE_NAME}\r\n${REPOSITORY_SIMPLE_NAME}\r\n",
       "directory": "",
       "customProps": [
@@ -66,10 +76,18 @@
         "REPOSITORY_SIMPLE_NAME",
         "PACKAGE_NAME",
         "FLOW_NAME"
+      ],
+      "generatedProps": [
+        "REPOSITORY_IMPL_TEMPLATE_NAME",
+        "REPOSITORY_IMPL_PACKAGE_NAME",
+        "REPOSITORY_IMPL_FILE_NAME",
+        "REPOSITORY_IMPL_SIMPLE_NAME",
+        "REPOSITORY_IMPL_CLASS_NAME"
       ]
     },
     {
       "name": "RepositoryBindings.kt",
+      "simpleName": "REPOSITORY_BINDINGS",
       "text": "${PACKAGE_NAME}\r\n${REPOSITORY_CLASS_NAME}\r\n${REPOSITORY_IMPL_CLASS_NAME}\r\n${FILE_NAME}\r\n${REPOSITORY_SIMPLE_NAME}\r\n${REPOSITORY_IMPL_SIMPLE_NAME}\r\n",
       "directory": "di",
       "customProps": [
@@ -88,6 +106,11 @@
         "PACKAGE_NAME",
         "REPOSITORY_IMPL_SIMPLE_NAME",
         "FLOW_NAME"
+      ],
+      "generatedProps": [
+        "REPOSITORY_BINDINGS_TEMPLATE_NAME",
+        "REPOSITORY_BINDINGS_PACKAGE_NAME",
+        "REPOSITORY_BINDINGS_FILE_NAME"
       ]
     }
   ],
@@ -96,5 +119,21 @@
   "requiredProps": [
     "PACKAGE_NAME",
     "FLOW_NAME"
+  ],
+  "generatedProps": [
+    "REPOSITORY_GROUP_NAME",
+    "REPOSITORY_TEMPLATE_NAME",
+    "REPOSITORY_PACKAGE_NAME",
+    "REPOSITORY_FILE_NAME",
+    "REPOSITORY_SIMPLE_NAME",
+    "REPOSITORY_CLASS_NAME",
+    "REPOSITORY_IMPL_TEMPLATE_NAME",
+    "REPOSITORY_IMPL_PACKAGE_NAME",
+    "REPOSITORY_IMPL_FILE_NAME",
+    "REPOSITORY_IMPL_SIMPLE_NAME",
+    "REPOSITORY_IMPL_CLASS_NAME",
+    "REPOSITORY_BINDINGS_TEMPLATE_NAME",
+    "REPOSITORY_BINDINGS_PACKAGE_NAME",
+    "REPOSITORY_BINDINGS_FILE_NAME"
   ]
 }
