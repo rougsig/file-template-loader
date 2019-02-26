@@ -27,7 +27,7 @@ class CreateFileTemplateAnAction(
       requiredProps,
       { props ->
         project.writeAction("Create ${template.name}") {
-          template.generateProps(dir, props)
+          //          template.generateProps(dir, props)
           template.create(dir, props)
         }
       },

@@ -3,6 +3,7 @@ package com.github.rougsig.filetemplateloader
 import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.generator.Props
+import com.github.rougsig.filetemplateloader.generator.generateProps
 import com.github.rougsig.filetemplateloader.reader.readFileTemplate
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
@@ -27,7 +28,7 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     val dir = psiManager.findDirectory(project.guessProjectDir()!!)!!
 
     props.setProperty(PROP_FILE_NAME, fileName)
-    template.generateProps(dir, props)
+    template.generateProps(props)
 
     val createdFileTemplateFile = project.writeAction {
       template

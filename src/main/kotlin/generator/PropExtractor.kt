@@ -24,8 +24,8 @@ fun Set<String>.extractPropsBase(): Set<String> {
 }
 
 fun String.extractPropBase(): String? {
-  return GENERATED_PROP_MATCHER.find(this)?.value?.let {
-    GENERATED_PROP_MATCHER.replace(this) { "" }
+  return PROP_MODIFICATOR_MATCHER.find(this)?.value?.let {
+    PROP_MODIFICATOR_MATCHER.replace(this) { "" }
   }
 }
 

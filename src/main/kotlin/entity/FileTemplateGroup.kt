@@ -2,7 +2,7 @@ package com.github.rougsig.filetemplateloader.entity
 
 import com.github.rougsig.filetemplateloader.constant.PROP_GROUP_NAME
 import com.github.rougsig.filetemplateloader.extension.createSubDirectoriesByRelativePath
-import com.github.rougsig.filetemplateloader.generator.Props
+import com.github.rougsig.filetemplateloader.generator.*
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
 
@@ -17,15 +17,16 @@ data class FileTemplateGroup(
     .plusCustomProps()
     .minusGeneratedProps()
 
-  override val initialGeneratedProps = setOf(
-    "${simpleName}_$PROP_GROUP_NAME"
-  ).plus(templates.flatMap(FileTemplate::generatedProps))
+  private val initialPropGenerators = listOf(
+    InitialPropGenerator(
+      propName = "${simpleName}_$PROP_GROUP_NAME"
+    ) { name }
+  )
 
-  override fun generateProps(dir: PsiDirectory, props: Props) {
-    props.setProperty("${simpleName}_$PROP_GROUP_NAME", name)
-    super.generateProps(dir, props)
-    templates.forEach { it.generateProps(dir, props) }
-  }
+  override val propGenerators: List<PropGenerator> = initialPropGenerators
+    .plus(customProps.map { CustomPropGenerator(simpleName, it) })
+    .plus(templates.flatMap(FileTemplate::propGenerators))
+    .plus(requiredProps.extractModificatorPropGenerators())
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
     val subDir = dir.createSubDirectoriesByRelativePath(directory)
@@ -34,5 +35,9 @@ data class FileTemplateGroup(
 
   private fun Set<String>.minusGeneratedProps(): Set<String> {
     return minus(templates.flatMap(FileTemplate::generatedProps))
+  }
+
+  private fun List<FileTemplate>.requiredProps(): Set<String> {
+    return flatMap(FileTemplate::requiredProps).toSet()
   }
 }
