@@ -47,7 +47,7 @@ private fun readGroupFileTemplate(
   return FileTemplateGroup(
     name = json.name ?: templateName,
     templates = json.templates.map { it.toFileTemplate(templateFiles) },
-    customProps = customProps.plus(json.customProps ?: emptyList())
+    customProps = customProps.plus(json.customProps.toFileTemplateCustomProps())
   )
 }
 
@@ -68,12 +68,11 @@ private fun readSingleFileTemplate(
 private fun FileTemplateJson.toFileTemplate(
   templates: List<VirtualFile>
 ): FileTemplate {
-  val customProps = listOf(
-    FileTemplateCustomProp(
-      name = PROP_FILE_NAME,
-      text = fileName
-    )
+  val fileNameProp = FileTemplateCustomProp(
+    name = PROP_FILE_NAME,
+    text = fileName
   )
+  val customProps = listOf(fileNameProp).plus(customProps.toFileTemplateCustomProps())
 
   return if (textFrom != null) {
     readFileTemplate(textFrom, templates, customProps, directory ?: "")
@@ -85,6 +84,10 @@ private fun FileTemplateJson.toFileTemplate(
       directory = directory ?: ""
     )
   }
+}
+
+private fun List<FileTemplateCustomPropJson>?.toFileTemplateCustomProps(): List<FileTemplateCustomProp> {
+  return this?.map { FileTemplateCustomProp(it.name, it.text) } ?: emptyList()
 }
 
 private val VirtualFile.fileRec: List<VirtualFile>

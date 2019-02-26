@@ -8,14 +8,28 @@
       "customProps": [
         {
           "requiredProps": [
-            "FLOW_NAME"
+            "SIMPLE_NAME"
           ],
           "name": "FILE_NAME",
-          "text": "${FLOW_NAME}Repository.kt"
+          "text": "${SIMPLE_NAME}.kt"
+        },
+        {
+          "requiredProps": [
+            "FLOW_NAME"
+          ],
+          "name": "SIMPLE_NAME",
+          "text": "${FLOW_NAME}Repository"
+        },
+        {
+          "requiredProps": [
+            "FILE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME",
+          "text": "${PACKAGE_NAME}.${FILE_NAME}"
         }
       ],
       "requiredProps": [
-        "FILE_NAME",
         "PACKAGE_NAME",
         "FLOW_NAME"
       ]
@@ -27,15 +41,29 @@
       "customProps": [
         {
           "requiredProps": [
-            "FLOW_NAME"
+            "SIMPLE_NAME"
           ],
           "name": "FILE_NAME",
-          "text": "${FLOW_NAME}RepositoryImpl.kt"
+          "text": "${SIMPLE_NAME}.kt"
+        },
+        {
+          "requiredProps": [
+            "FLOW_NAME"
+          ],
+          "name": "SIMPLE_NAME",
+          "text": "${FLOW_NAME}RepositoryImpl"
+        },
+        {
+          "requiredProps": [
+            "FILE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME",
+          "text": "${PACKAGE_NAME}.${FILE_NAME}"
         }
       ],
       "requiredProps": [
         "REPOSITORY_SIMPLE_NAME",
-        "FILE_NAME",
         "PACKAGE_NAME",
         "FLOW_NAME"
       ]
@@ -56,7 +84,6 @@
       "requiredProps": [
         "REPOSITORY_CLASS_NAME",
         "REPOSITORY_SIMPLE_NAME",
-        "FILE_NAME",
         "REPOSITORY_IMPL_CLASS_NAME",
         "PACKAGE_NAME",
         "REPOSITORY_IMPL_SIMPLE_NAME",
@@ -68,10 +95,6 @@
   "customProps": [],
   "requiredProps": [
     "PACKAGE_NAME",
-    "FLOW_NAME",
-    "REPOSITORY_SIMPLE_NAME",
-    "REPOSITORY_CLASS_NAME",
-    "REPOSITORY_IMPL_CLASS_NAME",
-    "REPOSITORY_IMPL_SIMPLE_NAME"
+    "FLOW_NAME"
   ]
 }

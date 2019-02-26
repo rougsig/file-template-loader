@@ -17,6 +17,7 @@ data class FileTemplateGroup(
     .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
     .minus(customProps.map(FileTemplateCustomProp::name))
     .minus(templates.flatMap(FileTemplate::customProps).map(FileTemplateCustomProp::name))
+    .minus(templates.flatMap { template -> template.customProps.map { "${template.simpleName}_${it.name}" } })
     .toSet()
 
   override fun generateProps(dir: PsiDirectory, props: Props) {
