@@ -4,9 +4,9 @@ import com.github.rougsig.filetemplateloader.extension.*
 import java.util.*
 
 typealias Props = Properties
-typealias PropGenerators = Map<String, (String) -> String>
+typealias PropModificators = Map<String, (String) -> String>
 
-val PROP_GENERATORS: PropGenerators = HashMap<String, (String) -> String>().apply {
+val PROP_MODIFICATORS: PropModificators = HashMap<String, (String) -> String>().apply {
   put("LOWER_CAMEL_CASE", String::toLowerCamelCase)
   put("UPPER_CAMEL_CASE", String::toUpperCamelCase)
   put("LOWER_SNAKE_CASE", String::toLowerSnakeCase)
@@ -19,7 +19,7 @@ val PROP_GENERATORS: PropGenerators = HashMap<String, (String) -> String>().appl
   put("LOWER_CASE", String::toLowerCase)
 }
 
-val GENERATED_PROP_MATCHER = PROP_GENERATORS.keys.joinToString("|") { "_$it" }.toRegex()
+val GENERATED_PROP_MATCHER = PROP_MODIFICATORS.keys.joinToString("|") { "_$it" }.toRegex()
 
 fun Set<String>.generateProps(props: Props): Props {
   filter { GENERATED_PROP_MATCHER.containsMatchIn(it) }
@@ -27,7 +27,7 @@ fun Set<String>.generateProps(props: Props): Props {
       val generatorName = GENERATED_PROP_MATCHER.find(fullPropName)!!.value.removePrefix("_")
       val propBase = fullPropName.extractPropBase()
 
-      val propGenerator = PROP_GENERATORS.getValue(generatorName)
+      val propGenerator = PROP_MODIFICATORS.getValue(generatorName)
       val generatedProp = propGenerator(props.getProperty(propBase))
 
       props.setProperty(fullPropName, generatedProp)
