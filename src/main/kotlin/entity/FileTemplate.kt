@@ -13,6 +13,8 @@ import java.util.*
 abstract class FileTemplate {
   abstract val name: String
   abstract val directory: String
+
+  abstract val extractedProps: Set<String>
   abstract val requiredProps: Set<String>
   abstract val customProps: List<FileTemplateCustomProp>
 
@@ -29,16 +31,7 @@ abstract class FileTemplate {
       .toUpperSnakeCase()
   }
 
-  val isAnonimus: Boolean
-    get() = name.isBlank()
-
   abstract fun create(dir: PsiDirectory, props: Props): List<PsiFile>
-
-  protected fun Set<String>.plusCustomProps(): Set<String> {
-    return this
-      .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
-      .minus(customProps.map(FileTemplateCustomProp::name))
-  }
 }
 
 fun mergeTemplate(templateText: String, props: Properties): String {

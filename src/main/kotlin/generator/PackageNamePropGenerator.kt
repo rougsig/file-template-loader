@@ -1,6 +1,5 @@
 package com.github.rougsig.filetemplateloader.generator
 
-import com.github.rougsig.filetemplateloader.constant.PROP_INITIAL_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.extension.toDotCase
 
@@ -14,7 +13,7 @@ class PackageNamePropGenerator(
 
   override fun generateProp(props: Props) {
     val packageNameBuilder = StringBuilder()
-    packageNameBuilder.append(props.getProperty(PROP_INITIAL_PACKAGE_NAME) ?: "")
+    packageNameBuilder.append(props.getProperty(PROP_PACKAGE_NAME) ?: "")
     if (directory != null && directory.isNotBlank()) {
       packageNameBuilder.append(".")
       packageNameBuilder.append(directory.toDotCase())

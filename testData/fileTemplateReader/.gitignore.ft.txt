@@ -4,6 +4,7 @@
   "text": "",
   "directory": "",
   "customProps": [],
+  "extractedProps": [],
   "requiredProps": [
     "FILE_NAME"
   ],

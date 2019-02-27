@@ -12,10 +12,9 @@ data class FileTemplateGroup(
   override val directory: String = "",
   override val customProps: List<FileTemplateCustomProp> = emptyList()
 ) : FileTemplate() {
-  override val requiredProps = templates
+  override val extractedProps: Set<String> = templates
     .requiredProps()
-    .plusCustomProps()
-    .minusGeneratedProps()
+    .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
 
   private val initialPropGenerators = listOf(
     InitialPropGenerator(
@@ -23,21 +22,29 @@ data class FileTemplateGroup(
     ) { name }
   )
 
+  private val initialPropNames = initialPropGenerators.map(PropGenerator::propName).toSet()
+  private val customPropNames = customProps.map(FileTemplateCustomProp::name).toSet()
+
   override val propGenerators: List<PropGenerator> = initialPropGenerators
     .plus(customProps.map { CustomPropGenerator(simpleName, it) })
     .plus(templates.flatMap(FileTemplate::propGenerators))
-    .plus(requiredProps.extractModificatorPropGenerators())
+    .plus(
+      extractedProps.extractModificatorPropGenerators(
+        simpleName,
+        customPropNames,
+        initialPropNames
+      )
+    )
+
+  override val requiredProps: Set<String> = extractedProps
+    .minusGeneratedProps(simpleName, propGenerators)
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
     val subDir = dir.createSubDirectoriesByRelativePath(directory)
     return templates.flatMap { it.create(subDir, props) }
   }
 
-  private fun Set<String>.minusGeneratedProps(): Set<String> {
-    return minus(templates.flatMap(FileTemplate::generatedProps))
-  }
-
   private fun List<FileTemplate>.requiredProps(): Set<String> {
-    return flatMap(FileTemplate::requiredProps).toSet()
+    return flatMap { it.requiredProps }.toSet()
   }
 }

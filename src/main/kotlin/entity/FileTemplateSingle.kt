@@ -14,9 +14,8 @@ data class FileTemplateSingle(
   override val directory: String = "",
   override val customProps: List<FileTemplateCustomProp> = emptyList()
 ) : FileTemplate() {
-  override val requiredProps = extractProps(text)
-    .plus(PROP_FILE_NAME)
-    .plusCustomProps()
+  override val extractedProps: Set<String> = extractProps(text)
+    .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
 
   private val initialPropGenerators = listOf(
     InitialPropGenerator(
@@ -28,10 +27,23 @@ data class FileTemplateSingle(
     )
   )
 
+  private val initialPropNames = initialPropGenerators.map(PropGenerator::propName).toSet()
+  private val customPropNames = customProps.map(FileTemplateCustomProp::name).toSet()
+
   override val propGenerators: List<PropGenerator> =
     initialPropGenerators
       .plus(customProps.map { CustomPropGenerator(simpleName, it) })
-      .plus(requiredProps.extractModificatorPropGenerators())
+      .plus(
+        extractedProps.extractModificatorPropGenerators(
+          simpleName,
+          customPropNames,
+          initialPropNames
+        )
+      )
+
+  override val requiredProps: Set<String> = extractedProps
+    .plus(PROP_FILE_NAME)
+    .minusGeneratedProps(simpleName, propGenerators)
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
     val file = createSingleFileTemplate(dir.project, props, this)

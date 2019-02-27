@@ -11,17 +11,3 @@ class ModificatorPropGenerator(
     props.setProperty(propName, modificator(props.getProperty(propBaseName)))
   }
 }
-
-fun Set<String>.extractModificatorPropGenerators(): List<ModificatorPropGenerator> {
-  return mapNotNull { propName ->
-    propName.extractPropBase()?.let { propBaseName ->
-      val modificatorName = PROP_MODIFICATOR_MATCHER.find(propName)!!.value.removePrefix("_")
-      val modificator = PROP_MODIFICATORS.getValue(modificatorName)
-      ModificatorPropGenerator(
-        propName,
-        propBaseName,
-        modificator
-      )
-    }
-  }
-}

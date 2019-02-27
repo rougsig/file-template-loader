@@ -25,7 +25,7 @@ fun Set<String>.generatePropModificators(props: Props): Props {
   filter { PROP_MODIFICATOR_MATCHER.containsMatchIn(it) }
     .map { fullPropName ->
       val generatorName = PROP_MODIFICATOR_MATCHER.find(fullPropName)!!.value.removePrefix("_")
-      val propBase = fullPropName.extractPropBase()
+      val propBase = ""
 
       val propGenerator = PROP_MODIFICATORS.getValue(generatorName)
       val generatedProp = propGenerator(props.getProperty(propBase))

@@ -5,7 +5,7 @@
     {
       "name": "Repository.kt",
       "simpleName": "REPOSITORY",
-      "text": "${PACKAGE_NAME}\r\n${FILE_NAME}\r\n",
+      "text": "${PACKAGE_NAME}\r\n${FILE_NAME}\r\n${FILE_NAME_LOWER_CASE}\r\n",
       "directory": "",
       "customProps": [
         {
@@ -31,6 +31,13 @@
           "text": "${PACKAGE_NAME}.${FILE_NAME}"
         }
       ],
+      "extractedProps": [
+        "FILE_NAME",
+        "PACKAGE_NAME",
+        "FILE_NAME_LOWER_CASE",
+        "SIMPLE_NAME",
+        "FLOW_NAME"
+      ],
       "requiredProps": [
         "PACKAGE_NAME",
         "FLOW_NAME"
@@ -40,7 +47,8 @@
         "REPOSITORY_PACKAGE_NAME",
         "REPOSITORY_FILE_NAME",
         "REPOSITORY_SIMPLE_NAME",
-        "REPOSITORY_CLASS_NAME"
+        "REPOSITORY_CLASS_NAME",
+        "REPOSITORY_FILE_NAME_LOWER_CASE"
       ]
     },
     {
@@ -72,10 +80,17 @@
           "text": "${PACKAGE_NAME}.${FILE_NAME}"
         }
       ],
-      "requiredProps": [
+      "extractedProps": [
         "REPOSITORY_SIMPLE_NAME",
+        "FILE_NAME",
         "PACKAGE_NAME",
+        "SIMPLE_NAME",
         "FLOW_NAME"
+      ],
+      "requiredProps": [
+        "PACKAGE_NAME",
+        "FLOW_NAME",
+        "REPOSITORY_SIMPLE_NAME"
       ],
       "generatedProps": [
         "REPOSITORY_IMPL_TEMPLATE_NAME",
@@ -99,13 +114,22 @@
           "text": "${FLOW_NAME}RepositoryBindings.kt"
         }
       ],
-      "requiredProps": [
+      "extractedProps": [
         "REPOSITORY_CLASS_NAME",
         "REPOSITORY_SIMPLE_NAME",
+        "FILE_NAME",
         "REPOSITORY_IMPL_CLASS_NAME",
         "PACKAGE_NAME",
         "REPOSITORY_IMPL_SIMPLE_NAME",
         "FLOW_NAME"
+      ],
+      "requiredProps": [
+        "REPOSITORY_IMPL_CLASS_NAME",
+        "REPOSITORY_CLASS_NAME",
+        "PACKAGE_NAME",
+        "REPOSITORY_IMPL_SIMPLE_NAME",
+        "FLOW_NAME",
+        "REPOSITORY_SIMPLE_NAME"
       ],
       "generatedProps": [
         "REPOSITORY_BINDINGS_TEMPLATE_NAME",
@@ -116,6 +140,14 @@
   ],
   "directory": "",
   "customProps": [],
+  "extractedProps": [
+    "PACKAGE_NAME",
+    "FLOW_NAME",
+    "REPOSITORY_SIMPLE_NAME",
+    "REPOSITORY_IMPL_CLASS_NAME",
+    "REPOSITORY_CLASS_NAME",
+    "REPOSITORY_IMPL_SIMPLE_NAME"
+  ],
   "requiredProps": [
     "PACKAGE_NAME",
     "FLOW_NAME"
@@ -127,6 +159,7 @@
     "REPOSITORY_FILE_NAME",
     "REPOSITORY_SIMPLE_NAME",
     "REPOSITORY_CLASS_NAME",
+    "REPOSITORY_FILE_NAME_LOWER_CASE",
     "REPOSITORY_IMPL_TEMPLATE_NAME",
     "REPOSITORY_IMPL_PACKAGE_NAME",
     "REPOSITORY_IMPL_FILE_NAME",
