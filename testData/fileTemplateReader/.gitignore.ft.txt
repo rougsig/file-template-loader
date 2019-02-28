@@ -1,7 +1,6 @@
 {
   "name": ".gitignore",
   "simpleName": "GITIGNORE",
-  "text": "",
   "directory": "",
   "customProps": [],
   "extractedProps": [],

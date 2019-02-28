@@ -5,7 +5,6 @@
     {
       "name": "Repository.kt",
       "simpleName": "REPOSITORY",
-      "text": "${PACKAGE_NAME}\r\n${FILE_NAME}\r\n${FILE_NAME_LOWER_CASE}\r\n",
       "directory": "",
       "customProps": [
         {
@@ -54,7 +53,6 @@
     {
       "name": "RepositoryImpl.kt",
       "simpleName": "REPOSITORY_IMPL",
-      "text": "${PACKAGE_NAME}\r\n${FILE_NAME}\r\n${REPOSITORY_SIMPLE_NAME}\r\n",
       "directory": "",
       "customProps": [
         {
@@ -103,7 +101,6 @@
     {
       "name": "RepositoryBindings.kt",
       "simpleName": "REPOSITORY_BINDINGS",
-      "text": "${PACKAGE_NAME}\r\n${REPOSITORY_CLASS_NAME}\r\n${REPOSITORY_IMPL_CLASS_NAME}\r\n${FILE_NAME}\r\n${REPOSITORY_SIMPLE_NAME}\r\n${REPOSITORY_IMPL_SIMPLE_NAME}\r\n",
       "directory": "di",
       "customProps": [
         {

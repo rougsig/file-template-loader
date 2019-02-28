@@ -38,4 +38,6 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
   fun testRepositoryImplFileTemplate() = doTest("RepositoryImpl.kt.ft")
 
   fun testRepositoryGroup() = doTest("Repository.group.json")
+
+  fun testScreenGroup() = doTest("Screen.group.json")
 }

@@ -34,6 +34,7 @@ data class FileTemplateCustomPropJson(
 
 data class FileTemplateInjectorJson(
   val text: String,
+  val textFrom: String?,
   val className: String?,
   val pathName: String?,
   val selector: String

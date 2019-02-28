@@ -1,7 +1,6 @@
 {
   "name": "SimpleFileTemplate.kt",
   "simpleName": "SIMPLE_FILE_TEMPLATE",
-  "text": "${DUCK_VOICE_UPPER_CASE}\r\n${CAT_VOICE_LOWER_CASE}\r\n${TEMPLATE_NAME_LOWER_CASE}\r\n",
   "directory": "",
   "customProps": [],
   "extractedProps": [
