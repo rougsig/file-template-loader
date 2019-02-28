@@ -18,6 +18,11 @@ fun FileTemplate.generateProps(props: Props): Props {
   (props as Map<String, String>)
     .filterKeys { k -> requiredProps.contains(k) }
     .forEach { k, v -> filteredProps.setProperty(k, v) }
+
+  require(requiredProps.minus(filteredProps.keys).isEmpty()) {
+    throw IllegalStateException("props not found: ${requiredProps.minus(filteredProps.keys).joinToString { "$it" }}")
+  }
+
   return propGenerators.filter { generatedProps.contains(it.propName) }.generateProps(filteredProps)
 }
 

@@ -1,5 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
+import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
+import com.github.rougsig.filetemplateloader.entity.FileTemplateSingle
 import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.generator.generateProps
 import com.github.rougsig.filetemplateloader.reader.readFileTemplate
@@ -16,6 +18,10 @@ class FileTemplatePropGeneratorTest : LightPlatformCodeInsightFixtureTestCase() 
 
   private fun doTest(testFileName: String, props: Props = DEFAULT_PROPS) {
     val template = project.guessProjectDir()!!.readFileTemplate(testFileName)
+
+    if (template is FileTemplateSingle) {
+      props.setProperty(PROP_FILE_NAME, testFileName.replace(".ft", ""))
+    }
 
     val generatedProps = template
       .generateProps(props)
@@ -35,7 +41,7 @@ class FileTemplatePropGeneratorTest : LightPlatformCodeInsightFixtureTestCase() 
 
   fun testSimpleFileTemplate() = doTest("SimpleFileTemplate.kt.ft")
 
-  fun testRepositoryImplFileTemplate() = doTest("RepositoryImpl.kt.ft")
-
   fun testRepositoryGroup() = doTest("Repository.group.json")
+
+  fun testScreenGroup() = doTest("Screen.group.json")
 }

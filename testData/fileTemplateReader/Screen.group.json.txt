@@ -1,0 +1,290 @@
+{
+  "name": "Screen",
+  "simpleName": "SCREEN",
+  "templates": [
+    {
+      "name": "Controller.kt",
+      "simpleName": "CONTROLLER",
+      "directory": "",
+      "customProps": [
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME",
+          "text": "${SIMPLE_NAME}.kt"
+        },
+        {
+          "requiredProps": [
+            "SCREEN_NAME"
+          ],
+          "name": "SIMPLE_NAME",
+          "text": "${SCREEN_NAME}Controller"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME",
+          "text": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        }
+      ],
+      "extractedProps": [
+        "PRESENTER_SIMPLE_NAME",
+        "FILE_NAME",
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+        "SCREEN_CLASS_NAME",
+        "SIMPLE_NAME",
+        "SCREEN_NAME"
+      ],
+      "requiredProps": [
+        "PRESENTER_SIMPLE_NAME",
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "SCREEN_NAME",
+        "SCREEN_CLASS_NAME",
+        "LAYOUT_SIMPLE_NAME"
+      ],
+      "generatedProps": [
+        "CONTROLLER_TEMPLATE_NAME",
+        "CONTROLLER_PACKAGE_NAME",
+        "CONTROLLER_FILE_NAME",
+        "CONTROLLER_SIMPLE_NAME",
+        "CONTROLLER_CLASS_NAME",
+        "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE"
+      ]
+    },
+    {
+      "name": "Key.kt",
+      "simpleName": "KEY",
+      "directory": "",
+      "customProps": [
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME",
+          "text": "${SIMPLE_NAME}.kt"
+        },
+        {
+          "requiredProps": [
+            "SCREEN_NAME"
+          ],
+          "name": "SIMPLE_NAME",
+          "text": "${SCREEN_NAME}Key"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME",
+          "text": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        }
+      ],
+      "extractedProps": [
+        "FILE_NAME",
+        "CONTROLLER_SIMPLE_NAME",
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "SIMPLE_NAME",
+        "SCREEN_NAME"
+      ],
+      "requiredProps": [
+        "PACKAGE_BASE",
+        "CONTROLLER_SIMPLE_NAME",
+        "PACKAGE_NAME",
+        "SCREEN_NAME"
+      ],
+      "generatedProps": [
+        "KEY_TEMPLATE_NAME",
+        "KEY_PACKAGE_NAME",
+        "KEY_FILE_NAME",
+        "KEY_SIMPLE_NAME",
+        "KEY_CLASS_NAME"
+      ]
+    },
+    {
+      "name": "Presenter.kt",
+      "simpleName": "PRESENTER",
+      "directory": "",
+      "customProps": [
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME",
+          "text": "${SIMPLE_NAME}.kt"
+        },
+        {
+          "requiredProps": [
+            "SCREEN_NAME"
+          ],
+          "name": "SIMPLE_NAME",
+          "text": "${SCREEN_NAME}Presenter"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME",
+          "text": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        }
+      ],
+      "extractedProps": [
+        "FILE_NAME",
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "SCREEN_CLASS_NAME",
+        "SIMPLE_NAME",
+        "SCREEN_NAME"
+      ],
+      "requiredProps": [
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "SCREEN_NAME",
+        "SCREEN_CLASS_NAME"
+      ],
+      "generatedProps": [
+        "PRESENTER_TEMPLATE_NAME",
+        "PRESENTER_PACKAGE_NAME",
+        "PRESENTER_FILE_NAME",
+        "PRESENTER_SIMPLE_NAME",
+        "PRESENTER_CLASS_NAME"
+      ]
+    },
+    {
+      "name": "Screen.kt",
+      "simpleName": "SCREEN",
+      "directory": "",
+      "customProps": [
+        {
+          "requiredProps": [
+            "SCREEN_NAME"
+          ],
+          "name": "FILE_NAME",
+          "text": "${SCREEN_NAME}.kt"
+        },
+        {
+          "requiredProps": [
+            "SCREEN_NAME"
+          ],
+          "name": "SIMPLE_NAME",
+          "text": "${SCREEN_NAME}Screen"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME",
+          "text": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        }
+      ],
+      "extractedProps": [
+        "FILE_NAME",
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "SCREEN_NAME",
+        "SIMPLE_NAME"
+      ],
+      "requiredProps": [
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "SCREEN_NAME"
+      ],
+      "generatedProps": [
+        "SCREEN_TEMPLATE_NAME",
+        "SCREEN_PACKAGE_NAME",
+        "SCREEN_FILE_NAME",
+        "SCREEN_SIMPLE_NAME",
+        "SCREEN_CLASS_NAME"
+      ]
+    },
+    {
+      "name": "Layout.xml",
+      "simpleName": "LAYOUT",
+      "directory": "./src/main/res/layout",
+      "customProps": [
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME",
+          "text": "${SIMPLE_NAME}.xml"
+        },
+        {
+          "requiredProps": [
+            "SCREEN_NAME_LOWER_SNAKE_CASE"
+          ],
+          "name": "SIMPLE_NAME",
+          "text": "${SCREEN_NAME_LOWER_SNAKE_CASE}_controller"
+        }
+      ],
+      "extractedProps": [
+        "SIMPLE_NAME",
+        "SCREEN_NAME_LOWER_SNAKE_CASE"
+      ],
+      "requiredProps": [
+        "PACKAGE_NAME",
+        "SCREEN_NAME"
+      ],
+      "generatedProps": [
+        "LAYOUT_TEMPLATE_NAME",
+        "LAYOUT_PACKAGE_NAME",
+        "LAYOUT_FILE_NAME",
+        "LAYOUT_SIMPLE_NAME",
+        "SCREEN_NAME_LOWER_SNAKE_CASE"
+      ]
+    }
+  ],
+  "directory": "",
+  "customProps": [],
+  "extractedProps": [
+    "PRESENTER_SIMPLE_NAME",
+    "PACKAGE_BASE",
+    "PACKAGE_NAME",
+    "SCREEN_NAME",
+    "SCREEN_CLASS_NAME",
+    "LAYOUT_SIMPLE_NAME",
+    "CONTROLLER_SIMPLE_NAME"
+  ],
+  "requiredProps": [
+    "PACKAGE_BASE",
+    "PACKAGE_NAME",
+    "SCREEN_NAME"
+  ],
+  "generatedProps": [
+    "SCREEN_GROUP_NAME",
+    "CONTROLLER_TEMPLATE_NAME",
+    "CONTROLLER_PACKAGE_NAME",
+    "CONTROLLER_FILE_NAME",
+    "CONTROLLER_SIMPLE_NAME",
+    "CONTROLLER_CLASS_NAME",
+    "LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+    "KEY_TEMPLATE_NAME",
+    "KEY_PACKAGE_NAME",
+    "KEY_FILE_NAME",
+    "KEY_SIMPLE_NAME",
+    "KEY_CLASS_NAME",
+    "PRESENTER_TEMPLATE_NAME",
+    "PRESENTER_PACKAGE_NAME",
+    "PRESENTER_FILE_NAME",
+    "PRESENTER_SIMPLE_NAME",
+    "PRESENTER_CLASS_NAME",
+    "SCREEN_TEMPLATE_NAME",
+    "SCREEN_PACKAGE_NAME",
+    "SCREEN_FILE_NAME",
+    "SCREEN_SIMPLE_NAME",
+    "SCREEN_CLASS_NAME",
+    "LAYOUT_TEMPLATE_NAME",
+    "LAYOUT_PACKAGE_NAME",
+    "LAYOUT_FILE_NAME",
+    "LAYOUT_SIMPLE_NAME",
+    "SCREEN_NAME_LOWER_SNAKE_CASE"
+  ]
+}

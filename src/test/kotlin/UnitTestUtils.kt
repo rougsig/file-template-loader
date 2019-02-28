@@ -1,13 +1,10 @@
 package com.github.rougsig.filetemplateloader
 
-import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.reader.createGson
 import com.google.gson.Gson
 import com.intellij.openapi.util.io.FileUtil
 import java.io.File
-
-const val PROP_PACKAGE_NAME_TEST_VALUE = "com.github.rougsig.filetemplateloader"
 
 val DEFAULT_PROPS: Props
   get() = Props().apply {
@@ -17,7 +14,9 @@ val DEFAULT_PROPS: Props
     setProperty("DUCK_VOICE", "Quack Quack")
     setProperty("CAT_VOICE", "Meow Meow")
     setProperty("FLOW_NAME", "Epic")
-    setProperty(PROP_PACKAGE_NAME, PROP_PACKAGE_NAME_TEST_VALUE)
+    setProperty("SCREEN_NAME", "Duck")
+    setProperty("PACKAGE_NAME", "com.github.rougsig.filetemplateloader")
+    setProperty("PACKAGE_BASE", "com.github.rougsig")
   }
 
 fun calculateTestDataPath(): String {
