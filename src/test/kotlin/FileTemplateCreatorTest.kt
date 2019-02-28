@@ -1,6 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.generator.generateProps
@@ -20,9 +21,10 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     get() = Props().apply {
       setProperty("DUCK_VOICE", "Quack Quack")
       setProperty("CAT_VOICE", "Meow Meow")
+      setProperty(PROP_PACKAGE_NAME, PROP_PACKAGE_NAME_TEST_VALUE)
     }
 
-  private fun doTest(testFileName: String, props: Props) {
+  private fun doTest(testFileName: String, props: Props = defaultProps) {
     val fileName = testFileName.replace(".ft", "")
     val template = project.guessProjectDir()!!.readFileTemplate(testFileName)
     val dir = psiManager.findDirectory(project.guessProjectDir()!!)!!
@@ -51,9 +53,9 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     )
   }
 
-  fun testEmptyFileTemplate() = doTest("EmptyFileTemplate.kt.ft", Props())
+  fun testEmptyFileTemplate() = doTest("EmptyFileTemplate.kt.ft")
 
-  fun testGitignore() = doTest(".gitignore.ft", Props())
+  fun testGitignore() = doTest(".gitignore.ft")
 
-  fun testSimpleFileTemplate() = doTest("SimpleFileTemplate.kt.ft", defaultProps)
+  fun testSimpleFileTemplate() = doTest("SimpleFileTemplate.kt.ft")
 }

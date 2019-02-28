@@ -1,2 +1,6 @@
-NO_PROPS_PACKAGE_NAME=
+NO_PROPS_PACKAGE_NAME=com.github.rougsig.filetemplateloader
 NO_PROPS_TEMPLATE_NAME=NoProps
+ONE_PROP=OneProp
+PACKAGE_NAME=com.github.rougsig.filetemplateloader
+THREE_PROP=ThreeProp
+TWO_PROP=TwoProp

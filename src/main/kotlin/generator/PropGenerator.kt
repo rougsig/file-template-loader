@@ -14,6 +14,17 @@ abstract class PropGenerator {
 }
 
 fun FileTemplate.generateProps(props: Props): Props {
-  val avaliableGenerators = propGenerators.filter { it.isGenerateAvailable(props) }
+  return propGenerators.generateProps(props)
+}
+
+fun List<PropGenerator>.generateProps(props: Props): Props {
+  val canBeGenerated = filter { it.isGenerateAvailable(props) }
+
+  if (canBeGenerated.isEmpty() && isNotEmpty())
+    throw IllegalStateException("can't generate props: ${joinToString { it.propName }}")
+
+  canBeGenerated.forEach { it.generateProp(props) }
+  if (isNotEmpty()) minus(canBeGenerated).generateProps(props)
+
   return props
 }

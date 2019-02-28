@@ -5,6 +5,8 @@ import com.google.gson.Gson
 import com.intellij.openapi.util.io.FileUtil
 import java.io.File
 
+const val PROP_PACKAGE_NAME_TEST_VALUE = "com.github.rougsig.filetemplateloader"
+
 fun calculateTestDataPath(): String {
   val userDir = System.getProperty("user.dir")
   val dir = File(userDir ?: ".")
