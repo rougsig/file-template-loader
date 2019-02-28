@@ -1,0 +1,6 @@
+com.github.rougsig.filetemplateloader
+com.github.rougsig.filetemplateloader.EpicRepository.kt
+com.github.rougsig.filetemplateloader.EpicRepositoryImpl.kt
+EpicRepositoryBindings.kt
+EpicRepository
+EpicRepositoryImpl

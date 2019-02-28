@@ -1,0 +1,21 @@
+{
+  "name": "RepositoryImpl.kt",
+  "simpleName": "REPOSITORY_IMPL",
+  "text": "${PACKAGE_NAME}\r\n${FILE_NAME}\r\n${REPOSITORY_SIMPLE_NAME}\r\n",
+  "directory": "",
+  "customProps": [],
+  "extractedProps": [
+    "REPOSITORY_SIMPLE_NAME",
+    "FILE_NAME",
+    "PACKAGE_NAME"
+  ],
+  "requiredProps": [
+    "PACKAGE_NAME",
+    "FILE_NAME",
+    "REPOSITORY_SIMPLE_NAME"
+  ],
+  "generatedProps": [
+    "REPOSITORY_IMPL_TEMPLATE_NAME",
+    "REPOSITORY_IMPL_PACKAGE_NAME"
+  ]
+}
