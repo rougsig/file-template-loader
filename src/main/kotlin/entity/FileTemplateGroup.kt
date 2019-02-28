@@ -26,7 +26,7 @@ data class FileTemplateGroup(
   private val customPropNames = customProps.map(FileTemplateCustomProp::name).toSet()
 
   override val propGenerators: List<PropGenerator> = initialPropGenerators
-    .plus(customProps.map { CustomPropGenerator(simpleName, it) })
+    .plus(customProps.map { CustomPropGenerator(simpleName, customPropNames, it) })
     .plus(templates.flatMap(FileTemplate::propGenerators))
     .plus(
       extractedProps.extractModificatorPropGenerators(
@@ -40,9 +40,8 @@ data class FileTemplateGroup(
     .minusGeneratedProps(simpleName, propGenerators)
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
-    val localScopeProps = copyPropsToLocalScopeProps(simpleName, generatedProps, props)
     val subDir = dir.createSubDirectoriesByRelativePath(directory)
-    return templates.flatMap { it.create(subDir, localScopeProps) }
+    return templates.flatMap { it.create(subDir, props) }
   }
 
   private fun List<FileTemplate>.requiredProps(): Set<String> {

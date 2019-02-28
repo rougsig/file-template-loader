@@ -1,3 +1,0 @@
-QUACK QUACK
-meow meow
-simplefiletemplate.kt

@@ -24,11 +24,11 @@
         },
         {
           "requiredProps": [
-            "FILE_NAME",
+            "SIMPLE_NAME",
             "PACKAGE_NAME"
           ],
           "name": "CLASS_NAME",
-          "text": "${PACKAGE_NAME}.${FILE_NAME}"
+          "text": "${PACKAGE_NAME}.${SIMPLE_NAME}"
         }
       ],
       "extractedProps": [
@@ -73,11 +73,11 @@
         },
         {
           "requiredProps": [
-            "FILE_NAME",
+            "SIMPLE_NAME",
             "PACKAGE_NAME"
           ],
           "name": "CLASS_NAME",
-          "text": "${PACKAGE_NAME}.${FILE_NAME}"
+          "text": "${PACKAGE_NAME}.${SIMPLE_NAME}"
         }
       ],
       "extractedProps": [

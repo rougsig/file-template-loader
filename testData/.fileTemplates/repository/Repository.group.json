@@ -10,7 +10,7 @@
         },
         {
           "name": "CLASS_NAME",
-          "text": "${PACKAGE_NAME}.${FILE_NAME}"
+          "text": "${PACKAGE_NAME}.${SIMPLE_NAME}"
         }
       ]
     },
@@ -24,7 +24,7 @@
         },
         {
           "name": "CLASS_NAME",
-          "text": "${PACKAGE_NAME}.${FILE_NAME}"
+          "text": "${PACKAGE_NAME}.${SIMPLE_NAME}"
         }
       ]
     },

@@ -65,17 +65,13 @@ fun Set<String>.minusGeneratedProps(
   propGenerators: List<PropGenerator>
 ): Set<String> {
   fun Iterable<PropGenerator>.findPropGenerator(propName: String): PropGenerator? {
-    return find { it.propName == propName }
-  }
-
-  fun Iterable<PropGenerator>.findPrefixedPropGenerator(propName: String): PropGenerator? {
-    return find { it.propName == "${prefix}_$propName" }
+    return find { it.propName == propName || it.propName == "${prefix}_$propName" }
   }
 
   val notPackageNamePropGenerators = propGenerators.filterNot { it is PackageNamePropGenerator }
 
   return this
     .flatMapTo(HashSet<String>()) { propGenerators.findPropGenerator(it)?.requiredProps ?: setOf(it) }
-    .filter { notPackageNamePropGenerators.findPrefixedPropGenerator(it) == null }
+    .filter { notPackageNamePropGenerators.findPropGenerator(it) == null }
     .toSet()
 }

@@ -16,6 +16,7 @@ val DEFAULT_PROPS: Props
     setProperty("THREE_PROP", "ThreeProp")
     setProperty("DUCK_VOICE", "Quack Quack")
     setProperty("CAT_VOICE", "Meow Meow")
+    setProperty("FLOW_NAME", "Epic")
     setProperty(PROP_PACKAGE_NAME, PROP_PACKAGE_NAME_TEST_VALUE)
   }
 

@@ -29,9 +29,13 @@ class FileTemplatePropGeneratorTest : LightPlatformCodeInsightFixtureTestCase() 
     )
   }
 
-  fun testNoProps() = doTest(".gitignore.ft")
+  fun testGitignore() = doTest(".gitignore.ft")
 
-  fun testNoGeneratedProps() = doTest("EmptyFileTemplate.kt.ft")
+  fun testEmptyFileTemplate() = doTest("EmptyFileTemplate.kt.ft")
 
-  fun testGeneratedProps() = doTest("SimpleFileTemplate.kt.ft")
+  fun testSimpleFileTemplate() = doTest("SimpleFileTemplate.kt.ft")
+
+  fun testRepositoryImplFileTemplate() = doTest("RepositoryImpl.kt.ft")
+
+  fun testRepositoryGroup() = doTest("Repository.group.json")
 }

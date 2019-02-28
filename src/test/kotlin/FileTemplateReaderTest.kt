@@ -23,13 +23,8 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
 
     val json = gson.toJson(template)
 
-    val expectedJson = project
-      .guessProjectDir()!!
-      .findChild("fileTemplateReader")!!
-      .findChild("$testFileName.txt")!!
-
-    assertSameLines(
-      String(expectedJson.inputStream.readBytes()),
+    assertSameLinesWithFile(
+      "$testDataPath/fileTemplateReader/$testFileName.txt",
       json
     )
   }
@@ -39,6 +34,8 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
   fun testGitignoreFileTemplate() = doTest(".gitignore.ft")
 
   fun testSimpleFileTemplate() = doTest("SimpleFileTemplate.kt.ft")
+
+  fun testRepositoryImplFileTemplate() = doTest("RepositoryImpl.kt.ft")
 
   fun testRepositoryGroup() = doTest("Repository.group.json")
 }

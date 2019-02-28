@@ -7,6 +7,7 @@ import com.github.rougsig.filetemplateloader.generator.generateProps
 import com.github.rougsig.filetemplateloader.reader.readFileTemplate
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
+import org.jetbrains.kotlin.idea.core.getFqNameByDirectory
 
 class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
   override fun getTestDataPath(): String = calculateTestDataPath()
@@ -24,26 +25,24 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     props.setProperty(PROP_FILE_NAME, fileName)
     val generatedProps = template.generateProps(props)
 
-    val createdFileTemplateFile = project.writeAction {
+    val createdFileTemplateFiles = project.writeAction {
       template
         .create(dir, generatedProps)
-        .first()
     }
 
-    val expectedMergedTemplate = myFixture.project
-      .guessProjectDir()!!
-      .findChild("singleFileTemplateCreator")!!
-      .findChild("$testFileName.txt")!!
+    createdFileTemplateFiles.forEach { createdFileTemplateFile ->
 
-    assertSameLines(
-      String(expectedMergedTemplate.inputStream.readBytes()),
-      createdFileTemplateFile.text
-    )
+      val filePathBuilder = StringBuilder()
+      filePathBuilder.append("$testDataPath/singleFileTemplateCreator/")
+      val fileDirectory = createdFileTemplateFile.getFqNameByDirectory().asString()
+      if (fileDirectory.isNotBlank()) filePathBuilder.append("$fileDirectory/")
+      filePathBuilder.append("${createdFileTemplateFile.name}.txt")
 
-    assertEquals(
-      fileName,
-      createdFileTemplateFile.name
-    )
+      assertSameLinesWithFile(
+        filePathBuilder.toString(),
+        createdFileTemplateFile.text
+      )
+    }
   }
 
   fun testEmptyFileTemplate() = doTest("EmptyFileTemplate.kt.ft")
@@ -51,4 +50,6 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
   fun testGitignore() = doTest(".gitignore.ft")
 
   fun testSimpleFileTemplate() = doTest("SimpleFileTemplate.kt.ft")
+
+  fun testRepositoryGroupFileTemplate() = doTest("Repository.group.json")
 }

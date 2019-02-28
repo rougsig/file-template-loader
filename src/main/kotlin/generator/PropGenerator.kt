@@ -16,7 +16,7 @@ abstract class PropGenerator {
 fun FileTemplate.generateProps(props: Props): Props {
   val filteredProps = Props()
   (props as Map<String, String>)
-    .filterKeys { k -> this.requiredProps.contains(k) }
+    .filterKeys { k -> requiredProps.contains(k) }
     .forEach { k, v -> filteredProps.setProperty(k, v) }
   return propGenerators.filter { generatedProps.contains(it.propName) }.generateProps(filteredProps)
 }
@@ -25,7 +25,10 @@ fun List<PropGenerator>.generateProps(props: Props): Props {
   val canBeGenerated = filter { it.isGenerateAvailable(props) }
 
   if (canBeGenerated.isEmpty() && isNotEmpty())
-    throw IllegalStateException("can't generate props: ${joinToString { it.propName }}")
+    throw IllegalStateException(
+      "can't generate props: ${joinToString { "\n${it.propName}" }}.\n\n" +
+          "PropsRequired: ${flatMap(PropGenerator::requiredProps).toSet().joinToString { "\n$it" }}"
+    )
 
   canBeGenerated.forEach { it.generateProp(props) }
   if (isNotEmpty()) minus(canBeGenerated).generateProps(props)
@@ -37,7 +40,9 @@ fun copyPropsToLocalScopeProps(prefix: String, generatedProps: Set<String>, prop
   val localScopeProps = Props()
 
   (props as Map<String, String>)
-    .forEach { k, v ->
+    .toList()
+    .sortedBy { (k, _) -> if (k.startsWith(prefix)) 1 else -1 }
+    .forEach { (k, v) ->
       if (generatedProps.contains(k)) {
         localScopeProps.setProperty(k.removePrefix("${prefix}_"), v)
       } else {

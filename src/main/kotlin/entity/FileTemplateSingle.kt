@@ -33,7 +33,7 @@ data class FileTemplateSingle(
 
   override val propGenerators: List<PropGenerator> =
     initialPropGenerators
-      .plus(customProps.map { CustomPropGenerator(simpleName, it) })
+      .plus(customProps.map { CustomPropGenerator(simpleName, customPropNames, it) })
       .plus(
         extractedProps.extractModificatorPropGenerators(
           simpleName,
@@ -51,8 +51,9 @@ data class FileTemplateSingle(
     val localScopeProps = copyPropsToLocalScopeProps(simpleName, generatedProps, props)
     val mergedTemplate = mergeTemplate(text, localScopeProps)
     val fileName = localScopeProps.getProperty(PROP_FILE_NAME)
-    val file = dir.project.createPsiFile(fileName, mergedTemplate)
-    dir.createSubDirectoriesByRelativePath(directory).add(file)
+    val file = dir.createSubDirectoriesByRelativePath(directory)
+      .add(dir.project.createPsiFile(fileName, mergedTemplate))
+      .containingFile
     return listOf(file)
   }
 }
