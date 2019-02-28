@@ -12,7 +12,7 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
 
   override fun setUp() {
     super.setUp()
-    myFixture.copyDirectoryToProject("fileTemplateReader", "")
+    myFixture.copyDirectoryToProject("", "")
   }
 
   private fun doTest(testFileName: String) {
@@ -25,6 +25,7 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
 
     val expectedJson = project
       .guessProjectDir()!!
+      .findChild("fileTemplateReader")!!
       .findChild("$testFileName.txt")!!
 
     assertSameLines(

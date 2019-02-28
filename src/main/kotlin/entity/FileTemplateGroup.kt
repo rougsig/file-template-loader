@@ -40,8 +40,9 @@ data class FileTemplateGroup(
     .minusGeneratedProps(simpleName, propGenerators)
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
+    val localScopeProps = copyPropsToLocalScopeProps(simpleName, generatedProps, props)
     val subDir = dir.createSubDirectoriesByRelativePath(directory)
-    return templates.flatMap { it.create(subDir, props) }
+    return templates.flatMap { it.create(subDir, localScopeProps) }
   }
 
   private fun List<FileTemplate>.requiredProps(): Set<String> {

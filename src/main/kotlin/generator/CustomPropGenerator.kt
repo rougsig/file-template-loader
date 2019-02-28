@@ -12,7 +12,8 @@ class CustomPropGenerator(
   override val requiredProps: Set<String>
     get() = customProp.requiredProps
 
-  override fun generateProp(props: Props) {
+  override fun generateProp(props: Props): Props {
     props.setProperty(propName, mergeTemplate(customProp.text, props))
+    return props
   }
 }

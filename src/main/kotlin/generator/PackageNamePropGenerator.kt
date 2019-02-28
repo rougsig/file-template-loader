@@ -11,7 +11,7 @@ class PackageNamePropGenerator(
 
   override val requiredProps: Set<String> = setOf(PROP_PACKAGE_NAME)
 
-  override fun generateProp(props: Props) {
+  override fun generateProp(props: Props): Props {
     val packageNameBuilder = StringBuilder()
     packageNameBuilder.append(props.getProperty(PROP_PACKAGE_NAME) ?: "")
     if (directory != null && directory.isNotBlank()) {
@@ -20,5 +20,7 @@ class PackageNamePropGenerator(
     }
 
     props.setProperty(propName, packageNameBuilder.toString())
+
+    return props
   }
 }

@@ -1,0 +1,3 @@
+EMPTY_FILE_TEMPLATE_PACKAGE_NAME=com.github.rougsig.filetemplateloader
+EMPTY_FILE_TEMPLATE_TEMPLATE_NAME=EmptyFileTemplate.kt
+PACKAGE_NAME=com.github.rougsig.filetemplateloader

@@ -1,7 +1,6 @@
 package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
-import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.generator.generateProps
@@ -14,33 +13,27 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
 
   override fun setUp() {
     super.setUp()
-    myFixture.copyDirectoryToProject("singleFileTemplateCreator", "")
+    myFixture.copyDirectoryToProject("", "")
   }
 
-  private val defaultProps: Props
-    get() = Props().apply {
-      setProperty("DUCK_VOICE", "Quack Quack")
-      setProperty("CAT_VOICE", "Meow Meow")
-      setProperty(PROP_PACKAGE_NAME, PROP_PACKAGE_NAME_TEST_VALUE)
-    }
-
-  private fun doTest(testFileName: String, props: Props = defaultProps) {
+  private fun doTest(testFileName: String, props: Props = DEFAULT_PROPS) {
     val fileName = testFileName.replace(".ft", "")
     val template = project.guessProjectDir()!!.readFileTemplate(testFileName)
     val dir = psiManager.findDirectory(project.guessProjectDir()!!)!!
 
     props.setProperty(PROP_FILE_NAME, fileName)
-    template.generateProps(props)
+    val generatedProps = template.generateProps(props)
 
     val createdFileTemplateFile = project.writeAction {
       template
-        .create(dir, props)
+        .create(dir, generatedProps)
         .first()
     }
 
     val expectedMergedTemplate = myFixture.project
       .guessProjectDir()!!
-      .findFileByRelativePath("$testFileName.txt")!!
+      .findChild("singleFileTemplateCreator")!!
+      .findChild("$testFileName.txt")!!
 
     assertSameLines(
       String(expectedMergedTemplate.inputStream.readBytes()),

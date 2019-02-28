@@ -6,6 +6,7 @@
   "customProps": [],
   "extractedProps": [],
   "requiredProps": [
+    "PACKAGE_NAME",
     "FILE_NAME"
   ],
   "generatedProps": [

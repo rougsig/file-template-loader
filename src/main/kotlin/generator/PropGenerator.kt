@@ -6,7 +6,7 @@ abstract class PropGenerator {
   abstract val propName: String
   abstract val requiredProps: Set<String>
 
-  abstract fun generateProp(props: Props)
+  abstract fun generateProp(props: Props): Props
 
   fun isGenerateAvailable(props: Props): Boolean {
     return requiredProps.minus(props.keys as Set<String>).isEmpty()
@@ -14,7 +14,11 @@ abstract class PropGenerator {
 }
 
 fun FileTemplate.generateProps(props: Props): Props {
-  return propGenerators.generateProps(props)
+  val filteredProps = Props()
+  (props as Map<String, String>)
+    .filterKeys { k -> this.requiredProps.contains(k) }
+    .forEach { k, v -> filteredProps.setProperty(k, v) }
+  return propGenerators.filter { generatedProps.contains(it.propName) }.generateProps(filteredProps)
 }
 
 fun List<PropGenerator>.generateProps(props: Props): Props {
@@ -27,4 +31,19 @@ fun List<PropGenerator>.generateProps(props: Props): Props {
   if (isNotEmpty()) minus(canBeGenerated).generateProps(props)
 
   return props
+}
+
+fun copyPropsToLocalScopeProps(prefix: String, generatedProps: Set<String>, props: Props): Props {
+  val localScopeProps = Props()
+
+  (props as Map<String, String>)
+    .forEach { k, v ->
+      if (generatedProps.contains(k)) {
+        localScopeProps.setProperty(k.removePrefix("${prefix}_"), v)
+      } else {
+        localScopeProps.setProperty(k, v)
+      }
+    }
+
+  return localScopeProps
 }

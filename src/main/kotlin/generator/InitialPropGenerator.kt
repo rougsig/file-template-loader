@@ -6,7 +6,8 @@ class InitialPropGenerator(
 ) : PropGenerator() {
   override val requiredProps: Set<String> = emptySet()
 
-  override fun generateProp(props: Props) {
+  override fun generateProp(props: Props): Props {
     props.setProperty(propName, generator(props))
+    return props
   }
 }

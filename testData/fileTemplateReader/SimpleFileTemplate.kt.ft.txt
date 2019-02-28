@@ -12,6 +12,7 @@
   "requiredProps": [
     "DUCK_VOICE",
     "CAT_VOICE",
+    "PACKAGE_NAME",
     "FILE_NAME"
   ],
   "generatedProps": [

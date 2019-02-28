@@ -21,7 +21,7 @@ abstract class FileTemplate {
   abstract val propGenerators: List<PropGenerator>
 
   val generatedProps by lazy(LazyThreadSafetyMode.NONE) {
-    propGenerators.map(PropGenerator::propName)
+    propGenerators.map(PropGenerator::propName).toSet()
   }
 
   val simpleName by lazy(LazyThreadSafetyMode.NONE) {
