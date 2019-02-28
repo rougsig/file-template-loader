@@ -7,4 +7,12 @@ data class FileTemplateCustomProp(
   val text: String
 ) {
   val requiredProps = extractProps("$name\n$text")
+
+  override fun equals(other: Any?): Boolean {
+    return name.equals(other)
+  }
+
+  override fun hashCode(): Int {
+    return name.hashCode()
+  }
 }

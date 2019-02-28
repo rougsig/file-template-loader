@@ -16,16 +16,16 @@ fun createGson(): Gson {
 private val gson = createGson()
 
 fun VirtualFile.readFileTemplate(templateName: String): FileTemplate {
-  return readFileTemplate(templateName, fileRec)
+  return readFileTemplate(templateName, fileRec.map { it.name to it }.toMap(), emptySet(), "")
 }
 
 fun readFileTemplate(
   templateName: String,
-  templateFiles: List<VirtualFile>,
-  customProps: List<FileTemplateCustomProp> = emptyList(),
-  directory: String = ""
+  templateFiles: Map<String, VirtualFile>,
+  customProps: Set<FileTemplateCustomProp>,
+  directory: String
 ): FileTemplate {
-  val templateFile = templateFiles.find { it.name == templateName }
+  val templateFile = templateFiles[templateName]
     ?: throw IllegalStateException("template not found: $templateName")
 
   val templateNameWithoutExtension = FILE_TEMPLATE_EXTENSION_MATCHER.replace(templateName) { "" }
@@ -40,8 +40,8 @@ fun readFileTemplate(
 private fun readGroupFileTemplate(
   file: VirtualFile,
   templateName: String,
-  templateFiles: List<VirtualFile>,
-  customProps: List<FileTemplateCustomProp>
+  templateFiles: Map<String, VirtualFile>,
+  customProps: Set<FileTemplateCustomProp>
 ): FileTemplateGroup {
   val json = gson.fromJson(String(file.inputStream.readBytes()), FileTemplateGroupJson::class.java)
   return FileTemplateGroup(
@@ -54,7 +54,7 @@ private fun readGroupFileTemplate(
 private fun readSingleFileTemplate(
   file: VirtualFile,
   templateName: String,
-  customProps: List<FileTemplateCustomProp>,
+  customProps: Set<FileTemplateCustomProp>,
   directory: String
 ): FileTemplateSingle {
   return FileTemplateSingle(
@@ -66,16 +66,16 @@ private fun readSingleFileTemplate(
 }
 
 private fun FileTemplateJson.toFileTemplate(
-  templates: List<VirtualFile>
+  templateFiles: Map<String, VirtualFile>
 ): FileTemplate {
   val fileNameProp = FileTemplateCustomProp(
     name = PROP_FILE_NAME,
     text = fileName
   )
-  val customProps = listOf(fileNameProp).plus(customProps.toFileTemplateCustomProps())
+  val customProps = setOf(fileNameProp).plus(customProps.toFileTemplateCustomProps())
 
   return if (textFrom != null) {
-    readFileTemplate(textFrom, templates, customProps, directory ?: "")
+    readFileTemplate(textFrom, templateFiles, customProps, directory ?: "")
   } else {
     FileTemplateSingle(
       name = "",
@@ -86,8 +86,8 @@ private fun FileTemplateJson.toFileTemplate(
   }
 }
 
-private fun List<FileTemplateCustomPropJson>?.toFileTemplateCustomProps(): List<FileTemplateCustomProp> {
-  return this?.map { FileTemplateCustomProp(it.name, it.text) } ?: emptyList()
+private fun List<FileTemplateCustomPropJson>?.toFileTemplateCustomProps(): Set<FileTemplateCustomProp> {
+  return this?.map { FileTemplateCustomProp(it.name, it.text) }?.toSet() ?: emptySet()
 }
 
 private val VirtualFile.fileRec: List<VirtualFile>

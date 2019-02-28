@@ -16,7 +16,7 @@ abstract class FileTemplate {
 
   abstract val extractedProps: Set<String>
   abstract val requiredProps: Set<String>
-  abstract val customProps: List<FileTemplateCustomProp>
+  abstract val customProps: Set<FileTemplateCustomProp>
 
   abstract val propGenerators: List<PropGenerator>
 

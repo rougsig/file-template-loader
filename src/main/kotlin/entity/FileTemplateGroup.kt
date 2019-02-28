@@ -10,7 +10,7 @@ data class FileTemplateGroup(
   override val name: String,
   val templates: List<FileTemplate>,
   override val directory: String = "",
-  override val customProps: List<FileTemplateCustomProp> = emptyList()
+  override val customProps: Set<FileTemplateCustomProp> = emptySet()
 ) : FileTemplate() {
   override val extractedProps: Set<String> = templates
     .requiredProps()

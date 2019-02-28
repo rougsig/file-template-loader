@@ -12,7 +12,7 @@ data class FileTemplateSingle(
   override val name: String,
   val text: String,
   override val directory: String = "",
-  override val customProps: List<FileTemplateCustomProp> = emptyList()
+  override val customProps: Set<FileTemplateCustomProp> = emptySet()
 ) : FileTemplate() {
   override val extractedProps: Set<String> = extractProps(text)
     .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
