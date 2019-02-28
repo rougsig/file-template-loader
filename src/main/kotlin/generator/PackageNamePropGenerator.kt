@@ -4,10 +4,10 @@ import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.extension.toDotCase
 
 class PackageNamePropGenerator(
-  prefix: String,
-  private val directory: String?
+  private val directory: String?,
+  prefix: String? = null
 ) : PropGenerator() {
-  override val propName: String = "${prefix}_$PROP_PACKAGE_NAME"
+  override val propName: String = prefix?.let { "${it}_$PROP_PACKAGE_NAME" } ?: PROP_PACKAGE_NAME
 
   override val requiredProps: Set<String> = setOf(PROP_PACKAGE_NAME)
 
