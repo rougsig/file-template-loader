@@ -12,7 +12,6 @@ import java.util.*
 
 abstract class FileTemplate {
   abstract val name: String
-  abstract val directory: String
 
   abstract val extractedProps: Set<String>
   abstract val requiredProps: Set<String>

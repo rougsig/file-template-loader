@@ -23,8 +23,6 @@ data class FileTemplateJson(
   val name: String?,
   val text: String?,
   val textFrom: String?,
-  val fileName: String,
-  val directory: String?,
   val customProps: List<FileTemplateCustomPropJson>?
 )
 

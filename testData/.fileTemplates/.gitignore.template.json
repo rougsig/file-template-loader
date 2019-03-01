@@ -1,4 +1,9 @@
 {
   "textFrom": ".gitignore.ft",
-  "fileName": ".gitignore"
+  "customProps": [
+    {
+      "name": "FILE_NAME",
+      "text": ".gitignore"
+    }
+  ]
 }

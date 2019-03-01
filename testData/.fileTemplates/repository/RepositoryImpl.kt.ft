@@ -1,3 +1,5 @@
-${PACKAGE_NAME}
-${FILE_NAME}
-${REPOSITORY_SIMPLE_NAME}
+package ${PACKAGE_NAME}
+
+import javax.inject.Inject
+
+internal class ${SIMPLE_NAME} @Inject constructor() : ${REPOSITORY_SIMPLE_NAME}

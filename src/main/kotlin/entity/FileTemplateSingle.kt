@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader.entity
 
+import com.github.rougsig.filetemplateloader.constant.PROP_FILE_DIRECTORY
 import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
-import com.github.rougsig.filetemplateloader.constant.PROP_TEMPLATE_DIRECTORY
 import com.github.rougsig.filetemplateloader.constant.PROP_TEMPLATE_NAME
 import com.github.rougsig.filetemplateloader.extension.createPsiFile
 import com.github.rougsig.filetemplateloader.extension.createSubDirectoriesByRelativePath
@@ -11,8 +11,7 @@ import com.intellij.psi.PsiFile
 
 data class FileTemplateSingle(
   override val name: String,
-  val text: String,
-  override val directory: String = "",
+  private val text: String,
   override val customProps: Set<FileTemplateCustomProp> = emptySet()
 ) : FileTemplate() {
   override val extractedProps: Set<String> = extractProps(text)
@@ -22,15 +21,7 @@ data class FileTemplateSingle(
     InitialPropGenerator(
       propName = "${simpleName}_$PROP_TEMPLATE_NAME"
     ) { name }
-  ).apply {
-    if (directory.isNotBlank()) {
-      plus(
-        InitialPropGenerator(
-          propName = "${simpleName}_$PROP_TEMPLATE_DIRECTORY"
-        ) { directory }
-      )
-    }
-  }
+  )
 
   private val initialPropNames = initialPropGenerators
     .map(PropGenerator::propName)
@@ -59,9 +50,13 @@ data class FileTemplateSingle(
     val localScopeProps = copyPropsToLocalScopeProps(simpleName, generatedProps, props)
     val mergedTemplate = mergeTemplate(text, localScopeProps)
     val fileName = localScopeProps.getProperty(PROP_FILE_NAME)
-    val file = dir.createSubDirectoriesByRelativePath(directory)
-      .add(dir.project.createPsiFile(fileName, mergedTemplate))
+
+    val relativePath = props.getProperty(PROP_FILE_DIRECTORY) ?: null
+    val resultDir = relativePath?.let { dir.createSubDirectoriesByRelativePath(it) } ?: dir
+    val file = resultDir
+      .add(resultDir.project.createPsiFile(fileName, mergedTemplate))
       .containingFile
+
     return listOf(file)
   }
 }
