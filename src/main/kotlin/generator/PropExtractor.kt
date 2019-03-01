@@ -68,10 +68,9 @@ fun Set<String>.minusGeneratedProps(
     return find { it.propName == propName || it.propName == "${prefix}_$propName" }
   }
 
-  val notPackageNamePropGenerators = propGenerators.filterNot { it is PackageNamePropGenerator }
 
   return this
     .flatMapTo(HashSet<String>()) { propGenerators.findPropGenerator(it)?.requiredProps ?: setOf(it) }
-    .filter { notPackageNamePropGenerators.findPropGenerator(it) == null }
+//    .filter { notPackageNamePropGenerators.findPropGenerator(it) == null }
     .toSet()
 }

@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader.entity
 
 import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
-import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_TEMPLATE_DIRECTORY
 import com.github.rougsig.filetemplateloader.constant.PROP_TEMPLATE_NAME
 import com.github.rougsig.filetemplateloader.extension.createPsiFile
 import com.github.rougsig.filetemplateloader.extension.createSubDirectoriesByRelativePath
@@ -21,15 +21,24 @@ data class FileTemplateSingle(
   private val initialPropGenerators = listOf(
     InitialPropGenerator(
       propName = "${simpleName}_$PROP_TEMPLATE_NAME"
-    ) { name },
-    PackageNamePropGenerator(
-      prefix = simpleName,
-      directory = directory
-    )
-  )
+    ) { name }
+  ).apply {
+    if (directory.isNotBlank()) {
+      plus(
+        InitialPropGenerator(
+          propName = "${simpleName}_$PROP_TEMPLATE_DIRECTORY"
+        ) { directory }
+      )
+    }
+  }
 
-  private val initialPropNames = initialPropGenerators.map(PropGenerator::propName).toSet()
-  private val customPropNames = customProps.map(FileTemplateCustomProp::name).toSet()
+  private val initialPropNames = initialPropGenerators
+    .map(PropGenerator::propName)
+    .toSet()
+
+  private val customPropNames = customProps
+    .map(FileTemplateCustomProp::name)
+    .toSet()
 
   override val propGenerators: List<PropGenerator> =
     initialPropGenerators
@@ -44,7 +53,6 @@ data class FileTemplateSingle(
 
   override val requiredProps: Set<String> = extractedProps
     .plus(PROP_FILE_NAME)
-    .plus(PROP_PACKAGE_NAME)
     .minusGeneratedProps(simpleName, propGenerators)
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {

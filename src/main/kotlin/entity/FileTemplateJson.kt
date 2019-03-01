@@ -20,6 +20,7 @@ data class FileTemplateSourceSetJson(
 )
 
 data class FileTemplateJson(
+  val name: String?,
   val text: String?,
   val textFrom: String?,
   val fileName: String,

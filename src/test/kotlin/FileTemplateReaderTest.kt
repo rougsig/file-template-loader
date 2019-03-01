@@ -29,15 +29,7 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
     )
   }
 
-  fun testEmptyFileTemplate() = doTest("EmptyFileTemplate.kt.ft")
+  fun testGitignoreFt() = doTest(".gitignore.ft")
 
-  fun testGitignoreFileTemplate() = doTest(".gitignore.ft")
-
-  fun testSimpleFileTemplate() = doTest("SimpleFileTemplate.kt.ft")
-
-  fun testRepositoryImplFileTemplate() = doTest("RepositoryImpl.kt.ft")
-
-  fun testRepositoryGroup() = doTest("Repository.group.json")
-
-  fun testScreenGroup() = doTest("Screen.group.json")
+  fun testGitignoreTemplateJson() = doTest(".gitignore.template.json")
 }

@@ -31,8 +31,12 @@ fun readFileTemplate(
   val templateNameWithoutExtension = FILE_TEMPLATE_EXTENSION_MATCHER.replace(templateName) { "" }
 
   return when {
+    templateName.endsWith("$FILE_NAME_DELIMITER$FILE_TEMPLATE_TEMPLATE_EXTENSION") ->
+      readTemplateFileTemplate(templateFile, templateFiles)
+
     templateName.endsWith("$FILE_NAME_DELIMITER$FILE_TEMPLATE_GROUP_EXTENSION") ->
       readGroupFileTemplate(templateFile, templateNameWithoutExtension, templateFiles, customProps)
+
     else -> readSingleFileTemplate(templateFile, templateNameWithoutExtension, customProps, directory)
   }
 }
@@ -49,6 +53,14 @@ private fun readGroupFileTemplate(
     templates = json.templates.map { it.toFileTemplate(templateFiles) },
     customProps = customProps.plus(json.customProps.toFileTemplateCustomProps())
   )
+}
+
+private fun readTemplateFileTemplate(
+  file: VirtualFile,
+  templateFiles: Map<String, VirtualFile>
+): FileTemplate {
+  val json = gson.fromJson(String(file.inputStream.readBytes()), FileTemplateJson::class.java)
+  return json.toFileTemplate(templateFiles)
 }
 
 private fun readSingleFileTemplate(
@@ -78,7 +90,7 @@ private fun FileTemplateJson.toFileTemplate(
     readFileTemplate(textFrom, templateFiles, customProps, directory ?: "")
   } else {
     FileTemplateSingle(
-      name = "",
+      name = name ?: "",
       text = text ?: "",
       customProps = customProps,
       directory = directory ?: ""

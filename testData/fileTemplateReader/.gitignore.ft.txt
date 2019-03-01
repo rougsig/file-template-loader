@@ -5,11 +5,9 @@
   "customProps": [],
   "extractedProps": [],
   "requiredProps": [
-    "PACKAGE_NAME",
     "FILE_NAME"
   ],
   "generatedProps": [
-    "GITIGNORE_TEMPLATE_NAME",
-    "GITIGNORE_PACKAGE_NAME"
+    "GITIGNORE_TEMPLATE_NAME"
   ]
 }
