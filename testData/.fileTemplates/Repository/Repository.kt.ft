@@ -1,0 +1,3 @@
+package ${PACKAGE_NAME}
+
+interface ${SIMPLE_NAME}

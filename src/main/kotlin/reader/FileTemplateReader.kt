@@ -6,7 +6,7 @@ import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.vfs.VirtualFile
 
 fun Project.readFileTemplate(templateFileName: String): FileTemplate {
-  return guessProjectDir()!!.readFileTemplate(templateFileName)
+  return guessProjectDir()!!.findChild(FILE_TEMPLATE_FOLDER_NAME)!!.readFileTemplate(templateFileName)
 }
 
 fun VirtualFile.readFileTemplate(templateFileName: String): FileTemplate {

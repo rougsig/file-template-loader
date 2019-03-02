@@ -1,0 +1,22 @@
+package com.github.rougsig.filetemplateloader
+
+import com.github.rougsig.base.ui.mvi.core.routing.coordinator.FlowConfig
+import com.github.rougsig.base.ui.mvi.core.routing.coordinator.FlowConstructor
+import com.github.rougsig.base.ui.mvi.core.routing.coordinator.FlowCoordinator
+import com.github.rougsig.base.ui.mvi.core.routing.RouteCommand
+import com.github.rougsig.filetemplateloader.di.EpicFlowModule
+
+interface EpicFlow {
+  companion object : FlowConstructor<EpicFlow.Coordinator>(
+    FlowConfig(
+      flowId = "epic_flow",
+      flowModules = listOf(EpicFlowModule()),
+      coordinatorClass = Coordinator::class.java
+    )
+  )
+
+  interface Coordinator : FlowCoordinator<Event, Unit>
+
+  sealed class Event
+}
+

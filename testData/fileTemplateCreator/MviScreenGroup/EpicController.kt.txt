@@ -1,0 +1,29 @@
+package com.github.rougsig.filetemplateloader
+
+import android.view.View
+import com.github.rougsig.base.core.util.instance
+import com.github.rougsig.base.ui.mvi.core.ScopedMviController
+import kotlinx.android.synthetic.main.epic_controller.*
+import com.github.rougsig.filetemplateloader.EpicScreen.ViewState
+import com.github.rougsig.filetemplateloader.EpicScreen.ViewStateRenderer
+import com.github.rougsig.filetemplateloader.EpicScreen.View as MviView
+
+internal class EpicController :
+  ScopedMviController<ViewState, MviView, EpicPresenter>(),
+  MviView,
+  ViewStateRenderer {
+
+  override fun createScopedConfig() = object : ScopedMviController.Config<ViewState> {
+    override val viewLayoutResource = R.layout.epic_controller
+    override val diffDispatcher = ViewStateDiffDispatcher.Builder().target(this@EpicController).build()
+    override val presenterClass = EpicPresenter::class.java
+  }
+
+  override fun initializeView(rootView: View) {
+
+  }
+
+  override fun createPresenter(): EpicPresenter {
+    return screenScope.instance()
+  }
+}

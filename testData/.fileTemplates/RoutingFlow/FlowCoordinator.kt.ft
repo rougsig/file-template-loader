@@ -1,0 +1,23 @@
+package ${PACKAGE_NAME}
+
+import ${PACKAGE_BASE}.base.ui.mvi.core.routing.coordinator.BaseFlowCoordinator
+import ${PACKAGE_BASE}.base.ui.mvi.core.routing.RouteCommand
+import ${PACKAGE_BASE}.${PROJECT_NAME}.ui.routing.${APP_ROUTER_NAME}
+import ${PACKAGE_BASE}.base.ui.mvi.core.routing.setRoot
+import toothpick.Scope
+import javax.inject.Inject
+
+internal class ${SIMPLE_NAME} @Inject constructor(
+  scope: Scope,
+  private val router: ${APP_ROUTER_NAME}
+) : BaseFlowCoordinator<${FLOW_SIMPLE_NAME}.Event, Unit>(scope), ${FLOW_SIMPLE_NAME}.Coordinator {
+
+  override fun createInitialRoute(replaceTopScreen: Boolean): RouteCommand {
+    return router.setRoot(TODO(), createContext())
+  }
+
+  override fun createHandleEventCommand(event: ${FLOW_SIMPLE_NAME}.Event): RouteCommand? {
+    return TODO()
+  }
+}
+

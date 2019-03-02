@@ -1,0 +1,286 @@
+{
+  "name": "MviScreen",
+  "simpleName": "MVI_SCREEN",
+  "templates": [
+    {
+      "name": "Controller.kt",
+      "simpleName": "CONTROLLER",
+      "customProps": [
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SCREEN_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        }
+      ],
+      "extractedProps": [
+        "PRESENTER_SIMPLE_NAME",
+        "SIMPLE_NAME",
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+        "SCREEN_CLASS_NAME",
+        "SCREEN_NAME"
+      ],
+      "requiredProps": [
+        "PRESENTER_SIMPLE_NAME",
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "ANDROID_LAYOUT_SIMPLE_NAME",
+        "SCREEN_NAME",
+        "SCREEN_CLASS_NAME"
+      ],
+      "generatedProps": [
+        "CONTROLLER_TEMPLATE_NAME",
+        "CONTROLLER_SIMPLE_NAME",
+        "CONTROLLER_FILE_NAME",
+        "CONTROLLER_CLASS_NAME",
+        "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE"
+      ]
+    },
+    {
+      "name": "Key.kt",
+      "simpleName": "KEY",
+      "customProps": [
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SCREEN_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        }
+      ],
+      "extractedProps": [
+        "CONTROLLER_SIMPLE_NAME",
+        "SIMPLE_NAME",
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "SCREEN_NAME"
+      ],
+      "requiredProps": [
+        "PACKAGE_BASE",
+        "CONTROLLER_SIMPLE_NAME",
+        "PACKAGE_NAME",
+        "SCREEN_NAME"
+      ],
+      "generatedProps": [
+        "KEY_TEMPLATE_NAME",
+        "KEY_SIMPLE_NAME",
+        "KEY_FILE_NAME",
+        "KEY_CLASS_NAME"
+      ]
+    },
+    {
+      "name": "Presenter.kt",
+      "simpleName": "PRESENTER",
+      "customProps": [
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SCREEN_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        }
+      ],
+      "extractedProps": [
+        "SIMPLE_NAME",
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "SCREEN_CLASS_NAME",
+        "SCREEN_NAME"
+      ],
+      "requiredProps": [
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "SCREEN_NAME",
+        "SCREEN_CLASS_NAME"
+      ],
+      "generatedProps": [
+        "PRESENTER_TEMPLATE_NAME",
+        "PRESENTER_SIMPLE_NAME",
+        "PRESENTER_FILE_NAME",
+        "PRESENTER_CLASS_NAME"
+      ]
+    },
+    {
+      "name": "Screen.kt",
+      "simpleName": "SCREEN",
+      "customProps": [
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SCREEN_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        }
+      ],
+      "extractedProps": [
+        "SIMPLE_NAME",
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "SCREEN_NAME"
+      ],
+      "requiredProps": [
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "SCREEN_NAME"
+      ],
+      "generatedProps": [
+        "SCREEN_TEMPLATE_NAME",
+        "SCREEN_SIMPLE_NAME",
+        "SCREEN_FILE_NAME",
+        "SCREEN_CLASS_NAME"
+      ]
+    },
+    {
+      "name": "AndroidLayout.xml",
+      "simpleName": "ANDROID_LAYOUT",
+      "customProps": [
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SCREEN_NAME_LOWER_SNAKE_CASE"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_DIRECTORY"
+        }
+      ],
+      "extractedProps": [
+        "SCREEN_NAME_LOWER_SNAKE_CASE",
+        "SIMPLE_NAME"
+      ],
+      "requiredProps": [
+        "SCREEN_NAME"
+      ],
+      "generatedProps": [
+        "ANDROID_LAYOUT_TEMPLATE_NAME",
+        "ANDROID_LAYOUT_SIMPLE_NAME",
+        "ANDROID_LAYOUT_FILE_NAME",
+        "ANDROID_LAYOUT_FILE_DIRECTORY",
+        "SCREEN_NAME_LOWER_SNAKE_CASE"
+      ]
+    }
+  ],
+  "customProps": [
+    {
+      "requiredProps": [],
+      "name": "GROUP_NAME"
+    }
+  ],
+  "extractedProps": [
+    "PRESENTER_SIMPLE_NAME",
+    "PACKAGE_BASE",
+    "PACKAGE_NAME",
+    "ANDROID_LAYOUT_SIMPLE_NAME",
+    "SCREEN_NAME",
+    "SCREEN_CLASS_NAME",
+    "CONTROLLER_SIMPLE_NAME"
+  ],
+  "requiredProps": [
+    "PACKAGE_BASE",
+    "PACKAGE_NAME",
+    "SCREEN_NAME"
+  ],
+  "generatedProps": [
+    "MVI_SCREEN_GROUP_NAME",
+    "CONTROLLER_TEMPLATE_NAME",
+    "CONTROLLER_SIMPLE_NAME",
+    "CONTROLLER_FILE_NAME",
+    "CONTROLLER_CLASS_NAME",
+    "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+    "KEY_TEMPLATE_NAME",
+    "KEY_SIMPLE_NAME",
+    "KEY_FILE_NAME",
+    "KEY_CLASS_NAME",
+    "PRESENTER_TEMPLATE_NAME",
+    "PRESENTER_SIMPLE_NAME",
+    "PRESENTER_FILE_NAME",
+    "PRESENTER_CLASS_NAME",
+    "SCREEN_TEMPLATE_NAME",
+    "SCREEN_SIMPLE_NAME",
+    "SCREEN_FILE_NAME",
+    "SCREEN_CLASS_NAME",
+    "ANDROID_LAYOUT_TEMPLATE_NAME",
+    "ANDROID_LAYOUT_SIMPLE_NAME",
+    "ANDROID_LAYOUT_FILE_NAME",
+    "ANDROID_LAYOUT_FILE_DIRECTORY",
+    "SCREEN_NAME_LOWER_SNAKE_CASE"
+  ]
+}

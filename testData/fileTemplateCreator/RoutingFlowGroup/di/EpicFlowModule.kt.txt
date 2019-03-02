@@ -1,0 +1,14 @@
+package com.github.rougsig.filetemplateloader.di
+
+import com.github.rougsig.filetemplateloader.EpicFlow
+import com.github.rougsig.filetemplateloader.EpicFlowCoordinator
+import toothpick.config.Module
+
+internal class EpicFlowModule : Module() {
+  init {
+    bind(EpicFlow.Coordinator::class.java)
+      .to(EpicFlowCoordinator::class.java)
+      .singletonInScope()
+  }
+}
+

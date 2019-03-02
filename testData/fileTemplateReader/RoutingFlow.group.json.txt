@@ -1,10 +1,10 @@
 {
-  "name": "Repository",
-  "simpleName": "REPOSITORY",
+  "name": "RoutingFlow",
+  "simpleName": "ROUTING_FLOW",
   "templates": [
     {
-      "name": "Repository.kt",
-      "simpleName": "REPOSITORY",
+      "name": "Flow.kt",
+      "simpleName": "FLOW",
       "customProps": [
         {
           "requiredProps": [],
@@ -31,24 +31,33 @@
         }
       ],
       "extractedProps": [
+        "FLOW_MODULE_SIMPLE_NAME",
+        "FLOW_NAME_LOWER_CASE",
         "SIMPLE_NAME",
+        "PACKAGE_BASE",
+        "FLOW_MODULE_CLASS_NAME",
         "PACKAGE_NAME",
         "REPOSITORY_NAME"
       ],
       "requiredProps": [
+        "PACKAGE_BASE",
         "REPOSITORY_NAME",
-        "PACKAGE_NAME"
+        "PACKAGE_NAME",
+        "FLOW_MODULE_SIMPLE_NAME",
+        "FLOW_MODULE_CLASS_NAME",
+        "FLOW_NAME"
       ],
       "generatedProps": [
-        "REPOSITORY_TEMPLATE_NAME",
-        "REPOSITORY_FILE_NAME",
-        "REPOSITORY_SIMPLE_NAME",
-        "REPOSITORY_CLASS_NAME"
+        "FLOW_TEMPLATE_NAME",
+        "FLOW_FILE_NAME",
+        "FLOW_SIMPLE_NAME",
+        "FLOW_CLASS_NAME",
+        "FLOW_NAME_LOWER_CASE"
       ]
     },
     {
-      "name": "RepositoryImpl.kt",
-      "simpleName": "REPOSITORY_IMPL",
+      "name": "FlowCoordinator.kt",
+      "simpleName": "FLOW_COORDINATOR",
       "customProps": [
         {
           "requiredProps": [],
@@ -75,26 +84,32 @@
         }
       ],
       "extractedProps": [
-        "REPOSITORY_SIMPLE_NAME",
+        "APP_ROUTER_NAME",
+        "PROJECT_NAME",
+        "FLOW_SIMPLE_NAME",
         "SIMPLE_NAME",
+        "PACKAGE_BASE",
         "PACKAGE_NAME",
         "REPOSITORY_NAME"
       ],
       "requiredProps": [
+        "PACKAGE_BASE",
+        "APP_ROUTER_NAME",
         "REPOSITORY_NAME",
         "PACKAGE_NAME",
-        "REPOSITORY_SIMPLE_NAME"
+        "FLOW_SIMPLE_NAME",
+        "PROJECT_NAME"
       ],
       "generatedProps": [
-        "REPOSITORY_IMPL_TEMPLATE_NAME",
-        "REPOSITORY_IMPL_FILE_NAME",
-        "REPOSITORY_IMPL_SIMPLE_NAME",
-        "REPOSITORY_IMPL_CLASS_NAME"
+        "FLOW_COORDINATOR_TEMPLATE_NAME",
+        "FLOW_COORDINATOR_FILE_NAME",
+        "FLOW_COORDINATOR_SIMPLE_NAME",
+        "FLOW_COORDINATOR_CLASS_NAME"
       ]
     },
     {
-      "name": "RepositoryBindings.kt",
-      "simpleName": "REPOSITORY_BINDINGS",
+      "name": "FlowModule.kt",
+      "simpleName": "FLOW_MODULE",
       "customProps": [
         {
           "requiredProps": [],
@@ -122,35 +137,41 @@
             "REPOSITORY_NAME"
           ],
           "name": "SIMPLE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
         }
       ],
       "extractedProps": [
-        "REPOSITORY_CLASS_NAME",
-        "REPOSITORY_SIMPLE_NAME",
+        "FLOW_CLASS_NAME",
+        "FLOW_SIMPLE_NAME",
         "SIMPLE_NAME",
-        "REPOSITORY_IMPL_CLASS_NAME",
-        "PACKAGE_BASE",
+        "FLOW_COORDINATOR_SIMPLE_NAME",
         "PACKAGE_NAME",
-        "REPOSITORY_IMPL_SIMPLE_NAME",
+        "FLOW_COORDINATOR_CLASS_NAME",
         "FILE_DIRECTORY_DOT_CASE",
         "REPOSITORY_NAME"
       ],
       "requiredProps": [
-        "REPOSITORY_IMPL_CLASS_NAME",
-        "PACKAGE_BASE",
-        "REPOSITORY_CLASS_NAME",
+        "FLOW_CLASS_NAME",
+        "FLOW_COORDINATOR_SIMPLE_NAME",
         "REPOSITORY_NAME",
         "PACKAGE_NAME",
-        "REPOSITORY_IMPL_SIMPLE_NAME",
-        "REPOSITORY_SIMPLE_NAME"
+        "FLOW_SIMPLE_NAME",
+        "FLOW_COORDINATOR_CLASS_NAME"
       ],
       "generatedProps": [
-        "REPOSITORY_BINDINGS_TEMPLATE_NAME",
-        "REPOSITORY_BINDINGS_PACKAGE_NAME",
-        "REPOSITORY_BINDINGS_FILE_NAME",
-        "REPOSITORY_BINDINGS_FILE_DIRECTORY",
-        "REPOSITORY_BINDINGS_SIMPLE_NAME",
-        "REPOSITORY_BINDINGS_FILE_DIRECTORY_DOT_CASE"
+        "FLOW_MODULE_TEMPLATE_NAME",
+        "FLOW_MODULE_PACKAGE_NAME",
+        "FLOW_MODULE_FILE_NAME",
+        "FLOW_MODULE_FILE_DIRECTORY",
+        "FLOW_MODULE_SIMPLE_NAME",
+        "FLOW_MODULE_CLASS_NAME",
+        "FLOW_MODULE_FILE_DIRECTORY_DOT_CASE"
       ]
     }
   ],
@@ -161,34 +182,44 @@
     }
   ],
   "extractedProps": [
+    "PACKAGE_BASE",
     "REPOSITORY_NAME",
     "PACKAGE_NAME",
-    "REPOSITORY_SIMPLE_NAME",
-    "REPOSITORY_IMPL_CLASS_NAME",
-    "PACKAGE_BASE",
-    "REPOSITORY_CLASS_NAME",
-    "REPOSITORY_IMPL_SIMPLE_NAME"
+    "FLOW_MODULE_SIMPLE_NAME",
+    "FLOW_MODULE_CLASS_NAME",
+    "FLOW_NAME",
+    "APP_ROUTER_NAME",
+    "FLOW_SIMPLE_NAME",
+    "PROJECT_NAME",
+    "FLOW_CLASS_NAME",
+    "FLOW_COORDINATOR_SIMPLE_NAME",
+    "FLOW_COORDINATOR_CLASS_NAME"
   ],
   "requiredProps": [
     "PACKAGE_BASE",
+    "APP_ROUTER_NAME",
     "REPOSITORY_NAME",
-    "PACKAGE_NAME"
+    "PACKAGE_NAME",
+    "FLOW_NAME",
+    "PROJECT_NAME"
   ],
   "generatedProps": [
-    "REPOSITORY_GROUP_NAME",
-    "REPOSITORY_TEMPLATE_NAME",
-    "REPOSITORY_FILE_NAME",
-    "REPOSITORY_SIMPLE_NAME",
-    "REPOSITORY_CLASS_NAME",
-    "REPOSITORY_IMPL_TEMPLATE_NAME",
-    "REPOSITORY_IMPL_FILE_NAME",
-    "REPOSITORY_IMPL_SIMPLE_NAME",
-    "REPOSITORY_IMPL_CLASS_NAME",
-    "REPOSITORY_BINDINGS_TEMPLATE_NAME",
-    "REPOSITORY_BINDINGS_PACKAGE_NAME",
-    "REPOSITORY_BINDINGS_FILE_NAME",
-    "REPOSITORY_BINDINGS_FILE_DIRECTORY",
-    "REPOSITORY_BINDINGS_SIMPLE_NAME",
-    "REPOSITORY_BINDINGS_FILE_DIRECTORY_DOT_CASE"
+    "ROUTING_FLOW_GROUP_NAME",
+    "FLOW_TEMPLATE_NAME",
+    "FLOW_FILE_NAME",
+    "FLOW_SIMPLE_NAME",
+    "FLOW_CLASS_NAME",
+    "FLOW_NAME_LOWER_CASE",
+    "FLOW_COORDINATOR_TEMPLATE_NAME",
+    "FLOW_COORDINATOR_FILE_NAME",
+    "FLOW_COORDINATOR_SIMPLE_NAME",
+    "FLOW_COORDINATOR_CLASS_NAME",
+    "FLOW_MODULE_TEMPLATE_NAME",
+    "FLOW_MODULE_PACKAGE_NAME",
+    "FLOW_MODULE_FILE_NAME",
+    "FLOW_MODULE_FILE_DIRECTORY",
+    "FLOW_MODULE_SIMPLE_NAME",
+    "FLOW_MODULE_CLASS_NAME",
+    "FLOW_MODULE_FILE_DIRECTORY_DOT_CASE"
   ]
 }

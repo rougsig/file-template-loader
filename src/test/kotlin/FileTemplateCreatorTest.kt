@@ -2,8 +2,8 @@ package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
 import com.github.rougsig.filetemplateloader.extension.writeAction
-import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.generator.generateProps
+import com.github.rougsig.filetemplateloader.reader.readConfig
 import com.github.rougsig.filetemplateloader.reader.readFileTemplate
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
@@ -17,9 +17,11 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     myFixture.copyDirectoryToProject("", "")
   }
 
-  private fun doTest(testFileName: String, props: Props = DEFAULT_PROPS) {
+  private fun doTest(testFileName: String, subDir: String) {
     val fileName = testFileName.replace(".ft", "")
-    val template = project.guessProjectDir()!!.readFileTemplate(testFileName)
+    val template = project.readFileTemplate(testFileName)
+    val props = project.readConfig()
+      .apply { DEFAULT_PROPS.forEach { (k, v) -> this.setProperty(k, v) } }
     val dir = psiManager.findDirectory(project.guessProjectDir()!!)!!
 
     props.setProperty(PROP_FILE_NAME, fileName)
@@ -33,7 +35,7 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     createdFileTemplateFiles.forEach { createdFileTemplateFile ->
 
       val filePathBuilder = StringBuilder()
-      filePathBuilder.append("$testDataPath/fileTemplateCreator/")
+      filePathBuilder.append("$testDataPath/fileTemplateCreator/$subDir/")
       val fileDirectory = createdFileTemplateFile.getFqNameByDirectory().asString()
       if (fileDirectory.isNotBlank()) filePathBuilder.append("$fileDirectory/")
       filePathBuilder.append("${createdFileTemplateFile.name}.txt")
@@ -45,11 +47,15 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     }
   }
 
-  fun testGitignoreFt() = doTest(".gitignore.ft")
+  fun testGitignoreFt() = doTest(".gitignore.ft", "gitignore")
 
-  fun testGitignoreTemplateJson() = doTest(".gitignore.template.json")
+  fun testDummyKtFt() = doTest("Dummy.kt.ft", "Dummy")
 
-  fun testRepositoryTemplateJson() = doTest("Repository.template.json")
+  fun testDomainGroupJson() = doTest("Domain.group.json", "DomainGroup")
 
-  fun testRepositoryGroupJson() = doTest("Repository.group.json")
+  fun testMviScreenGroupJson() = doTest("MviScreen.group.json", "MviScreenGroup")
+
+  fun testRepositoryGroupJson() = doTest("Repository.group.json", "RepositoryGroup")
+
+  fun testRoutingFlowGroupJson() = doTest("RoutingFlow.group.json", "RoutingFlowGroup")
 }

@@ -1,0 +1,14 @@
+package ${PACKAGE_NAME}
+
+import ${FLOW_CLASS_NAME}
+import ${FLOW_COORDINATOR_CLASS_NAME}
+import toothpick.config.Module
+
+internal class ${SIMPLE_NAME} : Module() {
+  init {
+    bind(${FLOW_SIMPLE_NAME}.Coordinator::class.java)
+      .to(${FLOW_COORDINATOR_SIMPLE_NAME}::class.java)
+      .singletonInScope()
+  }
+}
+

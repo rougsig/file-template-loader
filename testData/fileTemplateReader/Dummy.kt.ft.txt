@@ -1,0 +1,20 @@
+{
+  "name": "Dummy.kt",
+  "simpleName": "DUMMY",
+  "customProps": [
+    {
+      "requiredProps": [],
+      "name": "TEMPLATE_NAME"
+    }
+  ],
+  "extractedProps": [
+    "PACKAGE_NAME"
+  ],
+  "requiredProps": [
+    "PACKAGE_NAME",
+    "FILE_NAME"
+  ],
+  "generatedProps": [
+    "DUMMY_TEMPLATE_NAME"
+  ]
+}

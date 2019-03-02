@@ -1,0 +1,79 @@
+{
+  "name": "MviScreen",
+  "moduleName": "${PROJECT_NAME_LOWER_KEBAB_CASE}-ui-${SCREEN_NAME_LOWER_CASE}",
+  "sourceSets": [
+    {
+      "directory": "src/main/kotlin",
+      "templates": [
+        {
+          "template": "Controller.kt",
+          "fileName": "${SCREEN_NAME}Controller"
+        },
+        {
+          "template": "Key.kt",
+          "fileName": "${SCREEN_NAME}Key"
+        },
+        {
+          "template": "Presenter.kt",
+          "fileName": "${SCREEN_NAME}Presenter"
+        },
+        {
+          "template": "Screen.kt",
+          "fileName": "${SCREEN_NAME}Screen"
+        }
+      ]
+    },
+    {
+      "directory": "src/main/res/layout",
+      "templates": [
+        {
+          "template": "AndroidLayout.xml",
+          "fileName": "${SCREEN_NAME_LOWER_SNAKE_CASE}_controller"
+        }
+      ]
+    },
+    {
+      "templates": [
+        {
+          "template": "MviScreenBuild.gradle",
+          "fileName": "build"
+        },
+        {
+          "template": "GitIgnore.txt",
+          "fileName": ".gitignore"
+        }
+      ]
+    },
+    {
+      "directory": "src/main",
+      "templates": [
+        {
+          "template": "AndroidManifestModule.xml",
+          "fileName": "AndroidManifest"
+        }
+      ]
+    }
+  ],
+  "injectors": [
+    {
+      "text": ",\n':${MODULE_NAME}'",
+      "pathName": "${SETTING_FILE_PATH}",
+      "selector": "Literal"
+    },
+    {
+      "text": "\nis ${APP_ROUTE_NAME}.${SCREEN_NAME_UPPER_CAMEL_CASE} -> ${KEY_SIMPLE_NAME}()",
+      "className": "${PACKAGE_BASE}.${PROJECT_NAME}.routing.ScreenKeyFactory",
+      "selector": "WHEN WHEN_ENTRY"
+    },
+    {
+      "text": "\nobject ${SCREEN_NAME_UPPER_CAMEL_CASE} : ${APP_ROUTE_NAME}(\"${ROUTE_PATH}\")",
+      "className": "${PACKAGE_BASE}.${PROJECT_NAME}.ui.routing.${APP_ROUTE_NAME}",
+      "selector": "AppRoute CLASS_BODY LBRACE"
+    },
+    {
+      "text": "\nimport ${KEY_CLASS_NAME}",
+      "className": "${PACKAGE_BASE}.${PROJECT_NAME}.routing.ScreenKeyFactory",
+      "selector": "IMPORT_LIST IMPORT_DIRECTIVE"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+package com.github.rougsig.filetemplateloader
+
+import com.github.dimsuz.diffdispatcher.annotations.DiffElement
+import com.github.rougsig.base.ui.mvi.core.MviView
+
+internal interface EpicScreen {
+  interface View : MviView<ViewState> 
+
+  @DiffElement(diffReceiver = ViewStateRenderer::class)
+  data class ViewState(
+    val todoValue: Boolean
+  )
+
+  interface ViewStateRenderer
+}

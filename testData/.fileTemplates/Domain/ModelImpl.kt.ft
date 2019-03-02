@@ -1,0 +1,43 @@
+package ${PACKAGE_NAME}
+
+import io.reactivex.Observable
+import ${PACKAGE_BASE}.base.core.util.AppSchedulers
+import ${PACKAGE_BASE}.base.domain.core.model.SerialReactiveModel
+import ${PACKAGE_BASE}.base.domain.core.util.distinctFieldChanges
+import ${PACKAGE_BASE}.base.domain.core.util.toLceEventObservable
+import ${PACKAGE_BASE}.base.domain.entity.LceState
+import ${PACKAGE_NAME}.${SIMPLE_NAME}.State
+import ${PACKAGE_NAME}.${SIMPLE_NAME}.Request
+import ${PACKAGE_NAME}.${SIMPLE_NAME}.Action
+import javax.inject.Inject
+
+internal class ${SIMPLE_NAME} @Inject constructor(
+  schedulers: AppSchedulers
+) :
+  SerialReactiveModel<State, Request, Action>(
+    initialState = State(),
+    schedulers = schedulers
+  ),
+  ${MODEL_SIMPLE_NAME} {
+
+
+  override fun createCommand(request: Request, state: State): Observable<Action> {
+    return Observable.empty()
+  }
+
+  override fun reduceState(previousState: State, action: Action): State {
+    return previousState
+  }
+
+  data class State(
+    val todoValue: Boolean = true
+  )
+
+  sealed class Request {
+    object TodoRequest : Request()
+  }
+
+  sealed class Action {
+    data class TodoAction(val state: LceState<Unit>) : Action()
+  }
+}

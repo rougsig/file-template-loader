@@ -1,0 +1,59 @@
+{
+  "templates": [
+    {
+      "textFrom": "Repository.kt.ft",
+      "customProps": [
+        {
+          "name": "FILE_NAME",
+          "text": "${SIMPLE_NAME}.kt"
+        },
+        {
+          "name": "SIMPLE_NAME",
+          "text": "${REPOSITORY_NAME}Repository"
+        },
+        {
+          "name": "CLASS_NAME",
+          "text": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        }
+      ]
+    },
+    {
+      "textFrom": "RepositoryImpl.kt.ft",
+      "customProps": [
+        {
+          "name": "FILE_NAME",
+          "text": "${SIMPLE_NAME}.kt"
+        },
+        {
+          "name": "SIMPLE_NAME",
+          "text": "${REPOSITORY_NAME}RepositoryImpl"
+        },
+        {
+          "name": "CLASS_NAME",
+          "text": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        }
+      ]
+    },
+    {
+      "textFrom": "RepositoryBindings.kt.ft",
+      "customProps": [
+        {
+          "name": "PACKAGE_NAME",
+          "text": "${PACKAGE_NAME}.${FILE_DIRECTORY_DOT_CASE}"
+        },
+        {
+          "name": "FILE_NAME",
+          "text": "${SIMPLE_NAME}.kt"
+        },
+        {
+          "name": "FILE_DIRECTORY",
+          "text": "di"
+        },
+        {
+          "name": "SIMPLE_NAME",
+          "text": "${REPOSITORY_NAME}RepositoryBindings"
+        }
+      ]
+    }
+  ]
+}

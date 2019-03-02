@@ -6,18 +6,14 @@ import com.google.gson.Gson
 import com.intellij.openapi.util.io.FileUtil
 import java.io.File
 
-val DEFAULT_PROPS: Props
+val DEFAULT_PROPS: Map<String, String>
   get() = Props().apply {
-    setProperty("ONE_PROP", "OneProp")
-    setProperty("TWO_PROP", "TwoProp")
-    setProperty("THREE_PROP", "ThreeProp")
-    setProperty("DUCK_VOICE", "Quack Quack")
-    setProperty("CAT_VOICE", "Meow Meow")
-    setProperty("FLOW_NAME", "Epic")
-    setProperty("SCREEN_NAME", "Duck")
     setProperty("PACKAGE_NAME", "com.github.rougsig.filetemplateloader")
-    setProperty("PACKAGE_BASE", "com.github.rougsig")
-  }
+    setProperty("MODEL_NAME", "Epic")
+    setProperty("SCREEN_NAME", "Epic")
+    setProperty("FLOW_NAME", "Epic")
+    setProperty("REPOSITORY_NAME", "Epic")
+  } as Map<String, String>
 
 fun calculateTestDataPath(): String {
   val userDir = System.getProperty("user.dir")

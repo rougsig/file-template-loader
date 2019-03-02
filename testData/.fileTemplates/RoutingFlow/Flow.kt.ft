@@ -1,0 +1,22 @@
+package ${PACKAGE_NAME}
+
+import ${PACKAGE_BASE}.base.ui.mvi.core.routing.coordinator.FlowConfig
+import ${PACKAGE_BASE}.base.ui.mvi.core.routing.coordinator.FlowConstructor
+import ${PACKAGE_BASE}.base.ui.mvi.core.routing.coordinator.FlowCoordinator
+import ${PACKAGE_BASE}.base.ui.mvi.core.routing.RouteCommand
+import ${FLOW_MODULE_CLASS_NAME}
+
+interface ${SIMPLE_NAME} {
+  companion object : FlowConstructor<${SIMPLE_NAME}.Coordinator>(
+    FlowConfig(
+      flowId = "${FLOW_NAME_LOWER_CASE}_flow",
+      flowModules = listOf(${FLOW_MODULE_SIMPLE_NAME}()),
+      coordinatorClass = Coordinator::class.java
+    )
+  )
+
+  interface Coordinator : FlowCoordinator<Event, Unit>
+
+  sealed class Event
+}
+

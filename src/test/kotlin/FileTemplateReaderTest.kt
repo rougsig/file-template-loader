@@ -31,11 +31,13 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
 
   fun testGitignoreFt() = doTest(".gitignore.ft")
 
-  fun testGitignoreTemplateJson() = doTest(".gitignore.template.json")
+  fun testDummyKtFt() = doTest("Dummy.kt.ft")
 
-  fun testRepositoryTemplateJson() = doTest("Repository.template.json")
+  fun testDomainGroupJson() = doTest("Domain.group.json")
 
-  fun testRepositoryBindingsTemplateJson() = doTest("RepositoryBindings.template.json")
+  fun testMviScreenGroupJson() = doTest("MviScreen.group.json")
 
   fun testRepositoryGroupJson() = doTest("Repository.group.json")
+
+  fun testRoutingFlowGroupJson() = doTest("RoutingFlow.group.json")
 }

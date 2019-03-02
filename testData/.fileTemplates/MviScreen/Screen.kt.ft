@@ -1,0 +1,15 @@
+package ${PACKAGE_NAME}
+
+import com.github.dimsuz.diffdispatcher.annotations.DiffElement
+import ${PACKAGE_BASE}.base.ui.mvi.core.MviView
+
+internal interface ${SIMPLE_NAME} {
+  interface View : MviView<ViewState> 
+
+  @DiffElement(diffReceiver = ViewStateRenderer::class)
+  data class ViewState(
+    val todoValue: Boolean
+  )
+
+  interface ViewStateRenderer
+}

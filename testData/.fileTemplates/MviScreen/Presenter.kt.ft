@@ -1,0 +1,44 @@
+package ${PACKAGE_NAME}
+
+import com.github.rougsig.actionsdispatcher.annotations.ActionElement
+import io.reactivex.Observable
+import ${PACKAGE_BASE}.base.core.util.AppSchedulers
+import ${PACKAGE_BASE}.base.ui.mvi.core.BaseReducingMviPresenter
+import ${SCREEN_CLASS_NAME}.ViewState
+import ${SCREEN_CLASS_NAME}.View
+import javax.inject.Inject
+
+@ActionElement(state = ViewState::class)
+internal sealed class ScreenAction
+
+internal object StubAction : ScreenAction()
+
+internal class ${SIMPLE_NAME} @Inject constructor(
+  schedulers: AppSchedulers
+) : BaseReducingMviPresenter<View, ViewState, ScreenAction, Nothing>(
+  schedulers,
+  coordinatorCallback = null
+),
+  ActionReceiver {
+
+  override val actionsReducer = ActionsReducer.Builder().receiver(this).build()
+
+  override fun createIntents(): List<Observable<out ScreenAction>> {
+    return emptyList()
+  }
+
+  override fun processStubAction(
+    previousState: ViewState,
+    action: StubAction
+  ): Pair<ViewState, (() -> ScreenAction?)?> {
+    return previousState to null
+  }
+
+  override fun routeReducer(previousState: ViewState, newState: ViewState, action: ScreenAction): Nothing? {
+    return null
+  }
+
+  override fun createInitialState(): ViewState {
+    return ViewState(todoValue = true)
+  }
+}

@@ -1,0 +1,51 @@
+import ${PACKAGE_BASE}.ApkConfig
+import ${PACKAGE_BASE}.Deps
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+  compileSdkVersion ApkConfig.COMPILE_SDK_VERSION
+
+  defaultConfig {
+    minSdkVersion ApkConfig.MIN_SDK_VERSION
+    targetSdkVersion ApkConfig.TARGET_SDK_VERSION
+    versionCode 1
+    versionName "1.0"
+
+    buildConfigField 'boolean', 'DEV', 'Boolean.parseBoolean("false")'
+    buildConfigField 'boolean', 'INTERNAL', 'Boolean.parseBoolean("false")'
+    buildConfigField 'boolean', 'EXTERNAL', 'Boolean.parseBoolean("false")'
+    buildConfigField 'boolean', 'RELEASE', 'Boolean.parseBoolean("false")'
+  }
+
+  sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+    test.java.srcDirs += 'src/test/kotlin'
+  }
+
+  // see app/build.gradle for description and other details
+  buildTypes {
+    debug {
+      buildConfigField 'boolean', 'DEV', 'Boolean.parseBoolean("true")'
+    }
+    internal {
+      buildConfigField 'boolean', 'INTERNAL', 'Boolean.parseBoolean("true")'
+      matchingFallbacks = ["debug"]
+    }
+    external {
+      buildConfigField 'boolean', 'EXTERNAL', 'true'
+      matchingFallbacks = ["release"]
+    }
+    release {
+      buildConfigField 'boolean', 'RELEASE', 'true'
+    }
+  }
+}
+
+dependencies {
+  implementation project(':${PROJECT_NAME_LOWER_KEBAB_CASE}-repositories-datamappers')
+
+  kapt Deps.toothpickProcessor
+}

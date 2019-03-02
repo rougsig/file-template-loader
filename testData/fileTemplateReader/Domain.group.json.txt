@@ -1,0 +1,194 @@
+{
+  "name": "Domain",
+  "simpleName": "DOMAIN",
+  "templates": [
+    {
+      "name": "Model.kt",
+      "simpleName": "MODEL",
+      "customProps": [
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
+        {
+          "requiredProps": [
+            "MODEL_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        }
+      ],
+      "extractedProps": [
+        "SIMPLE_NAME",
+        "PACKAGE_NAME",
+        "MODEL_NAME"
+      ],
+      "requiredProps": [
+        "MODEL_NAME",
+        "PACKAGE_NAME"
+      ],
+      "generatedProps": [
+        "MODEL_TEMPLATE_NAME",
+        "MODEL_SIMPLE_NAME",
+        "MODEL_FILE_NAME",
+        "MODEL_CLASS_NAME"
+      ]
+    },
+    {
+      "name": "ModelImpl.kt",
+      "simpleName": "MODEL_IMPL",
+      "customProps": [
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "MODEL_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        }
+      ],
+      "extractedProps": [
+        "SIMPLE_NAME",
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "MODEL_SIMPLE_NAME",
+        "MODEL_NAME"
+      ],
+      "requiredProps": [
+        "MODEL_NAME",
+        "PACKAGE_BASE",
+        "PACKAGE_NAME",
+        "MODEL_SIMPLE_NAME"
+      ],
+      "generatedProps": [
+        "MODEL_IMPL_TEMPLATE_NAME",
+        "MODEL_IMPL_FILE_NAME",
+        "MODEL_IMPL_SIMPLE_NAME",
+        "MODEL_IMPL_CLASS_NAME"
+      ]
+    },
+    {
+      "name": "ModelModule.kt",
+      "simpleName": "MODEL_MODULE",
+      "customProps": [
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_DIRECTORY"
+        },
+        {
+          "requiredProps": [
+            "MODEL_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
+          "requiredProps": [
+            "PACKAGE_NAME",
+            "FILE_DIRECTORY_DOT_CASE"
+          ],
+          "name": "PACKAGE_NAME"
+        }
+      ],
+      "extractedProps": [
+        "MODEL_IMPL_CLASS_NAME",
+        "MODEL_IMPL_SIMPLE_NAME",
+        "SIMPLE_NAME",
+        "PACKAGE_NAME",
+        "MODEL_CLASS_NAME",
+        "MODEL_SIMPLE_NAME",
+        "MODEL_NAME",
+        "FILE_DIRECTORY_DOT_CASE"
+      ],
+      "requiredProps": [
+        "MODEL_NAME",
+        "MODEL_IMPL_SIMPLE_NAME",
+        "PACKAGE_NAME",
+        "MODEL_IMPL_CLASS_NAME",
+        "MODEL_SIMPLE_NAME",
+        "MODEL_CLASS_NAME"
+      ],
+      "generatedProps": [
+        "MODEL_MODULE_TEMPLATE_NAME",
+        "MODEL_MODULE_FILE_NAME",
+        "MODEL_MODULE_FILE_DIRECTORY",
+        "MODEL_MODULE_SIMPLE_NAME",
+        "MODEL_MODULE_PACKAGE_NAME",
+        "MODEL_MODULE_FILE_DIRECTORY_DOT_CASE"
+      ]
+    }
+  ],
+  "customProps": [
+    {
+      "requiredProps": [],
+      "name": "GROUP_NAME"
+    }
+  ],
+  "extractedProps": [
+    "MODEL_NAME",
+    "PACKAGE_NAME",
+    "PACKAGE_BASE",
+    "MODEL_SIMPLE_NAME",
+    "MODEL_IMPL_SIMPLE_NAME",
+    "MODEL_IMPL_CLASS_NAME",
+    "MODEL_CLASS_NAME"
+  ],
+  "requiredProps": [
+    "MODEL_NAME",
+    "PACKAGE_BASE",
+    "PACKAGE_NAME"
+  ],
+  "generatedProps": [
+    "DOMAIN_GROUP_NAME",
+    "MODEL_TEMPLATE_NAME",
+    "MODEL_SIMPLE_NAME",
+    "MODEL_FILE_NAME",
+    "MODEL_CLASS_NAME",
+    "MODEL_IMPL_TEMPLATE_NAME",
+    "MODEL_IMPL_FILE_NAME",
+    "MODEL_IMPL_SIMPLE_NAME",
+    "MODEL_IMPL_CLASS_NAME",
+    "MODEL_MODULE_TEMPLATE_NAME",
+    "MODEL_MODULE_FILE_NAME",
+    "MODEL_MODULE_FILE_DIRECTORY",
+    "MODEL_MODULE_SIMPLE_NAME",
+    "MODEL_MODULE_PACKAGE_NAME",
+    "MODEL_MODULE_FILE_DIRECTORY_DOT_CASE"
+  ]
+}

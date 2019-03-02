@@ -1,0 +1,15 @@
+package ${PACKAGE_NAME}
+
+import toothpick.config.Module
+import ${REPOSITORY_CLASS_NAME}
+import ${REPOSITORY_IMPL_CLASS_NAME}
+import ${PACKAGE_BASE}.base.core.util.ToothpickModuleBindings
+
+object ${SIMPLE_NAME} : ToothpickModuleBindings {
+  override fun bindInto(module: Module) {
+    module
+      .bind(${REPOSITORY_SIMPLE_NAME}::class.java)
+      .to(${REPOSITORY_IMPL_SIMPLE_NAME}::class.java)
+      .singletonInScope()
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "templates": [
+    {
+      "textFrom": "Model.kt.ft",
+      "customProps": [
+        {
+          "name": "SIMPLE_NAME",
+          "text": "${MODEL_NAME}Model"
+        },
+        {
+          "name": "FILE_NAME",
+          "text": "${SIMPLE_NAME}.kt"
+        },
+        {
+          "name": "CLASS_NAME",
+          "text": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        }
+      ]
+    },
+    {
+      "textFrom": "ModelImpl.kt.ft",
+      "customProps": [
+        {
+          "name": "FILE_NAME",
+          "text": "${SIMPLE_NAME}.kt"
+        },
+        {
+          "name": "SIMPLE_NAME",
+          "text": "${MODEL_NAME}ModelImpl"
+        },
+        {
+          "name": "CLASS_NAME",
+          "text": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        }
+      ]
+    },
+    {
+      "textFrom": "ModelModule.kt.ft",
+      "customProps": [
+        {
+          "name": "FILE_NAME",
+          "text": "${SIMPLE_NAME}.kt"
+        },
+        {
+          "name": "FILE_DIRECTORY",
+          "text": "di"
+        },
+        {
+          "name": "SIMPLE_NAME",
+          "text": "Domain${MODEL_NAME}Module"
+        },
+        {
+          "name": "PACKAGE_NAME",
+          "text": "${PACKAGE_NAME}.${FILE_DIRECTORY_DOT_CASE}"
+        }
+      ]
+    }
+  ]
+}
