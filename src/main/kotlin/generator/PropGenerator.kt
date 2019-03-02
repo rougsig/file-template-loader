@@ -5,6 +5,7 @@ import com.github.rougsig.filetemplateloader.entity.FileTemplate
 abstract class PropGenerator {
   abstract val propName: String
   abstract val requiredProps: Set<String>
+  abstract val selfRequiredProps: Set<String>
 
   abstract fun generateProp(props: Props): Props
 
@@ -31,8 +32,8 @@ fun List<PropGenerator>.generateProps(props: Props): Props {
 
   if (canBeGenerated.isEmpty() && isNotEmpty())
     throw IllegalStateException(
-      "can't generate props: ${joinToString { "\n${it.propName}" }}.\n\n" +
-          "PropsRequired: ${flatMap(PropGenerator::requiredProps).toSet().joinToString { "\n$it" }}"
+      "can't generate props: ${joinToString("") { "\n${it.propName}" }}\n\n" +
+          "PropsRequired: ${flatMap(PropGenerator::requiredProps).toSet().joinToString("") { "\n$it" }}"
     )
 
   canBeGenerated.forEach { it.generateProp(props) }

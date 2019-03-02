@@ -7,6 +7,8 @@ class ModificatorPropGenerator(
 ) : PropGenerator() {
   override val requiredProps: Set<String> = setOf(propBaseName)
 
+  override val selfRequiredProps: Set<String> = emptySet()
+
   override fun generateProp(props: Props): Props {
     props.setProperty(propName, modificator(props.getProperty(propBaseName)))
     return props

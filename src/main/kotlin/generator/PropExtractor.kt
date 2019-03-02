@@ -69,18 +69,7 @@ fun Set<String>.minusGeneratedProps(
   propGenerators: List<PropGenerator>
 ): Set<String> {
   return this
-    .flatMapTo(HashSet<String>()) { propName ->
-      propGenerators.findPropGenerator(prefix, propName)?.requiredProps ?: setOf(propName)
-    }
-    .flatMapTo(HashSet<String>()) { propName ->
-      propGenerators.findPropGenerator(prefix, propName)?.let { propGenerator ->
-        val isSelfRequired = propGenerator.requiredProps.contains(propName)
-        if (isSelfRequired) {
-          setOf(propName)
-        } else {
-          emptySet()
-        }
-      } ?: setOf(propName)
-    }
+    .flatMapTo(HashSet<String>()) { propGenerators.findPropGenerator(prefix, it)?.requiredProps ?: setOf(it) }
+    .flatMapTo(HashSet<String>()) { propGenerators.findPropGenerator(prefix, it)?.selfRequiredProps ?: setOf(it) }
     .toSet()
 }

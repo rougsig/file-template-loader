@@ -44,7 +44,7 @@ data class FileTemplateSingle(
 
   override val propGenerators: List<PropGenerator> =
     initialPropGenerators
-      .plus(customProps.map { CustomPropGenerator(simpleName, it) })
+      .plus(customProps.map { CustomPropGenerator(simpleName, customPropNames, it) })
       .plus(
         extractedProps.extractModificatorPropGenerators(
           simpleName,
