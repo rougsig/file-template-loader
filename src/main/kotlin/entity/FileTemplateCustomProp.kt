@@ -6,7 +6,7 @@ data class FileTemplateCustomProp(
   val name: String,
   @Transient val text: String
 ) {
-  val requiredProps = extractProps("$name\n$text")
+  val requiredProps = extractProps(text)
 
   override fun equals(other: Any?): Boolean {
     return name.equals(other)

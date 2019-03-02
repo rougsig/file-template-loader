@@ -1,7 +1,12 @@
 {
   "name": ".gitignore",
   "simpleName": "GITIGNORE",
-  "customProps": [],
+  "customProps": [
+    {
+      "requiredProps": [],
+      "name": "TEMPLATE_NAME"
+    }
+  ],
   "extractedProps": [],
   "requiredProps": [
     "FILE_NAME"

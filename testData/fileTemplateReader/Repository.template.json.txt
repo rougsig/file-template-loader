@@ -3,6 +3,10 @@
   "simpleName": "REPOSITORY",
   "customProps": [
     {
+      "requiredProps": [],
+      "name": "TEMPLATE_NAME"
+    },
+    {
       "requiredProps": [
         "SIMPLE_NAME"
       ],

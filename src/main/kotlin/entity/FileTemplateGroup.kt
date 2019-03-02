@@ -8,34 +8,35 @@ import com.intellij.psi.PsiFile
 data class FileTemplateGroup(
   override val name: String,
   val templates: List<FileTemplate>,
-  override val customProps: Set<FileTemplateCustomProp> = emptySet()
+  private val initialCustomProps: Set<FileTemplateCustomProp> = emptySet()
 ) : FileTemplate() {
-  override val extractedProps: Set<String> = templates
-    .requiredProps()
-    .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
+  override val customProps: Set<FileTemplateCustomProp> = {
+    val props = mutableSetOf<FileTemplateCustomProp>()
 
-  private val initialPropGenerators = listOf(
-    InitialPropGenerator(
-      propName = "${simpleName}_$PROP_GROUP_NAME"
-    ) { name }
-  )
+    props.add(FileTemplateCustomProp(PROP_GROUP_NAME, name))
+    props.addAll(initialCustomProps)
 
-  private val initialPropNames = initialPropGenerators.map(PropGenerator::propName).toSet()
-  private val customPropNames = customProps.map(FileTemplateCustomProp::name).toSet()
+    props
+  }()
 
-  override val propGenerators: List<PropGenerator> = initialPropGenerators
-    .plus(customProps.map { CustomPropGenerator(simpleName, customPropNames, it) })
-    .plus(templates.flatMap(FileTemplate::propGenerators))
-    .plus(
-      extractedProps.extractModificatorPropGenerators(
-        simpleName,
-        customPropNames,
-        initialPropNames
+  override val extractedProps: Set<String> =
+    templates
+      .requiredProps()
+      .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
+
+  override val propGenerators: List<PropGenerator> =
+    customProps.map { CustomPropGenerator(simpleName, customPropNames, it) }
+      .plus(templates.flatMap(FileTemplate::propGenerators))
+      .plus(
+        extractedProps.extractModificatorPropGenerators(
+          simpleName,
+          customPropNames
+        )
       )
-    )
 
-  override val requiredProps: Set<String> = extractedProps
-    .minusGeneratedProps(simpleName, propGenerators)
+  override val requiredProps: Set<String> =
+    extractedProps
+      .minusGeneratedProps(simpleName, propGenerators)
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
     return templates.flatMap { it.create(dir, props) }

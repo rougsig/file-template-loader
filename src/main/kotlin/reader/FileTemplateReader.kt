@@ -45,7 +45,7 @@ private fun readGroupFileTemplate(
     templates = json.templates.map {
       it.toFileTemplate(templateFiles)
     },
-    customProps = (parentCustomProps ?: emptySet()).plus(json.customProps.toFileTemplateCustomProps())
+    initialCustomProps = (parentCustomProps ?: emptySet()).plus(json.customProps.toFileTemplateCustomProps())
   )
 }
 
@@ -68,7 +68,7 @@ private fun readSingleFileTemplate(
     name = templateName,
     text = String(file.inputStream.readBytes()),
     directory = directory ?: "",
-    customProps = parentCustomProps ?: emptySet()
+    initialCustomProps = parentCustomProps ?: emptySet()
   )
 }
 
@@ -89,7 +89,7 @@ private fun FileTemplateJson.toFileTemplate(
       name = name ?: "",
       text = text ?: "",
       directory = directory ?: "",
-      customProps = customProps
+      initialCustomProps = customProps
     )
   }
 }

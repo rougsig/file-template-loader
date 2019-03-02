@@ -7,6 +7,10 @@
       "simpleName": "REPOSITORY",
       "customProps": [
         {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
+        {
           "requiredProps": [
             "SIMPLE_NAME"
           ],
@@ -46,6 +50,10 @@
       "name": "RepositoryImpl.kt",
       "simpleName": "REPOSITORY_IMPL",
       "customProps": [
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
         {
           "requiredProps": [
             "SIMPLE_NAME"
@@ -88,6 +96,14 @@
       "name": "RepositoryBindings.kt",
       "simpleName": "REPOSITORY_BINDINGS",
       "customProps": [
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_DIRECTORY"
+        },
         {
           "requiredProps": [
             "PACKAGE_NAME",
@@ -136,7 +152,12 @@
       ]
     }
   ],
-  "customProps": [],
+  "customProps": [
+    {
+      "requiredProps": [],
+      "name": "GROUP_NAME"
+    }
+  ],
   "extractedProps": [
     "PACKAGE_NAME",
     "FLOW_NAME",

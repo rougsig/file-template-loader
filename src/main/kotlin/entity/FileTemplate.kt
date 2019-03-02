@@ -15,6 +15,7 @@ abstract class FileTemplate {
 
   abstract val extractedProps: Set<String>
   abstract val requiredProps: Set<String>
+
   abstract val customProps: Set<FileTemplateCustomProp>
 
   abstract val propGenerators: List<PropGenerator>
@@ -28,6 +29,12 @@ abstract class FileTemplate {
       .split(FILE_NAME_DELIMITER)
       .find { it.isNotBlank() && it != FILE_NAME_DELIMITER } ?: name)
       .toUpperSnakeCase()
+  }
+
+  val customPropNames by lazy(LazyThreadSafetyMode.NONE) {
+    customProps
+      .map(FileTemplateCustomProp::name)
+      .toSet()
   }
 
   abstract fun create(dir: PsiDirectory, props: Props): List<PsiFile>

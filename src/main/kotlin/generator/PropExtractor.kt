@@ -30,25 +30,31 @@ private fun String.getReferences(): Set<String> {
   return names
 }
 
+fun String.extractBaseProp(): String {
+  return PROP_MODIFICATOR_MATCHER.replace(this) { "" }
+}
+
+fun Set<String>.extractBaseProps(): Set<String> {
+  return map { PROP_MODIFICATOR_MATCHER.replace(it) { "" } }.toSet()
+}
+
 fun Set<String>.extractModificatorPropGenerators(
   prefix: String,
-  customProps: Set<String>,
-  initialProps: Set<String>
+  customProps: Set<String>
 ): List<ModificatorPropGenerator> {
-  fun String.extractPropBase(
+  fun String.extractBaseProp(
     prefix: String,
-    customProps: Set<String>,
-    initialProps: Set<String>
+    customProps: Set<String>
   ): Pair<String, String>? {
     return PROP_MODIFICATOR_MATCHER.find(this)?.value?.let {
-      val propBase = PROP_MODIFICATOR_MATCHER.replace(this) { "" }
-      val isCustomProp = customProps.contains(propBase) || initialProps.contains("${prefix}_$propBase")
+      val propBase = this.extractBaseProp()
+      val isCustomProp = customProps.contains(propBase) || customProps.contains("${prefix}_$propBase")
       if (isCustomProp) "${prefix}_$this" to "${prefix}_$propBase" else this to propBase
     }
   }
 
   return mapNotNull { propName ->
-    propName.extractPropBase(prefix, customProps, initialProps)?.let { (prefixedPropName, propBaseName) ->
+    propName.extractBaseProp(prefix, customProps)?.let { (prefixedPropName, propBaseName) ->
       val modificatorName = PROP_MODIFICATOR_MATCHER.find(propName)!!.value.removePrefix("_")
       val modificator = PROP_MODIFICATORS.getValue(modificatorName)
       ModificatorPropGenerator(

@@ -4,6 +4,10 @@
   "customProps": [
     {
       "requiredProps": [],
+      "name": "TEMPLATE_NAME"
+    },
+    {
+      "requiredProps": [],
       "name": "FILE_NAME"
     }
   ],

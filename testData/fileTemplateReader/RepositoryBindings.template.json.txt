@@ -3,6 +3,14 @@
   "simpleName": "REPOSITORY_BINDINGS",
   "customProps": [
     {
+      "requiredProps": [],
+      "name": "TEMPLATE_NAME"
+    },
+    {
+      "requiredProps": [],
+      "name": "TEMPLATE_DIRECTORY"
+    },
+    {
       "requiredProps": [
         "PACKAGE_NAME",
         "TEMPLATE_DIRECTORY_DOT_CASE"
