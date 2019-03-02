@@ -24,7 +24,7 @@ class CustomPropGenerator(
   }()
 
   override fun generateProp(props: Props): Props {
-    val localScopeProps = copyPropsToLocalScopeProps(prefix, requiredProps, props)
+    val localScopeProps = copyPropsToLocalScopeProps(prefix, customPropNames.map { "${prefix}_$it" }.toSet(), props)
     props.setProperty(propName, mergeTemplate(customProp.text, localScopeProps))
     return props
   }

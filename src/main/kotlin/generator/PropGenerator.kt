@@ -42,14 +42,14 @@ fun List<PropGenerator>.generateProps(props: Props): Props {
   return props
 }
 
-fun copyPropsToLocalScopeProps(prefix: String, generatedProps: Set<String>, props: Props): Props {
+fun copyPropsToLocalScopeProps(prefix: String, requiredProps: Set<String>, props: Props): Props {
   val localScopeProps = Props()
 
   (props as Map<String, String>)
     .toList()
-    .sortedBy { (k, _) -> if (k.startsWith(prefix)) 1 else -1 }
+    .sortedBy { (k, _) -> if (requiredProps.contains(k.extractBaseProp())) 1 else -1 }
     .forEach { (k, v) ->
-      if (generatedProps.contains(k)) {
+      if (requiredProps.contains(k.extractBaseProp())) {
         localScopeProps.setProperty(k.removePrefix("${prefix}_"), v)
       } else {
         localScopeProps.setProperty(k, v)

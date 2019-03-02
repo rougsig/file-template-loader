@@ -1,7 +1,13 @@
 package com.github.rougsig.filetemplateloader.reader
 
 import com.github.rougsig.filetemplateloader.entity.*
+import com.intellij.openapi.project.Project
+import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.vfs.VirtualFile
+
+fun Project.readFileTemplate(templateFileName: String): FileTemplate {
+  return guessProjectDir()!!.readFileTemplate(templateFileName)
+}
 
 fun VirtualFile.readFileTemplate(templateFileName: String): FileTemplate {
   return readFileTemplate(
@@ -13,7 +19,6 @@ fun VirtualFile.readFileTemplate(templateFileName: String): FileTemplate {
 private fun readFileTemplate(
   templateFileName: String,
   templateFiles: Map<String, VirtualFile>,
-  directory: String? = null,
   parentCustomProps: Set<FileTemplateCustomProp>? = null
 ): FileTemplate {
   val templateFile = templateFiles[templateFileName]
@@ -29,7 +34,7 @@ private fun readFileTemplate(
       readTemplateFileTemplate(templateFile, templateFiles)
 
     else ->
-      readSingleFileTemplate(templateFile, templateFileNameWithoutExtension, directory, parentCustomProps)
+      readSingleFileTemplate(templateFile, templateFileNameWithoutExtension, parentCustomProps)
   }
 }
 
@@ -61,13 +66,11 @@ private fun readTemplateFileTemplate(
 private fun readSingleFileTemplate(
   file: VirtualFile,
   templateName: String,
-  directory: String?,
   parentCustomProps: Set<FileTemplateCustomProp>?
 ): FileTemplateSingle {
   return FileTemplateSingle(
     name = templateName,
     text = String(file.inputStream.readBytes()),
-    directory = directory ?: "",
     initialCustomProps = parentCustomProps ?: emptySet()
   )
 }
@@ -81,14 +84,12 @@ private fun FileTemplateJson.toFileTemplate(
     readFileTemplate(
       templateFileName = textFrom,
       templateFiles = templateFiles,
-      directory = directory,
       parentCustomProps = customProps
     )
   } else {
     FileTemplateSingle(
       name = name ?: "",
       text = text ?: "",
-      directory = directory ?: "",
       initialCustomProps = customProps
     )
   }

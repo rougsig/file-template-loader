@@ -3,6 +3,8 @@ package com.github.rougsig.filetemplateloader.entity
 import com.github.rougsig.filetemplateloader.extension.toUpperSnakeCase
 import com.github.rougsig.filetemplateloader.generator.PropGenerator
 import com.github.rougsig.filetemplateloader.generator.Props
+import com.github.rougsig.filetemplateloader.generator.extractProps
+import com.github.rougsig.filetemplateloader.generator.filterProps
 import com.github.rougsig.filetemplateloader.reader.FILE_NAME_DELIMITER
 import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.util.text.StringUtil
@@ -41,6 +43,11 @@ abstract class FileTemplate {
 }
 
 fun mergeTemplate(templateText: String, props: Properties): String {
+  val requiredProps = extractProps(templateText).filterProps(props)
+  check(requiredProps.isEmpty()) {
+    "cannot merge template props not found: ${requiredProps.joinToString { it }}"
+  }
+
   val merged = FileTemplateUtil.mergeTemplate(props, templateText, true)
   return StringUtil.convertLineSeparators(merged)
 }
