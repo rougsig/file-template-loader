@@ -1,0 +1,2 @@
+FILE_NAME=.gitignore
+GITIGNORE_TEMPLATE_NAME=.gitignore

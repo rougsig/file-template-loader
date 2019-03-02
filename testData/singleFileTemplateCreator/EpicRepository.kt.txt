@@ -1,3 +1,0 @@
-com.github.rougsig.filetemplateloader
-EpicRepository.kt
-epicrepository.kt

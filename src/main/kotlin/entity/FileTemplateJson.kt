@@ -23,6 +23,7 @@ data class FileTemplateJson(
   val name: String?,
   val text: String?,
   val textFrom: String?,
+  val directory: String?,
   val customProps: List<FileTemplateCustomPropJson>?
 )
 
@@ -32,7 +33,7 @@ data class FileTemplateCustomPropJson(
 )
 
 data class FileTemplateInjectorJson(
-  val text: String,
+  val text: String?,
   val textFrom: String?,
   val className: String?,
   val pathName: String?,

@@ -4,7 +4,7 @@ import com.github.rougsig.filetemplateloader.generator.extractProps
 
 data class FileTemplateCustomProp(
   val name: String,
-  val text: String
+  @Transient val text: String
 ) {
   val requiredProps = extractProps("$name\n$text")
 

@@ -3,7 +3,7 @@ package ${PACKAGE_NAME}
 import toothpick.config.Module
 import ${REPOSITORY_CLASS_NAME}
 import ${REPOSITORY_IMPL_CLASS_NAME}
-import ru.appkode.base.core.util.ToothpickModuleBindings
+import com.github.rougsig.core.util.ToothpickModuleBindings
 
 object ${SIMPLE_NAME} : ToothpickModuleBindings {
   override fun bindInto(module: Module) {

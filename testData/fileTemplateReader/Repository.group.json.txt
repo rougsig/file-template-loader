@@ -1,0 +1,169 @@
+{
+  "name": "Repository",
+  "simpleName": "REPOSITORY",
+  "templates": [
+    {
+      "name": "Repository.kt",
+      "simpleName": "REPOSITORY",
+      "customProps": [
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "FLOW_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        }
+      ],
+      "extractedProps": [
+        "SIMPLE_NAME",
+        "PACKAGE_NAME",
+        "FLOW_NAME"
+      ],
+      "requiredProps": [
+        "PACKAGE_NAME",
+        "FLOW_NAME"
+      ],
+      "generatedProps": [
+        "REPOSITORY_TEMPLATE_NAME",
+        "REPOSITORY_FILE_NAME",
+        "REPOSITORY_SIMPLE_NAME",
+        "REPOSITORY_CLASS_NAME"
+      ]
+    },
+    {
+      "name": "RepositoryImpl.kt",
+      "simpleName": "REPOSITORY_IMPL",
+      "customProps": [
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "FLOW_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        }
+      ],
+      "extractedProps": [
+        "REPOSITORY_SIMPLE_NAME",
+        "SIMPLE_NAME",
+        "PACKAGE_NAME",
+        "FLOW_NAME"
+      ],
+      "requiredProps": [
+        "PACKAGE_NAME",
+        "FLOW_NAME",
+        "REPOSITORY_SIMPLE_NAME"
+      ],
+      "generatedProps": [
+        "REPOSITORY_IMPL_TEMPLATE_NAME",
+        "REPOSITORY_IMPL_FILE_NAME",
+        "REPOSITORY_IMPL_SIMPLE_NAME",
+        "REPOSITORY_IMPL_CLASS_NAME"
+      ]
+    },
+    {
+      "name": "RepositoryBindings.kt",
+      "simpleName": "REPOSITORY_BINDINGS",
+      "customProps": [
+        {
+          "requiredProps": [
+            "PACKAGE_NAME",
+            "TEMPLATE_DIRECTORY_DOT_CASE"
+          ],
+          "name": "PACKAGE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "FLOW_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        }
+      ],
+      "extractedProps": [
+        "REPOSITORY_CLASS_NAME",
+        "REPOSITORY_SIMPLE_NAME",
+        "SIMPLE_NAME",
+        "REPOSITORY_IMPL_CLASS_NAME",
+        "PACKAGE_NAME",
+        "REPOSITORY_IMPL_SIMPLE_NAME",
+        "TEMPLATE_DIRECTORY_DOT_CASE",
+        "FLOW_NAME"
+      ],
+      "requiredProps": [
+        "REPOSITORY_IMPL_CLASS_NAME",
+        "REPOSITORY_CLASS_NAME",
+        "PACKAGE_NAME",
+        "REPOSITORY_IMPL_SIMPLE_NAME",
+        "FLOW_NAME",
+        "REPOSITORY_SIMPLE_NAME"
+      ],
+      "generatedProps": [
+        "REPOSITORY_BINDINGS_TEMPLATE_NAME",
+        "REPOSITORY_BINDINGS_TEMPLATE_DIRECTORY",
+        "REPOSITORY_BINDINGS_PACKAGE_NAME",
+        "REPOSITORY_BINDINGS_FILE_NAME",
+        "REPOSITORY_BINDINGS_SIMPLE_NAME",
+        "REPOSITORY_BINDINGS_TEMPLATE_DIRECTORY_DOT_CASE"
+      ]
+    }
+  ],
+  "customProps": [],
+  "extractedProps": [
+    "PACKAGE_NAME",
+    "FLOW_NAME",
+    "REPOSITORY_SIMPLE_NAME",
+    "REPOSITORY_IMPL_CLASS_NAME",
+    "REPOSITORY_CLASS_NAME",
+    "REPOSITORY_IMPL_SIMPLE_NAME"
+  ],
+  "requiredProps": [
+    "PACKAGE_NAME",
+    "FLOW_NAME"
+  ],
+  "generatedProps": [
+    "REPOSITORY_GROUP_NAME",
+    "REPOSITORY_TEMPLATE_NAME",
+    "REPOSITORY_FILE_NAME",
+    "REPOSITORY_SIMPLE_NAME",
+    "REPOSITORY_CLASS_NAME",
+    "REPOSITORY_IMPL_TEMPLATE_NAME",
+    "REPOSITORY_IMPL_FILE_NAME",
+    "REPOSITORY_IMPL_SIMPLE_NAME",
+    "REPOSITORY_IMPL_CLASS_NAME",
+    "REPOSITORY_BINDINGS_TEMPLATE_NAME",
+    "REPOSITORY_BINDINGS_TEMPLATE_DIRECTORY",
+    "REPOSITORY_BINDINGS_PACKAGE_NAME",
+    "REPOSITORY_BINDINGS_FILE_NAME",
+    "REPOSITORY_BINDINGS_SIMPLE_NAME",
+    "REPOSITORY_BINDINGS_TEMPLATE_DIRECTORY_DOT_CASE"
+  ]
+}

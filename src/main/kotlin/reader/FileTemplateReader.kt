@@ -1,41 +1,35 @@
 package com.github.rougsig.filetemplateloader.reader
 
 import com.github.rougsig.filetemplateloader.entity.*
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import com.intellij.openapi.vfs.VirtualFile
 
-fun createGson(): Gson {
-  return GsonBuilder()
-    .registerTypeAdapter(FileTemplateSingle::class.java, FileTemplateSingleAdapter())
-    .registerTypeAdapter(FileTemplateGroup::class.java, FileTemplateGroupAdapter())
-    .create()
+fun VirtualFile.readFileTemplate(templateFileName: String): FileTemplate {
+  return readFileTemplate(
+    templateFileName,
+    fileRec.map { it.name to it }.toMap()
+  )
 }
 
-private val gson = createGson()
-
-fun VirtualFile.readFileTemplate(templateName: String): FileTemplate {
-  return readFileTemplate(templateName, fileRec.map { it.name to it }.toMap(), emptySet())
-}
-
-fun readFileTemplate(
-  templateName: String,
+private fun readFileTemplate(
+  templateFileName: String,
   templateFiles: Map<String, VirtualFile>,
-  customProps: Set<FileTemplateCustomProp>
+  directory: String? = null,
+  parentCustomProps: Set<FileTemplateCustomProp>? = null
 ): FileTemplate {
-  val templateFile = templateFiles[templateName]
-    ?: throw IllegalStateException("template not found: $templateName")
+  val templateFile = templateFiles[templateFileName]
+    ?: throw IllegalStateException("template not found: $templateFileName")
 
-  val templateNameWithoutExtension = FILE_TEMPLATE_EXTENSION_MATCHER.replace(templateName) { "" }
+  val templateFileNameWithoutExtension = FILE_TEMPLATE_EXTENSION_MATCHER.replace(templateFileName) { "" }
 
   return when {
-    templateName.endsWith("$FILE_NAME_DELIMITER$FILE_TEMPLATE_TEMPLATE_EXTENSION") ->
+    templateFileName.endsWith(FILE_TEMPLATE_GROUP_EXTENSION) ->
+      readGroupFileTemplate(templateFile, templateFileNameWithoutExtension, templateFiles, parentCustomProps)
+
+    templateFileName.endsWith(FILE_TEMPLATE_TEMPLATE_EXTENSION) ->
       readTemplateFileTemplate(templateFile, templateFiles)
 
-    templateName.endsWith("$FILE_NAME_DELIMITER$FILE_TEMPLATE_GROUP_EXTENSION") ->
-      readGroupFileTemplate(templateFile, templateNameWithoutExtension, templateFiles, customProps)
-
-    else -> readSingleFileTemplate(templateFile, templateNameWithoutExtension, customProps)
+    else ->
+      readSingleFileTemplate(templateFile, templateFileNameWithoutExtension, directory, parentCustomProps)
   }
 }
 
@@ -43,13 +37,15 @@ private fun readGroupFileTemplate(
   file: VirtualFile,
   templateName: String,
   templateFiles: Map<String, VirtualFile>,
-  customProps: Set<FileTemplateCustomProp>
+  parentCustomProps: Set<FileTemplateCustomProp>?
 ): FileTemplateGroup {
   val json = gson.fromJson(String(file.inputStream.readBytes()), FileTemplateGroupJson::class.java)
   return FileTemplateGroup(
     name = json.name ?: templateName,
-    templates = json.templates.map { it.toFileTemplate(templateFiles) },
-    customProps = customProps.plus(json.customProps.toFileTemplateCustomProps())
+    templates = json.templates.map {
+      it.toFileTemplate(templateFiles)
+    },
+    customProps = (parentCustomProps ?: emptySet()).plus(json.customProps.toFileTemplateCustomProps())
   )
 }
 
@@ -57,36 +53,43 @@ private fun readTemplateFileTemplate(
   file: VirtualFile,
   templateFiles: Map<String, VirtualFile>
 ): FileTemplate {
-  val json = gson.fromJson(String(file.inputStream.readBytes()), FileTemplateJson::class.java)
-  return json.toFileTemplate(templateFiles)
+  return gson
+    .fromJson(String(file.inputStream.readBytes()), FileTemplateJson::class.java)
+    .toFileTemplate(templateFiles)
 }
 
 private fun readSingleFileTemplate(
   file: VirtualFile,
   templateName: String,
-  customProps: Set<FileTemplateCustomProp>
+  directory: String?,
+  parentCustomProps: Set<FileTemplateCustomProp>?
 ): FileTemplateSingle {
   return FileTemplateSingle(
     name = templateName,
     text = String(file.inputStream.readBytes()),
-    customProps = customProps
+    directory = directory ?: "",
+    customProps = parentCustomProps ?: emptySet()
   )
 }
 
 private fun FileTemplateJson.toFileTemplate(
   templateFiles: Map<String, VirtualFile>
 ): FileTemplate {
+  val customProps = customProps.toFileTemplateCustomProps()
+
   return if (textFrom != null) {
     readFileTemplate(
-      templateName = textFrom,
+      templateFileName = textFrom,
       templateFiles = templateFiles,
-      customProps = customProps.toFileTemplateCustomProps()
+      directory = directory,
+      parentCustomProps = customProps
     )
   } else {
     FileTemplateSingle(
       name = name ?: "",
       text = text ?: "",
-      customProps = customProps.toFileTemplateCustomProps()
+      directory = directory ?: "",
+      customProps = customProps
     )
   }
 }

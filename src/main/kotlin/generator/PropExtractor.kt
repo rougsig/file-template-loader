@@ -60,17 +60,27 @@ fun Set<String>.extractModificatorPropGenerators(
   }
 }
 
+private fun Iterable<PropGenerator>.findPropGenerator(prefix: String, propName: String): PropGenerator? {
+  return find { it.propName == propName || it.propName == "${prefix}_$propName" }
+}
+
 fun Set<String>.minusGeneratedProps(
   prefix: String,
   propGenerators: List<PropGenerator>
 ): Set<String> {
-  fun Iterable<PropGenerator>.findPropGenerator(propName: String): PropGenerator? {
-    return find { it.propName == propName || it.propName == "${prefix}_$propName" }
-  }
-
-
   return this
-    .flatMapTo(HashSet<String>()) { propGenerators.findPropGenerator(it)?.requiredProps ?: setOf(it) }
-//    .filter { notPackageNamePropGenerators.findPropGenerator(it) == null }
+    .flatMapTo(HashSet<String>()) { propName ->
+      propGenerators.findPropGenerator(prefix, propName)?.requiredProps ?: setOf(propName)
+    }
+    .flatMapTo(HashSet<String>()) { propName ->
+      propGenerators.findPropGenerator(prefix, propName)?.let { propGenerator ->
+        val isSelfRequired = propGenerator.requiredProps.contains(propName)
+        if (isSelfRequired) {
+          setOf(propName)
+        } else {
+          emptySet()
+        }
+      } ?: setOf(propName)
+    }
     .toSet()
 }

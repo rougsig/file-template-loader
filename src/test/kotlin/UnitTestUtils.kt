@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.generator.Props
-import com.github.rougsig.filetemplateloader.reader.createGson
+import com.github.rougsig.filetemplateloader.reader.gson
 import com.google.gson.Gson
 import com.intellij.openapi.util.io.FileUtil
 import java.io.File
@@ -26,7 +26,7 @@ fun calculateTestDataPath(): String {
 }
 
 fun createUnitTestGson(): Gson {
-  return createGson()
+  return gson
     .newBuilder()
     .serializeNulls()
     .setPrettyPrinting()

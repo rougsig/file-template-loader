@@ -1,0 +1,6 @@
+FLOW_NAME=Epic
+PACKAGE_NAME=com.github.rougsig.filetemplateloader
+REPOSITORY_CLASS_NAME=com.github.rougsig.filetemplateloader.EpicRepository
+REPOSITORY_FILE_NAME=EpicRepository.kt
+REPOSITORY_SIMPLE_NAME=EpicRepository
+REPOSITORY_TEMPLATE_NAME=Repository.kt

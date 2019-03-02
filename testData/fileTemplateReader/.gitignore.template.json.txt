@@ -4,8 +4,7 @@
   "customProps": [
     {
       "requiredProps": [],
-      "name": "FILE_NAME",
-      "text": ".gitignore"
+      "name": "FILE_NAME"
     }
   ],
   "extractedProps": [],

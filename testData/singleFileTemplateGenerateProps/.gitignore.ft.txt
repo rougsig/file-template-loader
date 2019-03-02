@@ -1,4 +1,0 @@
-FILE_NAME=.gitignore
-GITIGNORE_PACKAGE_NAME=com.github.rougsig.filetemplateloader
-GITIGNORE_TEMPLATE_NAME=.gitignore
-PACKAGE_NAME=com.github.rougsig.filetemplateloader

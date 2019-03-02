@@ -30,18 +30,16 @@ class FileTemplatePropGeneratorTest : LightPlatformCodeInsightFixtureTestCase() 
       .joinToString("\n") { it }
 
     assertSameLinesWithFile(
-      "$testDataPath/singleFileTemplateGenerateProps/$testFileName.txt",
+      "$testDataPath/fileTemplatePropGenerator/$testFileName.txt",
       generatedProps
     )
   }
 
-  fun testGitignore() = doTest(".gitignore.ft")
+  fun testGitignoreFt() = doTest(".gitignore.ft")
 
-  fun testEmptyFileTemplate() = doTest("EmptyFileTemplate.kt.ft")
+  fun testGitignoreTemplateJson() = doTest(".gitignore.template.json")
 
-  fun testSimpleFileTemplate() = doTest("SimpleFileTemplate.kt.ft")
+  fun testRepositoryTemplateJson() = doTest("Repository.template.json")
 
-  fun testRepositoryGroup() = doTest("Repository.group.json")
-
-  fun testScreenGroup() = doTest("Screen.group.json")
+  fun testRepositoryGroupJson() = doTest("Repository.group.json")
 }

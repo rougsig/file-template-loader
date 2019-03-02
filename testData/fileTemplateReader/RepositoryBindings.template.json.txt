@@ -1,0 +1,51 @@
+{
+  "name": "RepositoryBindings.kt",
+  "simpleName": "REPOSITORY_BINDINGS",
+  "customProps": [
+    {
+      "requiredProps": [
+        "PACKAGE_NAME",
+        "TEMPLATE_DIRECTORY_DOT_CASE"
+      ],
+      "name": "PACKAGE_NAME"
+    },
+    {
+      "requiredProps": [
+        "SIMPLE_NAME"
+      ],
+      "name": "FILE_NAME"
+    },
+    {
+      "requiredProps": [
+        "FLOW_NAME"
+      ],
+      "name": "SIMPLE_NAME"
+    }
+  ],
+  "extractedProps": [
+    "REPOSITORY_CLASS_NAME",
+    "REPOSITORY_SIMPLE_NAME",
+    "SIMPLE_NAME",
+    "REPOSITORY_IMPL_CLASS_NAME",
+    "PACKAGE_NAME",
+    "REPOSITORY_IMPL_SIMPLE_NAME",
+    "TEMPLATE_DIRECTORY_DOT_CASE",
+    "FLOW_NAME"
+  ],
+  "requiredProps": [
+    "REPOSITORY_IMPL_CLASS_NAME",
+    "REPOSITORY_CLASS_NAME",
+    "PACKAGE_NAME",
+    "REPOSITORY_IMPL_SIMPLE_NAME",
+    "FLOW_NAME",
+    "REPOSITORY_SIMPLE_NAME"
+  ],
+  "generatedProps": [
+    "REPOSITORY_BINDINGS_TEMPLATE_NAME",
+    "REPOSITORY_BINDINGS_TEMPLATE_DIRECTORY",
+    "REPOSITORY_BINDINGS_PACKAGE_NAME",
+    "REPOSITORY_BINDINGS_FILE_NAME",
+    "REPOSITORY_BINDINGS_SIMPLE_NAME",
+    "REPOSITORY_BINDINGS_TEMPLATE_DIRECTORY_DOT_CASE"
+  ]
+}

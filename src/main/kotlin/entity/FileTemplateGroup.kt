@@ -24,7 +24,7 @@ data class FileTemplateGroup(
   private val customPropNames = customProps.map(FileTemplateCustomProp::name).toSet()
 
   override val propGenerators: List<PropGenerator> = initialPropGenerators
-    .plus(customProps.map { CustomPropGenerator(simpleName, customPropNames, it) })
+    .plus(customProps.map { CustomPropGenerator(simpleName, it) })
     .plus(templates.flatMap(FileTemplate::propGenerators))
     .plus(
       extractedProps.extractModificatorPropGenerators(

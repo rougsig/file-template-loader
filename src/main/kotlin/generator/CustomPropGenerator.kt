@@ -5,13 +5,12 @@ import com.github.rougsig.filetemplateloader.entity.mergeTemplate
 
 class CustomPropGenerator(
   private val prefix: String,
-  private val customPropNames: Set<String>,
   private val customProp: FileTemplateCustomProp
 ) : PropGenerator() {
   override val propName: String = "${prefix}_${customProp.name}"
 
-  override val requiredProps: Set<String> = customProp.requiredProps
-    .mapTo(HashSet()) { propName -> if (customPropNames.contains(propName)) "${prefix}_$propName" else propName }
+  override val requiredProps: Set<String>
+    get() = customProp.requiredProps
 
   override fun generateProp(props: Props): Props {
     val localScopeProps = copyPropsToLocalScopeProps(prefix, requiredProps, props)

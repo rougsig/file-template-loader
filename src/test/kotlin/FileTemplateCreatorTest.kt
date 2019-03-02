@@ -33,7 +33,7 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     createdFileTemplateFiles.forEach { createdFileTemplateFile ->
 
       val filePathBuilder = StringBuilder()
-      filePathBuilder.append("$testDataPath/singleFileTemplateCreator/")
+      filePathBuilder.append("$testDataPath/fileTemplateCreator/")
       val fileDirectory = createdFileTemplateFile.getFqNameByDirectory().asString()
       if (fileDirectory.isNotBlank()) filePathBuilder.append("$fileDirectory/")
       filePathBuilder.append("${createdFileTemplateFile.name}.txt")
@@ -45,11 +45,11 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
     }
   }
 
-  fun testEmptyFileTemplate() = doTest("EmptyFileTemplate.kt.ft")
+  fun testGitignoreFt() = doTest(".gitignore.ft")
 
-  fun testGitignore() = doTest(".gitignore.ft")
+  fun testGitignoreTemplateJson() = doTest(".gitignore.template.json")
 
-  fun testSimpleFileTemplate() = doTest("SimpleFileTemplate.kt.ft")
+  fun testRepositoryTemplateJson() = doTest("Repository.template.json")
 
-  fun testRepositoryGroupFileTemplate() = doTest("Repository.group.json")
+  fun testRepositoryGroupJson() = doTest("Repository.group.json")
 }

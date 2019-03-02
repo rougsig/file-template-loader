@@ -1,0 +1,17 @@
+{
+  "textFrom": "Repository.kt.ft",
+  "customProps": [
+    {
+      "name": "FILE_NAME",
+      "text": "${SIMPLE_NAME}.kt"
+    },
+    {
+      "name": "SIMPLE_NAME",
+      "text": "${FLOW_NAME}Repository"
+    },
+    {
+      "name": "CLASS_NAME",
+      "text": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+    }
+  ]
+}

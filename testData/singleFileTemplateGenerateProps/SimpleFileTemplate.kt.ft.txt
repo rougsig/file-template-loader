@@ -1,9 +1,0 @@
-CAT_VOICE=Meow Meow
-CAT_VOICE_LOWER_CASE=meow meow
-DUCK_VOICE=Quack Quack
-DUCK_VOICE_UPPER_CASE=QUACK QUACK
-FILE_NAME=SimpleFileTemplate.kt
-PACKAGE_NAME=com.github.rougsig.filetemplateloader
-SIMPLE_FILE_TEMPLATE_PACKAGE_NAME=com.github.rougsig.filetemplateloader
-SIMPLE_FILE_TEMPLATE_TEMPLATE_NAME=SimpleFileTemplate.kt
-SIMPLE_FILE_TEMPLATE_TEMPLATE_NAME_LOWER_CASE=simplefiletemplate.kt

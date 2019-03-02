@@ -2,8 +2,11 @@
   "templates": [
     {
       "textFrom": "Repository.kt.ft",
-      "fileName": "${SIMPLE_NAME}.kt",
       "customProps": [
+        {
+          "name": "FILE_NAME",
+          "text": "${SIMPLE_NAME}.kt"
+        },
         {
           "name": "SIMPLE_NAME",
           "text": "${FLOW_NAME}Repository"
@@ -16,8 +19,11 @@
     },
     {
       "textFrom": "RepositoryImpl.kt.ft",
-      "fileName": "${SIMPLE_NAME}.kt",
       "customProps": [
+        {
+          "name": "FILE_NAME",
+          "text": "${SIMPLE_NAME}.kt"
+        },
         {
           "name": "SIMPLE_NAME",
           "text": "${FLOW_NAME}RepositoryImpl"
@@ -30,8 +36,21 @@
     },
     {
       "textFrom": "RepositoryBindings.kt.ft",
-      "fileName": "${FLOW_NAME}RepositoryBindings.kt",
-      "directory": "di"
+      "directory": "di",
+      "customProps": [
+        {
+          "name": "PACKAGE_NAME",
+          "text": "${PACKAGE_NAME}.${TEMPLATE_DIRECTORY_DOT_CASE}"
+        },
+        {
+          "name": "FILE_NAME",
+          "text": "${SIMPLE_NAME}.kt"
+        },
+        {
+          "name": "SIMPLE_NAME",
+          "text": "${FLOW_NAME}RepositoryBindings"
+        }
+      ]
     }
   ]
 }
