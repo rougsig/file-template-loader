@@ -14,7 +14,20 @@
     "PACKAGE_NAME",
     "FILE_NAME"
   ],
-  "generatedProps": [
-    "DUMMY_TEMPLATE_NAME"
-  ]
+  "scope": {
+    "name": "DUMMY",
+    "scopedPropGenerators": [
+      {
+        "propName": "DUMMY_TEMPLATE_NAME",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "TEMPLATE_NAME"
+          }
+        }
+      }
+    ]
+  }
 }

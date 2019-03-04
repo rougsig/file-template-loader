@@ -15,7 +15,7 @@ class FileTemplateSingleAdapter : JsonSerializer<FileTemplateSingle> {
       add("customProps", context.serialize(template.customProps))
       add("extractedProps", context.serialize(template.extractedProps))
       add("requiredProps", context.serialize(template.requiredProps))
-      add("generatedProps", context.serialize(template.generatedPropNames))
+      add("scope", context.serialize(template.scope))
     }
   }
 }

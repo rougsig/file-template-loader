@@ -1,11 +1,11 @@
 package com.github.rougsig.filetemplateloader.entity
 
 import com.github.rougsig.filetemplateloader.extension.toUpperSnakeCase
-import com.github.rougsig.filetemplateloader.generator.PropGenerator
 import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.generator.extractProps
 import com.github.rougsig.filetemplateloader.generator.filterProps
 import com.github.rougsig.filetemplateloader.reader.FILE_NAME_DELIMITER
+import com.github.rougsig.filetemplateloader.scope.PropScope
 import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.util.text.StringUtil
 import com.intellij.psi.PsiDirectory
@@ -20,23 +20,13 @@ abstract class FileTemplate {
 
   abstract val customProps: Set<FileTemplateCustomProp>
 
-  abstract val propGenerators: List<PropGenerator>
-
-  val generatedPropNames by lazy(LazyThreadSafetyMode.NONE) {
-    propGenerators.map(PropGenerator::propName).toSet()
-  }
+  abstract val scope: PropScope
 
   val simpleName by lazy(LazyThreadSafetyMode.NONE) {
     (name
       .split(FILE_NAME_DELIMITER)
       .find { it.isNotBlank() && it != FILE_NAME_DELIMITER } ?: name)
       .toUpperSnakeCase()
-  }
-
-  val customPropNames by lazy(LazyThreadSafetyMode.NONE) {
-    customProps
-      .map(FileTemplateCustomProp::name)
-      .toSet()
   }
 
   abstract fun create(dir: PsiDirectory, props: Props): List<PsiFile>

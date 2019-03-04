@@ -6,6 +6,7 @@ import com.github.rougsig.filetemplateloader.constant.PROP_TEMPLATE_NAME
 import com.github.rougsig.filetemplateloader.extension.createPsiFile
 import com.github.rougsig.filetemplateloader.extension.createSubDirectoriesByRelativePath
 import com.github.rougsig.filetemplateloader.generator.*
+import com.github.rougsig.filetemplateloader.scope.PropScope
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
 
@@ -27,23 +28,23 @@ data class FileTemplateSingle(
     extractProps(text)
       .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
 
-  override val propGenerators: List<PropGenerator> =
-    customProps
-      .map { CustomPropGenerator(simpleName, customPropNames, it) }
-      .plus(
-        extractedProps.extractModificatorPropGenerators(
-          simpleName,
-          customPropNames
-        )
-      )
+  override val scope: PropScope = PropScope(
+    name = simpleName,
+    childScopes = emptySet(),
+    propGenerators = customProps
+      .map { CustomPropGenerator(it) }
+      .plus(extractedProps.extractModificatorPropGenerators())
+      .toSet()
+  )
 
   override val requiredProps: Set<String> =
     extractedProps
       .plus(PROP_FILE_NAME)
-      .minusGeneratedProps(simpleName, propGenerators)
+      .minusGeneratedProps(scope.propGenerators)
+      .minus(scope.scopedPropGenerators.map(PropGenerator::propName))
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
-    val localScopeProps = copyPropsToLocalScopeProps(simpleName, generatedPropNames, props)
+    val localScopeProps = scope.copyPropsToLocalScope(props)
     val mergedTemplate = mergeTemplate(text, localScopeProps)
 
     val fileName = localScopeProps.getProperty(PROP_FILE_NAME)

@@ -30,52 +30,30 @@ private fun String.getReferences(): Set<String> {
   return names
 }
 
-fun String.extractBaseProp(): String {
+fun String.extractBaseProp(): String? {
   return PROP_MODIFICATOR_MATCHER.replace(this) { "" }
+    .takeIf { PROP_MODIFICATOR_MATCHER.containsMatchIn(this) }
 }
 
-fun Set<String>.extractBaseProps(): Set<String> {
-  return map { PROP_MODIFICATOR_MATCHER.replace(it) { "" } }.toSet()
-}
-
-fun Set<String>.extractModificatorPropGenerators(
-  prefix: String,
-  customProps: Set<String>
-): List<ModificatorPropGenerator> {
-  fun String.extractBaseProp(
-    prefix: String,
-    customProps: Set<String>
-  ): Pair<String, String>? {
-    return PROP_MODIFICATOR_MATCHER.find(this)?.value?.let {
-      val propBase = this.extractBaseProp()
-      val isCustomProp = customProps.contains(propBase) || customProps.contains("${prefix}_$propBase")
-      if (isCustomProp) "${prefix}_$this" to "${prefix}_$propBase" else this to propBase
-    }
-  }
-
+fun Set<String>.extractModificatorPropGenerators(): List<ModificatorPropGenerator> {
   return mapNotNull { propName ->
-    propName.extractBaseProp(prefix, customProps)?.let { (prefixedPropName, propBaseName) ->
+    propName.extractBaseProp()?.let { propBaseName ->
       val modificatorName = PROP_MODIFICATOR_MATCHER.find(propName)!!.value.removePrefix("_")
       val modificator = PROP_MODIFICATORS.getValue(modificatorName)
-      ModificatorPropGenerator(
-        prefixedPropName,
-        propBaseName,
-        modificator
-      )
+      ModificatorPropGenerator(propName, propBaseName, modificator)
     }
   }
 }
 
-private fun Iterable<PropGenerator>.findPropGenerator(prefix: String, propName: String): PropGenerator? {
-  return find { it.propName == propName || it.propName == "${prefix}_$propName" }
+private fun Iterable<PropGenerator>.findPropGenerator(propName: String): PropGenerator? {
+  return find { it.propName == propName }
 }
 
 fun Set<String>.minusGeneratedProps(
-  prefix: String,
-  propGenerators: List<PropGenerator>
+  propGenerators: Set<PropGenerator>
 ): Set<String> {
   return this
-    .flatMapTo(HashSet<String>()) { propGenerators.findPropGenerator(prefix, it)?.requiredProps ?: setOf(it) }
-    .flatMapTo(HashSet<String>()) { propGenerators.findPropGenerator(prefix, it)?.selfRequiredProps ?: setOf(it) }
+    .flatMapTo(HashSet<String>()) { propGenerators.findPropGenerator(it)?.requiredProps ?: setOf(it) }
+    .flatMapTo(HashSet<String>()) { propGenerators.findPropGenerator(it)?.selfRequiredProps ?: setOf(it) }
     .toSet()
 }

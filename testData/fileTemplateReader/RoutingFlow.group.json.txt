@@ -47,13 +47,83 @@
         "FLOW_MODULE_CLASS_NAME",
         "FLOW_NAME"
       ],
-      "generatedProps": [
-        "FLOW_TEMPLATE_NAME",
-        "FLOW_FILE_NAME",
-        "FLOW_SIMPLE_NAME",
-        "FLOW_CLASS_NAME",
-        "FLOW_NAME_LOWER_CASE"
-      ]
+      "scope": {
+        "name": "FLOW",
+        "scopedPropGenerators": [
+          {
+            "propName": "FLOW_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_FILE_NAME",
+            "requiredProps": [
+              "FLOW_SIMPLE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_SIMPLE_NAME",
+            "requiredProps": [
+              "REPOSITORY_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "REPOSITORY_NAME"
+                ],
+                "name": "SIMPLE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_CLASS_NAME",
+            "requiredProps": [
+              "FLOW_SIMPLE_NAME",
+              "PACKAGE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ],
+                "name": "CLASS_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_FLOW_NAME_LOWER_CASE",
+            "requiredProps": [
+              "FLOW_NAME"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FLOW_NAME"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FLOW_NAME_LOWER_CASE",
+              "propBaseName": "FLOW_NAME"
+            }
+          }
+        ]
+      }
     },
     {
       "name": "FlowCoordinator.kt",
@@ -100,12 +170,69 @@
         "FLOW_SIMPLE_NAME",
         "PROJECT_NAME"
       ],
-      "generatedProps": [
-        "FLOW_COORDINATOR_TEMPLATE_NAME",
-        "FLOW_COORDINATOR_FILE_NAME",
-        "FLOW_COORDINATOR_SIMPLE_NAME",
-        "FLOW_COORDINATOR_CLASS_NAME"
-      ]
+      "scope": {
+        "name": "FLOW_COORDINATOR",
+        "scopedPropGenerators": [
+          {
+            "propName": "FLOW_COORDINATOR_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_COORDINATOR_FILE_NAME",
+            "requiredProps": [
+              "FLOW_COORDINATOR_SIMPLE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_COORDINATOR_SIMPLE_NAME",
+            "requiredProps": [
+              "REPOSITORY_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "REPOSITORY_NAME"
+                ],
+                "name": "SIMPLE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_COORDINATOR_CLASS_NAME",
+            "requiredProps": [
+              "FLOW_COORDINATOR_SIMPLE_NAME",
+              "PACKAGE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ],
+                "name": "CLASS_NAME"
+              }
+            }
+          }
+        ]
+      }
     },
     {
       "name": "FlowModule.kt",
@@ -164,15 +291,113 @@
         "FLOW_SIMPLE_NAME",
         "FLOW_COORDINATOR_CLASS_NAME"
       ],
-      "generatedProps": [
-        "FLOW_MODULE_TEMPLATE_NAME",
-        "FLOW_MODULE_PACKAGE_NAME",
-        "FLOW_MODULE_FILE_NAME",
-        "FLOW_MODULE_FILE_DIRECTORY",
-        "FLOW_MODULE_SIMPLE_NAME",
-        "FLOW_MODULE_CLASS_NAME",
-        "FLOW_MODULE_FILE_DIRECTORY_DOT_CASE"
-      ]
+      "scope": {
+        "name": "FLOW_MODULE",
+        "scopedPropGenerators": [
+          {
+            "propName": "FLOW_MODULE_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_MODULE_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "FLOW_MODULE_FILE_DIRECTORY_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_MODULE_FILE_NAME",
+            "requiredProps": [
+              "FLOW_MODULE_SIMPLE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_MODULE_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_MODULE_SIMPLE_NAME",
+            "requiredProps": [
+              "REPOSITORY_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "REPOSITORY_NAME"
+                ],
+                "name": "SIMPLE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_MODULE_CLASS_NAME",
+            "requiredProps": [
+              "FLOW_MODULE_SIMPLE_NAME",
+              "FLOW_MODULE_PACKAGE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ],
+                "name": "CLASS_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_MODULE_FILE_DIRECTORY_DOT_CASE",
+            "requiredProps": [
+              "FLOW_MODULE_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
+            }
+          }
+        ]
+      }
     }
   ],
   "customProps": [
@@ -203,23 +428,252 @@
     "FLOW_NAME",
     "PROJECT_NAME"
   ],
-  "generatedProps": [
-    "ROUTING_FLOW_GROUP_NAME",
-    "FLOW_TEMPLATE_NAME",
-    "FLOW_FILE_NAME",
-    "FLOW_SIMPLE_NAME",
-    "FLOW_CLASS_NAME",
-    "FLOW_NAME_LOWER_CASE",
-    "FLOW_COORDINATOR_TEMPLATE_NAME",
-    "FLOW_COORDINATOR_FILE_NAME",
-    "FLOW_COORDINATOR_SIMPLE_NAME",
-    "FLOW_COORDINATOR_CLASS_NAME",
-    "FLOW_MODULE_TEMPLATE_NAME",
-    "FLOW_MODULE_PACKAGE_NAME",
-    "FLOW_MODULE_FILE_NAME",
-    "FLOW_MODULE_FILE_DIRECTORY",
-    "FLOW_MODULE_SIMPLE_NAME",
-    "FLOW_MODULE_CLASS_NAME",
-    "FLOW_MODULE_FILE_DIRECTORY_DOT_CASE"
-  ]
+  "scope": {
+    "name": "ROUTING_FLOW",
+    "scopedPropGenerators": [
+      {
+        "propName": "ROUTING_FLOW_GROUP_NAME",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "GROUP_NAME"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_MODULE_TEMPLATE_NAME",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "TEMPLATE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_MODULE_PACKAGE_NAME",
+        "requiredProps": [
+          "PACKAGE_NAME",
+          "FLOW_MODULE_FILE_DIRECTORY_DOT_CASE"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [
+            "PACKAGE_NAME"
+          ],
+          "customProp": {
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "FILE_DIRECTORY_DOT_CASE"
+            ],
+            "name": "PACKAGE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_MODULE_FILE_NAME",
+        "requiredProps": [
+          "FLOW_MODULE_SIMPLE_NAME"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [
+              "SIMPLE_NAME"
+            ],
+            "name": "FILE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_MODULE_FILE_DIRECTORY",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "FILE_DIRECTORY"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_MODULE_SIMPLE_NAME",
+        "requiredProps": [
+          "REPOSITORY_NAME"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [
+              "REPOSITORY_NAME"
+            ],
+            "name": "SIMPLE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_MODULE_CLASS_NAME",
+        "requiredProps": [
+          "FLOW_MODULE_SIMPLE_NAME",
+          "FLOW_MODULE_PACKAGE_NAME"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [
+              "SIMPLE_NAME",
+              "PACKAGE_NAME"
+            ],
+            "name": "CLASS_NAME"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_MODULE_FILE_DIRECTORY_DOT_CASE",
+        "requiredProps": [
+          "FLOW_MODULE_FILE_DIRECTORY"
+        ],
+        "propGenerator": {
+          "requiredProps": [
+            "FILE_DIRECTORY"
+          ],
+          "selfRequiredProps": [],
+          "propName": "FILE_DIRECTORY_DOT_CASE",
+          "propBaseName": "FILE_DIRECTORY"
+        }
+      },
+      {
+        "propName": "FLOW_TEMPLATE_NAME",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "TEMPLATE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_FILE_NAME",
+        "requiredProps": [
+          "FLOW_SIMPLE_NAME"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [
+              "SIMPLE_NAME"
+            ],
+            "name": "FILE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_SIMPLE_NAME",
+        "requiredProps": [
+          "REPOSITORY_NAME"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [
+              "REPOSITORY_NAME"
+            ],
+            "name": "SIMPLE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_CLASS_NAME",
+        "requiredProps": [
+          "FLOW_SIMPLE_NAME",
+          "PACKAGE_NAME"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [
+              "SIMPLE_NAME",
+              "PACKAGE_NAME"
+            ],
+            "name": "CLASS_NAME"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_FLOW_NAME_LOWER_CASE",
+        "requiredProps": [
+          "FLOW_NAME"
+        ],
+        "propGenerator": {
+          "requiredProps": [
+            "FLOW_NAME"
+          ],
+          "selfRequiredProps": [],
+          "propName": "FLOW_NAME_LOWER_CASE",
+          "propBaseName": "FLOW_NAME"
+        }
+      },
+      {
+        "propName": "FLOW_COORDINATOR_TEMPLATE_NAME",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "TEMPLATE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_COORDINATOR_FILE_NAME",
+        "requiredProps": [
+          "FLOW_COORDINATOR_SIMPLE_NAME"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [
+              "SIMPLE_NAME"
+            ],
+            "name": "FILE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_COORDINATOR_SIMPLE_NAME",
+        "requiredProps": [
+          "REPOSITORY_NAME"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [
+              "REPOSITORY_NAME"
+            ],
+            "name": "SIMPLE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "FLOW_COORDINATOR_CLASS_NAME",
+        "requiredProps": [
+          "FLOW_COORDINATOR_SIMPLE_NAME",
+          "PACKAGE_NAME"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [
+              "SIMPLE_NAME",
+              "PACKAGE_NAME"
+            ],
+            "name": "CLASS_NAME"
+          }
+        }
+      }
+    ]
+  }
 }

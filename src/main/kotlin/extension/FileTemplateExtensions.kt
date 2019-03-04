@@ -4,7 +4,6 @@ import com.intellij.openapi.project.guessProjectDir
 import com.intellij.psi.PsiDirectory
 import org.jetbrains.kotlin.idea.util.projectStructure.module
 
-// FIXME Move "./" logic to separate function
 fun PsiDirectory.createSubDirectoriesByRelativePath(path: String): PsiDirectory {
   val dir = path.replace("\\", "/")
   if (dir.isBlank() || dir == "/") return this
