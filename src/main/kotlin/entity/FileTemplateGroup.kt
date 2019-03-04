@@ -1,6 +1,8 @@
 package com.github.rougsig.filetemplateloader.entity
 
+import com.github.rougsig.filetemplateloader.constant.PROP_FILE_DIRECTORY
 import com.github.rougsig.filetemplateloader.constant.PROP_GROUP_NAME
+import com.github.rougsig.filetemplateloader.extension.createSubDirectoriesByRelativePath
 import com.github.rougsig.filetemplateloader.generator.*
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
@@ -25,7 +27,8 @@ data class FileTemplateGroup(
       .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
 
   override val propGenerators: List<PropGenerator> =
-    customProps.map { CustomPropGenerator(simpleName, customPropNames, it) }
+    customProps
+      .map { CustomPropGenerator(simpleName, customPropNames, it) }
       .plus(templates.flatMap(FileTemplate::propGenerators))
       .plus(
         extractedProps.extractModificatorPropGenerators(
@@ -39,7 +42,11 @@ data class FileTemplateGroup(
       .minusGeneratedProps(simpleName, propGenerators)
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
-    return templates.flatMap { it.create(dir, props) }
+    val localScopeProps = copyPropsToLocalScopeProps(simpleName, generatedPropNames, props)
+    val directory = localScopeProps.getProperty(PROP_FILE_DIRECTORY) ?: ""
+    val subDirectory = dir.createSubDirectoriesByRelativePath(directory)
+
+    return templates.flatMap { it.create(subDirectory, props) }
   }
 
   private fun List<FileTemplate>.requiredProps(): Set<String> {

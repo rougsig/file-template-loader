@@ -43,7 +43,7 @@ data class FileTemplateSingle(
       .minusGeneratedProps(simpleName, propGenerators)
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
-    val localScopeProps = copyPropsToLocalScopeProps(simpleName, generatedProps, props)
+    val localScopeProps = copyPropsToLocalScopeProps(simpleName, generatedPropNames, props)
     val mergedTemplate = mergeTemplate(text, localScopeProps)
 
     val fileName = localScopeProps.getProperty(PROP_FILE_NAME)

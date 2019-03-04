@@ -16,7 +16,7 @@ class FileTemplateGroupAdapter : JsonSerializer<FileTemplateGroup> {
       add("customProps", context.serialize(template.customProps))
       add("extractedProps", context.serialize(template.extractedProps))
       add("requiredProps", context.serialize(template.requiredProps))
-      add("generatedProps", context.serialize(template.generatedProps))
+      add("generatedProps", context.serialize(template.generatedPropNames))
     }
   }
 }

@@ -24,7 +24,7 @@ fun FileTemplate.generateProps(props: Props): Props {
     throw IllegalStateException("props not found: ${requiredProps.minus(filteredProps.keys).joinToString { "$it" }}")
   }
 
-  return propGenerators.filter { generatedProps.contains(it.propName) }.generateProps(filteredProps)
+  return propGenerators.filter { generatedPropNames.contains(it.propName) }.generateProps(filteredProps)
 }
 
 fun List<PropGenerator>.generateProps(props: Props): Props {
