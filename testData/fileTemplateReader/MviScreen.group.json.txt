@@ -49,6 +49,7 @@
       ],
       "scope": {
         "name": "CONTROLLER",
+        "childScopes": [],
         "scopedPropGenerators": [
           {
             "propName": "CONTROLLER_TEMPLATE_NAME",
@@ -168,6 +169,7 @@
       ],
       "scope": {
         "name": "KEY",
+        "childScopes": [],
         "scopedPropGenerators": [
           {
             "propName": "KEY_TEMPLATE_NAME",
@@ -273,6 +275,7 @@
       ],
       "scope": {
         "name": "PRESENTER",
+        "childScopes": [],
         "scopedPropGenerators": [
           {
             "propName": "PRESENTER_TEMPLATE_NAME",
@@ -376,6 +379,7 @@
       ],
       "scope": {
         "name": "SCREEN",
+        "childScopes": [],
         "scopedPropGenerators": [
           {
             "propName": "SCREEN_TEMPLATE_NAME",
@@ -472,6 +476,7 @@
       ],
       "scope": {
         "name": "ANDROID_LAYOUT",
+        "childScopes": [],
         "scopedPropGenerators": [
           {
             "propName": "ANDROID_LAYOUT_TEMPLATE_NAME",
@@ -565,6 +570,350 @@
   ],
   "scope": {
     "name": "MVI_SCREEN",
+    "childScopes": [
+      {
+        "name": "ANDROID_LAYOUT",
+        "childScopes": [],
+        "scopedPropGenerators": [
+          {
+            "propName": "ANDROID_LAYOUT_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "ANDROID_LAYOUT_SIMPLE_NAME",
+            "requiredProps": [
+              "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SCREEN_NAME_LOWER_SNAKE_CASE"
+                ],
+                "name": "SIMPLE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "ANDROID_LAYOUT_FILE_NAME",
+            "requiredProps": [
+              "ANDROID_LAYOUT_SIMPLE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "ANDROID_LAYOUT_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
+          },
+          {
+            "propName": "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE",
+            "requiredProps": [
+              "SCREEN_NAME"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "SCREEN_NAME"
+              ],
+              "selfRequiredProps": [],
+              "propName": "SCREEN_NAME_LOWER_SNAKE_CASE",
+              "propBaseName": "SCREEN_NAME"
+            }
+          }
+        ]
+      },
+      {
+        "name": "CONTROLLER",
+        "childScopes": [],
+        "scopedPropGenerators": [
+          {
+            "propName": "CONTROLLER_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "CONTROLLER_SIMPLE_NAME",
+            "requiredProps": [
+              "SCREEN_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SCREEN_NAME"
+                ],
+                "name": "SIMPLE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "CONTROLLER_FILE_NAME",
+            "requiredProps": [
+              "CONTROLLER_SIMPLE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "CONTROLLER_CLASS_NAME",
+            "requiredProps": [
+              "CONTROLLER_SIMPLE_NAME",
+              "PACKAGE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ],
+                "name": "CLASS_NAME"
+              }
+            }
+          },
+          {
+            "propName": "CONTROLLER_ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+            "requiredProps": [
+              "ANDROID_LAYOUT_SIMPLE_NAME"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "ANDROID_LAYOUT_SIMPLE_NAME"
+              ],
+              "selfRequiredProps": [],
+              "propName": "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+              "propBaseName": "ANDROID_LAYOUT_SIMPLE_NAME"
+            }
+          }
+        ]
+      },
+      {
+        "name": "SCREEN",
+        "childScopes": [],
+        "scopedPropGenerators": [
+          {
+            "propName": "SCREEN_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "SCREEN_SIMPLE_NAME",
+            "requiredProps": [
+              "SCREEN_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SCREEN_NAME"
+                ],
+                "name": "SIMPLE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "SCREEN_FILE_NAME",
+            "requiredProps": [
+              "SCREEN_SIMPLE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "SCREEN_CLASS_NAME",
+            "requiredProps": [
+              "SCREEN_SIMPLE_NAME",
+              "PACKAGE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ],
+                "name": "CLASS_NAME"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "PRESENTER",
+        "childScopes": [],
+        "scopedPropGenerators": [
+          {
+            "propName": "PRESENTER_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "PRESENTER_SIMPLE_NAME",
+            "requiredProps": [
+              "SCREEN_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SCREEN_NAME"
+                ],
+                "name": "SIMPLE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "PRESENTER_FILE_NAME",
+            "requiredProps": [
+              "PRESENTER_SIMPLE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "PRESENTER_CLASS_NAME",
+            "requiredProps": [
+              "PRESENTER_SIMPLE_NAME",
+              "PACKAGE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ],
+                "name": "CLASS_NAME"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "KEY",
+        "childScopes": [],
+        "scopedPropGenerators": [
+          {
+            "propName": "KEY_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "KEY_SIMPLE_NAME",
+            "requiredProps": [
+              "SCREEN_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SCREEN_NAME"
+                ],
+                "name": "SIMPLE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "KEY_FILE_NAME",
+            "requiredProps": [
+              "KEY_SIMPLE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "KEY_CLASS_NAME",
+            "requiredProps": [
+              "KEY_SIMPLE_NAME",
+              "PACKAGE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ],
+                "name": "CLASS_NAME"
+              }
+            }
+          }
+        ]
+      }
+    ],
     "scopedPropGenerators": [
       {
         "propName": "MVI_SCREEN_GROUP_NAME",

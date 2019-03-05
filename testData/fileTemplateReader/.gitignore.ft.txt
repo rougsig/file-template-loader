@@ -13,6 +13,7 @@
   ],
   "scope": {
     "name": "GITIGNORE",
+    "childScopes": [],
     "scopedPropGenerators": [
       {
         "propName": "GITIGNORE_TEMPLATE_NAME",

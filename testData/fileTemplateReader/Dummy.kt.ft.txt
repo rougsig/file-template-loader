@@ -16,6 +16,7 @@
   ],
   "scope": {
     "name": "DUMMY",
+    "childScopes": [],
     "scopedPropGenerators": [
       {
         "propName": "DUMMY_TEMPLATE_NAME",

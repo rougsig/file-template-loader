@@ -11,6 +11,7 @@ class PropScopeAdapter : JsonSerializer<PropScope> {
   override fun serialize(scope: PropScope, type: Type, context: JsonSerializationContext): JsonElement {
     return JsonObject().apply {
       add("name", context.serialize(scope.name))
+      add("childScopes", context.serialize(scope.childScopes))
       add("scopedPropGenerators", context.serialize(scope.scopedPropGenerators))
     }
   }

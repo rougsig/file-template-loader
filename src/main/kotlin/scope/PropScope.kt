@@ -16,14 +16,7 @@ class PropScope(
         it
       )
     }
-    .plus(childScopes.flatMap { childScope ->
-      childScope.propGenerators.map {
-        ScopedPropGenerator(
-          childScope,
-          it
-        )
-      }
-    })
+    .plus(childScopes.flatMap { it.scopedPropGenerators })
     .toSet()
 
   fun copyPropsToLocalScope(props: Props): Props {
