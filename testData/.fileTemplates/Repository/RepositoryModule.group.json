@@ -13,7 +13,7 @@
   "customProps": [
     {
       "name": "PACKAGE_NAME",
-      "text": "${PACKAGE_NAME}.epic-repository"
+      "text": "${PACKAGE_NAME}.epic.repository"
     }
   ]
 }

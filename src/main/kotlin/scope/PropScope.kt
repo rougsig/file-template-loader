@@ -9,15 +9,15 @@ class PropScope(
   @Transient val propGenerators: Set<PropGenerator>,
   @Transient val childScopes: Set<PropScope>
 ) {
-  val scopedPropGenerators: Set<ScopedPropGenerator> = propGenerators
-    .map {
-      ScopedPropGenerator(
-        this,
-        it
-      )
-    }
-    .plus(childScopes.flatMap { it.scopedPropGenerators })
-    .toSet()
+  val scopedPropGenerators: Set<ScopedPropGenerator> =
+    propGenerators
+      .map {
+        ScopedPropGenerator(
+          this,
+          it
+        )
+      }
+      .toSet()
 
   fun copyPropsToLocalScope(props: Props): Props {
     val propGeneratorNames = propGenerators.map(PropGenerator::propName)
@@ -51,7 +51,13 @@ class PropScope(
   }
 
   fun generateProps(props: Props): Props {
-    return scopedPropGenerators.generateProps(props)
+    val scopedProps = scopedPropGenerators.generateProps(props)
+    childScopes.forEach { childScope ->
+      val childProps = childScope.generateProps(copyPropsToLocalScope(scopedProps)) as Map<String, String>
+      childProps.forEach { (k, v) -> scopedProps.setProperty(k, v) }
+    }
+    propGenerators.forEach { scopedProps.remove(it.propName) }
+    return scopedProps
   }
 
   override fun equals(other: Any?): Boolean {

@@ -49,7 +49,7 @@ private fun Iterable<PropGenerator>.findPropGenerator(propName: String): PropGen
   return find { it.propName == propName }
 }
 
-fun Set<String>.minusGeneratedProps(
+fun Set<String>.applyPropGenerators(
   propGenerators: Set<PropGenerator>
 ): Set<String> {
   return this

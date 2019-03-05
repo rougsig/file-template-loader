@@ -38,15 +38,16 @@ data class FileTemplateGroup(
 
   override val requiredProps: Set<String> =
     extractedProps
-      .minusGeneratedProps(scope.propGenerators)
+      .applyPropGenerators(scope.propGenerators)
       .minus(scope.scopedPropGenerators.map(PropGenerator::propName))
+      .minus(scope.childScopes.flatMap { it.scopedPropGenerators.map(PropGenerator::propName) })
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
     val localScopeProps = scope.copyPropsToLocalScope(props)
     val directory = localScopeProps.getProperty(PROP_FILE_DIRECTORY) ?: ""
     val subDirectory = dir.createSubDirectoriesByRelativePath(directory)
 
-    return templates.flatMap { it.create(subDirectory, props) }
+    return templates.flatMap { it.create(subDirectory, localScopeProps) }
   }
 
   private fun List<FileTemplate>.requiredProps(): Set<String> {

@@ -40,7 +40,7 @@ data class FileTemplateSingle(
   override val requiredProps: Set<String> =
     extractedProps
       .plus(PROP_FILE_NAME)
-      .minusGeneratedProps(scope.propGenerators)
+      .applyPropGenerators(scope.propGenerators)
       .minus(scope.scopedPropGenerators.map(PropGenerator::propName))
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
