@@ -5,10 +5,8 @@ import com.intellij.psi.PsiDirectory
 import org.jetbrains.kotlin.idea.util.projectStructure.module
 
 fun PsiDirectory.createSubDirectoriesByRelativePath(path: String): PsiDirectory {
-  val dir = path.replace("\\", "/")
-  if (dir.isBlank() || dir == "/") return this
-
-  val startDirectory = if (dir.startsWith("./")) {
+  if (path.isBlank() || path == "/") return this
+  val startDirectory = if (path.startsWith("./")) {
     val projectDir = project.guessProjectDir()!!
     val moduleDir = projectDir.findChild(module!!.name)
     moduleDir
@@ -17,7 +15,7 @@ fun PsiDirectory.createSubDirectoriesByRelativePath(path: String): PsiDirectory 
   } else {
     this
   }
-  val subDirs = dir.replace("./", "").split("/")
+  val subDirs = path.replace("./", "").split("/").filter(String::isNotBlank)
   return subDirs.fold(startDirectory) { acc, dirName ->
     acc.findSubdirectory(dirName) ?: acc.createSubdirectory(dirName)
   }

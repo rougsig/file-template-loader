@@ -361,10 +361,6 @@
         {
           "requiredProps": [],
           "name": "GROUP_NAME"
-        },
-        {
-          "requiredProps": [],
-          "name": "FILE_DIRECTORY"
         }
       ],
       "extractedProps": [
@@ -615,17 +611,6 @@
                 "name": "GROUP_NAME"
               }
             }
-          },
-          {
-            "propName": "REPOSITORY_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
           }
         ]
       }
@@ -641,6 +626,10 @@
         "PACKAGE_NAME"
       ],
       "name": "PACKAGE_NAME"
+    },
+    {
+      "requiredProps": [],
+      "name": "FILE_DIRECTORY"
     }
   ],
   "extractedProps": [
@@ -890,17 +879,6 @@
                 "name": "GROUP_NAME"
               }
             }
-          },
-          {
-            "propName": "REPOSITORY_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
           }
         ]
       }
@@ -931,6 +909,17 @@
               "PACKAGE_NAME"
             ],
             "name": "PACKAGE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "REPOSITORY_MODULE_FILE_DIRECTORY",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "FILE_DIRECTORY"
           }
         }
       }

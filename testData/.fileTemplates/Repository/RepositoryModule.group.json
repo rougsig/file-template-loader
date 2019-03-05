@@ -1,19 +1,17 @@
 {
   "templates": [
     {
-      "textFrom": "Repository.group.json",
-      "customProps": [
-        {
-          "name": "FILE_DIRECTORY",
-          "text": "./module"
-        }
-      ]
+      "textFrom": "Repository.group.json"
     }
   ],
   "customProps": [
     {
       "name": "PACKAGE_NAME",
       "text": "${PACKAGE_NAME}.epic.repository"
+    },
+    {
+      "name": "FILE_DIRECTORY",
+      "text": "./module"
     }
   ]
 }
