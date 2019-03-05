@@ -7,6 +7,7 @@ REPOSITORY_BINDINGS_PACKAGE_NAME=com.github.rougsig.filetemplateloader.di
 REPOSITORY_BINDINGS_SIMPLE_NAME=EpicRepositoryBindings
 REPOSITORY_BINDINGS_TEMPLATE_NAME=RepositoryBindings.kt
 REPOSITORY_CLASS_NAME=com.github.rougsig.filetemplateloader.EpicRepository
+REPOSITORY_FILE_DIRECTORY=./module
 REPOSITORY_FILE_NAME=EpicRepository.kt
 REPOSITORY_GROUP_NAME=Repository
 REPOSITORY_IMPL_CLASS_NAME=com.github.rougsig.filetemplateloader.EpicRepositoryImpl
