@@ -54,8 +54,11 @@ fun String.toUpperKebabCase(): String {
 }
 
 fun String.toDotCase(): String {
-  return toUpperCamelCase().toLowerSnakeCase()
+  return toUpperCamelCase()
+    .toLowerSnakeCase()
+    .replace("./", "/")
     .split('-', '_', '/', '\\')
+    .filter(String::isNotBlank)
     .joinToString(".") { it }
 }
 

@@ -1,17 +1,23 @@
 {
   "templates": [
     {
-      "textFrom": "Repository.group.json"
+      "textFrom": "RepositoryGroup.group.json",
+      "customProps": [
+        {
+          "name": "FILE_DIRECTORY",
+          "text": "src/main/kotlin"
+        }
+      ]
     }
   ],
   "customProps": [
     {
       "name": "PACKAGE_NAME",
-      "text": "${PACKAGE_NAME}.epic.repository"
+      "text": "${PACKAGE_NAME}.${FILE_DIRECTORY_DOT_CASE}"
     },
     {
       "name": "FILE_DIRECTORY",
-      "text": "./module"
+      "text": "./epic-repository"
     }
   ]
 }

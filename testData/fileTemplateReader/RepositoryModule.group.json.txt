@@ -3,8 +3,8 @@
   "simpleName": "REPOSITORY_MODULE",
   "templates": [
     {
-      "name": "Repository",
-      "simpleName": "REPOSITORY",
+      "name": "RepositoryGroup",
+      "simpleName": "REPOSITORY_GROUP",
       "templates": [
         {
           "name": "Repository.kt",
@@ -412,7 +412,7 @@
         "PACKAGE_NAME"
       ],
       "scope": {
-        "name": "REPOSITORY",
+        "name": "REPOSITORY_GROUP",
         "childScopes": [
           {
             "name": "REPOSITORY_IMPL",
@@ -658,7 +658,7 @@
         ],
         "scopedPropGenerators": [
           {
-            "propName": "REPOSITORY_GROUP_NAME",
+            "propName": "REPOSITORY_GROUP_GROUP_NAME",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -669,7 +669,7 @@
             }
           },
           {
-            "propName": "REPOSITORY_FILE_DIRECTORY",
+            "propName": "REPOSITORY_GROUP_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -690,7 +690,8 @@
     },
     {
       "requiredProps": [
-        "PACKAGE_NAME"
+        "PACKAGE_NAME",
+        "FILE_DIRECTORY_DOT_CASE"
       ],
       "name": "PACKAGE_NAME"
     },
@@ -702,7 +703,8 @@
   "extractedProps": [
     "PACKAGE_BASE",
     "REPOSITORY_NAME",
-    "PACKAGE_NAME"
+    "PACKAGE_NAME",
+    "FILE_DIRECTORY_DOT_CASE"
   ],
   "requiredProps": [
     "PACKAGE_BASE",
@@ -713,7 +715,7 @@
     "name": "REPOSITORY_MODULE",
     "childScopes": [
       {
-        "name": "REPOSITORY",
+        "name": "REPOSITORY_GROUP",
         "childScopes": [
           {
             "name": "REPOSITORY_IMPL",
@@ -959,7 +961,7 @@
         ],
         "scopedPropGenerators": [
           {
-            "propName": "REPOSITORY_GROUP_NAME",
+            "propName": "REPOSITORY_GROUP_GROUP_NAME",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -970,7 +972,7 @@
             }
           },
           {
-            "propName": "REPOSITORY_FILE_DIRECTORY",
+            "propName": "REPOSITORY_GROUP_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -998,7 +1000,8 @@
       {
         "propName": "REPOSITORY_MODULE_PACKAGE_NAME",
         "requiredProps": [
-          "PACKAGE_NAME"
+          "PACKAGE_NAME",
+          "REPOSITORY_MODULE_FILE_DIRECTORY_DOT_CASE"
         ],
         "propGenerator": {
           "selfRequiredProps": [
@@ -1006,7 +1009,8 @@
           ],
           "customProp": {
             "requiredProps": [
-              "PACKAGE_NAME"
+              "PACKAGE_NAME",
+              "FILE_DIRECTORY_DOT_CASE"
             ],
             "name": "PACKAGE_NAME"
           }
@@ -1021,6 +1025,20 @@
             "requiredProps": [],
             "name": "FILE_DIRECTORY"
           }
+        }
+      },
+      {
+        "propName": "REPOSITORY_MODULE_FILE_DIRECTORY_DOT_CASE",
+        "requiredProps": [
+          "REPOSITORY_MODULE_FILE_DIRECTORY"
+        ],
+        "propGenerator": {
+          "requiredProps": [
+            "FILE_DIRECTORY"
+          ],
+          "selfRequiredProps": [],
+          "propName": "FILE_DIRECTORY_DOT_CASE",
+          "propBaseName": "FILE_DIRECTORY"
         }
       }
     ]

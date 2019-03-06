@@ -37,7 +37,7 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
 
   fun testMviScreenGroupJson() = doTest("MviScreen.group.json")
 
-  fun testRepositoryGroupJson() = doTest("Repository.group.json")
+  fun testRepositoryGroupJson() = doTest("RepositoryGroup.group.json")
 
   fun testRoutingFlowGroupJson() = doTest("RoutingFlow.group.json")
 
