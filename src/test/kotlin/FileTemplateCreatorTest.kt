@@ -6,9 +6,12 @@ import com.github.rougsig.filetemplateloader.generator.generateProps
 import com.github.rougsig.filetemplateloader.generator.setProperty
 import com.github.rougsig.filetemplateloader.reader.readConfig
 import com.github.rougsig.filetemplateloader.reader.readFileTemplate
+import com.intellij.openapi.fileTypes.FileTypeManager
+import com.intellij.openapi.fileTypes.PlainTextFileType
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
 import org.jetbrains.kotlin.idea.core.getFqNameByDirectory
+import org.jetbrains.plugins.groovy.GroovyFileType
 
 class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
   override fun getTestDataPath(): String = calculateTestDataPath()
@@ -16,6 +19,11 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
   override fun setUp() {
     super.setUp()
     myFixture.copyDirectoryToProject("", "")
+
+    project.writeAction {
+      FileTypeManager.getInstance().associatePattern(GroovyFileType.GROOVY_FILE_TYPE, "*.gradle")
+      FileTypeManager.getInstance().associatePattern(PlainTextFileType.INSTANCE, ".gitignore")
+    }
   }
 
   private fun doTest(testFileName: String, subDir: String) {
