@@ -28,7 +28,7 @@ data class FileTemplateInjector(
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
     val insertTo = getInsertTo(dir.project, props).containingFile
-    val selected = insertTo.select(selector)!!
+    val selected = insertTo.select(mergeTemplate(selector, props))!!
     val ext = mergeTemplate(text, props)
 
     val doc = PsiDocumentManager.getInstance(dir.project).getDocument(insertTo)!!
