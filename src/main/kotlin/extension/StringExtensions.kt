@@ -64,6 +64,8 @@ fun String.toDotCase(): String {
 
 fun String.toSolidCase(): String {
   return toUpperCamelCase().toLowerSnakeCase()
+    .replace("./", "/")
     .split('-', '_', '/', '\\')
+    .filter(String::isNotBlank)
     .joinToString("") { it }
 }
