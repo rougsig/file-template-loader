@@ -47,9 +47,8 @@ private fun readGroupFileTemplate(
   val json = gson.fromJson(String(file.inputStream.readBytes()), FileTemplateGroupJson::class.java)
   return FileTemplateGroup(
     name = json.name ?: templateName,
-    templates = json.templates.map {
-      it.toFileTemplate(templateFiles)
-    },
+    templates = json.templates.map { it.toFileTemplate(templateFiles) },
+    injectors = (json.injectors ?: emptyList()).map { it.toFileTemplateInjector() },
     initialCustomProps = (parentCustomProps ?: emptySet()).plus(json.customProps.toFileTemplateCustomProps())
   )
 }
@@ -93,6 +92,15 @@ private fun FileTemplateJson.toFileTemplate(
       initialCustomProps = customProps
     )
   }
+}
+
+private fun FileTemplateInjectorJson.toFileTemplateInjector(): FileTemplateInjector {
+  return FileTemplateInjector(
+    text = text,
+    selector = selector,
+    className = className,
+    pathName = pathName
+  )
 }
 
 private fun List<FileTemplateCustomPropJson>?.toFileTemplateCustomProps(): Set<FileTemplateCustomProp> {

@@ -11,7 +11,7 @@ import com.intellij.psi.PsiFile
 data class FileTemplateGroup(
   override val name: String,
   val templates: List<ScopedFileTemplate>,
-  private val injectors: Set<FileTemplateInjector> = emptySet(),
+  val injectors: List<FileTemplateInjector> = emptyList(),
   private val initialCustomProps: Set<FileTemplateCustomProp> = emptySet()
 ) : ScopedFileTemplate() {
   override val customProps: Set<FileTemplateCustomProp> = {
@@ -30,6 +30,7 @@ data class FileTemplateGroup(
     templates
       .requiredProps()
       .plus(customProps.flatMap(FileTemplateCustomProp::requiredProps))
+      .plus(injectors.flatMap(FileTemplateInjector::requiredProps))
 
   override val scope: PropScope = PropScope(
     name = simpleName,

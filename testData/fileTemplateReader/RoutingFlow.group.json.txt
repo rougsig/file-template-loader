@@ -433,6 +433,7 @@
       }
     }
   ],
+  "injectors": [],
   "customProps": [
     {
       "requiredProps": [],

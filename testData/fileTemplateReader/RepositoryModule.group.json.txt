@@ -387,6 +387,7 @@
           }
         }
       ],
+      "injectors": [],
       "customProps": [
         {
           "requiredProps": [],
@@ -683,6 +684,7 @@
       }
     }
   ],
+  "injectors": [],
   "customProps": [
     {
       "requiredProps": [],

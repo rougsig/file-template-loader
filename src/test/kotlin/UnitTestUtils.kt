@@ -14,6 +14,7 @@ val DEFAULT_PROPS: Map<String, String>
     setProperty("SCREEN_NAME", "Epic")
     setProperty("FLOW_NAME", "Epic")
     setProperty("REPOSITORY_NAME", "Epic")
+    setProperty("ROUTE_PATH", "/epic")
   }
 
 fun calculateTestDataPath(): String {

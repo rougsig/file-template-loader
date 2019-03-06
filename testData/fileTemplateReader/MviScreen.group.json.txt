@@ -608,6 +608,42 @@
       }
     }
   ],
+  "injectors": [
+    {
+      "selector": "WHEN WHEN_ENTRY",
+      "className": "${PACKAGE_BASE}.${PROJECT_NAME}.routing.ScreenKeyFactory",
+      "pathName": null,
+      "requiredProps": [
+        "APP_ROUTE_NAME",
+        "SCREEN_NAME_UPPER_CAMEL_CASE",
+        "KEY_SIMPLE_NAME",
+        "PROJECT_NAME",
+        "PACKAGE_BASE"
+      ]
+    },
+    {
+      "selector": "AppRoute CLASS_BODY LBRACE",
+      "className": "${PACKAGE_BASE}.${PROJECT_NAME}.ui.routing.${APP_ROUTE_NAME}",
+      "pathName": null,
+      "requiredProps": [
+        "APP_ROUTE_NAME",
+        "ROUTE_PATH",
+        "SCREEN_NAME_UPPER_CAMEL_CASE",
+        "PROJECT_NAME",
+        "PACKAGE_BASE"
+      ]
+    },
+    {
+      "selector": "IMPORT_LIST IMPORT_DIRECTIVE",
+      "className": "${PACKAGE_BASE}.${PROJECT_NAME}.routing.ScreenKeyFactory",
+      "pathName": null,
+      "requiredProps": [
+        "KEY_CLASS_NAME",
+        "PROJECT_NAME",
+        "PACKAGE_BASE"
+      ]
+    }
+  ],
   "customProps": [
     {
       "requiredProps": [],
@@ -625,12 +661,21 @@
     "ANDROID_LAYOUT_SIMPLE_NAME",
     "SCREEN_NAME",
     "SCREEN_CLASS_NAME",
-    "CONTROLLER_SIMPLE_NAME"
+    "CONTROLLER_SIMPLE_NAME",
+    "APP_ROUTE_NAME",
+    "SCREEN_NAME_UPPER_CAMEL_CASE",
+    "KEY_SIMPLE_NAME",
+    "PROJECT_NAME",
+    "ROUTE_PATH",
+    "KEY_CLASS_NAME"
   ],
   "requiredProps": [
     "PACKAGE_BASE",
+    "ROUTE_PATH",
     "PACKAGE_NAME",
-    "SCREEN_NAME"
+    "APP_ROUTE_NAME",
+    "SCREEN_NAME",
+    "PROJECT_NAME"
   ],
   "scope": {
     "name": "MVI_SCREEN",
@@ -1043,6 +1088,20 @@
             "requiredProps": [],
             "name": "FILE_DIRECTORY"
           }
+        }
+      },
+      {
+        "propName": "MVI_SCREEN_SCREEN_NAME_UPPER_CAMEL_CASE",
+        "requiredProps": [
+          "SCREEN_NAME"
+        ],
+        "propGenerator": {
+          "requiredProps": [
+            "SCREEN_NAME"
+          ],
+          "selfRequiredProps": [],
+          "propName": "SCREEN_NAME_UPPER_CAMEL_CASE",
+          "propBaseName": "SCREEN_NAME"
         }
       }
     ]
