@@ -1,6 +1,7 @@
 package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.generator.Props
+import com.github.rougsig.filetemplateloader.generator.setProperty
 import com.github.rougsig.filetemplateloader.reader.gson
 import com.google.gson.Gson
 import com.intellij.openapi.util.io.FileUtil
@@ -13,7 +14,7 @@ val DEFAULT_PROPS: Map<String, String>
     setProperty("SCREEN_NAME", "Epic")
     setProperty("FLOW_NAME", "Epic")
     setProperty("REPOSITORY_NAME", "Epic")
-  } as Map<String, String>
+  }
 
 fun calculateTestDataPath(): String {
   val userDir = System.getProperty("user.dir")

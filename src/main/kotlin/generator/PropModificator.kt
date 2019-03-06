@@ -3,7 +3,6 @@ package com.github.rougsig.filetemplateloader.generator
 import com.github.rougsig.filetemplateloader.extension.*
 import java.util.*
 
-typealias Props = Properties
 typealias PropModificators = Map<String, (String) -> String>
 
 val PROP_MODIFICATORS: PropModificators = HashMap<String, (String) -> String>().apply {
@@ -20,18 +19,3 @@ val PROP_MODIFICATORS: PropModificators = HashMap<String, (String) -> String>().
 }
 
 val PROP_MODIFICATOR_MATCHER = PROP_MODIFICATORS.keys.joinToString("|") { "_$it" }.toRegex()
-
-fun Set<String>.generatePropModificators(props: Props): Props {
-  filter { PROP_MODIFICATOR_MATCHER.containsMatchIn(it) }
-    .map { fullPropName ->
-      val generatorName = PROP_MODIFICATOR_MATCHER.find(fullPropName)!!.value.removePrefix("_")
-      val propBase = ""
-
-      val propGenerator = PROP_MODIFICATORS.getValue(generatorName)
-      val generatedProp = propGenerator(props.getProperty(propBase))
-
-      props.setProperty(fullPropName, generatedProp)
-    }
-
-  return props
-}

@@ -3,6 +3,7 @@ package com.github.rougsig.filetemplateloader
 import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
 import com.github.rougsig.filetemplateloader.entity.FileTemplateSingle
 import com.github.rougsig.filetemplateloader.generator.generateProps
+import com.github.rougsig.filetemplateloader.generator.setProperty
 import com.github.rougsig.filetemplateloader.reader.readConfig
 import com.github.rougsig.filetemplateloader.reader.readFileTemplate
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
@@ -27,7 +28,6 @@ class FileTemplatePropGeneratorTest : LightPlatformCodeInsightFixtureTestCase() 
     val generatedProps = template
       .generateProps(props)
       .map { (key, value) -> "$key=$value" }
-      .sorted()
       .joinToString("\n") { it }
 
     assertSameLinesWithFile(

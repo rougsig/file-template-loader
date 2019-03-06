@@ -1,3 +1,4 @@
-DUMMY_TEMPLATE_NAME=Dummy.kt
-FILE_NAME=Dummy.kt
 PACKAGE_NAME=com.github.rougsig.filetemplateloader
+FILE_NAME=Dummy.kt
+DUMMY_TEMPLATE_NAME=Dummy.kt
+DUMMY_FILE_DIRECTORY=

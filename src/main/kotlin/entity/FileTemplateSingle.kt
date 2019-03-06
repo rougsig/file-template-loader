@@ -21,6 +21,9 @@ data class FileTemplateSingle(
     props.add(FileTemplateCustomProp(PROP_TEMPLATE_NAME, name))
     props.addAll(initialCustomProps)
 
+    if (initialCustomProps.find { it.name == PROP_FILE_DIRECTORY } == null)
+      props.add(FileTemplateCustomProp(PROP_FILE_DIRECTORY, ""))
+
     props
   }()
 
@@ -47,12 +50,12 @@ data class FileTemplateSingle(
     val localScopeProps = scope.copyPropsToLocalScope(props)
     val mergedTemplate = mergeTemplate(text, localScopeProps)
 
-    val fileName = localScopeProps.getProperty(PROP_FILE_NAME)
-    val directory = localScopeProps.getProperty(PROP_FILE_DIRECTORY) ?: ""
+    val fileName = localScopeProps.requireProperty(PROP_FILE_NAME)
+    val directory = localScopeProps.requireProperty(PROP_FILE_DIRECTORY)
+    println("Create TEMPLATE: `$name` TO: `$directory`")
 
     val file = dir.createSubDirectoriesByRelativePath(directory)
       .add(dir.project.createPsiFile(fileName, mergedTemplate)) as PsiFile
-
     return listOf(file)
   }
 }

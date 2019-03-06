@@ -4,6 +4,7 @@ import com.github.rougsig.filetemplateloader.entity.FileTemplate
 import com.github.rougsig.filetemplateloader.extension.getDirectory
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.generator.filterProps
+import com.github.rougsig.filetemplateloader.generator.generateProps
 import com.github.rougsig.filetemplateloader.reader.readConfig
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -27,7 +28,7 @@ class CreateFileTemplateAnAction(
       requiredProps,
       { props ->
         project.writeAction("Create ${template.name}") {
-          //          template.generateProps(dir, props)
+          template.generateProps(props)
           template.create(dir, props)
         }
       },

@@ -28,6 +28,10 @@
             "PACKAGE_NAME"
           ],
           "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_DIRECTORY"
         }
       ],
       "extractedProps": [
@@ -100,6 +104,17 @@
                 "name": "CLASS_NAME"
               }
             }
+          },
+          {
+            "propName": "MODEL_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
           }
         ]
       }
@@ -130,6 +145,10 @@
             "PACKAGE_NAME"
           ],
           "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_DIRECTORY"
         }
       ],
       "extractedProps": [
@@ -204,6 +223,17 @@
                   "PACKAGE_NAME"
                 ],
                 "name": "CLASS_NAME"
+              }
+            }
+          },
+          {
+            "propName": "MODEL_IMPL_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
               }
             }
           }
@@ -357,6 +387,10 @@
     {
       "requiredProps": [],
       "name": "GROUP_NAME"
+    },
+    {
+      "requiredProps": [],
+      "name": "FILE_DIRECTORY"
     }
   ],
   "extractedProps": [
@@ -437,6 +471,17 @@
                 "name": "CLASS_NAME"
               }
             }
+          },
+          {
+            "propName": "MODEL_IMPL_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
           }
         ]
       },
@@ -499,6 +544,17 @@
                   "PACKAGE_NAME"
                 ],
                 "name": "CLASS_NAME"
+              }
+            }
+          },
+          {
+            "propName": "MODEL_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
               }
             }
           }
@@ -605,6 +661,17 @@
           "customProp": {
             "requiredProps": [],
             "name": "GROUP_NAME"
+          }
+        }
+      },
+      {
+        "propName": "DOMAIN_FILE_DIRECTORY",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "FILE_DIRECTORY"
           }
         }
       }

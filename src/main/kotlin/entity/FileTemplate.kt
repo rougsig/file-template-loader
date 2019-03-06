@@ -10,7 +10,6 @@ import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.util.text.StringUtil
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
-import java.util.*
 
 abstract class FileTemplate {
   abstract val name: String
@@ -32,7 +31,7 @@ abstract class FileTemplate {
   abstract fun create(dir: PsiDirectory, props: Props): List<PsiFile>
 }
 
-fun mergeTemplate(templateText: String, props: Properties): String {
+fun mergeTemplate(templateText: String, props: Props): String {
   val requiredProps = extractProps(templateText).filterProps(props)
   check(requiredProps.isEmpty()) {
     "cannot merge template props not found: ${requiredProps.joinToString { it }}"

@@ -3,6 +3,7 @@ package com.github.rougsig.filetemplateloader.scope
 import com.github.rougsig.filetemplateloader.generator.PropGenerator
 import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.generator.ScopedPropGenerator
+import com.github.rougsig.filetemplateloader.generator.setProperty
 
 class PropScope(
   val name: String,
@@ -20,7 +21,6 @@ class PropScope(
       .toSet()
 
   fun copyPropsToLocalScope(props: Props): Props {
-    val propGeneratorNames = propGenerators.map(PropGenerator::propName)
     val scopedPropGeneratorNames = scopedPropGenerators.map(PropGenerator::propName)
 
     val localScopeProps = Props()
@@ -28,9 +28,8 @@ class PropScope(
       .toList()
       .sortedBy { (k, _) -> if (scopedPropGeneratorNames.contains(k)) 1 else -1 }
       .forEach { (k, v) ->
-        val noPrefixPropName = k.removePrefix("${name}_")
-        if (scopedPropGeneratorNames.contains(k) && propGeneratorNames.contains(noPrefixPropName)) {
-          localScopeProps.setProperty(noPrefixPropName, v)
+        if (scopedPropGeneratorNames.contains(k)) {
+          localScopeProps.setProperty(k.removePrefix("${name}_"), v)
         } else {
           localScopeProps.setProperty(k, v)
         }

@@ -10,6 +10,6 @@ class ModificatorPropGenerator(
   override val selfRequiredProps: Set<String> = emptySet()
 
   override fun generateProp(props: Props): String {
-    return modificator(props.getProperty(propBaseName))
+    return modificator(props.requireProperty(propBaseName))
   }
 }

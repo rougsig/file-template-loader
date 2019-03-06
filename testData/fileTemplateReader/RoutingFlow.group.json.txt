@@ -28,6 +28,10 @@
             "PACKAGE_NAME"
           ],
           "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_DIRECTORY"
         }
       ],
       "extractedProps": [
@@ -110,6 +114,17 @@
             }
           },
           {
+            "propName": "FLOW_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
+          },
+          {
             "propName": "FLOW_FLOW_NAME_LOWER_CASE",
             "requiredProps": [
               "FLOW_NAME"
@@ -152,6 +167,10 @@
             "PACKAGE_NAME"
           ],
           "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_DIRECTORY"
         }
       ],
       "extractedProps": [
@@ -230,6 +249,17 @@
                   "PACKAGE_NAME"
                 ],
                 "name": "CLASS_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_COORDINATOR_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
               }
             }
           }
@@ -407,6 +437,10 @@
     {
       "requiredProps": [],
       "name": "GROUP_NAME"
+    },
+    {
+      "requiredProps": [],
+      "name": "FILE_DIRECTORY"
     }
   ],
   "extractedProps": [
@@ -605,6 +639,17 @@
             }
           },
           {
+            "propName": "FLOW_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
+          },
+          {
             "propName": "FLOW_FLOW_NAME_LOWER_CASE",
             "requiredProps": [
               "FLOW_NAME"
@@ -681,6 +726,17 @@
                 "name": "CLASS_NAME"
               }
             }
+          },
+          {
+            "propName": "FLOW_COORDINATOR_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
           }
         ]
       }
@@ -694,6 +750,17 @@
           "customProp": {
             "requiredProps": [],
             "name": "GROUP_NAME"
+          }
+        }
+      },
+      {
+        "propName": "ROUTING_FLOW_FILE_DIRECTORY",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "FILE_DIRECTORY"
           }
         }
       }

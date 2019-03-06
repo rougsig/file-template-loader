@@ -28,6 +28,10 @@
             "PACKAGE_NAME"
           ],
           "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_DIRECTORY"
         }
       ],
       "extractedProps": [
@@ -110,6 +114,17 @@
             }
           },
           {
+            "propName": "CONTROLLER_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
+          },
+          {
             "propName": "CONTROLLER_ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
             "requiredProps": [
               "ANDROID_LAYOUT_SIMPLE_NAME"
@@ -152,6 +167,10 @@
             "PACKAGE_NAME"
           ],
           "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_DIRECTORY"
         }
       ],
       "extractedProps": [
@@ -228,6 +247,17 @@
                 "name": "CLASS_NAME"
               }
             }
+          },
+          {
+            "propName": "KEY_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
           }
         ]
       }
@@ -258,6 +288,10 @@
             "PACKAGE_NAME"
           ],
           "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_DIRECTORY"
         }
       ],
       "extractedProps": [
@@ -334,6 +368,17 @@
                 "name": "CLASS_NAME"
               }
             }
+          },
+          {
+            "propName": "PRESENTER_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
           }
         ]
       }
@@ -364,6 +409,10 @@
             "PACKAGE_NAME"
           ],
           "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_DIRECTORY"
         }
       ],
       "extractedProps": [
@@ -436,6 +485,17 @@
                   "PACKAGE_NAME"
                 ],
                 "name": "CLASS_NAME"
+              }
+            }
+          },
+          {
+            "propName": "SCREEN_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
               }
             }
           }
@@ -552,6 +612,10 @@
     {
       "requiredProps": [],
       "name": "GROUP_NAME"
+    },
+    {
+      "requiredProps": [],
+      "name": "FILE_DIRECTORY"
     }
   ],
   "extractedProps": [
@@ -706,6 +770,17 @@
             }
           },
           {
+            "propName": "CONTROLLER_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
+          },
+          {
             "propName": "CONTROLLER_ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
             "requiredProps": [
               "ANDROID_LAYOUT_SIMPLE_NAME"
@@ -782,6 +857,17 @@
                 "name": "CLASS_NAME"
               }
             }
+          },
+          {
+            "propName": "SCREEN_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
           }
         ]
       },
@@ -844,6 +930,17 @@
                   "PACKAGE_NAME"
                 ],
                 "name": "CLASS_NAME"
+              }
+            }
+          },
+          {
+            "propName": "PRESENTER_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
               }
             }
           }
@@ -910,6 +1007,17 @@
                 "name": "CLASS_NAME"
               }
             }
+          },
+          {
+            "propName": "KEY_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
           }
         ]
       }
@@ -923,6 +1031,17 @@
           "customProp": {
             "requiredProps": [],
             "name": "GROUP_NAME"
+          }
+        }
+      },
+      {
+        "propName": "MVI_SCREEN_FILE_DIRECTORY",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "FILE_DIRECTORY"
           }
         }
       }

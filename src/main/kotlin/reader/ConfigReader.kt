@@ -4,20 +4,22 @@ import com.github.rougsig.filetemplateloader.generator.Props
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.vfs.VirtualFile
+import java.util.*
 
 fun Project.readConfig(): Props {
   return readConfig(guessProjectDir()!!)
 }
 
 fun readConfig(dir: VirtualFile): Props {
-  println("Read Config from: $dir")
-  val props = Props()
+  println("\nRead Config FROM: `$dir`\n")
+  val properties = Properties()
 
-  dir.findChild(FILE_TEMPLATE_FOLDER_NAME)!!
+  dir
+    .findChild(FILE_TEMPLATE_FOLDER_NAME)!!
     .findChild(CONFIG_FILE_NAME)!!
-    .let { props.load(it.inputStream) }
+    .let { properties.load(it.inputStream) }
 
-  return props
+  return Props().apply { putAll(properties as Map<String, String>) }
 }
 
 private const val CONFIG_FILE_NAME = "config.properties"

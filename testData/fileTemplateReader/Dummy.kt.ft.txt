@@ -5,6 +5,10 @@
     {
       "requiredProps": [],
       "name": "TEMPLATE_NAME"
+    },
+    {
+      "requiredProps": [],
+      "name": "FILE_DIRECTORY"
     }
   ],
   "extractedProps": [
@@ -26,6 +30,17 @@
           "customProp": {
             "requiredProps": [],
             "name": "TEMPLATE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "DUMMY_FILE_DIRECTORY",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "FILE_DIRECTORY"
           }
         }
       }

@@ -1,5 +1,6 @@
 package com.github.rougsig.filetemplateloader.ui
 
+import com.github.rougsig.filetemplateloader.generator.Props
 import com.intellij.ide.fileTemplates.ui.CreateFromTemplatePanel
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.DialogWrapper
@@ -12,9 +13,9 @@ import javax.swing.JComponent
 import javax.swing.JPanel
 
 class CrateTemplateGroupDialog(
-  private val defaultProperties: Properties,
+  private val defaultProperties: Props,
   private val unsetProperties: Set<String>,
-  private val doOkAction: (Properties) -> Unit,
+  private val doOkAction: (Props) -> Unit,
   project: Project
 ) : DialogWrapper(project, true) {
   private val attrPanel: CreateFromTemplatePanel = CreateFromTemplatePanel(
@@ -44,10 +45,11 @@ class CrateTemplateGroupDialog(
   }
 
   override fun doOKAction() {
-    val properties = attrPanel.getProperties(defaultProperties)
+    val properties = attrPanel.getProperties(Properties())
     val unsetProperties = unsetProperties.filter { properties.getProperty(it).isNullOrBlank() }
     if (unsetProperties.isEmpty()) {
-      doOkAction(properties)
+      defaultProperties.putAll(properties as Map<String, String>)
+      doOkAction(defaultProperties)
       super.doOKAction()
     } else {
       Messages.showMessageDialog(

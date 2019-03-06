@@ -19,6 +19,9 @@ data class FileTemplateGroup(
     props.add(FileTemplateCustomProp(PROP_GROUP_NAME, name))
     props.addAll(initialCustomProps)
 
+    if (initialCustomProps.find { it.name == PROP_FILE_DIRECTORY } == null)
+      props.add(FileTemplateCustomProp(PROP_FILE_DIRECTORY, ""))
+
     props
   }()
 
@@ -44,7 +47,9 @@ data class FileTemplateGroup(
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
     val localScopeProps = scope.copyPropsToLocalScope(props)
-    val directory = localScopeProps.getProperty(PROP_FILE_DIRECTORY) ?: ""
+    val directory = localScopeProps.requireProperty(PROP_FILE_DIRECTORY)
+    println("Create GROUP: `$name` TO: `$directory`")
+
     val subDirectory = dir.createSubDirectoriesByRelativePath(directory)
 
     return templates.flatMap { it.create(subDirectory, localScopeProps) }
