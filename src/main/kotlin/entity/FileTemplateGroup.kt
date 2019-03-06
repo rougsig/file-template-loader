@@ -10,9 +10,10 @@ import com.intellij.psi.PsiFile
 
 data class FileTemplateGroup(
   override val name: String,
-  val templates: List<FileTemplate>,
+  val templates: List<ScopedFileTemplate>,
+  private val injectors: Set<FileTemplateInjector> = emptySet(),
   private val initialCustomProps: Set<FileTemplateCustomProp> = emptySet()
-) : FileTemplate() {
+) : ScopedFileTemplate() {
   override val customProps: Set<FileTemplateCustomProp> = {
     val props = mutableSetOf<FileTemplateCustomProp>()
 
@@ -32,7 +33,7 @@ data class FileTemplateGroup(
 
   override val scope: PropScope = PropScope(
     name = simpleName,
-    childScopes = templates.mapTo(HashSet(), FileTemplate::scope),
+    childScopes = templates.mapTo(HashSet(), ScopedFileTemplate::scope),
     propGenerators = customProps
       .map { CustomPropGenerator(it) }
       .plus(extractedProps.extractModificatorPropGenerators())

@@ -1,6 +1,6 @@
 package com.github.rougsig.filetemplateloader.generator
 
-import com.github.rougsig.filetemplateloader.entity.FileTemplate
+import com.github.rougsig.filetemplateloader.entity.ScopedFileTemplate
 
 abstract class PropGenerator {
   abstract val propName: String
@@ -22,7 +22,7 @@ abstract class PropGenerator {
   }
 }
 
-fun FileTemplate.generateProps(props: Props): Props {
+fun ScopedFileTemplate.generateProps(props: Props): Props {
   val filteredProps = Props()
   (props as Map<String, String>)
     .filterKeys { k -> requiredProps.contains(k) }

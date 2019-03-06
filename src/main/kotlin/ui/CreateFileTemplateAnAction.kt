@@ -1,6 +1,6 @@
 package com.github.rougsig.filetemplateloader.ui
 
-import com.github.rougsig.filetemplateloader.entity.FileTemplate
+import com.github.rougsig.filetemplateloader.entity.ScopedFileTemplate
 import com.github.rougsig.filetemplateloader.extension.getDirectory
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.generator.filterProps
@@ -11,7 +11,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.fileTypes.StdFileTypes
 
 class CreateFileTemplateAnAction(
-  private val template: FileTemplate
+  private val template: ScopedFileTemplate
 ) : AnAction(
   template.name,
   null,

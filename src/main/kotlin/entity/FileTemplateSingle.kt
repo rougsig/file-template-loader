@@ -5,6 +5,7 @@ import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROP_TEMPLATE_NAME
 import com.github.rougsig.filetemplateloader.extension.createPsiFile
 import com.github.rougsig.filetemplateloader.extension.createSubDirectoriesByRelativePath
+import com.github.rougsig.filetemplateloader.extension.mergeTemplate
 import com.github.rougsig.filetemplateloader.generator.*
 import com.github.rougsig.filetemplateloader.scope.PropScope
 import com.intellij.psi.PsiDirectory
@@ -14,7 +15,7 @@ data class FileTemplateSingle(
   override val name: String,
   private val text: String,
   private val initialCustomProps: Set<FileTemplateCustomProp> = emptySet()
-) : FileTemplate() {
+) : ScopedFileTemplate() {
   override val customProps: Set<FileTemplateCustomProp> = {
     val props = mutableSetOf<FileTemplateCustomProp>()
 

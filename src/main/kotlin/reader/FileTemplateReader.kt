@@ -5,11 +5,11 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.vfs.VirtualFile
 
-fun Project.readFileTemplate(templateFileName: String): FileTemplate {
+fun Project.readFileTemplate(templateFileName: String): ScopedFileTemplate {
   return guessProjectDir()!!.findChild(FILE_TEMPLATE_FOLDER_NAME)!!.readFileTemplate(templateFileName)
 }
 
-fun VirtualFile.readFileTemplate(templateFileName: String): FileTemplate {
+fun VirtualFile.readFileTemplate(templateFileName: String): ScopedFileTemplate {
   return readFileTemplate(
     templateFileName,
     fileRec.map { it.name to it }.toMap()
@@ -20,7 +20,7 @@ private fun readFileTemplate(
   templateFileName: String,
   templateFiles: Map<String, VirtualFile>,
   parentCustomProps: Set<FileTemplateCustomProp>? = null
-): FileTemplate {
+): ScopedFileTemplate {
   val templateFile = templateFiles[templateFileName]
     ?: throw IllegalStateException("template not found: $templateFileName")
 
@@ -57,7 +57,7 @@ private fun readGroupFileTemplate(
 private fun readTemplateFileTemplate(
   file: VirtualFile,
   templateFiles: Map<String, VirtualFile>
-): FileTemplate {
+): ScopedFileTemplate {
   return gson
     .fromJson(String(file.inputStream.readBytes()), FileTemplateJson::class.java)
     .toFileTemplate(templateFiles)
@@ -77,7 +77,7 @@ private fun readSingleFileTemplate(
 
 private fun FileTemplateJson.toFileTemplate(
   templateFiles: Map<String, VirtualFile>
-): FileTemplate {
+): ScopedFileTemplate {
   val customProps = customProps.toFileTemplateCustomProps()
 
   return if (textFrom != null) {

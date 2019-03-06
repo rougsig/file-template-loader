@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader.generator
 
 import com.github.rougsig.filetemplateloader.entity.FileTemplateCustomProp
-import com.github.rougsig.filetemplateloader.entity.mergeTemplate
+import com.github.rougsig.filetemplateloader.extension.mergeTemplate
 
 class CustomPropGenerator(
   private val customProp: FileTemplateCustomProp
