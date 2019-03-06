@@ -62,6 +62,10 @@ fun String.toDotCase(): String {
     .joinToString(".") { it }
 }
 
+fun String.toSlashCase(): String {
+  return toDotCase().replace(".", "/")
+}
+
 fun String.toSolidCase(): String {
   return toUpperCamelCase().toLowerSnakeCase()
     .replace("./", "/")

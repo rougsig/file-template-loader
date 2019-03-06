@@ -13,6 +13,7 @@ val PROP_MODIFICATORS: PropModificators = HashMap<String, (String) -> String>().
   put("LOWER_KEBAB_CASE", String::toLowerKebabCase)
   put("UPPER_KEBAB_CASE", String::toUpperKebabCase)
   put("DOT_CASE", String::toDotCase)
+  put("SLASH_CASE", String::toSlashCase)
   put("SOLID_CASE", String::toSolidCase)
   put("UPPER_CASE", String::toUpperCase)
   put("LOWER_CASE", String::toLowerCase)
