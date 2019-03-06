@@ -54,7 +54,10 @@ data class FileTemplateGroup(
 
     val subDirectory = dir.createSubDirectoriesByRelativePath(directory)
 
-    return templates.flatMap { it.create(subDirectory, localScopeProps) }
+    val createdTemplates = templates.flatMap { it.create(subDirectory, localScopeProps) }
+    val injectedFiles = injectors.flatMap { it.create(dir, localScopeProps) }
+
+    return createdTemplates.plus(injectedFiles)
   }
 
   private fun List<FileTemplate>.requiredProps(): Set<String> {

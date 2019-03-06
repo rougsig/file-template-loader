@@ -44,16 +44,23 @@ data class FileTemplateInjector(
 
   private fun getInsertTo(project: Project, props: Props): PsiElement {
     if (className != null) {
-      return JavaPsiFacade.getInstance(project)
-        .findClass(mergeTemplate(className, props), GlobalSearchScope.allScope(project))!!
-        .containingFile
+      val mergedClassName = mergeTemplate(className, props)
+
+      val psiClass = JavaPsiFacade.getInstance(project)
+        .findClass(mergedClassName, GlobalSearchScope.allScope(project))
+
+      return psiClass?.containingFile ?: throw IllegalStateException("class not found by name: $mergedClassName")
     }
 
     if (pathName != null) {
-      val file = project.guessProjectDir()!!.findFileByRelativePath(mergeTemplate(pathName, props))!!
-      return PsiManager.getInstance(project).findFile(file)!!
+      val mergedPathName = mergeTemplate(pathName, props)
+
+      val file = project.guessProjectDir()!!.findFileByRelativePath(mergedPathName)
+      val psiFile = file?.let { PsiManager.getInstance(project).findFile(it) }
+
+      return psiFile ?: throw IllegalStateException("file not found by path: $mergedPathName")
     }
 
-    throw IllegalStateException("can't create entry: className == null && directory == null")
+    throw IllegalStateException("can't inject: className == null && directory == null")
   }
 }
