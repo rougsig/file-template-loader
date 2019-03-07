@@ -18,7 +18,7 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
 
   override fun setUp() {
     super.setUp()
-    myFixture.copyDirectoryToProject("", "")
+    myFixture.copyDirectoryToProject("testProject", "")
 
     project.writeAction {
       FileTypeManager.getInstance().associatePattern(GroovyFileType.GROOVY_FILE_TYPE, "*.gradle")

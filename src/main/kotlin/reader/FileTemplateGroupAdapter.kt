@@ -10,7 +10,6 @@ import java.lang.reflect.Type
 class FileTemplateGroupAdapter : JsonSerializer<FileTemplateGroup> {
   override fun serialize(template: FileTemplateGroup, type: Type, context: JsonSerializationContext): JsonElement {
     return JsonObject().apply {
-      add("name", context.serialize(template.name))
       add("simpleName", context.serialize(template.simpleName))
       add("templates", context.serialize(template.templates))
       add("injectors", context.serialize(template.injectors))

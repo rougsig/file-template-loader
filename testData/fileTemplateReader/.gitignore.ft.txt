@@ -1,5 +1,4 @@
 {
-  "name": ".gitignore",
   "simpleName": "GITIGNORE",
   "customProps": [
     {

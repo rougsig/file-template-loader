@@ -1,9 +1,7 @@
 {
-  "name": "RoutingFlow",
   "simpleName": "ROUTING_FLOW",
   "templates": [
     {
-      "name": "Flow.kt",
       "simpleName": "FLOW",
       "customProps": [
         {
@@ -142,7 +140,6 @@
       }
     },
     {
-      "name": "FlowCoordinator.kt",
       "simpleName": "FLOW_COORDINATOR",
       "customProps": [
         {
@@ -267,7 +264,6 @@
       }
     },
     {
-      "name": "FlowModule.kt",
       "simpleName": "FLOW_MODULE",
       "customProps": [
         {

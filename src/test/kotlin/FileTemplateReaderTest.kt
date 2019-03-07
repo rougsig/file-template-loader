@@ -12,7 +12,7 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
 
   override fun setUp() {
     super.setUp()
-    myFixture.copyDirectoryToProject("", "")
+    myFixture.copyDirectoryToProject("testProject", "")
   }
 
   private fun doTest(testFileName: String) {

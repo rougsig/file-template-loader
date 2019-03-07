@@ -1,0 +1,29 @@
+{
+  "templates": [
+    {
+      "contentFrom": "Model.kt.ft",
+      "variables": {
+        "SIMPLE_NAME": "${MODEL_NAME}Model",
+        "FILE_NAME": "${SIMPLE_NAME}.kt",
+        "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+      }
+    },
+    {
+      "contentFrom": "ModelImpl.kt.ft",
+      "variables": {
+        "FILE_NAME": "${SIMPLE_NAME}.kt",
+        "SIMPLE_NAME": "${MODEL_NAME}ModelImpl",
+        "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+      }
+    },
+    {
+      "contentFrom": "ModelModule.kt.ft",
+      "variables": {
+        "FILE_NAME": "${SIMPLE_NAME}.kt",
+        "FILE_DIRECTORY": "di",
+        "SIMPLE_NAME": "Domain${MODEL_NAME}Module",
+        "PACKAGE_NAME": "${PACKAGE_NAME}.${FILE_DIRECTORY_DOT_CASE}"
+      }
+    }
+  ]
+}

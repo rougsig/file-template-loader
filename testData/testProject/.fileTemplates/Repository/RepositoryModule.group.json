@@ -1,0 +1,41 @@
+{
+  "templates": [
+    {
+      "contentFrom": "RepositoryGroup.group.json",
+      "variables": {
+        "FILE_DIRECTORY": "src/main/kotlin"
+      }
+    },
+    {
+      "contentFrom": "RepositoryModuleBuild.gradle.ft",
+      "variables": {
+        "FILE_NAME": "build.gradle"
+      }
+    },
+    {
+      "contentFrom": ".gitignore.ft",
+      "variables": {
+        "FILE_NAME": ".gitignore"
+      }
+    },
+    {
+      "contentFrom": "AndroidManifest.xml.ft",
+      "variables": {
+        "FILE_NAME": "AndroidManifest.xml",
+        "FILE_DIRECTORY": "src/main"
+      }
+    }
+  ],
+  "variables": {
+    "PACKAGE_NAME": "${PACKAGE_NAME}.${MODULE_NAME_DOT_CASE}",
+    "FILE_DIRECTORY": "./${MODULE_NAME}",
+    "MODULE_NAME": "epic-repository"
+  },
+  "injectors": [
+    {
+      "text": ",\n':${MODULE_NAME}'",
+      "pathName": "${SETTING_FILE_PATH}",
+      "selector": "Literal"
+    }
+  ]
+}

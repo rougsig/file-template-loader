@@ -1,9 +1,7 @@
 {
-  "name": "RepositoryGroup",
   "simpleName": "REPOSITORY_GROUP",
   "templates": [
     {
-      "name": "Repository.kt",
       "simpleName": "REPOSITORY",
       "customProps": [
         {
@@ -120,7 +118,6 @@
       }
     },
     {
-      "name": "RepositoryImpl.kt",
       "simpleName": "REPOSITORY_IMPL",
       "customProps": [
         {
@@ -239,7 +236,6 @@
       }
     },
     {
-      "name": "RepositoryBindings.kt",
       "simpleName": "REPOSITORY_BINDINGS",
       "customProps": [
         {

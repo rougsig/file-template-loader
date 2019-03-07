@@ -1,0 +1,61 @@
+{
+  "templates": [
+    {
+      "contentFrom": "Controller.kt.ft",
+      "variables": {
+        "SIMPLE_NAME": "${SCREEN_NAME}Controller",
+        "FILE_NAME": "${SIMPLE_NAME}.kt",
+        "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+      }
+    },
+    {
+      "contentFrom": "Key.kt.ft",
+      "variables": {
+        "SIMPLE_NAME": "${SCREEN_NAME}Key",
+        "FILE_NAME": "${SIMPLE_NAME}.kt",
+        "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+      }
+    },
+    {
+      "contentFrom": "Presenter.kt.ft",
+      "variables": {
+        "SIMPLE_NAME": "${SCREEN_NAME}Presenter",
+        "FILE_NAME": "${SIMPLE_NAME}.kt",
+        "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+      }
+    },
+    {
+      "contentFrom": "Screen.kt.ft",
+      "variables": {
+        "SIMPLE_NAME": "${SCREEN_NAME}Screen",
+        "FILE_NAME": "${SIMPLE_NAME}.kt",
+        "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+      }
+    },
+    {
+      "contentFrom": "AndroidLayout.xml.ft",
+      "variables": {
+        "SIMPLE_NAME": "${SCREEN_NAME_LOWER_SNAKE_CASE}_controller",
+        "FILE_NAME": "${SIMPLE_NAME}.xml",
+        "FILE_DIRECTORY": "./src/main/res/layout"
+      }
+    }
+  ],
+  "injectors": [
+    {
+      "text": "\nis ${APP_ROUTE_NAME}.${SCREEN_NAME_UPPER_CAMEL_CASE} -> ${KEY_SIMPLE_NAME}()",
+      "className": "${PACKAGE_BASE}.${PROJECT_NAME}.routing.ScreenKeyFactory",
+      "selector": "WHEN WHEN_ENTRY"
+    },
+    {
+      "text": "\nobject ${SCREEN_NAME_UPPER_CAMEL_CASE} : ${APP_ROUTE_NAME}(\"${ROUTE_PATH}\")",
+      "className": "${PACKAGE_BASE}.${PROJECT_NAME}.ui.routing.${APP_ROUTE_NAME}",
+      "selector": "AppRoute CLASS_BODY LBRACE"
+    },
+    {
+      "text": "\nimport ${KEY_CLASS_NAME}",
+      "className": "${PACKAGE_BASE}.${PROJECT_NAME}.routing.ScreenKeyFactory",
+      "selector": "IMPORT_LIST IMPORT_DIRECTIVE"
+    }
+  ]
+}

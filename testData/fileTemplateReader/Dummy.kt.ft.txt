@@ -1,5 +1,4 @@
 {
-  "name": "Dummy.kt",
   "simpleName": "DUMMY",
   "customProps": [
     {

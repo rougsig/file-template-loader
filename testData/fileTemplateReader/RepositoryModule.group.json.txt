@@ -1,13 +1,10 @@
 {
-  "name": "RepositoryModule",
   "simpleName": "REPOSITORY_MODULE",
   "templates": [
     {
-      "name": "RepositoryGroup",
       "simpleName": "REPOSITORY_GROUP",
       "templates": [
         {
-          "name": "Repository.kt",
           "simpleName": "REPOSITORY",
           "customProps": [
             {
@@ -124,7 +121,6 @@
           }
         },
         {
-          "name": "RepositoryImpl.kt",
           "simpleName": "REPOSITORY_IMPL",
           "customProps": [
             {
@@ -243,7 +239,6 @@
           }
         },
         {
-          "name": "RepositoryBindings.kt",
           "simpleName": "REPOSITORY_BINDINGS",
           "customProps": [
             {
@@ -684,7 +679,6 @@
       }
     },
     {
-      "name": "RepositoryModuleBuild.gradle",
       "simpleName": "REPOSITORY_MODULE_BUILD",
       "customProps": [
         {
@@ -763,7 +757,6 @@
       }
     },
     {
-      "name": ".gitignore",
       "simpleName": "GITIGNORE",
       "customProps": [
         {
@@ -822,7 +815,6 @@
       }
     },
     {
-      "name": "AndroidManifest.xml",
       "simpleName": "ANDROID_MANIFEST",
       "customProps": [
         {

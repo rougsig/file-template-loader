@@ -1,9 +1,7 @@
 {
-  "name": "Domain",
   "simpleName": "DOMAIN",
   "templates": [
     {
-      "name": "Model.kt",
       "simpleName": "MODEL",
       "customProps": [
         {
@@ -120,7 +118,6 @@
       }
     },
     {
-      "name": "ModelImpl.kt",
       "simpleName": "MODEL_IMPL",
       "customProps": [
         {
@@ -241,7 +238,6 @@
       }
     },
     {
-      "name": "ModelModule.kt",
       "simpleName": "MODEL_MODULE",
       "customProps": [
         {

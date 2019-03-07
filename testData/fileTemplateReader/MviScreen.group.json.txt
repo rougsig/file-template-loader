@@ -1,9 +1,7 @@
 {
-  "name": "MviScreen",
   "simpleName": "MVI_SCREEN",
   "templates": [
     {
-      "name": "Controller.kt",
       "simpleName": "CONTROLLER",
       "customProps": [
         {
@@ -142,7 +140,6 @@
       }
     },
     {
-      "name": "Key.kt",
       "simpleName": "KEY",
       "customProps": [
         {
@@ -263,7 +260,6 @@
       }
     },
     {
-      "name": "Presenter.kt",
       "simpleName": "PRESENTER",
       "customProps": [
         {
@@ -384,7 +380,6 @@
       }
     },
     {
-      "name": "Screen.kt",
       "simpleName": "SCREEN",
       "customProps": [
         {
@@ -503,7 +498,6 @@
       }
     },
     {
-      "name": "AndroidLayout.xml",
       "simpleName": "ANDROID_LAYOUT",
       "customProps": [
         {
