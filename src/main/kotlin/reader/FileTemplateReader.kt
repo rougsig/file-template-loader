@@ -1,6 +1,7 @@
 package com.github.rougsig.filetemplateloader.reader
 
 import com.github.rougsig.filetemplateloader.entity.*
+import com.google.gson.JsonObject
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.vfs.VirtualFile
@@ -49,7 +50,7 @@ private fun readGroupFileTemplate(
     name = json.name ?: templateName,
     templates = json.templates.map { it.toFileTemplate(templateFiles) },
     injectors = (json.injectors ?: emptyList()).map { it.toFileTemplateInjector() },
-    initialCustomProps = (parentCustomProps ?: emptySet()).plus(json.customProps.toFileTemplateCustomProps())
+    initialCustomProps = (parentCustomProps ?: emptySet()).plus(json.variables.toFileTemplateCustomProps())
   )
 }
 
@@ -77,18 +78,18 @@ private fun readSingleFileTemplate(
 private fun FileTemplateJson.toFileTemplate(
   templateFiles: Map<String, VirtualFile>
 ): ScopedFileTemplate {
-  val customProps = customProps.toFileTemplateCustomProps()
+  val customProps = variables.toFileTemplateCustomProps()
 
-  return if (textFrom != null) {
+  return if (contentFrom != null) {
     readFileTemplate(
-      templateFileName = textFrom,
+      templateFileName = contentFrom,
       templateFiles = templateFiles,
       parentCustomProps = customProps
     )
   } else {
     FileTemplateSingle(
       name = name ?: "",
-      text = text ?: "",
+      text = content ?: "",
       initialCustomProps = customProps
     )
   }
@@ -103,8 +104,10 @@ private fun FileTemplateInjectorJson.toFileTemplateInjector(): FileTemplateInjec
   )
 }
 
-private fun List<FileTemplateCustomPropJson>?.toFileTemplateCustomProps(): Set<FileTemplateCustomProp> {
-  return this?.map { FileTemplateCustomProp(it.name, it.text) }?.toSet() ?: emptySet()
+private fun JsonObject?.toFileTemplateCustomProps(): Set<FileTemplateCustomProp> {
+  return this?.entrySet()?.map { (k, v) ->
+    FileTemplateCustomProp(k, v.asString)
+  }?.toSet() ?: emptySet()
 }
 
 private val VirtualFile.fileRec: List<VirtualFile>
