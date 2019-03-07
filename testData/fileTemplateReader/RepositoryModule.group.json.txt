@@ -682,9 +682,220 @@
           }
         ]
       }
+    },
+    {
+      "name": "RepositoryModuleBuild.gradle",
+      "simpleName": "REPOSITORY_MODULE_BUILD",
+      "customProps": [
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_DIRECTORY"
+        }
+      ],
+      "extractedProps": [
+        "PROJECT_NAME_LOWER_KEBAB_CASE",
+        "PACKAGE_BASE"
+      ],
+      "requiredProps": [
+        "PACKAGE_BASE",
+        "PROJECT_NAME"
+      ],
+      "scope": {
+        "name": "REPOSITORY_MODULE_BUILD",
+        "childScopes": [],
+        "scopedPropGenerators": [
+          {
+            "propName": "REPOSITORY_MODULE_BUILD_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "REPOSITORY_MODULE_BUILD_FILE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "REPOSITORY_MODULE_BUILD_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
+          },
+          {
+            "propName": "REPOSITORY_MODULE_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
+            "requiredProps": [
+              "PROJECT_NAME"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "PROJECT_NAME"
+              ],
+              "selfRequiredProps": [],
+              "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
+              "propBaseName": "PROJECT_NAME"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": ".gitignore",
+      "simpleName": "GITIGNORE",
+      "customProps": [
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_DIRECTORY"
+        }
+      ],
+      "extractedProps": [],
+      "requiredProps": [],
+      "scope": {
+        "name": "GITIGNORE",
+        "childScopes": [],
+        "scopedPropGenerators": [
+          {
+            "propName": "GITIGNORE_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "GITIGNORE_FILE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "GITIGNORE_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "AndroidManifest.xml",
+      "simpleName": "ANDROID_MANIFEST",
+      "customProps": [
+        {
+          "requiredProps": [],
+          "name": "TEMPLATE_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [],
+          "name": "FILE_DIRECTORY"
+        }
+      ],
+      "extractedProps": [
+        "PACKAGE_NAME"
+      ],
+      "requiredProps": [
+        "PACKAGE_NAME"
+      ],
+      "scope": {
+        "name": "ANDROID_MANIFEST",
+        "childScopes": [],
+        "scopedPropGenerators": [
+          {
+            "propName": "ANDROID_MANIFEST_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "ANDROID_MANIFEST_FILE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "ANDROID_MANIFEST_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
+          }
+        ]
+      }
     }
   ],
-  "injectors": [],
+  "injectors": [
+    {
+      "selector": "Literal",
+      "className": null,
+      "pathName": "${SETTING_FILE_PATH}",
+      "requiredProps": [
+        "MODULE_NAME",
+        "SETTING_FILE_PATH"
+      ]
+    }
+  ],
   "customProps": [
     {
       "requiredProps": [],
@@ -692,30 +903,94 @@
     },
     {
       "requiredProps": [
-        "PACKAGE_NAME",
-        "FILE_DIRECTORY_DOT_CASE"
+        "MODULE_NAME_DOT_CASE",
+        "PACKAGE_NAME"
       ],
       "name": "PACKAGE_NAME"
     },
     {
-      "requiredProps": [],
+      "requiredProps": [
+        "MODULE_NAME"
+      ],
       "name": "FILE_DIRECTORY"
+    },
+    {
+      "requiredProps": [],
+      "name": "MODULE_NAME"
     }
   ],
   "extractedProps": [
     "PACKAGE_BASE",
     "REPOSITORY_NAME",
     "PACKAGE_NAME",
-    "FILE_DIRECTORY_DOT_CASE"
+    "PROJECT_NAME",
+    "MODULE_NAME_DOT_CASE",
+    "MODULE_NAME",
+    "SETTING_FILE_PATH"
   ],
   "requiredProps": [
+    "SETTING_FILE_PATH",
     "PACKAGE_BASE",
     "REPOSITORY_NAME",
-    "PACKAGE_NAME"
+    "PACKAGE_NAME",
+    "PROJECT_NAME"
   ],
   "scope": {
     "name": "REPOSITORY_MODULE",
     "childScopes": [
+      {
+        "name": "REPOSITORY_MODULE_BUILD",
+        "childScopes": [],
+        "scopedPropGenerators": [
+          {
+            "propName": "REPOSITORY_MODULE_BUILD_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "REPOSITORY_MODULE_BUILD_FILE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "REPOSITORY_MODULE_BUILD_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
+          },
+          {
+            "propName": "REPOSITORY_MODULE_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
+            "requiredProps": [
+              "PROJECT_NAME"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "PROJECT_NAME"
+              ],
+              "selfRequiredProps": [],
+              "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
+              "propBaseName": "PROJECT_NAME"
+            }
+          }
+        ]
+      },
       {
         "name": "REPOSITORY_GROUP",
         "childScopes": [
@@ -985,6 +1260,84 @@
             }
           }
         ]
+      },
+      {
+        "name": "ANDROID_MANIFEST",
+        "childScopes": [],
+        "scopedPropGenerators": [
+          {
+            "propName": "ANDROID_MANIFEST_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "ANDROID_MANIFEST_FILE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "ANDROID_MANIFEST_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "GITIGNORE",
+        "childScopes": [],
+        "scopedPropGenerators": [
+          {
+            "propName": "GITIGNORE_TEMPLATE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "GITIGNORE_FILE_NAME",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "GITIGNORE_FILE_DIRECTORY",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "FILE_DIRECTORY"
+              }
+            }
+          }
+        ]
       }
     ],
     "scopedPropGenerators": [
@@ -1002,8 +1355,8 @@
       {
         "propName": "REPOSITORY_MODULE_PACKAGE_NAME",
         "requiredProps": [
-          "PACKAGE_NAME",
-          "REPOSITORY_MODULE_FILE_DIRECTORY_DOT_CASE"
+          "REPOSITORY_MODULE_MODULE_NAME_DOT_CASE",
+          "PACKAGE_NAME"
         ],
         "propGenerator": {
           "selfRequiredProps": [
@@ -1011,8 +1364,8 @@
           ],
           "customProp": {
             "requiredProps": [
-              "PACKAGE_NAME",
-              "FILE_DIRECTORY_DOT_CASE"
+              "MODULE_NAME_DOT_CASE",
+              "PACKAGE_NAME"
             ],
             "name": "PACKAGE_NAME"
           }
@@ -1020,27 +1373,42 @@
       },
       {
         "propName": "REPOSITORY_MODULE_FILE_DIRECTORY",
-        "requiredProps": [],
+        "requiredProps": [
+          "REPOSITORY_MODULE_MODULE_NAME"
+        ],
         "propGenerator": {
           "selfRequiredProps": [],
           "customProp": {
-            "requiredProps": [],
+            "requiredProps": [
+              "MODULE_NAME"
+            ],
             "name": "FILE_DIRECTORY"
           }
         }
       },
       {
-        "propName": "REPOSITORY_MODULE_FILE_DIRECTORY_DOT_CASE",
+        "propName": "REPOSITORY_MODULE_MODULE_NAME",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "MODULE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "REPOSITORY_MODULE_MODULE_NAME_DOT_CASE",
         "requiredProps": [
-          "REPOSITORY_MODULE_FILE_DIRECTORY"
+          "REPOSITORY_MODULE_MODULE_NAME"
         ],
         "propGenerator": {
           "requiredProps": [
-            "FILE_DIRECTORY"
+            "MODULE_NAME"
           ],
           "selfRequiredProps": [],
-          "propName": "FILE_DIRECTORY_DOT_CASE",
-          "propBaseName": "FILE_DIRECTORY"
+          "propName": "MODULE_NAME_DOT_CASE",
+          "propBaseName": "MODULE_NAME"
         }
       }
     ]

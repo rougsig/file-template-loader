@@ -3,14 +3,12 @@ package com.github.rougsig.filetemplateloader.entity
 import com.github.rougsig.filetemplateloader.constant.PROP_FILE_DIRECTORY
 import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROP_TEMPLATE_NAME
-import com.github.rougsig.filetemplateloader.extension.createSubDirectoriesByRelativePath
+import com.github.rougsig.filetemplateloader.extension.createFileToDirectory
 import com.github.rougsig.filetemplateloader.extension.mergeTemplate
 import com.github.rougsig.filetemplateloader.generator.*
 import com.github.rougsig.filetemplateloader.scope.PropScope
 import com.intellij.psi.PsiDirectory
-import com.intellij.psi.PsiDocumentManager
 import com.intellij.psi.PsiFile
-import com.intellij.psi.codeStyle.CodeStyleManager
 
 data class FileTemplateSingle(
   override val name: String,
@@ -56,16 +54,6 @@ data class FileTemplateSingle(
     val directory = localScopeProps.requireProperty(PROP_FILE_DIRECTORY)
     println("Create TEMPLATE: `$name` TO: `$directory`")
 
-    val targetDir = dir.createSubDirectoriesByRelativePath(directory)
-
-    val doc = PsiDocumentManager.getInstance(dir.project).getDocument(targetDir.createFile(fileName))!!
-    doc.setText(mergedTemplate)
-    PsiDocumentManager.getInstance(dir.project).commitDocument(doc)
-
-    val resultFile = CodeStyleManager.getInstance(dir.manager)
-      .reformat(PsiDocumentManager.getInstance(dir.project).getPsiFile(doc)!!)
-      .containingFile
-
-    return listOf(resultFile)
+    return listOf(dir.createFileToDirectory(directory, fileName, mergedTemplate))
   }
 }
