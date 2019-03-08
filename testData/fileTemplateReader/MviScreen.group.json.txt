@@ -9,6 +9,10 @@
           "name": "TEMPLATE_NAME"
         },
         {
+          "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
           "requiredProps": [
             "SCREEN_NAME"
           ],
@@ -61,6 +65,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "CONTROLLER_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -147,6 +162,10 @@
           "name": "TEMPLATE_NAME"
         },
         {
+          "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
           "requiredProps": [
             "SCREEN_NAME"
           ],
@@ -195,6 +214,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "KEY_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -267,6 +297,10 @@
           "name": "TEMPLATE_NAME"
         },
         {
+          "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
           "requiredProps": [
             "SCREEN_NAME"
           ],
@@ -315,6 +349,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "PRESENTER_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -387,6 +432,10 @@
           "name": "TEMPLATE_NAME"
         },
         {
+          "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
           "requiredProps": [
             "SCREEN_NAME"
           ],
@@ -433,6 +482,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "SCREEN_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -505,6 +565,10 @@
           "name": "TEMPLATE_NAME"
         },
         {
+          "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
           "requiredProps": [
             "SCREEN_NAME_LOWER_SNAKE_CASE"
           ],
@@ -540,6 +604,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "ANDROID_LAYOUT_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -690,6 +765,17 @@
             }
           },
           {
+            "propName": "ANDROID_LAYOUT_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
+              }
+            }
+          },
+          {
             "propName": "ANDROID_LAYOUT_SIMPLE_NAME",
             "requiredProps": [
               "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE"
@@ -758,6 +844,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "CONTROLLER_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -851,6 +948,17 @@
             }
           },
           {
+            "propName": "SCREEN_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
+              }
+            }
+          },
+          {
             "propName": "SCREEN_SIMPLE_NAME",
             "requiredProps": [
               "SCREEN_NAME"
@@ -926,6 +1034,17 @@
             }
           },
           {
+            "propName": "PRESENTER_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
+              }
+            }
+          },
+          {
             "propName": "PRESENTER_SIMPLE_NAME",
             "requiredProps": [
               "SCREEN_NAME"
@@ -997,6 +1116,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "KEY_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },

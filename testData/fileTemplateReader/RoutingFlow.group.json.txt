@@ -9,6 +9,10 @@
           "name": "TEMPLATE_NAME"
         },
         {
+          "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
           "requiredProps": [
             "SIMPLE_NAME"
           ],
@@ -61,6 +65,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -147,6 +162,10 @@
           "name": "TEMPLATE_NAME"
         },
         {
+          "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
           "requiredProps": [
             "SIMPLE_NAME"
           ],
@@ -199,6 +218,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_COORDINATOR_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -271,6 +301,10 @@
           "name": "TEMPLATE_NAME"
         },
         {
+          "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
           "requiredProps": [
             "PACKAGE_NAME",
             "FILE_DIRECTORY_DOT_CASE"
@@ -331,6 +365,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_MODULE_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -481,6 +526,17 @@
             }
           },
           {
+            "propName": "FLOW_MODULE_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
+              }
+            }
+          },
+          {
             "propName": "FLOW_MODULE_PACKAGE_NAME",
             "requiredProps": [
               "PACKAGE_NAME",
@@ -589,6 +645,17 @@
             }
           },
           {
+            "propName": "FLOW_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
+              }
+            }
+          },
+          {
             "propName": "FLOW_FILE_NAME",
             "requiredProps": [
               "FLOW_SIMPLE_NAME"
@@ -674,6 +741,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_COORDINATOR_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },

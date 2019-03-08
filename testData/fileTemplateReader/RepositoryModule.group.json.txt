@@ -12,6 +12,10 @@
               "name": "TEMPLATE_NAME"
             },
             {
+              "requiredProps": [],
+              "name": "TEMPLATE_EXTENSION"
+            },
+            {
               "requiredProps": [
                 "SIMPLE_NAME"
               ],
@@ -56,6 +60,17 @@
                   "customProp": {
                     "requiredProps": [],
                     "name": "TEMPLATE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "REPOSITORY_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
                   }
                 }
               },
@@ -128,6 +143,10 @@
               "name": "TEMPLATE_NAME"
             },
             {
+              "requiredProps": [],
+              "name": "TEMPLATE_EXTENSION"
+            },
+            {
               "requiredProps": [
                 "SIMPLE_NAME"
               ],
@@ -174,6 +193,17 @@
                   "customProp": {
                     "requiredProps": [],
                     "name": "TEMPLATE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "REPOSITORY_IMPL_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
                   }
                 }
               },
@@ -246,6 +276,10 @@
               "name": "TEMPLATE_NAME"
             },
             {
+              "requiredProps": [],
+              "name": "TEMPLATE_EXTENSION"
+            },
+            {
               "requiredProps": [
                 "PACKAGE_NAME",
                 "FILE_DIRECTORY_DOT_CASE"
@@ -301,6 +335,17 @@
                   "customProp": {
                     "requiredProps": [],
                     "name": "TEMPLATE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "REPOSITORY_BINDINGS_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
                   }
                 }
               },
@@ -426,6 +471,17 @@
                 }
               },
               {
+                "propName": "REPOSITORY_IMPL_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
+                  }
+                }
+              },
+              {
                 "propName": "REPOSITORY_IMPL_FILE_NAME",
                 "requiredProps": [
                   "REPOSITORY_IMPL_SIMPLE_NAME"
@@ -501,6 +557,17 @@
                 }
               },
               {
+                "propName": "REPOSITORY_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
+                  }
+                }
+              },
+              {
                 "propName": "REPOSITORY_FILE_NAME",
                 "requiredProps": [
                   "REPOSITORY_SIMPLE_NAME"
@@ -572,6 +639,17 @@
                   "customProp": {
                     "requiredProps": [],
                     "name": "TEMPLATE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "REPOSITORY_BINDINGS_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
                   }
                 }
               },
@@ -687,6 +765,10 @@
         },
         {
           "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
+          "requiredProps": [],
           "name": "FILE_NAME"
         },
         {
@@ -714,6 +796,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "REPOSITORY_MODULE_BUILD_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -765,6 +858,10 @@
         },
         {
           "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
+          "requiredProps": [],
           "name": "FILE_NAME"
         },
         {
@@ -786,6 +883,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "GITIGNORE_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -823,6 +931,10 @@
         },
         {
           "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
+          "requiredProps": [],
           "name": "FILE_NAME"
         },
         {
@@ -848,6 +960,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "ANDROID_MANIFEST_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -946,6 +1069,17 @@
             }
           },
           {
+            "propName": "REPOSITORY_MODULE_BUILD_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
+              }
+            }
+          },
+          {
             "propName": "REPOSITORY_MODULE_BUILD_FILE_NAME",
             "requiredProps": [],
             "propGenerator": {
@@ -998,6 +1132,17 @@
                   "customProp": {
                     "requiredProps": [],
                     "name": "TEMPLATE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "REPOSITORY_IMPL_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
                   }
                 }
               },
@@ -1077,6 +1222,17 @@
                 }
               },
               {
+                "propName": "REPOSITORY_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
+                  }
+                }
+              },
+              {
                 "propName": "REPOSITORY_FILE_NAME",
                 "requiredProps": [
                   "REPOSITORY_SIMPLE_NAME"
@@ -1148,6 +1304,17 @@
                   "customProp": {
                     "requiredProps": [],
                     "name": "TEMPLATE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "REPOSITORY_BINDINGS_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
                   }
                 }
               },
@@ -1269,6 +1436,17 @@
             }
           },
           {
+            "propName": "ANDROID_MANIFEST_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
+              }
+            }
+          },
+          {
             "propName": "ANDROID_MANIFEST_FILE_NAME",
             "requiredProps": [],
             "propGenerator": {
@@ -1304,6 +1482,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "GITIGNORE_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },

@@ -1,8 +1,6 @@
 package com.github.rougsig.filetemplateloader
 
-import com.github.rougsig.filetemplateloader.reader.FILE_TEMPLATE_FOLDER_NAME
 import com.github.rougsig.filetemplateloader.reader.readFileTemplate
-import com.intellij.openapi.project.guessProjectDir
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
 
 class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
@@ -16,11 +14,7 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
   }
 
   private fun doTest(testFileName: String) {
-    val template = project
-      .guessProjectDir()!!
-      .findChild(FILE_TEMPLATE_FOLDER_NAME)!!
-      .readFileTemplate(testFileName)
-
+    val template = project.readFileTemplate(testFileName)
     val json = gson.toJson(template)
 
     assertSameLinesWithFile(

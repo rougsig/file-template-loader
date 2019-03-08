@@ -9,6 +9,10 @@
           "name": "TEMPLATE_NAME"
         },
         {
+          "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
           "requiredProps": [
             "MODEL_NAME"
           ],
@@ -53,6 +57,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "MODEL_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -125,6 +140,10 @@
           "name": "TEMPLATE_NAME"
         },
         {
+          "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
           "requiredProps": [
             "SIMPLE_NAME"
           ],
@@ -173,6 +192,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "MODEL_IMPL_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -245,6 +275,10 @@
           "name": "TEMPLATE_NAME"
         },
         {
+          "requiredProps": [],
+          "name": "TEMPLATE_EXTENSION"
+        },
+        {
           "requiredProps": [
             "SIMPLE_NAME"
           ],
@@ -298,6 +332,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "MODEL_MODULE_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },
@@ -423,6 +468,17 @@
             }
           },
           {
+            "propName": "MODEL_IMPL_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
+              }
+            }
+          },
+          {
             "propName": "MODEL_IMPL_FILE_NAME",
             "requiredProps": [
               "MODEL_IMPL_SIMPLE_NAME"
@@ -498,6 +554,17 @@
             }
           },
           {
+            "propName": "MODEL_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
+              }
+            }
+          },
+          {
             "propName": "MODEL_SIMPLE_NAME",
             "requiredProps": [
               "MODEL_NAME"
@@ -569,6 +636,17 @@
               "customProp": {
                 "requiredProps": [],
                 "name": "TEMPLATE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "MODEL_MODULE_TEMPLATE_EXTENSION",
+            "requiredProps": [],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [],
+                "name": "TEMPLATE_EXTENSION"
               }
             }
           },

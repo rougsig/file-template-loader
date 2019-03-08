@@ -7,6 +7,10 @@
     },
     {
       "requiredProps": [],
+      "name": "TEMPLATE_EXTENSION"
+    },
+    {
+      "requiredProps": [],
       "name": "FILE_DIRECTORY"
     }
   ],
@@ -26,6 +30,17 @@
           "customProp": {
             "requiredProps": [],
             "name": "TEMPLATE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "GITIGNORE_TEMPLATE_EXTENSION",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "TEMPLATE_EXTENSION"
           }
         }
       },

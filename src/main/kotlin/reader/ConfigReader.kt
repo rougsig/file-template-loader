@@ -21,5 +21,3 @@ fun readConfig(dir: VirtualFile): Props {
 
   return Props().apply { putAll(properties as Map<String, String>) }
 }
-
-private const val CONFIG_FILE_NAME = "config.properties"

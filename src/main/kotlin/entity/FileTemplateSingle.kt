@@ -2,6 +2,7 @@ package com.github.rougsig.filetemplateloader.entity
 
 import com.github.rougsig.filetemplateloader.constant.PROP_FILE_DIRECTORY
 import com.github.rougsig.filetemplateloader.constant.PROP_FILE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_TEMPLATE_EXTENSION
 import com.github.rougsig.filetemplateloader.constant.PROP_TEMPLATE_NAME
 import com.github.rougsig.filetemplateloader.extension.createFileToDirectory
 import com.github.rougsig.filetemplateloader.extension.mergeTemplate
@@ -11,7 +12,7 @@ import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
 
 data class FileTemplateSingle(
-  override val name: String,
+  override val fullName: String,
   private val text: String,
   private val initialCustomProps: Set<FileTemplateCustomProp> = emptySet()
 ) : ScopedFileTemplate() {
@@ -19,6 +20,7 @@ data class FileTemplateSingle(
     val props = mutableSetOf<FileTemplateCustomProp>()
 
     props.add(FileTemplateCustomProp(PROP_TEMPLATE_NAME, name))
+    props.add(FileTemplateCustomProp(PROP_TEMPLATE_EXTENSION, extension))
     props.addAll(initialCustomProps)
 
     if (initialCustomProps.find { it.name == PROP_FILE_DIRECTORY } == null)

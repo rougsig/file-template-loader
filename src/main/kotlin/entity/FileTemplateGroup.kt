@@ -9,7 +9,7 @@ import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
 
 data class FileTemplateGroup(
-  override val name: String,
+  override val fullName: String,
   val templates: List<ScopedFileTemplate>,
   val injectors: List<FileTemplateInjector> = emptyList(),
   private val initialCustomProps: Set<FileTemplateCustomProp> = emptySet()

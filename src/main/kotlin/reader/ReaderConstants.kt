@@ -1,18 +1,16 @@
 package com.github.rougsig.filetemplateloader.reader
 
+const val CONFIG_FILE_NAME = "config.properties"
 const val FILE_TEMPLATE_FOLDER_NAME = ".fileTemplates"
-const val FILE_NAME_DELIMITER = "."
 
-const val FILE_TEMPLATE_FT_EXTENSION = ".ft"
-const val FILE_TEMPLATE_TEMPLATE_EXTENSION = ".template.json"
-const val FILE_TEMPLATE_GROUP_EXTENSION = ".group.json"
+const val FT_EXTENSION = ".ft"
+const val JSON_EXTENSION = ".json"
+
 const val FILE_TEMPLATE_MIXIN_EXTENSION = ".mixin.json"
 
-val FILE_TEMPLATE_EXTENSIONS = listOf(
-  FILE_TEMPLATE_FT_EXTENSION,
-  FILE_TEMPLATE_GROUP_EXTENSION,
-  FILE_TEMPLATE_TEMPLATE_EXTENSION,
-  FILE_TEMPLATE_MIXIN_EXTENSION
+val TEMPLATE_EXTENSIONS = listOf(
+  FT_EXTENSION,
+  JSON_EXTENSION
 )
 
-val FILE_TEMPLATE_EXTENSION_MATCHER = FILE_TEMPLATE_EXTENSIONS.joinToString("|") { it }.toRegex()
+val TEMPLATE_EXTENSION_MATCHER = TEMPLATE_EXTENSIONS.joinToString("|") { it }.toRegex()
