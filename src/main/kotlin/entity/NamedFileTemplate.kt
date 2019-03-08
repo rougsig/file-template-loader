@@ -12,4 +12,12 @@ abstract class NamedFileTemplate : FileTemplate() {
       .find { it.isNotBlank() && it != FILE_NAME_DELIMITER } ?: name)
       .toUpperSnakeCase()
   }
+
+  override fun equals(other: Any?): Boolean {
+    return other == name
+  }
+
+  override fun hashCode(): Int {
+    return name.hashCode()
+  }
 }

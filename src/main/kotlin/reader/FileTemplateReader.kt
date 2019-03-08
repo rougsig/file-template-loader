@@ -6,6 +6,24 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.vfs.VirtualFile
 
+private typealias TemplateFiles = Map<String, VirtualFile>
+private typealias TemplateMixins = Map<String, FileTemplateMixin>
+
+fun TemplateFiles.requireTemplate(fileName: String): VirtualFile {
+  return this[fileName] ?: throw IllegalStateException("template not found: $fileName")
+}
+
+fun TemplateMixins.requireMixin(mixinName: String): FileTemplateMixin {
+  return this[mixinName] ?: throw IllegalStateException("mixin not found: $mixinName")
+}
+
+fun TemplateMixins.findMatches(templateName: String): Set<FileTemplateMixin> {
+  return this
+    .filter { (k, v) -> v.pattern?.containsMatchIn(templateName) ?: false }
+    .values
+    .toSet()
+}
+
 fun Project.readFileTemplate(templateFileName: String): ScopedFileTemplate {
   return guessProjectDir()!!
     .findChild(FILE_TEMPLATE_FOLDER_NAME)!!
@@ -13,91 +31,117 @@ fun Project.readFileTemplate(templateFileName: String): ScopedFileTemplate {
 }
 
 fun VirtualFile.readFileTemplate(templateFileName: String): ScopedFileTemplate {
+  val templateFiles = fileRec.map { it.name to it }.toMap()
+  val templateMixins = templateFiles
+    .filter { (k, _) -> k.endsWith(FILE_TEMPLATE_MIXIN_EXTENSION) }
+    .map { (k, v) -> k to v.readFileTemplateMixin() }
+    .toMap()
+
   return readFileTemplate(
     templateFileName,
-    fileRec.map { it.name to it }.toMap()
+    emptySet(),
+    templateFiles,
+    templateMixins
   )
 }
 
 private fun readFileTemplate(
   templateFileName: String,
-  templateFiles: Map<String, VirtualFile>,
-  parentCustomProps: Set<FileTemplateCustomProp>? = null
+  parentCustomProps: Set<FileTemplateCustomProp>,
+  templateFiles: TemplateFiles,
+  templateMixins: TemplateMixins
 ): ScopedFileTemplate {
-  val templateFile = templateFiles[templateFileName]
-    ?: throw IllegalStateException("template not found: $templateFileName")
-
-  val templateFileNameWithoutExtension = FILE_TEMPLATE_EXTENSION_MATCHER.replace(templateFileName) { "" }
+  val templateFile = templateFiles.requireTemplate(templateFileName)
+  val templateName = FILE_TEMPLATE_EXTENSION_MATCHER.replace(templateFileName) { "" }
 
   return when {
     templateFileName.endsWith(FILE_TEMPLATE_GROUP_EXTENSION) ->
-      readGroupFileTemplate(templateFile, templateFileNameWithoutExtension, templateFiles, parentCustomProps)
+      templateFile.readGroupFileTemplate(templateName, parentCustomProps, templateFiles, templateMixins)
 
     templateFileName.endsWith(FILE_TEMPLATE_TEMPLATE_EXTENSION) ->
-      readTemplateFileTemplate(templateFile, templateFiles)
+      templateFile.readTemplateFileTemplate(templateFiles, templateMixins)
 
     templateFileName.endsWith(FILE_TEMPLATE_FT_EXTENSION) ->
-      readSingleFileTemplate(templateFile, templateFileNameWithoutExtension, parentCustomProps)
+      templateFile.readSingleFileTemplate(templateName, parentCustomProps, templateMixins)
 
     else ->
       throw IllegalStateException("unknown template type: $templateFileName")
   }
 }
 
-private fun readGroupFileTemplate(
-  file: VirtualFile,
+private fun VirtualFile.readGroupFileTemplate(
   templateName: String,
-  templateFiles: Map<String, VirtualFile>,
-  parentCustomProps: Set<FileTemplateCustomProp>?
+  parentCustomProps: Set<FileTemplateCustomProp>,
+  templateFiles: TemplateFiles,
+  templateMixins: TemplateMixins
 ): FileTemplateGroup {
-  val json = gson.fromJson(String(file.inputStream.readBytes()), FileTemplateGroupJson::class.java)
+  val json = gson.fromJson(String(inputStream.readBytes()), FileTemplateGroupJson::class.java)
   return FileTemplateGroup(
     name = json.name ?: templateName,
-    templates = json.templates.map { it.toFileTemplate(templateFiles) },
-    injectors = (json.injectors ?: emptyList()).map { it.toFileTemplateInjector() },
-    initialCustomProps = (parentCustomProps ?: emptySet()).plus(json.variables.toFileTemplateCustomProps())
+    templates = json.templates.toFileTemplates(templateFiles, templateMixins),
+    injectors = json.injectors.toFileTemplateInjectors(),
+    initialCustomProps = parentCustomProps
+      .plus(json.variables.toFileTemplateCustomProps())
+      .plus(json.mixins.readFileTemplateMixins(templateMixins).flatMap(FileTemplateMixin::customProps))
+      .plus(templateMixins.findMatches(name).flatMap(FileTemplateMixin::customProps))
   )
 }
 
-private fun readTemplateFileTemplate(
-  file: VirtualFile,
-  templateFiles: Map<String, VirtualFile>
+private fun VirtualFile.readTemplateFileTemplate(
+  templateFiles: TemplateFiles,
+  templateMixins: TemplateMixins
 ): ScopedFileTemplate {
   return gson
-    .fromJson(String(file.inputStream.readBytes()), FileTemplateJson::class.java)
-    .toFileTemplate(templateFiles)
+    .fromJson(String(inputStream.readBytes()), FileTemplateJson::class.java)
+    .toFileTemplate(this.name, templateFiles, templateMixins)
 }
 
-private fun readSingleFileTemplate(
-  file: VirtualFile,
+private fun VirtualFile.readSingleFileTemplate(
   templateName: String,
-  parentCustomProps: Set<FileTemplateCustomProp>?
+  parentCustomProps: Set<FileTemplateCustomProp>,
+  templateMixins: TemplateMixins
 ): FileTemplateSingle {
   return FileTemplateSingle(
     name = templateName,
-    text = String(file.inputStream.readBytes()),
-    initialCustomProps = parentCustomProps ?: emptySet()
+    text = String(inputStream.readBytes()),
+    initialCustomProps = parentCustomProps
+      .plus(templateMixins.findMatches(name).flatMap(FileTemplateMixin::customProps))
   )
 }
 
+private fun List<FileTemplateJson>.toFileTemplates(
+  templateFiles: TemplateFiles,
+  templateMixins: TemplateMixins
+): List<ScopedFileTemplate> {
+  return map { it.toFileTemplate("", templateFiles, templateMixins) }
+}
+
 private fun FileTemplateJson.toFileTemplate(
-  templateFiles: Map<String, VirtualFile>
+  fileName: String,
+  templateFiles: TemplateFiles,
+  templateMixins: TemplateMixins
 ): ScopedFileTemplate {
   val customProps = variables.toFileTemplateCustomProps()
 
   return if (contentFrom != null) {
     readFileTemplate(
       templateFileName = contentFrom,
+      parentCustomProps = customProps,
       templateFiles = templateFiles,
-      parentCustomProps = customProps
+      templateMixins = templateMixins
     )
   } else {
     FileTemplateSingle(
       name = name ?: "",
       text = content ?: "",
       initialCustomProps = customProps
+        .plus(templateMixins.findMatches(fileName).flatMap(FileTemplateMixin::customProps))
     )
   }
+}
+
+private fun List<FileTemplateInjectorJson>?.toFileTemplateInjectors(): List<FileTemplateInjector> {
+  return this?.map { it.toFileTemplateInjector() } ?: emptyList()
 }
 
 private fun FileTemplateInjectorJson.toFileTemplateInjector(): FileTemplateInjector {
@@ -106,6 +150,21 @@ private fun FileTemplateInjectorJson.toFileTemplateInjector(): FileTemplateInjec
     selector = selector,
     className = className,
     pathName = pathName
+  )
+}
+
+private fun List<String>?.readFileTemplateMixins(
+  templateMixins: TemplateMixins
+): List<FileTemplateMixin> {
+  return this?.map { templateMixins.requireMixin(it) } ?: emptyList()
+}
+
+private fun VirtualFile.readFileTemplateMixin(): FileTemplateMixin {
+  val json = gson.fromJson(String(inputStream.readBytes()), FileTemplateMixinJson::class.java)
+  return FileTemplateMixin(
+    name = FILE_TEMPLATE_EXTENSION_MATCHER.replace(name) { "" },
+    pattern = json.pattern?.toRegex(),
+    customProps = json.variables.toFileTemplateCustomProps()
   )
 }
 
