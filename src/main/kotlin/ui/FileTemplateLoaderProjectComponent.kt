@@ -1,7 +1,7 @@
 package com.github.rougsig.filetemplateloader.ui
 
 import com.github.rougsig.filetemplateloader.extension.writeAction
-import com.github.rougsig.filetemplateloader.reader.FILE_TEMPLATE_EXTENSION
+import com.github.rougsig.filetemplateloader.reader.FILE_TEMPLATE_FT_EXTENSION
 import com.google.gson.Gson
 import com.intellij.openapi.actionSystem.ActionManager
 import com.intellij.openapi.actionSystem.DefaultActionGroup
@@ -31,7 +31,7 @@ class FileTemplateLoaderProjectComponent : ProjectComponent {
     println("Init: FileTemplateLoaderProjectComponent")
     projects.forEach {
       it.writeAction {
-        FileTypeManager.getInstance().associatePattern(PlainTextFileType.INSTANCE, "*.$FILE_TEMPLATE_EXTENSION")
+        FileTypeManager.getInstance().associatePattern(PlainTextFileType.INSTANCE, "*.$FILE_TEMPLATE_FT_EXTENSION")
       }
     }
   }

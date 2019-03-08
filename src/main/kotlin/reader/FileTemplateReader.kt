@@ -7,7 +7,9 @@ import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.vfs.VirtualFile
 
 fun Project.readFileTemplate(templateFileName: String): ScopedFileTemplate {
-  return guessProjectDir()!!.findChild(FILE_TEMPLATE_FOLDER_NAME)!!.readFileTemplate(templateFileName)
+  return guessProjectDir()!!
+    .findChild(FILE_TEMPLATE_FOLDER_NAME)!!
+    .readFileTemplate(templateFileName)
 }
 
 fun VirtualFile.readFileTemplate(templateFileName: String): ScopedFileTemplate {
@@ -34,8 +36,11 @@ private fun readFileTemplate(
     templateFileName.endsWith(FILE_TEMPLATE_TEMPLATE_EXTENSION) ->
       readTemplateFileTemplate(templateFile, templateFiles)
 
-    else ->
+    templateFileName.endsWith(FILE_TEMPLATE_FT_EXTENSION) ->
       readSingleFileTemplate(templateFile, templateFileNameWithoutExtension, parentCustomProps)
+
+    else ->
+      throw IllegalStateException("unknown template type: $templateFileName")
   }
 }
 
