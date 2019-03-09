@@ -1,12 +1,12 @@
+PROJECT_NAME=filetemplateloader
 SETTING_FILE_PATH=kotlin/settings.gradle
 PACKAGE_BASE=com.github.rougsig
-PROJECT_NAME=filetemplateloader
 MODEL_NAME=Epic
 DOMAIN_MODULE_GROUP_NAME=DomainModule
 DOMAIN_MODULE_PROJECT_NAME_LOWER_KEBAB_CASE=filetemplateloader
 DOMAIN_MODULE_MODEL_NAME_LOWER_CASE=epic
 DOMAIN_MODULE_MODULE_NAME=filetemplateloader-domain-epic
-DOMAIN_MODULE_FILE_DIRECTORY=./filetemplateloader-domain-epic
+DOMAIN_MODULE_FILE_DIRECTORY=/filetemplateloader-domain-epic
 DOMAIN_MODULE_MODULE_NAME_DOT_CASE=filetemplateloader.domain.epic
 DOMAIN_MODULE_PACKAGE_NAME=com.github.rougsig.filetemplateloader.domain.epic
 DOMAIN_MODULE_BUILD_TEMPLATE_NAME=DomainModuleBuild

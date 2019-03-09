@@ -19,7 +19,7 @@ fun TemplateMixins.requireMixin(mixinName: String): FileTemplateMixin {
 
 fun TemplateMixins.findMatches(templateName: String): Set<FileTemplateMixin> {
   return this
-    .filter { (k, v) -> v.pattern?.containsMatchIn(templateName) ?: false }
+    .filter { (_, v) -> v.pattern?.containsMatchIn(templateName) ?: false }
     .values
     .toSet()
 }

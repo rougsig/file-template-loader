@@ -872,36 +872,33 @@
   "injectors": [
     {
       "selector": "WHEN WHEN_ENTRY",
-      "className": "${PACKAGE_BASE}.${PROJECT_NAME}.routing.ScreenKeyFactory",
+      "className": "${KEY_FACTORY_CLASS}",
       "pathName": null,
       "requiredProps": [
         "APP_ROUTE_NAME",
         "SCREEN_NAME_UPPER_CAMEL_CASE",
         "KEY_SIMPLE_NAME",
-        "PROJECT_NAME",
-        "PACKAGE_BASE"
+        "KEY_FACTORY_CLASS"
       ]
     },
     {
       "selector": "AppRoute CLASS_BODY LBRACE",
-      "className": "${PACKAGE_BASE}.${PROJECT_NAME}.ui.routing.${APP_ROUTE_NAME}",
+      "className": "${APP_ROUTE_CLASS}",
       "pathName": null,
       "requiredProps": [
         "APP_ROUTE_NAME",
         "ROUTE_PATH",
         "SCREEN_NAME_UPPER_CAMEL_CASE",
-        "PROJECT_NAME",
-        "PACKAGE_BASE"
+        "APP_ROUTE_CLASS"
       ]
     },
     {
       "selector": "IMPORT_LIST IMPORT_DIRECTIVE",
-      "className": "${PACKAGE_BASE}.${PROJECT_NAME}.routing.ScreenKeyFactory",
+      "className": "${KEY_FACTORY_CLASS}",
       "pathName": null,
       "requiredProps": [
         "KEY_CLASS_NAME",
-        "PROJECT_NAME",
-        "PACKAGE_BASE"
+        "KEY_FACTORY_CLASS"
       ]
     }
   ],
@@ -926,17 +923,19 @@
     "APP_ROUTE_NAME",
     "SCREEN_NAME_UPPER_CAMEL_CASE",
     "KEY_SIMPLE_NAME",
-    "PROJECT_NAME",
+    "KEY_FACTORY_CLASS",
     "ROUTE_PATH",
+    "APP_ROUTE_CLASS",
     "KEY_CLASS_NAME"
   ],
   "requiredProps": [
-    "PACKAGE_BASE",
+    "KEY_FACTORY_CLASS",
     "ROUTE_PATH",
-    "PACKAGE_NAME",
     "APP_ROUTE_NAME",
-    "SCREEN_NAME",
-    "PROJECT_NAME"
+    "APP_ROUTE_CLASS",
+    "PACKAGE_BASE",
+    "PACKAGE_NAME",
+    "SCREEN_NAME"
   ],
   "scope": {
     "name": "MVI_SCREEN_GROUP",

@@ -1,6 +1,7 @@
 APP_ROUTE_NAME=AppRoute
+KEY_FACTORY_CLASS=com.github.rougsig.filetemplateloader.routing.ScreenKeyFactory
 PACKAGE_BASE=com.github.rougsig
-PROJECT_NAME=filetemplateloader
+APP_ROUTE_CLASS=com.github.rougsig.filetemplateloader.ui.routing.AppRoute
 PACKAGE_NAME=com.github.rougsig.filetemplateloader
 SCREEN_NAME=Epic
 ROUTE_PATH=/epic

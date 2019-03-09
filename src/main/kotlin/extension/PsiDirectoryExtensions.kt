@@ -1,21 +1,31 @@
 package com.github.rougsig.filetemplateloader.extension
 
+import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_BASE
+import com.github.rougsig.filetemplateloader.generator.Props
+import com.intellij.openapi.module.ModuleUtil
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiDocumentManager
 import com.intellij.psi.PsiFile
+import org.jetbrains.kotlin.idea.core.getPackage
 import org.jetbrains.kotlin.idea.util.projectStructure.module
 
 fun PsiDirectory.createSubDirectoriesByRelativePath(path: String): PsiDirectory {
-  if (path.isBlank() || path == "/") return this
-  val startDirectory = if (path.startsWith("./")) {
-    val projectDir = project.guessProjectDir()!!
-    val moduleDir = projectDir.findChild(module!!.name)
-    moduleDir
-      ?.let { manager.findDirectory(it)!! }
-      ?: manager.findDirectory(projectDir)!!
-  } else {
-    this
+  if (path.isBlank()) return this
+  val projectDir = project.guessProjectDir()!!
+  val startDirectory = when {
+    path.startsWith("./") -> {
+      // Find module root
+      val moduleDir = projectDir.findChild(module!!.name)
+      moduleDir
+        ?.let { manager.findDirectory(it)!! }
+        ?: manager.findDirectory(projectDir)!!
+    }
+    path.startsWith("/") -> {
+      // Find project root
+      manager.findDirectory(projectDir)!!
+    }
+    else -> this
   }
   val subDirs = path.replace("./", "").split("/").filter(String::isNotBlank)
   return subDirs.fold(startDirectory) { acc, dirName ->
@@ -31,4 +41,32 @@ fun PsiDirectory.createFileToDirectory(directory: String, fileName: String, cont
   PsiDocumentManager.getInstance(project).commitDocument(doc)
 
   return PsiDocumentManager.getInstance(project).getPsiFile(doc)!!
+}
+
+fun generatePackageName(props: Props, dir: PsiDirectory): String {
+  val packageName = StringBuilder()
+
+  val basePackageName = props.getOrDefault(PROP_PACKAGE_BASE, "")
+  if (!basePackageName.isBlank()) {
+    packageName.append(basePackageName)
+  }
+
+  val moduleName = dir.module
+    ?.let { ModuleUtil.getModuleDirPath(it) }
+    ?.replace("\\", "/")
+    ?.split("/")
+    ?.last()
+    ?.toDotCase()
+  if (!moduleName.isNullOrBlank()) {
+    packageName.append(".")
+    packageName.append(moduleName)
+  }
+
+  val subPackage = dir.getPackage()?.qualifiedName
+  if (!subPackage.isNullOrBlank()) {
+    packageName.append(".")
+    packageName.append(subPackage)
+  }
+
+  return packageName.toString()
 }

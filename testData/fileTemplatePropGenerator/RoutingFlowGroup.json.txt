@@ -1,6 +1,6 @@
+PROJECT_NAME=filetemplateloader
 APP_ROUTER_NAME=AppRouter
 PACKAGE_BASE=com.github.rougsig
-PROJECT_NAME=filetemplateloader
 PACKAGE_NAME=com.github.rougsig.filetemplateloader
 FLOW_NAME=Epic
 REPOSITORY_NAME=Epic
