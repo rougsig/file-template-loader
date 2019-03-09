@@ -1,5 +1,5 @@
 {
-  "simpleName": "ROUTING_FLOW",
+  "simpleName": "ROUTING_FLOW_GROUP",
   "templates": [
     {
       "simpleName": "FLOW",
@@ -611,7 +611,7 @@
     "PROJECT_NAME"
   ],
   "scope": {
-    "name": "ROUTING_FLOW",
+    "name": "ROUTING_FLOW_GROUP",
     "childScopes": [
       {
         "name": "FLOW_MODULE",
@@ -987,7 +987,7 @@
     ],
     "scopedPropGenerators": [
       {
-        "propName": "ROUTING_FLOW_GROUP_NAME",
+        "propName": "ROUTING_FLOW_GROUP_GROUP_NAME",
         "requiredProps": [],
         "propGenerator": {
           "selfRequiredProps": [],
@@ -998,7 +998,7 @@
         }
       },
       {
-        "propName": "ROUTING_FLOW_FILE_DIRECTORY",
+        "propName": "ROUTING_FLOW_GROUP_FILE_DIRECTORY",
         "requiredProps": [],
         "propGenerator": {
           "selfRequiredProps": [],

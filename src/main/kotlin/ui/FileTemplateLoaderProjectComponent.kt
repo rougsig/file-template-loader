@@ -2,7 +2,6 @@ package com.github.rougsig.filetemplateloader.ui
 
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.reader.FT_EXTENSION
-import com.google.gson.Gson
 import com.intellij.openapi.actionSystem.ActionManager
 import com.intellij.openapi.actionSystem.DefaultActionGroup
 import com.intellij.openapi.components.ProjectComponent
@@ -14,7 +13,6 @@ import com.intellij.openapi.project.ProjectManager
 class FileTemplateLoaderProjectComponent : ProjectComponent {
 
   companion object {
-    private val gson = Gson()
     private val projects: List<Project>
       get() = ProjectManager.getInstance().openProjects.toList()
 

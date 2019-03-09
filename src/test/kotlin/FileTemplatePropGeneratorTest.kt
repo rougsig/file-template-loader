@@ -49,5 +49,5 @@ class FileTemplatePropGeneratorTest : LightPlatformCodeInsightFixtureTestCase() 
   fun testRepositoryGroupJson() = doTest("RepositoryGroup.json")
   fun testRepositoryModuleGroupJson() = doTest("RepositoryModule.json")
 
-  fun testRoutingFlowGroupJson() = doTest("RoutingFlow.group.json")
+  fun testRoutingFlowGroupJson() = doTest("RoutingFlowGroup.json")
 }

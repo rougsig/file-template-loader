@@ -2,6 +2,10 @@ package com.github.rougsig.filetemplateloader.entity
 
 import com.google.gson.JsonObject
 
+data class NamedFileTemplateJson(
+  val name: String?
+)
+
 data class FileTemplateGroupJson(
   val name: String?,
   val templates: List<FileTemplateJson>,
