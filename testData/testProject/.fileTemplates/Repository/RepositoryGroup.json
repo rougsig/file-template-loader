@@ -16,8 +16,7 @@
       "contentFrom": "RepositoryBindings.kt.ft",
       "variables": {
         "FILE_DIRECTORY": "di",
-        "SIMPLE_NAME": "${REPOSITORY_NAME}RepositoryBindings",
-        "PACKAGE_NAME": "${PACKAGE_NAME}.${FILE_DIRECTORY_DOT_CASE}"
+        "SIMPLE_NAME": "${REPOSITORY_NAME}RepositoryBindings"
       }
     }
   ]

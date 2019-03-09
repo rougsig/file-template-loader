@@ -51,6 +51,13 @@
           "name": "SIMPLE_NAME"
         },
         {
+          "requiredProps": [
+            "PACKAGE_NAME",
+            "FILE_DIRECTORY_APPEND_DOT_CASE"
+          ],
+          "name": "PACKAGE_NAME"
+        },
+        {
           "requiredProps": [],
           "name": "FILE_DIRECTORY"
         }
@@ -63,7 +70,8 @@
         "FLOW_MODULE_CLASS_NAME",
         "PACKAGE_NAME",
         "REPOSITORY_NAME",
-        "TEMPLATE_NAME"
+        "TEMPLATE_NAME",
+        "FILE_DIRECTORY_APPEND_DOT_CASE"
       ],
       "requiredProps": [
         "PACKAGE_BASE",
@@ -133,7 +141,7 @@
             "propName": "FLOW_CLASS_NAME",
             "requiredProps": [
               "FLOW_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "FLOW_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -143,6 +151,25 @@
                   "PACKAGE_NAME"
                 ],
                 "name": "CLASS_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "FLOW_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
               }
             }
           },
@@ -169,6 +196,20 @@
               "selfRequiredProps": [],
               "propName": "FLOW_NAME_LOWER_CASE",
               "propBaseName": "FLOW_NAME"
+            }
+          },
+          {
+            "propName": "FLOW_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "FLOW_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -224,6 +265,13 @@
           "name": "SIMPLE_NAME"
         },
         {
+          "requiredProps": [
+            "PACKAGE_NAME",
+            "FILE_DIRECTORY_APPEND_DOT_CASE"
+          ],
+          "name": "PACKAGE_NAME"
+        },
+        {
           "requiredProps": [],
           "name": "FILE_DIRECTORY"
         }
@@ -236,7 +284,8 @@
         "PACKAGE_BASE",
         "PACKAGE_NAME",
         "REPOSITORY_NAME",
-        "TEMPLATE_NAME"
+        "TEMPLATE_NAME",
+        "FILE_DIRECTORY_APPEND_DOT_CASE"
       ],
       "requiredProps": [
         "PACKAGE_BASE",
@@ -306,7 +355,7 @@
             "propName": "FLOW_COORDINATOR_CLASS_NAME",
             "requiredProps": [
               "FLOW_COORDINATOR_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "FLOW_COORDINATOR_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -320,6 +369,25 @@
             }
           },
           {
+            "propName": "FLOW_COORDINATOR_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "FLOW_COORDINATOR_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
             "propName": "FLOW_COORDINATOR_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
@@ -328,6 +396,20 @@
                 "requiredProps": [],
                 "name": "FILE_DIRECTORY"
               }
+            }
+          },
+          {
+            "propName": "FLOW_COORDINATOR_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "FLOW_COORDINATOR_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -392,6 +474,13 @@
             "TEMPLATE_NAME"
           ],
           "name": "SIMPLE_NAME"
+        },
+        {
+          "requiredProps": [
+            "PACKAGE_NAME",
+            "FILE_DIRECTORY_APPEND_DOT_CASE"
+          ],
+          "name": "PACKAGE_NAME"
         }
       ],
       "extractedProps": [
@@ -403,7 +492,8 @@
         "FLOW_COORDINATOR_CLASS_NAME",
         "FILE_DIRECTORY_DOT_CASE",
         "REPOSITORY_NAME",
-        "TEMPLATE_NAME"
+        "TEMPLATE_NAME",
+        "FILE_DIRECTORY_APPEND_DOT_CASE"
       ],
       "requiredProps": [
         "FLOW_CLASS_NAME",
@@ -527,6 +617,20 @@
               ],
               "selfRequiredProps": [],
               "propName": "FILE_DIRECTORY_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
+            }
+          },
+          {
+            "propName": "FLOW_MODULE_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "FLOW_MODULE_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
               "propBaseName": "FILE_DIRECTORY"
             }
           }
@@ -686,6 +790,20 @@
               "propName": "FILE_DIRECTORY_DOT_CASE",
               "propBaseName": "FILE_DIRECTORY"
             }
+          },
+          {
+            "propName": "FLOW_MODULE_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "FLOW_MODULE_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
+            }
           }
         ]
       },
@@ -749,7 +867,7 @@
             "propName": "FLOW_CLASS_NAME",
             "requiredProps": [
               "FLOW_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "FLOW_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -759,6 +877,25 @@
                   "PACKAGE_NAME"
                 ],
                 "name": "CLASS_NAME"
+              }
+            }
+          },
+          {
+            "propName": "FLOW_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "FLOW_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
               }
             }
           },
@@ -785,6 +922,20 @@
               "selfRequiredProps": [],
               "propName": "FLOW_NAME_LOWER_CASE",
               "propBaseName": "FLOW_NAME"
+            }
+          },
+          {
+            "propName": "FLOW_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "FLOW_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -849,7 +1000,7 @@
             "propName": "FLOW_COORDINATOR_CLASS_NAME",
             "requiredProps": [
               "FLOW_COORDINATOR_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "FLOW_COORDINATOR_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -863,6 +1014,25 @@
             }
           },
           {
+            "propName": "FLOW_COORDINATOR_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "FLOW_COORDINATOR_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
             "propName": "FLOW_COORDINATOR_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
@@ -871,6 +1041,20 @@
                 "requiredProps": [],
                 "name": "FILE_DIRECTORY"
               }
+            }
+          },
+          {
+            "propName": "FLOW_COORDINATOR_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "FLOW_COORDINATOR_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]

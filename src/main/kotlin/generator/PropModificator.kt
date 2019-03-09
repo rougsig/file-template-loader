@@ -17,6 +17,7 @@ val PROP_MODIFICATORS: PropModificators = HashMap<String, (String) -> String>().
   put("SOLID_CASE", String::toSolidCase)
   put("UPPER_CASE", String::toUpperCase)
   put("LOWER_CASE", String::toLowerCase)
+  put("APPEND_DOT_CASE", String::appendDotCase)
 }
 
 val PROP_MODIFICATOR_MATCHER = PROP_MODIFICATORS.keys.joinToString("|") { "_$it" }.toRegex()

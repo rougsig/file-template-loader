@@ -73,3 +73,7 @@ fun String.toSolidCase(): String {
     .filter(String::isNotBlank)
     .joinToString("") { it }
 }
+
+fun String.appendDotCase(): String {
+  return ".${toDotCase()}".takeIf { isNotBlank() } ?: ""
+}

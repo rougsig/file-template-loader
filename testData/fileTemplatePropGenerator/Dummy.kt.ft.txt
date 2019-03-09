@@ -1,7 +1,8 @@
-PACKAGE_NAME=com.github.rougsig.filetemplateloader
 DUMMY_TEMPLATE_NAME=Dummy
 DUMMY_TEMPLATE_EXTENSION=kt
 DUMMY_FILE_DIRECTORY=
 DUMMY_SIMPLE_NAME=Dummy
+DUMMY_FILE_DIRECTORY_APPEND_DOT_CASE=
 DUMMY_FILE_NAME=Dummy.kt
+DUMMY_PACKAGE_NAME=com.github.rougsig.filetemplateloader
 DUMMY_CLASS_NAME=com.github.rougsig.filetemplateloader.Dummy

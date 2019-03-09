@@ -38,6 +38,13 @@
           "name": "SIMPLE_NAME"
         },
         {
+          "requiredProps": [
+            "PACKAGE_NAME",
+            "FILE_DIRECTORY_APPEND_DOT_CASE"
+          ],
+          "name": "PACKAGE_NAME"
+        },
+        {
           "requiredProps": [],
           "name": "FILE_DIRECTORY"
         }
@@ -46,7 +53,8 @@
         "SIMPLE_NAME",
         "PACKAGE_NAME",
         "REPOSITORY_NAME",
-        "TEMPLATE_NAME"
+        "TEMPLATE_NAME",
+        "FILE_DIRECTORY_APPEND_DOT_CASE"
       ],
       "requiredProps": [
         "REPOSITORY_NAME",
@@ -112,7 +120,7 @@
             "propName": "REPOSITORY_CLASS_NAME",
             "requiredProps": [
               "REPOSITORY_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "REPOSITORY_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -126,6 +134,25 @@
             }
           },
           {
+            "propName": "REPOSITORY_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
             "propName": "REPOSITORY_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
@@ -134,6 +161,20 @@
                 "requiredProps": [],
                 "name": "FILE_DIRECTORY"
               }
+            }
+          },
+          {
+            "propName": "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "REPOSITORY_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -176,6 +217,13 @@
           "name": "SIMPLE_NAME"
         },
         {
+          "requiredProps": [
+            "PACKAGE_NAME",
+            "FILE_DIRECTORY_APPEND_DOT_CASE"
+          ],
+          "name": "PACKAGE_NAME"
+        },
+        {
           "requiredProps": [],
           "name": "FILE_DIRECTORY"
         }
@@ -185,7 +233,8 @@
         "SIMPLE_NAME",
         "PACKAGE_NAME",
         "REPOSITORY_NAME",
-        "TEMPLATE_NAME"
+        "TEMPLATE_NAME",
+        "FILE_DIRECTORY_APPEND_DOT_CASE"
       ],
       "requiredProps": [
         "REPOSITORY_NAME",
@@ -252,7 +301,7 @@
             "propName": "REPOSITORY_IMPL_CLASS_NAME",
             "requiredProps": [
               "REPOSITORY_IMPL_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "REPOSITORY_IMPL_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -266,6 +315,25 @@
             }
           },
           {
+            "propName": "REPOSITORY_IMPL_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
             "propName": "REPOSITORY_IMPL_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
@@ -274,6 +342,20 @@
                 "requiredProps": [],
                 "name": "FILE_DIRECTORY"
               }
+            }
+          },
+          {
+            "propName": "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "REPOSITORY_IMPL_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -302,13 +384,6 @@
         },
         {
           "requiredProps": [
-            "PACKAGE_NAME",
-            "FILE_DIRECTORY_DOT_CASE"
-          ],
-          "name": "PACKAGE_NAME"
-        },
-        {
-          "requiredProps": [
             "SIMPLE_NAME"
           ],
           "name": "FILE_NAME"
@@ -325,6 +400,13 @@
             "TEMPLATE_NAME"
           ],
           "name": "SIMPLE_NAME"
+        },
+        {
+          "requiredProps": [
+            "PACKAGE_NAME",
+            "FILE_DIRECTORY_APPEND_DOT_CASE"
+          ],
+          "name": "PACKAGE_NAME"
         }
       ],
       "extractedProps": [
@@ -336,8 +418,8 @@
         "PACKAGE_NAME",
         "REPOSITORY_IMPL_SIMPLE_NAME",
         "REPOSITORY_NAME",
-        "FILE_DIRECTORY_DOT_CASE",
-        "TEMPLATE_NAME"
+        "TEMPLATE_NAME",
+        "FILE_DIRECTORY_APPEND_DOT_CASE"
       ],
       "requiredProps": [
         "REPOSITORY_IMPL_CLASS_NAME",
@@ -401,25 +483,6 @@
             }
           },
           {
-            "propName": "REPOSITORY_BINDINGS_PACKAGE_NAME",
-            "requiredProps": [
-              "PACKAGE_NAME",
-              "REPOSITORY_BINDINGS_FILE_DIRECTORY_DOT_CASE"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [
-                "PACKAGE_NAME"
-              ],
-              "customProp": {
-                "requiredProps": [
-                  "PACKAGE_NAME",
-                  "FILE_DIRECTORY_DOT_CASE"
-                ],
-                "name": "PACKAGE_NAME"
-              }
-            }
-          },
-          {
             "propName": "REPOSITORY_BINDINGS_FILE_NAME",
             "requiredProps": [
               "REPOSITORY_BINDINGS_SIMPLE_NAME"
@@ -452,7 +515,26 @@
             }
           },
           {
-            "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY_DOT_CASE",
+            "propName": "REPOSITORY_BINDINGS_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE",
             "requiredProps": [
               "REPOSITORY_BINDINGS_FILE_DIRECTORY"
             ],
@@ -461,7 +543,7 @@
                 "FILE_DIRECTORY"
               ],
               "selfRequiredProps": [],
-              "propName": "FILE_DIRECTORY_DOT_CASE",
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
               "propBaseName": "FILE_DIRECTORY"
             }
           }
@@ -557,7 +639,7 @@
             "propName": "REPOSITORY_IMPL_CLASS_NAME",
             "requiredProps": [
               "REPOSITORY_IMPL_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "REPOSITORY_IMPL_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -571,6 +653,25 @@
             }
           },
           {
+            "propName": "REPOSITORY_IMPL_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
             "propName": "REPOSITORY_IMPL_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
@@ -579,6 +680,20 @@
                 "requiredProps": [],
                 "name": "FILE_DIRECTORY"
               }
+            }
+          },
+          {
+            "propName": "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "REPOSITORY_IMPL_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -643,7 +758,7 @@
             "propName": "REPOSITORY_CLASS_NAME",
             "requiredProps": [
               "REPOSITORY_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "REPOSITORY_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -657,6 +772,25 @@
             }
           },
           {
+            "propName": "REPOSITORY_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
             "propName": "REPOSITORY_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
@@ -665,6 +799,20 @@
                 "requiredProps": [],
                 "name": "FILE_DIRECTORY"
               }
+            }
+          },
+          {
+            "propName": "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "REPOSITORY_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -722,25 +870,6 @@
             }
           },
           {
-            "propName": "REPOSITORY_BINDINGS_PACKAGE_NAME",
-            "requiredProps": [
-              "PACKAGE_NAME",
-              "REPOSITORY_BINDINGS_FILE_DIRECTORY_DOT_CASE"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [
-                "PACKAGE_NAME"
-              ],
-              "customProp": {
-                "requiredProps": [
-                  "PACKAGE_NAME",
-                  "FILE_DIRECTORY_DOT_CASE"
-                ],
-                "name": "PACKAGE_NAME"
-              }
-            }
-          },
-          {
             "propName": "REPOSITORY_BINDINGS_FILE_NAME",
             "requiredProps": [
               "REPOSITORY_BINDINGS_SIMPLE_NAME"
@@ -773,7 +902,26 @@
             }
           },
           {
-            "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY_DOT_CASE",
+            "propName": "REPOSITORY_BINDINGS_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE",
             "requiredProps": [
               "REPOSITORY_BINDINGS_FILE_DIRECTORY"
             ],
@@ -782,7 +930,7 @@
                 "FILE_DIRECTORY"
               ],
               "selfRequiredProps": [],
-              "propName": "FILE_DIRECTORY_DOT_CASE",
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
               "propBaseName": "FILE_DIRECTORY"
             }
           }

@@ -51,6 +51,13 @@
           "name": "SIMPLE_NAME"
         },
         {
+          "requiredProps": [
+            "PACKAGE_NAME",
+            "FILE_DIRECTORY_APPEND_DOT_CASE"
+          ],
+          "name": "PACKAGE_NAME"
+        },
+        {
           "requiredProps": [],
           "name": "FILE_DIRECTORY"
         }
@@ -63,7 +70,8 @@
         "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
         "SCREEN_CLASS_NAME",
         "SCREEN_NAME",
-        "TEMPLATE_NAME"
+        "TEMPLATE_NAME",
+        "FILE_DIRECTORY_APPEND_DOT_CASE"
       ],
       "requiredProps": [
         "PRESENTER_SIMPLE_NAME",
@@ -133,7 +141,7 @@
             "propName": "CONTROLLER_CLASS_NAME",
             "requiredProps": [
               "CONTROLLER_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "CONTROLLER_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -143,6 +151,25 @@
                   "PACKAGE_NAME"
                 ],
                 "name": "CLASS_NAME"
+              }
+            }
+          },
+          {
+            "propName": "CONTROLLER_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
               }
             }
           },
@@ -169,6 +196,20 @@
               "selfRequiredProps": [],
               "propName": "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
               "propBaseName": "ANDROID_LAYOUT_SIMPLE_NAME"
+            }
+          },
+          {
+            "propName": "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "CONTROLLER_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -224,6 +265,13 @@
           "name": "SIMPLE_NAME"
         },
         {
+          "requiredProps": [
+            "PACKAGE_NAME",
+            "FILE_DIRECTORY_APPEND_DOT_CASE"
+          ],
+          "name": "PACKAGE_NAME"
+        },
+        {
           "requiredProps": [],
           "name": "FILE_DIRECTORY"
         }
@@ -234,7 +282,8 @@
         "PACKAGE_BASE",
         "PACKAGE_NAME",
         "SCREEN_NAME",
-        "TEMPLATE_NAME"
+        "TEMPLATE_NAME",
+        "FILE_DIRECTORY_APPEND_DOT_CASE"
       ],
       "requiredProps": [
         "PACKAGE_BASE",
@@ -302,7 +351,7 @@
             "propName": "KEY_CLASS_NAME",
             "requiredProps": [
               "KEY_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "KEY_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -316,6 +365,25 @@
             }
           },
           {
+            "propName": "KEY_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "KEY_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
             "propName": "KEY_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
@@ -324,6 +392,20 @@
                 "requiredProps": [],
                 "name": "FILE_DIRECTORY"
               }
+            }
+          },
+          {
+            "propName": "KEY_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "KEY_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -379,6 +461,13 @@
           "name": "SIMPLE_NAME"
         },
         {
+          "requiredProps": [
+            "PACKAGE_NAME",
+            "FILE_DIRECTORY_APPEND_DOT_CASE"
+          ],
+          "name": "PACKAGE_NAME"
+        },
+        {
           "requiredProps": [],
           "name": "FILE_DIRECTORY"
         }
@@ -389,7 +478,8 @@
         "PACKAGE_NAME",
         "SCREEN_CLASS_NAME",
         "SCREEN_NAME",
-        "TEMPLATE_NAME"
+        "TEMPLATE_NAME",
+        "FILE_DIRECTORY_APPEND_DOT_CASE"
       ],
       "requiredProps": [
         "PACKAGE_BASE",
@@ -457,7 +547,7 @@
             "propName": "PRESENTER_CLASS_NAME",
             "requiredProps": [
               "PRESENTER_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "PRESENTER_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -471,6 +561,25 @@
             }
           },
           {
+            "propName": "PRESENTER_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
             "propName": "PRESENTER_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
@@ -479,6 +588,20 @@
                 "requiredProps": [],
                 "name": "FILE_DIRECTORY"
               }
+            }
+          },
+          {
+            "propName": "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "PRESENTER_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -534,6 +657,13 @@
           "name": "SIMPLE_NAME"
         },
         {
+          "requiredProps": [
+            "PACKAGE_NAME",
+            "FILE_DIRECTORY_APPEND_DOT_CASE"
+          ],
+          "name": "PACKAGE_NAME"
+        },
+        {
           "requiredProps": [],
           "name": "FILE_DIRECTORY"
         }
@@ -543,7 +673,8 @@
         "PACKAGE_BASE",
         "PACKAGE_NAME",
         "SCREEN_NAME",
-        "TEMPLATE_NAME"
+        "TEMPLATE_NAME",
+        "FILE_DIRECTORY_APPEND_DOT_CASE"
       ],
       "requiredProps": [
         "PACKAGE_BASE",
@@ -610,7 +741,7 @@
             "propName": "SCREEN_CLASS_NAME",
             "requiredProps": [
               "SCREEN_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "SCREEN_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -624,6 +755,25 @@
             }
           },
           {
+            "propName": "SCREEN_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
             "propName": "SCREEN_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
@@ -632,6 +782,20 @@
                 "requiredProps": [],
                 "name": "FILE_DIRECTORY"
               }
+            }
+          },
+          {
+            "propName": "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "SCREEN_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -972,7 +1136,7 @@
             "propName": "CONTROLLER_CLASS_NAME",
             "requiredProps": [
               "CONTROLLER_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "CONTROLLER_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -982,6 +1146,25 @@
                   "PACKAGE_NAME"
                 ],
                 "name": "CLASS_NAME"
+              }
+            }
+          },
+          {
+            "propName": "CONTROLLER_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
               }
             }
           },
@@ -1008,6 +1191,20 @@
               "selfRequiredProps": [],
               "propName": "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
               "propBaseName": "ANDROID_LAYOUT_SIMPLE_NAME"
+            }
+          },
+          {
+            "propName": "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "CONTROLLER_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -1072,7 +1269,7 @@
             "propName": "SCREEN_CLASS_NAME",
             "requiredProps": [
               "SCREEN_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "SCREEN_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -1086,6 +1283,25 @@
             }
           },
           {
+            "propName": "SCREEN_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
             "propName": "SCREEN_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
@@ -1094,6 +1310,20 @@
                 "requiredProps": [],
                 "name": "FILE_DIRECTORY"
               }
+            }
+          },
+          {
+            "propName": "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "SCREEN_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -1158,7 +1388,7 @@
             "propName": "PRESENTER_CLASS_NAME",
             "requiredProps": [
               "PRESENTER_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "PRESENTER_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -1172,6 +1402,25 @@
             }
           },
           {
+            "propName": "PRESENTER_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
             "propName": "PRESENTER_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
@@ -1180,6 +1429,20 @@
                 "requiredProps": [],
                 "name": "FILE_DIRECTORY"
               }
+            }
+          },
+          {
+            "propName": "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "PRESENTER_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]
@@ -1244,7 +1507,7 @@
             "propName": "KEY_CLASS_NAME",
             "requiredProps": [
               "KEY_SIMPLE_NAME",
-              "PACKAGE_NAME"
+              "KEY_PACKAGE_NAME"
             ],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -1258,6 +1521,25 @@
             }
           },
           {
+            "propName": "KEY_PACKAGE_NAME",
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "KEY_FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ],
+              "customProp": {
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
             "propName": "KEY_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
@@ -1266,6 +1548,20 @@
                 "requiredProps": [],
                 "name": "FILE_DIRECTORY"
               }
+            }
+          },
+          {
+            "propName": "KEY_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "KEY_FILE_DIRECTORY"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "FILE_DIRECTORY"
+              ],
+              "selfRequiredProps": [],
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY"
             }
           }
         ]

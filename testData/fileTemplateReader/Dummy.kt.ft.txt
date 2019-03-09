@@ -29,6 +29,13 @@
       "name": "SIMPLE_NAME"
     },
     {
+      "requiredProps": [
+        "PACKAGE_NAME",
+        "FILE_DIRECTORY_APPEND_DOT_CASE"
+      ],
+      "name": "PACKAGE_NAME"
+    },
+    {
       "requiredProps": [],
       "name": "FILE_DIRECTORY"
     }
@@ -36,7 +43,8 @@
   "extractedProps": [
     "PACKAGE_NAME",
     "SIMPLE_NAME",
-    "TEMPLATE_NAME"
+    "TEMPLATE_NAME",
+    "FILE_DIRECTORY_APPEND_DOT_CASE"
   ],
   "requiredProps": [
     "PACKAGE_NAME"
@@ -86,7 +94,7 @@
         "propName": "DUMMY_CLASS_NAME",
         "requiredProps": [
           "DUMMY_SIMPLE_NAME",
-          "PACKAGE_NAME"
+          "DUMMY_PACKAGE_NAME"
         ],
         "propGenerator": {
           "selfRequiredProps": [],
@@ -115,6 +123,25 @@
         }
       },
       {
+        "propName": "DUMMY_PACKAGE_NAME",
+        "requiredProps": [
+          "PACKAGE_NAME",
+          "DUMMY_FILE_DIRECTORY_APPEND_DOT_CASE"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [
+            "PACKAGE_NAME"
+          ],
+          "customProp": {
+            "requiredProps": [
+              "PACKAGE_NAME",
+              "FILE_DIRECTORY_APPEND_DOT_CASE"
+            ],
+            "name": "PACKAGE_NAME"
+          }
+        }
+      },
+      {
         "propName": "DUMMY_FILE_DIRECTORY",
         "requiredProps": [],
         "propGenerator": {
@@ -123,6 +150,20 @@
             "requiredProps": [],
             "name": "FILE_DIRECTORY"
           }
+        }
+      },
+      {
+        "propName": "DUMMY_FILE_DIRECTORY_APPEND_DOT_CASE",
+        "requiredProps": [
+          "DUMMY_FILE_DIRECTORY"
+        ],
+        "propGenerator": {
+          "requiredProps": [
+            "FILE_DIRECTORY"
+          ],
+          "selfRequiredProps": [],
+          "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+          "propBaseName": "FILE_DIRECTORY"
         }
       }
     ]
