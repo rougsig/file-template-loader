@@ -1,11 +1,11 @@
 {
-  "simpleName": "REPOSITORY_MODULE",
+  "simpleName": "MVI_SCREEN_MODULE",
   "templates": [
     {
-      "simpleName": "REPOSITORY_GROUP",
+      "simpleName": "MVI_SCREEN_GROUP",
       "templates": [
         {
-          "simpleName": "REPOSITORY",
+          "simpleName": "CONTROLLER",
           "customProps": [
             {
               "requiredProps": [],
@@ -17,7 +17,7 @@
             },
             {
               "requiredProps": [
-                "REPOSITORY_NAME"
+                "SCREEN_NAME"
               ],
               "name": "SIMPLE_NAME"
             },
@@ -53,22 +53,30 @@
             }
           ],
           "extractedProps": [
+            "PRESENTER_SIMPLE_NAME",
             "SIMPLE_NAME",
+            "PACKAGE_BASE",
             "PACKAGE_NAME",
-            "REPOSITORY_NAME",
+            "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+            "SCREEN_CLASS_NAME",
+            "SCREEN_NAME",
             "TEMPLATE_NAME",
             "FILE_DIRECTORY_APPEND_DOT_CASE"
           ],
           "requiredProps": [
-            "REPOSITORY_NAME",
-            "PACKAGE_NAME"
+            "PRESENTER_SIMPLE_NAME",
+            "PACKAGE_BASE",
+            "PACKAGE_NAME",
+            "ANDROID_LAYOUT_SIMPLE_NAME",
+            "SCREEN_NAME",
+            "SCREEN_CLASS_NAME"
           ],
           "scope": {
-            "name": "REPOSITORY",
+            "name": "CONTROLLER",
             "childScopes": [],
             "scopedPropGenerators": [
               {
-                "propName": "REPOSITORY_TEMPLATE_NAME",
+                "propName": "CONTROLLER_TEMPLATE_NAME",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -79,7 +87,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_TEMPLATE_EXTENSION",
+                "propName": "CONTROLLER_TEMPLATE_EXTENSION",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -90,24 +98,24 @@
                 }
               },
               {
-                "propName": "REPOSITORY_SIMPLE_NAME",
+                "propName": "CONTROLLER_SIMPLE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_NAME"
+                  "SCREEN_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
                   "customProp": {
                     "requiredProps": [
-                      "REPOSITORY_NAME"
+                      "SCREEN_NAME"
                     ],
                     "name": "SIMPLE_NAME"
                   }
                 }
               },
               {
-                "propName": "REPOSITORY_FILE_NAME",
+                "propName": "CONTROLLER_FILE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_SIMPLE_NAME"
+                  "CONTROLLER_SIMPLE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -120,10 +128,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_CLASS_NAME",
+                "propName": "CONTROLLER_CLASS_NAME",
                 "requiredProps": [
-                  "REPOSITORY_SIMPLE_NAME",
-                  "REPOSITORY_PACKAGE_NAME"
+                  "CONTROLLER_SIMPLE_NAME",
+                  "CONTROLLER_PACKAGE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -137,10 +145,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_PACKAGE_NAME",
+                "propName": "CONTROLLER_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
-                  "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE"
+                  "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [
@@ -156,7 +164,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_FILE_DIRECTORY",
+                "propName": "CONTROLLER_FILE_DIRECTORY",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -167,9 +175,23 @@
                 }
               },
               {
-                "propName": "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "propName": "CONTROLLER_ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
                 "requiredProps": [
-                  "REPOSITORY_FILE_DIRECTORY"
+                  "ANDROID_LAYOUT_SIMPLE_NAME"
+                ],
+                "propGenerator": {
+                  "requiredProps": [
+                    "ANDROID_LAYOUT_SIMPLE_NAME"
+                  ],
+                  "selfRequiredProps": [],
+                  "propName": "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+                  "propBaseName": "ANDROID_LAYOUT_SIMPLE_NAME"
+                }
+              },
+              {
+                "propName": "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "CONTROLLER_FILE_DIRECTORY"
                 ],
                 "propGenerator": {
                   "requiredProps": [
@@ -184,7 +206,7 @@
           }
         },
         {
-          "simpleName": "REPOSITORY_IMPL",
+          "simpleName": "KEY",
           "customProps": [
             {
               "requiredProps": [],
@@ -196,7 +218,7 @@
             },
             {
               "requiredProps": [
-                "REPOSITORY_NAME"
+                "SCREEN_NAME"
               ],
               "name": "SIMPLE_NAME"
             },
@@ -232,24 +254,26 @@
             }
           ],
           "extractedProps": [
-            "REPOSITORY_SIMPLE_NAME",
+            "CONTROLLER_SIMPLE_NAME",
             "SIMPLE_NAME",
+            "PACKAGE_BASE",
             "PACKAGE_NAME",
-            "REPOSITORY_NAME",
+            "SCREEN_NAME",
             "TEMPLATE_NAME",
             "FILE_DIRECTORY_APPEND_DOT_CASE"
           ],
           "requiredProps": [
-            "REPOSITORY_NAME",
+            "PACKAGE_BASE",
+            "CONTROLLER_SIMPLE_NAME",
             "PACKAGE_NAME",
-            "REPOSITORY_SIMPLE_NAME"
+            "SCREEN_NAME"
           ],
           "scope": {
-            "name": "REPOSITORY_IMPL",
+            "name": "KEY",
             "childScopes": [],
             "scopedPropGenerators": [
               {
-                "propName": "REPOSITORY_IMPL_TEMPLATE_NAME",
+                "propName": "KEY_TEMPLATE_NAME",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -260,7 +284,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_TEMPLATE_EXTENSION",
+                "propName": "KEY_TEMPLATE_EXTENSION",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -271,24 +295,24 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_SIMPLE_NAME",
+                "propName": "KEY_SIMPLE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_NAME"
+                  "SCREEN_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
                   "customProp": {
                     "requiredProps": [
-                      "REPOSITORY_NAME"
+                      "SCREEN_NAME"
                     ],
                     "name": "SIMPLE_NAME"
                   }
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_FILE_NAME",
+                "propName": "KEY_FILE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_IMPL_SIMPLE_NAME"
+                  "KEY_SIMPLE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -301,10 +325,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_CLASS_NAME",
+                "propName": "KEY_CLASS_NAME",
                 "requiredProps": [
-                  "REPOSITORY_IMPL_SIMPLE_NAME",
-                  "REPOSITORY_IMPL_PACKAGE_NAME"
+                  "KEY_SIMPLE_NAME",
+                  "KEY_PACKAGE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -318,10 +342,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_PACKAGE_NAME",
+                "propName": "KEY_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
-                  "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE"
+                  "KEY_FILE_DIRECTORY_APPEND_DOT_CASE"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [
@@ -337,7 +361,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_FILE_DIRECTORY",
+                "propName": "KEY_FILE_DIRECTORY",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -348,9 +372,9 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "propName": "KEY_FILE_DIRECTORY_APPEND_DOT_CASE",
                 "requiredProps": [
-                  "REPOSITORY_IMPL_FILE_DIRECTORY"
+                  "KEY_FILE_DIRECTORY"
                 ],
                 "propGenerator": {
                   "requiredProps": [
@@ -365,7 +389,7 @@
           }
         },
         {
-          "simpleName": "REPOSITORY_BINDINGS",
+          "simpleName": "PRESENTER",
           "customProps": [
             {
               "requiredProps": [],
@@ -376,12 +400,8 @@
               "name": "TEMPLATE_EXTENSION"
             },
             {
-              "requiredProps": [],
-              "name": "FILE_DIRECTORY"
-            },
-            {
               "requiredProps": [
-                "REPOSITORY_NAME"
+                "SCREEN_NAME"
               ],
               "name": "SIMPLE_NAME"
             },
@@ -410,35 +430,33 @@
                 "FILE_DIRECTORY_APPEND_DOT_CASE"
               ],
               "name": "PACKAGE_NAME"
+            },
+            {
+              "requiredProps": [],
+              "name": "FILE_DIRECTORY"
             }
           ],
           "extractedProps": [
-            "REPOSITORY_CLASS_NAME",
-            "REPOSITORY_SIMPLE_NAME",
             "SIMPLE_NAME",
-            "REPOSITORY_IMPL_CLASS_NAME",
             "PACKAGE_BASE",
             "PACKAGE_NAME",
-            "REPOSITORY_IMPL_SIMPLE_NAME",
-            "REPOSITORY_NAME",
+            "SCREEN_CLASS_NAME",
+            "SCREEN_NAME",
             "TEMPLATE_NAME",
             "FILE_DIRECTORY_APPEND_DOT_CASE"
           ],
           "requiredProps": [
-            "REPOSITORY_IMPL_CLASS_NAME",
             "PACKAGE_BASE",
-            "REPOSITORY_CLASS_NAME",
-            "REPOSITORY_NAME",
             "PACKAGE_NAME",
-            "REPOSITORY_IMPL_SIMPLE_NAME",
-            "REPOSITORY_SIMPLE_NAME"
+            "SCREEN_NAME",
+            "SCREEN_CLASS_NAME"
           ],
           "scope": {
-            "name": "REPOSITORY_BINDINGS",
+            "name": "PRESENTER",
             "childScopes": [],
             "scopedPropGenerators": [
               {
-                "propName": "REPOSITORY_BINDINGS_TEMPLATE_NAME",
+                "propName": "PRESENTER_TEMPLATE_NAME",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -449,7 +467,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_TEMPLATE_EXTENSION",
+                "propName": "PRESENTER_TEMPLATE_EXTENSION",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -460,35 +478,24 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
-              },
-              {
-                "propName": "REPOSITORY_BINDINGS_SIMPLE_NAME",
+                "propName": "PRESENTER_SIMPLE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_NAME"
+                  "SCREEN_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
                   "customProp": {
                     "requiredProps": [
-                      "REPOSITORY_NAME"
+                      "SCREEN_NAME"
                     ],
                     "name": "SIMPLE_NAME"
                   }
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_FILE_NAME",
+                "propName": "PRESENTER_FILE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_BINDINGS_SIMPLE_NAME"
+                  "PRESENTER_SIMPLE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -501,10 +508,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_CLASS_NAME",
+                "propName": "PRESENTER_CLASS_NAME",
                 "requiredProps": [
-                  "REPOSITORY_BINDINGS_SIMPLE_NAME",
-                  "REPOSITORY_BINDINGS_PACKAGE_NAME"
+                  "PRESENTER_SIMPLE_NAME",
+                  "PRESENTER_PACKAGE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -518,10 +525,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_PACKAGE_NAME",
+                "propName": "PRESENTER_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
-                  "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE"
+                  "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [
@@ -537,9 +544,20 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "propName": "PRESENTER_FILE_DIRECTORY",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "FILE_DIRECTORY"
+                  }
+                }
+              },
+              {
+                "propName": "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE",
                 "requiredProps": [
-                  "REPOSITORY_BINDINGS_FILE_DIRECTORY"
+                  "PRESENTER_FILE_DIRECTORY"
                 ],
                 "propGenerator": {
                   "requiredProps": [
@@ -548,13 +566,348 @@
                   "selfRequiredProps": [],
                   "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
                   "propBaseName": "FILE_DIRECTORY"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "simpleName": "SCREEN",
+          "customProps": [
+            {
+              "requiredProps": [],
+              "name": "TEMPLATE_NAME"
+            },
+            {
+              "requiredProps": [],
+              "name": "TEMPLATE_EXTENSION"
+            },
+            {
+              "requiredProps": [
+                "SCREEN_NAME"
+              ],
+              "name": "SIMPLE_NAME"
+            },
+            {
+              "requiredProps": [
+                "SIMPLE_NAME"
+              ],
+              "name": "FILE_NAME"
+            },
+            {
+              "requiredProps": [
+                "SIMPLE_NAME",
+                "PACKAGE_NAME"
+              ],
+              "name": "CLASS_NAME"
+            },
+            {
+              "requiredProps": [
+                "TEMPLATE_NAME"
+              ],
+              "name": "SIMPLE_NAME"
+            },
+            {
+              "requiredProps": [
+                "PACKAGE_NAME",
+                "FILE_DIRECTORY_APPEND_DOT_CASE"
+              ],
+              "name": "PACKAGE_NAME"
+            },
+            {
+              "requiredProps": [],
+              "name": "FILE_DIRECTORY"
+            }
+          ],
+          "extractedProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_BASE",
+            "PACKAGE_NAME",
+            "SCREEN_NAME",
+            "TEMPLATE_NAME",
+            "FILE_DIRECTORY_APPEND_DOT_CASE"
+          ],
+          "requiredProps": [
+            "PACKAGE_BASE",
+            "PACKAGE_NAME",
+            "SCREEN_NAME"
+          ],
+          "scope": {
+            "name": "SCREEN",
+            "childScopes": [],
+            "scopedPropGenerators": [
+              {
+                "propName": "SCREEN_TEMPLATE_NAME",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "SCREEN_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
+                  }
+                }
+              },
+              {
+                "propName": "SCREEN_SIMPLE_NAME",
+                "requiredProps": [
+                  "SCREEN_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ],
+                    "name": "SIMPLE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "SCREEN_FILE_NAME",
+                "requiredProps": [
+                  "SCREEN_SIMPLE_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ],
+                    "name": "FILE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "SCREEN_CLASS_NAME",
+                "requiredProps": [
+                  "SCREEN_SIMPLE_NAME",
+                  "SCREEN_PACKAGE_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ],
+                    "name": "CLASS_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "SCREEN_PACKAGE_NAME",
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ],
+                  "customProp": {
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ],
+                    "name": "PACKAGE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "SCREEN_FILE_DIRECTORY",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "FILE_DIRECTORY"
+                  }
+                }
+              },
+              {
+                "propName": "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "SCREEN_FILE_DIRECTORY"
+                ],
+                "propGenerator": {
+                  "requiredProps": [
+                    "FILE_DIRECTORY"
+                  ],
+                  "selfRequiredProps": [],
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "simpleName": "ANDROID_LAYOUT",
+          "customProps": [
+            {
+              "requiredProps": [],
+              "name": "TEMPLATE_NAME"
+            },
+            {
+              "requiredProps": [],
+              "name": "TEMPLATE_EXTENSION"
+            },
+            {
+              "requiredProps": [
+                "SCREEN_NAME_LOWER_SNAKE_CASE"
+              ],
+              "name": "SIMPLE_NAME"
+            },
+            {
+              "requiredProps": [
+                "SIMPLE_NAME"
+              ],
+              "name": "FILE_NAME"
+            },
+            {
+              "requiredProps": [],
+              "name": "FILE_DIRECTORY"
+            }
+          ],
+          "extractedProps": [
+            "SCREEN_NAME_LOWER_SNAKE_CASE",
+            "SIMPLE_NAME"
+          ],
+          "requiredProps": [
+            "SCREEN_NAME"
+          ],
+          "scope": {
+            "name": "ANDROID_LAYOUT",
+            "childScopes": [],
+            "scopedPropGenerators": [
+              {
+                "propName": "ANDROID_LAYOUT_TEMPLATE_NAME",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "ANDROID_LAYOUT_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
+                  }
+                }
+              },
+              {
+                "propName": "ANDROID_LAYOUT_SIMPLE_NAME",
+                "requiredProps": [
+                  "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SCREEN_NAME_LOWER_SNAKE_CASE"
+                    ],
+                    "name": "SIMPLE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "ANDROID_LAYOUT_FILE_NAME",
+                "requiredProps": [
+                  "ANDROID_LAYOUT_SIMPLE_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ],
+                    "name": "FILE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "ANDROID_LAYOUT_FILE_DIRECTORY",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "FILE_DIRECTORY"
+                  }
+                }
+              },
+              {
+                "propName": "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE",
+                "requiredProps": [
+                  "SCREEN_NAME"
+                ],
+                "propGenerator": {
+                  "requiredProps": [
+                    "SCREEN_NAME"
+                  ],
+                  "selfRequiredProps": [],
+                  "propName": "SCREEN_NAME_LOWER_SNAKE_CASE",
+                  "propBaseName": "SCREEN_NAME"
                 }
               }
             ]
           }
         }
       ],
-      "injectors": [],
+      "injectors": [
+        {
+          "selector": "WHEN WHEN_ENTRY",
+          "className": "${PACKAGE_BASE}.${PROJECT_NAME}.routing.ScreenKeyFactory",
+          "pathName": null,
+          "requiredProps": [
+            "APP_ROUTE_NAME",
+            "SCREEN_NAME_UPPER_CAMEL_CASE",
+            "KEY_SIMPLE_NAME",
+            "PROJECT_NAME",
+            "PACKAGE_BASE"
+          ]
+        },
+        {
+          "selector": "AppRoute CLASS_BODY LBRACE",
+          "className": "${PACKAGE_BASE}.${PROJECT_NAME}.ui.routing.${APP_ROUTE_NAME}",
+          "pathName": null,
+          "requiredProps": [
+            "APP_ROUTE_NAME",
+            "ROUTE_PATH",
+            "SCREEN_NAME_UPPER_CAMEL_CASE",
+            "PROJECT_NAME",
+            "PACKAGE_BASE"
+          ]
+        },
+        {
+          "selector": "IMPORT_LIST IMPORT_DIRECTIVE",
+          "className": "${PACKAGE_BASE}.${PROJECT_NAME}.routing.ScreenKeyFactory",
+          "pathName": null,
+          "requiredProps": [
+            "KEY_CLASS_NAME",
+            "PROJECT_NAME",
+            "PACKAGE_BASE"
+          ]
+        }
+      ],
       "customProps": [
         {
           "requiredProps": [],
@@ -566,28 +919,37 @@
         }
       ],
       "extractedProps": [
-        "REPOSITORY_NAME",
-        "PACKAGE_NAME",
-        "REPOSITORY_SIMPLE_NAME",
-        "REPOSITORY_IMPL_CLASS_NAME",
+        "PRESENTER_SIMPLE_NAME",
         "PACKAGE_BASE",
-        "REPOSITORY_CLASS_NAME",
-        "REPOSITORY_IMPL_SIMPLE_NAME"
+        "PACKAGE_NAME",
+        "ANDROID_LAYOUT_SIMPLE_NAME",
+        "SCREEN_NAME",
+        "SCREEN_CLASS_NAME",
+        "CONTROLLER_SIMPLE_NAME",
+        "APP_ROUTE_NAME",
+        "SCREEN_NAME_UPPER_CAMEL_CASE",
+        "KEY_SIMPLE_NAME",
+        "PROJECT_NAME",
+        "ROUTE_PATH",
+        "KEY_CLASS_NAME"
       ],
       "requiredProps": [
         "PACKAGE_BASE",
-        "REPOSITORY_NAME",
-        "PACKAGE_NAME"
+        "ROUTE_PATH",
+        "PACKAGE_NAME",
+        "APP_ROUTE_NAME",
+        "SCREEN_NAME",
+        "PROJECT_NAME"
       ],
       "scope": {
-        "name": "REPOSITORY_GROUP",
+        "name": "MVI_SCREEN_GROUP",
         "childScopes": [
           {
-            "name": "REPOSITORY_IMPL",
+            "name": "ANDROID_LAYOUT",
             "childScopes": [],
             "scopedPropGenerators": [
               {
-                "propName": "REPOSITORY_IMPL_TEMPLATE_NAME",
+                "propName": "ANDROID_LAYOUT_TEMPLATE_NAME",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -598,7 +960,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_TEMPLATE_EXTENSION",
+                "propName": "ANDROID_LAYOUT_TEMPLATE_EXTENSION",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -609,24 +971,24 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_SIMPLE_NAME",
+                "propName": "ANDROID_LAYOUT_SIMPLE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_NAME"
+                  "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
                   "customProp": {
                     "requiredProps": [
-                      "REPOSITORY_NAME"
+                      "SCREEN_NAME_LOWER_SNAKE_CASE"
                     ],
                     "name": "SIMPLE_NAME"
                   }
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_FILE_NAME",
+                "propName": "ANDROID_LAYOUT_FILE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_IMPL_SIMPLE_NAME"
+                  "ANDROID_LAYOUT_SIMPLE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -639,10 +1001,93 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_CLASS_NAME",
+                "propName": "ANDROID_LAYOUT_FILE_DIRECTORY",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "FILE_DIRECTORY"
+                  }
+                }
+              },
+              {
+                "propName": "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE",
                 "requiredProps": [
-                  "REPOSITORY_IMPL_SIMPLE_NAME",
-                  "REPOSITORY_IMPL_PACKAGE_NAME"
+                  "SCREEN_NAME"
+                ],
+                "propGenerator": {
+                  "requiredProps": [
+                    "SCREEN_NAME"
+                  ],
+                  "selfRequiredProps": [],
+                  "propName": "SCREEN_NAME_LOWER_SNAKE_CASE",
+                  "propBaseName": "SCREEN_NAME"
+                }
+              }
+            ]
+          },
+          {
+            "name": "CONTROLLER",
+            "childScopes": [],
+            "scopedPropGenerators": [
+              {
+                "propName": "CONTROLLER_TEMPLATE_NAME",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "CONTROLLER_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
+                  }
+                }
+              },
+              {
+                "propName": "CONTROLLER_SIMPLE_NAME",
+                "requiredProps": [
+                  "SCREEN_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ],
+                    "name": "SIMPLE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "CONTROLLER_FILE_NAME",
+                "requiredProps": [
+                  "CONTROLLER_SIMPLE_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ],
+                    "name": "FILE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "CONTROLLER_CLASS_NAME",
+                "requiredProps": [
+                  "CONTROLLER_SIMPLE_NAME",
+                  "CONTROLLER_PACKAGE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -656,10 +1101,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_PACKAGE_NAME",
+                "propName": "CONTROLLER_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
-                  "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE"
+                  "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [
@@ -675,7 +1120,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_FILE_DIRECTORY",
+                "propName": "CONTROLLER_FILE_DIRECTORY",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -686,9 +1131,23 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "propName": "CONTROLLER_ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
                 "requiredProps": [
-                  "REPOSITORY_IMPL_FILE_DIRECTORY"
+                  "ANDROID_LAYOUT_SIMPLE_NAME"
+                ],
+                "propGenerator": {
+                  "requiredProps": [
+                    "ANDROID_LAYOUT_SIMPLE_NAME"
+                  ],
+                  "selfRequiredProps": [],
+                  "propName": "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+                  "propBaseName": "ANDROID_LAYOUT_SIMPLE_NAME"
+                }
+              },
+              {
+                "propName": "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "CONTROLLER_FILE_DIRECTORY"
                 ],
                 "propGenerator": {
                   "requiredProps": [
@@ -702,11 +1161,11 @@
             ]
           },
           {
-            "name": "REPOSITORY",
+            "name": "SCREEN",
             "childScopes": [],
             "scopedPropGenerators": [
               {
-                "propName": "REPOSITORY_TEMPLATE_NAME",
+                "propName": "SCREEN_TEMPLATE_NAME",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -717,7 +1176,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_TEMPLATE_EXTENSION",
+                "propName": "SCREEN_TEMPLATE_EXTENSION",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -728,24 +1187,24 @@
                 }
               },
               {
-                "propName": "REPOSITORY_SIMPLE_NAME",
+                "propName": "SCREEN_SIMPLE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_NAME"
+                  "SCREEN_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
                   "customProp": {
                     "requiredProps": [
-                      "REPOSITORY_NAME"
+                      "SCREEN_NAME"
                     ],
                     "name": "SIMPLE_NAME"
                   }
                 }
               },
               {
-                "propName": "REPOSITORY_FILE_NAME",
+                "propName": "SCREEN_FILE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_SIMPLE_NAME"
+                  "SCREEN_SIMPLE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -758,10 +1217,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_CLASS_NAME",
+                "propName": "SCREEN_CLASS_NAME",
                 "requiredProps": [
-                  "REPOSITORY_SIMPLE_NAME",
-                  "REPOSITORY_PACKAGE_NAME"
+                  "SCREEN_SIMPLE_NAME",
+                  "SCREEN_PACKAGE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -775,10 +1234,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_PACKAGE_NAME",
+                "propName": "SCREEN_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
-                  "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE"
+                  "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [
@@ -794,7 +1253,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_FILE_DIRECTORY",
+                "propName": "SCREEN_FILE_DIRECTORY",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -805,9 +1264,9 @@
                 }
               },
               {
-                "propName": "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "propName": "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE",
                 "requiredProps": [
-                  "REPOSITORY_FILE_DIRECTORY"
+                  "SCREEN_FILE_DIRECTORY"
                 ],
                 "propGenerator": {
                   "requiredProps": [
@@ -821,11 +1280,11 @@
             ]
           },
           {
-            "name": "REPOSITORY_BINDINGS",
+            "name": "PRESENTER",
             "childScopes": [],
             "scopedPropGenerators": [
               {
-                "propName": "REPOSITORY_BINDINGS_TEMPLATE_NAME",
+                "propName": "PRESENTER_TEMPLATE_NAME",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -836,7 +1295,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_TEMPLATE_EXTENSION",
+                "propName": "PRESENTER_TEMPLATE_EXTENSION",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -847,35 +1306,24 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
-              },
-              {
-                "propName": "REPOSITORY_BINDINGS_SIMPLE_NAME",
+                "propName": "PRESENTER_SIMPLE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_NAME"
+                  "SCREEN_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
                   "customProp": {
                     "requiredProps": [
-                      "REPOSITORY_NAME"
+                      "SCREEN_NAME"
                     ],
                     "name": "SIMPLE_NAME"
                   }
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_FILE_NAME",
+                "propName": "PRESENTER_FILE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_BINDINGS_SIMPLE_NAME"
+                  "PRESENTER_SIMPLE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -888,10 +1336,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_CLASS_NAME",
+                "propName": "PRESENTER_CLASS_NAME",
                 "requiredProps": [
-                  "REPOSITORY_BINDINGS_SIMPLE_NAME",
-                  "REPOSITORY_BINDINGS_PACKAGE_NAME"
+                  "PRESENTER_SIMPLE_NAME",
+                  "PRESENTER_PACKAGE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -905,10 +1353,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_PACKAGE_NAME",
+                "propName": "PRESENTER_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
-                  "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE"
+                  "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [
@@ -924,9 +1372,139 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "propName": "PRESENTER_FILE_DIRECTORY",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "FILE_DIRECTORY"
+                  }
+                }
+              },
+              {
+                "propName": "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE",
                 "requiredProps": [
-                  "REPOSITORY_BINDINGS_FILE_DIRECTORY"
+                  "PRESENTER_FILE_DIRECTORY"
+                ],
+                "propGenerator": {
+                  "requiredProps": [
+                    "FILE_DIRECTORY"
+                  ],
+                  "selfRequiredProps": [],
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY"
+                }
+              }
+            ]
+          },
+          {
+            "name": "KEY",
+            "childScopes": [],
+            "scopedPropGenerators": [
+              {
+                "propName": "KEY_TEMPLATE_NAME",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_SIMPLE_NAME",
+                "requiredProps": [
+                  "SCREEN_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ],
+                    "name": "SIMPLE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_FILE_NAME",
+                "requiredProps": [
+                  "KEY_SIMPLE_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ],
+                    "name": "FILE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_CLASS_NAME",
+                "requiredProps": [
+                  "KEY_SIMPLE_NAME",
+                  "KEY_PACKAGE_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ],
+                    "name": "CLASS_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_PACKAGE_NAME",
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "KEY_FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ],
+                  "customProp": {
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ],
+                    "name": "PACKAGE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_FILE_DIRECTORY",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "FILE_DIRECTORY"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "KEY_FILE_DIRECTORY"
                 ],
                 "propGenerator": {
                   "requiredProps": [
@@ -942,7 +1520,7 @@
         ],
         "scopedPropGenerators": [
           {
-            "propName": "REPOSITORY_GROUP_GROUP_NAME",
+            "propName": "MVI_SCREEN_GROUP_GROUP_NAME",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -953,7 +1531,7 @@
             }
           },
           {
-            "propName": "REPOSITORY_GROUP_FILE_DIRECTORY",
+            "propName": "MVI_SCREEN_GROUP_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -962,12 +1540,26 @@
                 "name": "FILE_DIRECTORY"
               }
             }
+          },
+          {
+            "propName": "MVI_SCREEN_GROUP_SCREEN_NAME_UPPER_CAMEL_CASE",
+            "requiredProps": [
+              "SCREEN_NAME"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "SCREEN_NAME"
+              ],
+              "selfRequiredProps": [],
+              "propName": "SCREEN_NAME_UPPER_CAMEL_CASE",
+              "propBaseName": "SCREEN_NAME"
+            }
           }
         ]
       }
     },
     {
-      "simpleName": "REPOSITORY_MODULE_BUILD",
+      "simpleName": "MVI_SCREEN_BUILD",
       "customProps": [
         {
           "requiredProps": [],
@@ -995,11 +1587,11 @@
         "PROJECT_NAME"
       ],
       "scope": {
-        "name": "REPOSITORY_MODULE_BUILD",
+        "name": "MVI_SCREEN_BUILD",
         "childScopes": [],
         "scopedPropGenerators": [
           {
-            "propName": "REPOSITORY_MODULE_BUILD_TEMPLATE_NAME",
+            "propName": "MVI_SCREEN_BUILD_TEMPLATE_NAME",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -1010,7 +1602,7 @@
             }
           },
           {
-            "propName": "REPOSITORY_MODULE_BUILD_TEMPLATE_EXTENSION",
+            "propName": "MVI_SCREEN_BUILD_TEMPLATE_EXTENSION",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -1021,7 +1613,7 @@
             }
           },
           {
-            "propName": "REPOSITORY_MODULE_BUILD_FILE_NAME",
+            "propName": "MVI_SCREEN_BUILD_FILE_NAME",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -1032,7 +1624,7 @@
             }
           },
           {
-            "propName": "REPOSITORY_MODULE_BUILD_FILE_DIRECTORY",
+            "propName": "MVI_SCREEN_BUILD_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -1043,7 +1635,7 @@
             }
           },
           {
-            "propName": "REPOSITORY_MODULE_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
+            "propName": "MVI_SCREEN_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
             "requiredProps": [
               "PROJECT_NAME"
             ],
@@ -1228,7 +1820,8 @@
     },
     {
       "requiredProps": [
-        "PROJECT_NAME_LOWER_KEBAB_CASE"
+        "PROJECT_NAME_LOWER_KEBAB_CASE",
+        "SCREEN_NAME_LOWER_CASE"
       ],
       "name": "MODULE_NAME"
     },
@@ -1248,10 +1841,13 @@
   ],
   "extractedProps": [
     "PACKAGE_BASE",
-    "REPOSITORY_NAME",
+    "ROUTE_PATH",
     "PACKAGE_NAME",
+    "APP_ROUTE_NAME",
+    "SCREEN_NAME",
     "PROJECT_NAME",
     "PROJECT_NAME_LOWER_KEBAB_CASE",
+    "SCREEN_NAME_LOWER_CASE",
     "MODULE_NAME_DOT_CASE",
     "MODULE_NAME",
     "SETTING_FILE_PATH"
@@ -1259,19 +1855,21 @@
   "requiredProps": [
     "SETTING_FILE_PATH",
     "PACKAGE_BASE",
-    "REPOSITORY_NAME",
+    "ROUTE_PATH",
     "PACKAGE_NAME",
+    "APP_ROUTE_NAME",
+    "SCREEN_NAME",
     "PROJECT_NAME"
   ],
   "scope": {
-    "name": "REPOSITORY_MODULE",
+    "name": "MVI_SCREEN_MODULE",
     "childScopes": [
       {
-        "name": "REPOSITORY_MODULE_BUILD",
+        "name": "MVI_SCREEN_BUILD",
         "childScopes": [],
         "scopedPropGenerators": [
           {
-            "propName": "REPOSITORY_MODULE_BUILD_TEMPLATE_NAME",
+            "propName": "MVI_SCREEN_BUILD_TEMPLATE_NAME",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -1282,7 +1880,7 @@
             }
           },
           {
-            "propName": "REPOSITORY_MODULE_BUILD_TEMPLATE_EXTENSION",
+            "propName": "MVI_SCREEN_BUILD_TEMPLATE_EXTENSION",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -1293,7 +1891,7 @@
             }
           },
           {
-            "propName": "REPOSITORY_MODULE_BUILD_FILE_NAME",
+            "propName": "MVI_SCREEN_BUILD_FILE_NAME",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -1304,7 +1902,7 @@
             }
           },
           {
-            "propName": "REPOSITORY_MODULE_BUILD_FILE_DIRECTORY",
+            "propName": "MVI_SCREEN_BUILD_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -1315,7 +1913,7 @@
             }
           },
           {
-            "propName": "REPOSITORY_MODULE_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
+            "propName": "MVI_SCREEN_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
             "requiredProps": [
               "PROJECT_NAME"
             ],
@@ -1331,14 +1929,14 @@
         ]
       },
       {
-        "name": "REPOSITORY_GROUP",
+        "name": "MVI_SCREEN_GROUP",
         "childScopes": [
           {
-            "name": "REPOSITORY_IMPL",
+            "name": "ANDROID_LAYOUT",
             "childScopes": [],
             "scopedPropGenerators": [
               {
-                "propName": "REPOSITORY_IMPL_TEMPLATE_NAME",
+                "propName": "ANDROID_LAYOUT_TEMPLATE_NAME",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1349,7 +1947,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_TEMPLATE_EXTENSION",
+                "propName": "ANDROID_LAYOUT_TEMPLATE_EXTENSION",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1360,24 +1958,24 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_SIMPLE_NAME",
+                "propName": "ANDROID_LAYOUT_SIMPLE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_NAME"
+                  "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
                   "customProp": {
                     "requiredProps": [
-                      "REPOSITORY_NAME"
+                      "SCREEN_NAME_LOWER_SNAKE_CASE"
                     ],
                     "name": "SIMPLE_NAME"
                   }
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_FILE_NAME",
+                "propName": "ANDROID_LAYOUT_FILE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_IMPL_SIMPLE_NAME"
+                  "ANDROID_LAYOUT_SIMPLE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1390,10 +1988,93 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_CLASS_NAME",
+                "propName": "ANDROID_LAYOUT_FILE_DIRECTORY",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "FILE_DIRECTORY"
+                  }
+                }
+              },
+              {
+                "propName": "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE",
                 "requiredProps": [
-                  "REPOSITORY_IMPL_SIMPLE_NAME",
-                  "REPOSITORY_IMPL_PACKAGE_NAME"
+                  "SCREEN_NAME"
+                ],
+                "propGenerator": {
+                  "requiredProps": [
+                    "SCREEN_NAME"
+                  ],
+                  "selfRequiredProps": [],
+                  "propName": "SCREEN_NAME_LOWER_SNAKE_CASE",
+                  "propBaseName": "SCREEN_NAME"
+                }
+              }
+            ]
+          },
+          {
+            "name": "CONTROLLER",
+            "childScopes": [],
+            "scopedPropGenerators": [
+              {
+                "propName": "CONTROLLER_TEMPLATE_NAME",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "CONTROLLER_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
+                  }
+                }
+              },
+              {
+                "propName": "CONTROLLER_SIMPLE_NAME",
+                "requiredProps": [
+                  "SCREEN_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ],
+                    "name": "SIMPLE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "CONTROLLER_FILE_NAME",
+                "requiredProps": [
+                  "CONTROLLER_SIMPLE_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ],
+                    "name": "FILE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "CONTROLLER_CLASS_NAME",
+                "requiredProps": [
+                  "CONTROLLER_SIMPLE_NAME",
+                  "CONTROLLER_PACKAGE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1407,10 +2088,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_PACKAGE_NAME",
+                "propName": "CONTROLLER_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
-                  "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE"
+                  "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [
@@ -1426,7 +2107,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_FILE_DIRECTORY",
+                "propName": "CONTROLLER_FILE_DIRECTORY",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1437,9 +2118,23 @@
                 }
               },
               {
-                "propName": "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "propName": "CONTROLLER_ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
                 "requiredProps": [
-                  "REPOSITORY_IMPL_FILE_DIRECTORY"
+                  "ANDROID_LAYOUT_SIMPLE_NAME"
+                ],
+                "propGenerator": {
+                  "requiredProps": [
+                    "ANDROID_LAYOUT_SIMPLE_NAME"
+                  ],
+                  "selfRequiredProps": [],
+                  "propName": "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+                  "propBaseName": "ANDROID_LAYOUT_SIMPLE_NAME"
+                }
+              },
+              {
+                "propName": "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "CONTROLLER_FILE_DIRECTORY"
                 ],
                 "propGenerator": {
                   "requiredProps": [
@@ -1453,11 +2148,11 @@
             ]
           },
           {
-            "name": "REPOSITORY",
+            "name": "SCREEN",
             "childScopes": [],
             "scopedPropGenerators": [
               {
-                "propName": "REPOSITORY_TEMPLATE_NAME",
+                "propName": "SCREEN_TEMPLATE_NAME",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1468,7 +2163,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_TEMPLATE_EXTENSION",
+                "propName": "SCREEN_TEMPLATE_EXTENSION",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1479,24 +2174,24 @@
                 }
               },
               {
-                "propName": "REPOSITORY_SIMPLE_NAME",
+                "propName": "SCREEN_SIMPLE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_NAME"
+                  "SCREEN_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
                   "customProp": {
                     "requiredProps": [
-                      "REPOSITORY_NAME"
+                      "SCREEN_NAME"
                     ],
                     "name": "SIMPLE_NAME"
                   }
                 }
               },
               {
-                "propName": "REPOSITORY_FILE_NAME",
+                "propName": "SCREEN_FILE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_SIMPLE_NAME"
+                  "SCREEN_SIMPLE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1509,10 +2204,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_CLASS_NAME",
+                "propName": "SCREEN_CLASS_NAME",
                 "requiredProps": [
-                  "REPOSITORY_SIMPLE_NAME",
-                  "REPOSITORY_PACKAGE_NAME"
+                  "SCREEN_SIMPLE_NAME",
+                  "SCREEN_PACKAGE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1526,10 +2221,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_PACKAGE_NAME",
+                "propName": "SCREEN_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
-                  "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE"
+                  "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [
@@ -1545,7 +2240,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_FILE_DIRECTORY",
+                "propName": "SCREEN_FILE_DIRECTORY",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1556,9 +2251,9 @@
                 }
               },
               {
-                "propName": "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "propName": "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE",
                 "requiredProps": [
-                  "REPOSITORY_FILE_DIRECTORY"
+                  "SCREEN_FILE_DIRECTORY"
                 ],
                 "propGenerator": {
                   "requiredProps": [
@@ -1572,11 +2267,11 @@
             ]
           },
           {
-            "name": "REPOSITORY_BINDINGS",
+            "name": "PRESENTER",
             "childScopes": [],
             "scopedPropGenerators": [
               {
-                "propName": "REPOSITORY_BINDINGS_TEMPLATE_NAME",
+                "propName": "PRESENTER_TEMPLATE_NAME",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1587,7 +2282,7 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_TEMPLATE_EXTENSION",
+                "propName": "PRESENTER_TEMPLATE_EXTENSION",
                 "requiredProps": [],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1598,35 +2293,24 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
-              },
-              {
-                "propName": "REPOSITORY_BINDINGS_SIMPLE_NAME",
+                "propName": "PRESENTER_SIMPLE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_NAME"
+                  "SCREEN_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
                   "customProp": {
                     "requiredProps": [
-                      "REPOSITORY_NAME"
+                      "SCREEN_NAME"
                     ],
                     "name": "SIMPLE_NAME"
                   }
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_FILE_NAME",
+                "propName": "PRESENTER_FILE_NAME",
                 "requiredProps": [
-                  "REPOSITORY_BINDINGS_SIMPLE_NAME"
+                  "PRESENTER_SIMPLE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1639,10 +2323,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_CLASS_NAME",
+                "propName": "PRESENTER_CLASS_NAME",
                 "requiredProps": [
-                  "REPOSITORY_BINDINGS_SIMPLE_NAME",
-                  "REPOSITORY_BINDINGS_PACKAGE_NAME"
+                  "PRESENTER_SIMPLE_NAME",
+                  "PRESENTER_PACKAGE_NAME"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [],
@@ -1656,10 +2340,10 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_PACKAGE_NAME",
+                "propName": "PRESENTER_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
-                  "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE"
+                  "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE"
                 ],
                 "propGenerator": {
                   "selfRequiredProps": [
@@ -1675,9 +2359,139 @@
                 }
               },
               {
-                "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "propName": "PRESENTER_FILE_DIRECTORY",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "FILE_DIRECTORY"
+                  }
+                }
+              },
+              {
+                "propName": "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE",
                 "requiredProps": [
-                  "REPOSITORY_BINDINGS_FILE_DIRECTORY"
+                  "PRESENTER_FILE_DIRECTORY"
+                ],
+                "propGenerator": {
+                  "requiredProps": [
+                    "FILE_DIRECTORY"
+                  ],
+                  "selfRequiredProps": [],
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY"
+                }
+              }
+            ]
+          },
+          {
+            "name": "KEY",
+            "childScopes": [],
+            "scopedPropGenerators": [
+              {
+                "propName": "KEY_TEMPLATE_NAME",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_TEMPLATE_EXTENSION",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "TEMPLATE_EXTENSION"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_SIMPLE_NAME",
+                "requiredProps": [
+                  "SCREEN_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ],
+                    "name": "SIMPLE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_FILE_NAME",
+                "requiredProps": [
+                  "KEY_SIMPLE_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ],
+                    "name": "FILE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_CLASS_NAME",
+                "requiredProps": [
+                  "KEY_SIMPLE_NAME",
+                  "KEY_PACKAGE_NAME"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ],
+                    "name": "CLASS_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_PACKAGE_NAME",
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "KEY_FILE_DIRECTORY_APPEND_DOT_CASE"
+                ],
+                "propGenerator": {
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ],
+                  "customProp": {
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ],
+                    "name": "PACKAGE_NAME"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_FILE_DIRECTORY",
+                "requiredProps": [],
+                "propGenerator": {
+                  "selfRequiredProps": [],
+                  "customProp": {
+                    "requiredProps": [],
+                    "name": "FILE_DIRECTORY"
+                  }
+                }
+              },
+              {
+                "propName": "KEY_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "KEY_FILE_DIRECTORY"
                 ],
                 "propGenerator": {
                   "requiredProps": [
@@ -1693,7 +2507,7 @@
         ],
         "scopedPropGenerators": [
           {
-            "propName": "REPOSITORY_GROUP_GROUP_NAME",
+            "propName": "MVI_SCREEN_GROUP_GROUP_NAME",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -1704,7 +2518,7 @@
             }
           },
           {
-            "propName": "REPOSITORY_GROUP_FILE_DIRECTORY",
+            "propName": "MVI_SCREEN_GROUP_FILE_DIRECTORY",
             "requiredProps": [],
             "propGenerator": {
               "selfRequiredProps": [],
@@ -1712,6 +2526,20 @@
                 "requiredProps": [],
                 "name": "FILE_DIRECTORY"
               }
+            }
+          },
+          {
+            "propName": "MVI_SCREEN_GROUP_SCREEN_NAME_UPPER_CAMEL_CASE",
+            "requiredProps": [
+              "SCREEN_NAME"
+            ],
+            "propGenerator": {
+              "requiredProps": [
+                "SCREEN_NAME"
+              ],
+              "selfRequiredProps": [],
+              "propName": "SCREEN_NAME_UPPER_CAMEL_CASE",
+              "propBaseName": "SCREEN_NAME"
             }
           }
         ]
@@ -1819,7 +2647,7 @@
     ],
     "scopedPropGenerators": [
       {
-        "propName": "REPOSITORY_MODULE_GROUP_NAME",
+        "propName": "MVI_SCREEN_MODULE_GROUP_NAME",
         "requiredProps": [],
         "propGenerator": {
           "selfRequiredProps": [],
@@ -1830,24 +2658,26 @@
         }
       },
       {
-        "propName": "REPOSITORY_MODULE_MODULE_NAME",
+        "propName": "MVI_SCREEN_MODULE_MODULE_NAME",
         "requiredProps": [
-          "REPOSITORY_MODULE_PROJECT_NAME_LOWER_KEBAB_CASE"
+          "MVI_SCREEN_MODULE_PROJECT_NAME_LOWER_KEBAB_CASE",
+          "MVI_SCREEN_MODULE_SCREEN_NAME_LOWER_CASE"
         ],
         "propGenerator": {
           "selfRequiredProps": [],
           "customProp": {
             "requiredProps": [
-              "PROJECT_NAME_LOWER_KEBAB_CASE"
+              "PROJECT_NAME_LOWER_KEBAB_CASE",
+              "SCREEN_NAME_LOWER_CASE"
             ],
             "name": "MODULE_NAME"
           }
         }
       },
       {
-        "propName": "REPOSITORY_MODULE_PACKAGE_NAME",
+        "propName": "MVI_SCREEN_MODULE_PACKAGE_NAME",
         "requiredProps": [
-          "REPOSITORY_MODULE_MODULE_NAME_DOT_CASE",
+          "MVI_SCREEN_MODULE_MODULE_NAME_DOT_CASE",
           "PACKAGE_NAME"
         ],
         "propGenerator": {
@@ -1864,9 +2694,9 @@
         }
       },
       {
-        "propName": "REPOSITORY_MODULE_FILE_DIRECTORY",
+        "propName": "MVI_SCREEN_MODULE_FILE_DIRECTORY",
         "requiredProps": [
-          "REPOSITORY_MODULE_MODULE_NAME"
+          "MVI_SCREEN_MODULE_MODULE_NAME"
         ],
         "propGenerator": {
           "selfRequiredProps": [],
@@ -1879,7 +2709,7 @@
         }
       },
       {
-        "propName": "REPOSITORY_MODULE_PROJECT_NAME_LOWER_KEBAB_CASE",
+        "propName": "MVI_SCREEN_MODULE_PROJECT_NAME_LOWER_KEBAB_CASE",
         "requiredProps": [
           "PROJECT_NAME"
         ],
@@ -1893,9 +2723,23 @@
         }
       },
       {
-        "propName": "REPOSITORY_MODULE_MODULE_NAME_DOT_CASE",
+        "propName": "MVI_SCREEN_MODULE_SCREEN_NAME_LOWER_CASE",
         "requiredProps": [
-          "REPOSITORY_MODULE_MODULE_NAME"
+          "SCREEN_NAME"
+        ],
+        "propGenerator": {
+          "requiredProps": [
+            "SCREEN_NAME"
+          ],
+          "selfRequiredProps": [],
+          "propName": "SCREEN_NAME_LOWER_CASE",
+          "propBaseName": "SCREEN_NAME"
+        }
+      },
+      {
+        "propName": "MVI_SCREEN_MODULE_MODULE_NAME_DOT_CASE",
+        "requiredProps": [
+          "MVI_SCREEN_MODULE_MODULE_NAME"
         ],
         "propGenerator": {
           "requiredProps": [

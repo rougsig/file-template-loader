@@ -54,4 +54,4 @@ include ':app',
         ':jwt-ui-otp',
         ':jwt-domain-otp',
         ':jwt-ui-routing-otp',
-        ':filetemplateloader-repository'
+        ':filetemplateloader-ui-epic'

@@ -20,6 +20,10 @@ class PropScope(
       }
       .toSet()
 
+  val nestedScopedPropGenerators: Set<ScopedPropGenerator> by lazy(LazyThreadSafetyMode.NONE) {
+    scopedPropGenerators.plus(childScopes.flatMap { it.nestedScopedPropGenerators })
+  }
+
   fun copyPropsToLocalScope(props: Props): Props {
     val scopedPropGeneratorNames = scopedPropGenerators.map(PropGenerator::propName)
 

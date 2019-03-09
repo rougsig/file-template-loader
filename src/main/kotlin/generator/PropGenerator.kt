@@ -29,7 +29,10 @@ fun ScopedFileTemplate.generateProps(props: Props): Props {
     .forEach { k, v -> filteredProps.setProperty(k, v) }
 
   require(requiredProps.minus(filteredProps.keys).isEmpty()) {
-    throw IllegalStateException("props not found: ${requiredProps.minus(filteredProps.keys).joinToString { "$it" }}")
+    throw IllegalStateException(
+      "props not found: ${requiredProps.minus(filteredProps.keys).joinToString { it }} " +
+          "\n for template: ${this.fullName}"
+    )
   }
 
   return scope.generateProps(filteredProps)

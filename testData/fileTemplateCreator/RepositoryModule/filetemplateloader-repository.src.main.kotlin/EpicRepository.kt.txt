@@ -1,0 +1,3 @@
+package com.github.rougsig.filetemplateloader.filetemplateloader.repository
+
+interface EpicRepository

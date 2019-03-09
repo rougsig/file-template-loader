@@ -1,13 +1,13 @@
 {
   "templates": [
     {
-      "contentFrom": "RepositoryGroup.json",
+      "contentFrom": "MviScreenGroup.json",
       "variables": {
         "FILE_DIRECTORY": "src/main/kotlin"
       }
     },
     {
-      "contentFrom": "RepositoryModuleBuild.gradle.ft",
+      "contentFrom": "MviScreenBuild.gradle.ft",
       "variables": {
         "FILE_NAME": "build.gradle"
       }
@@ -24,7 +24,7 @@
     }
   ],
   "variables": {
-    "MODULE_NAME": "${PROJECT_NAME_LOWER_KEBAB_CASE}-repository"
+    "MODULE_NAME": "${PROJECT_NAME_LOWER_KEBAB_CASE}-ui-${SCREEN_NAME_LOWER_CASE}"
   },
   "injectors": [
     {

@@ -1,5 +1,5 @@
 {
-  "pattern": ".*.kt",
+  "pattern": ".*.kt.ft",
   "variables": {
     "FILE_NAME": "${SIMPLE_NAME}.kt",
     "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}",

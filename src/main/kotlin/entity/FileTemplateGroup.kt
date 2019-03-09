@@ -44,7 +44,7 @@ data class FileTemplateGroup(
   override val requiredProps: Set<String> =
     extractedProps
       .applyPropGenerators(scope.propGenerators)
-      .minus(scope.scopedPropGenerators.map(PropGenerator::propName))
+      .minus(scope.nestedScopedPropGenerators.map(PropGenerator::propName))
       .minus(scope.childScopes.flatMap { it.scopedPropGenerators.map(PropGenerator::propName) })
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {

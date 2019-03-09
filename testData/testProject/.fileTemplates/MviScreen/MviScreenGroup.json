@@ -3,33 +3,25 @@
     {
       "contentFrom": "Controller.kt.ft",
       "variables": {
-        "SIMPLE_NAME": "${SCREEN_NAME}Controller",
-        "FILE_NAME": "${SIMPLE_NAME}.kt",
-        "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        "SIMPLE_NAME": "${SCREEN_NAME}Controller"
       }
     },
     {
       "contentFrom": "Key.kt.ft",
       "variables": {
-        "SIMPLE_NAME": "${SCREEN_NAME}Key",
-        "FILE_NAME": "${SIMPLE_NAME}.kt",
-        "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        "SIMPLE_NAME": "${SCREEN_NAME}Key"
       }
     },
     {
       "contentFrom": "Presenter.kt.ft",
       "variables": {
-        "SIMPLE_NAME": "${SCREEN_NAME}Presenter",
-        "FILE_NAME": "${SIMPLE_NAME}.kt",
-        "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        "SIMPLE_NAME": "${SCREEN_NAME}Presenter"
       }
     },
     {
       "contentFrom": "Screen.kt.ft",
       "variables": {
-        "SIMPLE_NAME": "${SCREEN_NAME}Screen",
-        "FILE_NAME": "${SIMPLE_NAME}.kt",
-        "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        "SIMPLE_NAME": "${SCREEN_NAME}Screen"
       }
     },
     {
