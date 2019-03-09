@@ -7,6 +7,7 @@ import com.intellij.openapi.project.guessProjectDir
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiDocumentManager
 import com.intellij.psi.PsiFile
+import com.intellij.psi.util.parents
 import org.jetbrains.kotlin.idea.core.getPackage
 import org.jetbrains.kotlin.idea.util.projectStructure.module
 
@@ -19,7 +20,8 @@ fun PsiDirectory.createSubDirectoriesByRelativePath(path: String): PsiDirectory 
       val moduleDir = projectDir.findChild(module!!.name)
       moduleDir
         ?.let { manager.findDirectory(it)!! }
-        ?: manager.findDirectory(projectDir)!!
+        ?: parents().toList().reversed().getOrNull(3) as? PsiDirectory
+        ?: parents().toList().reversed().last() as PsiDirectory
     }
     path.startsWith("/") -> {
       // Find project root

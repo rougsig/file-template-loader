@@ -31,6 +31,11 @@
       "text": ",\n':${MODULE_NAME}'",
       "pathName": "${SETTING_FILE_PATH}",
       "selector": "Literal"
+    },
+    {
+      "text": "\nimplementation project(':${MODULE_NAME}')",
+      "pathName": "${MAIN_ROUTING_MODULE_GRADLE_FILE_PATH}",
+      "selector": "Method Closable Call Command Method Arguments"
     }
   ]
 }
