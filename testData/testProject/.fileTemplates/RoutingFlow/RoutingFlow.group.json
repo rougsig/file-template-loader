@@ -3,27 +3,20 @@
     {
       "contentFrom": "Flow.kt.ft",
       "variables": {
-        "FILE_NAME": "${SIMPLE_NAME}.kt",
-        "SIMPLE_NAME": "${REPOSITORY_NAME}Flow",
-        "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        "SIMPLE_NAME": "${REPOSITORY_NAME}Flow"
       }
     },
     {
       "contentFrom": "FlowCoordinator.kt.ft",
       "variables": {
-        "FILE_NAME": "${SIMPLE_NAME}.kt",
-        "SIMPLE_NAME": "${REPOSITORY_NAME}FlowCoordinator",
-        "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        "SIMPLE_NAME": "${REPOSITORY_NAME}FlowCoordinator"
       }
     },
     {
       "contentFrom": "FlowModule.kt.ft",
       "variables": {
-        "PACKAGE_NAME": "${PACKAGE_NAME}.${FILE_DIRECTORY_DOT_CASE}",
-        "FILE_NAME": "${SIMPLE_NAME}.kt",
         "FILE_DIRECTORY": "di",
-        "SIMPLE_NAME": "${REPOSITORY_NAME}FlowModule",
-        "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}"
+        "SIMPLE_NAME": "${REPOSITORY_NAME}FlowModule"
       }
     }
   ]

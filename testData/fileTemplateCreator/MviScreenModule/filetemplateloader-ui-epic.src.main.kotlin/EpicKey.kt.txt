@@ -1,4 +1,4 @@
-package com.github.rougsig.filetemplateloader.filetemplateloader.ui.epic
+package com.github.rougsig.filetemplateloader.ui.epic
 
 import com.bluelinelabs.conductor.Controller
 import kotlinx.android.parcel.Parcelize

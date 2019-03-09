@@ -1,0 +1,37 @@
+{
+  "templates": [
+    {
+      "contentFrom": "DomainGroup.json",
+      "variables": {
+        "FILE_DIRECTORY": "src/main/kotlin"
+      }
+    },
+    {
+      "contentFrom": "DomainModuleBuild.gradle.ft",
+      "variables": {
+        "FILE_NAME": "build.gradle"
+      }
+    },
+    {
+      "contentFrom": ".gitignore.ft"
+    },
+    {
+      "contentFrom": "AndroidManifest.xml.ft",
+      "variables": {
+        "FILE_NAME": "AndroidManifest.xml",
+        "FILE_DIRECTORY": "src/main"
+      }
+    }
+  ],
+  "variables": {
+    "MODULE_NAME": "${PROJECT_NAME_LOWER_KEBAB_CASE}-domain-${MODEL_NAME_LOWER_CASE}"
+  },
+  "injectors": [
+    {
+      "text": ",\n':${MODULE_NAME}'",
+      "pathName": "${SETTING_FILE_PATH}",
+      "selector": "Literal"
+    }
+  ]
+}
+

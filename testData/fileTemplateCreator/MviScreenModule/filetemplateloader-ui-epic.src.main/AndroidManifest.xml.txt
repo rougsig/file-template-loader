@@ -1,1 +1,1 @@
-<manifest package="com.github.rougsig.filetemplateloader.filetemplateloader.ui.epic" />
+<manifest package="com.github.rougsig.filetemplateloader.ui.epic" />

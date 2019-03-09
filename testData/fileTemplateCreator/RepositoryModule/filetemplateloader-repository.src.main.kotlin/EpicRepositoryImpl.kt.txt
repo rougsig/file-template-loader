@@ -1,4 +1,4 @@
-package com.github.rougsig.filetemplateloader.filetemplateloader.repository
+package com.github.rougsig.filetemplateloader.repository
 
 import javax.inject.Inject
 

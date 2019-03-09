@@ -27,14 +27,13 @@ class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
 
   fun testDummyKtFt() = doTest("Dummy.kt.ft")
 
-  fun testDomainGroupJson() = doTest("Domain.group.json")
+  fun testDomainGroupJson() = doTest("DomainGroup.json")
+  fun testDomainModuleJson() = doTest("DomainModule.json")
 
   fun testMviScreenGroupJson() = doTest("MviScreenGroup.json")
-
   fun testMviScreenModuleJson() = doTest("MviScreenModule.json")
 
   fun testRepositoryGroupJson() = doTest("RepositoryGroup.json")
-
   fun testRepositoryModuleGroupJson() = doTest("RepositoryModule.json")
 
   fun testRoutingFlowGroupJson() = doTest("RoutingFlow.group.json")

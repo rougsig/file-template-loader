@@ -1,8 +1,8 @@
-package com.github.rougsig.filetemplateloader.filetemplateloader.repository.di
+package com.github.rougsig.filetemplateloader.repository.di
 
 import toothpick.config.Module
-import com.github.rougsig.filetemplateloader.filetemplateloader.repository.EpicRepository
-import com.github.rougsig.filetemplateloader.filetemplateloader.repository.EpicRepositoryImpl
+import com.github.rougsig.filetemplateloader.repository.EpicRepository
+import com.github.rougsig.filetemplateloader.repository.EpicRepositoryImpl
 import com.github.rougsig.base.core.util.ToothpickModuleBindings
 
 object EpicRepositoryBindings : ToothpickModuleBindings {

@@ -1,0 +1,23 @@
+{
+  "templates": [
+    {
+      "contentFrom": "Model.kt.ft",
+      "variables": {
+        "SIMPLE_NAME": "${MODEL_NAME}Model"
+      }
+    },
+    {
+      "contentFrom": "ModelImpl.kt.ft",
+      "variables": {
+        "SIMPLE_NAME": "${MODEL_NAME}ModelImpl"
+      }
+    },
+    {
+      "contentFrom": "ModelModule.kt.ft",
+      "variables": {
+        "FILE_DIRECTORY": "di",
+        "SIMPLE_NAME": "Domain${MODEL_NAME}Module"
+      }
+    }
+  ]
+}

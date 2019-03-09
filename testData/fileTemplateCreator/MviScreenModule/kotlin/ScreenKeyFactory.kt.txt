@@ -4,7 +4,7 @@ import com.github.rougsig.filetemplateloader.Route
 import com.github.rougsig.filetemplateloader.ScreenKey1
 import com.github.rougsig.filetemplateloader.ScreenKey2
 import com.github.rougsig.filetemplateloader.ScreenKey3
-import com.github.rougsig.filetemplateloader.filetemplateloader.ui.epic.EpicKey
+import com.github.rougsig.filetemplateloader.ui.epic.EpicKey
 
 class ScreenKeyFactory : Function1<Route, Key> {
     override fun invoke(route: Route): Key {

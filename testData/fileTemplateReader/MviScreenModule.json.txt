@@ -1828,7 +1828,7 @@
     {
       "requiredProps": [
         "MODULE_NAME_DOT_CASE",
-        "PACKAGE_NAME"
+        "PACKAGE_BASE"
       ],
       "name": "PACKAGE_NAME"
     },
@@ -1856,7 +1856,6 @@
     "SETTING_FILE_PATH",
     "PACKAGE_BASE",
     "ROUTE_PATH",
-    "PACKAGE_NAME",
     "APP_ROUTE_NAME",
     "SCREEN_NAME",
     "PROJECT_NAME"
@@ -2678,16 +2677,14 @@
         "propName": "MVI_SCREEN_MODULE_PACKAGE_NAME",
         "requiredProps": [
           "MVI_SCREEN_MODULE_MODULE_NAME_DOT_CASE",
-          "PACKAGE_NAME"
+          "PACKAGE_BASE"
         ],
         "propGenerator": {
-          "selfRequiredProps": [
-            "PACKAGE_NAME"
-          ],
+          "selfRequiredProps": [],
           "customProp": {
             "requiredProps": [
               "MODULE_NAME_DOT_CASE",
-              "PACKAGE_NAME"
+              "PACKAGE_BASE"
             ],
             "name": "PACKAGE_NAME"
           }
