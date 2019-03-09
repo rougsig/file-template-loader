@@ -10,16 +10,36 @@
       "name": "TEMPLATE_EXTENSION"
     },
     {
+      "requiredProps": [
+        "SIMPLE_NAME"
+      ],
+      "name": "FILE_NAME"
+    },
+    {
+      "requiredProps": [
+        "SIMPLE_NAME",
+        "PACKAGE_NAME"
+      ],
+      "name": "CLASS_NAME"
+    },
+    {
+      "requiredProps": [
+        "TEMPLATE_NAME"
+      ],
+      "name": "SIMPLE_NAME"
+    },
+    {
       "requiredProps": [],
       "name": "FILE_DIRECTORY"
     }
   ],
   "extractedProps": [
-    "PACKAGE_NAME"
+    "PACKAGE_NAME",
+    "SIMPLE_NAME",
+    "TEMPLATE_NAME"
   ],
   "requiredProps": [
-    "PACKAGE_NAME",
-    "FILE_NAME"
+    "PACKAGE_NAME"
   ],
   "scope": {
     "name": "DUMMY",
@@ -44,6 +64,53 @@
           "customProp": {
             "requiredProps": [],
             "name": "TEMPLATE_EXTENSION"
+          }
+        }
+      },
+      {
+        "propName": "DUMMY_FILE_NAME",
+        "requiredProps": [
+          "DUMMY_SIMPLE_NAME"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [
+              "SIMPLE_NAME"
+            ],
+            "name": "FILE_NAME"
+          }
+        }
+      },
+      {
+        "propName": "DUMMY_CLASS_NAME",
+        "requiredProps": [
+          "DUMMY_SIMPLE_NAME",
+          "PACKAGE_NAME"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [
+              "SIMPLE_NAME",
+              "PACKAGE_NAME"
+            ],
+            "name": "CLASS_NAME"
+          }
+        }
+      },
+      {
+        "propName": "DUMMY_SIMPLE_NAME",
+        "requiredProps": [
+          "DUMMY_TEMPLATE_NAME"
+        ],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [
+              "TEMPLATE_NAME"
+            ],
+            "name": "SIMPLE_NAME"
           }
         }
       },

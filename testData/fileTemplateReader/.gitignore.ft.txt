@@ -11,13 +11,15 @@
     },
     {
       "requiredProps": [],
+      "name": "FILE_NAME"
+    },
+    {
+      "requiredProps": [],
       "name": "FILE_DIRECTORY"
     }
   ],
   "extractedProps": [],
-  "requiredProps": [
-    "FILE_NAME"
-  ],
+  "requiredProps": [],
   "scope": {
     "name": "GITIGNORE",
     "childScopes": [],
@@ -41,6 +43,17 @@
           "customProp": {
             "requiredProps": [],
             "name": "TEMPLATE_EXTENSION"
+          }
+        }
+      },
+      {
+        "propName": "GITIGNORE_FILE_NAME",
+        "requiredProps": [],
+        "propGenerator": {
+          "selfRequiredProps": [],
+          "customProp": {
+            "requiredProps": [],
+            "name": "FILE_NAME"
           }
         }
       },

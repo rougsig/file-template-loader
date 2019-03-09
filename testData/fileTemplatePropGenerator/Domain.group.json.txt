@@ -22,3 +22,4 @@ MODEL_MODULE_SIMPLE_NAME=DomainEpicModule
 MODEL_MODULE_FILE_NAME=DomainEpicModule.kt
 MODEL_MODULE_FILE_DIRECTORY_DOT_CASE=di
 MODEL_MODULE_PACKAGE_NAME=com.github.rougsig.filetemplateloader.di
+MODEL_MODULE_CLASS_NAME=com.github.rougsig.filetemplateloader.di.DomainEpicModule

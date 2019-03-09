@@ -13,7 +13,8 @@ class CustomPropGenerator(
     get() = customProp.requiredProps
 
   override val selfRequiredProps: Set<String> = {
-    if (requiredProps.contains(customProp.name)) setOf(customProp.name)
+    val requiredPropBaseNames = requiredProps.plus(requiredProps.extractPropBaseNames())
+    if (requiredPropBaseNames.contains(customProp.name)) setOf(customProp.name)
     else emptySet()
   }()
 

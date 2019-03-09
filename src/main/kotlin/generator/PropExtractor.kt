@@ -30,14 +30,18 @@ private fun String.getReferences(): Set<String> {
   return names
 }
 
-fun String.extractBaseProp(): String? {
+fun String.extractPropBaseName(): String? {
   return PROP_MODIFICATOR_MATCHER.replace(this) { "" }
     .takeIf { PROP_MODIFICATOR_MATCHER.containsMatchIn(this) }
 }
 
+fun Set<String>.extractPropBaseNames(): Set<String> {
+  return mapNotNullTo(HashSet()) { it.extractPropBaseName() }
+}
+
 fun Set<String>.extractModificatorPropGenerators(): List<ModificatorPropGenerator> {
   return mapNotNull { propName ->
-    propName.extractBaseProp()?.let { propBaseName ->
+    propName.extractPropBaseName()?.let { propBaseName ->
       val modificatorName = PROP_MODIFICATOR_MATCHER.find(propName)!!.value.removePrefix("_")
       val modificator = PROP_MODIFICATORS.getValue(modificatorName)
       ModificatorPropGenerator(propName, propBaseName, modificator)

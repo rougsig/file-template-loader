@@ -64,9 +64,9 @@ class FileTemplateCreatorTest : LightPlatformCodeInsightFixtureTestCase() {
 
   fun testMviScreenGroupJson() = doTest("MviScreen.group.json", "MviScreenGroup")
 
-  fun testRepositoryGroupJson() = doTest("RepositoryGroup.group.json", "RepositoryGroup")
+  fun testRepositoryGroupJson() = doTest("RepositoryGroup.json", "RepositoryGroup")
 
   fun testRoutingFlowGroupJson() = doTest("RoutingFlow.group.json", "RoutingFlowGroup")
 
-  fun testRepositoryModuleGroupJson() = doTest("RepositoryModule.group.json", "RepositoryModule")
+  fun testRepositoryModuleGroupJson() = doTest("RepositoryModule.json", "RepositoryModule")
 }

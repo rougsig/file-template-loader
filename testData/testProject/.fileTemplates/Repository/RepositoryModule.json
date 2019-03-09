@@ -1,7 +1,7 @@
 {
   "templates": [
     {
-      "contentFrom": "RepositoryGroup.group.json",
+      "contentFrom": "RepositoryGroup.json",
       "variables": {
         "FILE_DIRECTORY": "src/main/kotlin"
       }
@@ -13,10 +13,7 @@
       }
     },
     {
-      "contentFrom": ".gitignore.ft",
-      "variables": {
-        "FILE_NAME": ".gitignore"
-      }
+      "contentFrom": ".gitignore.ft"
     },
     {
       "contentFrom": "AndroidManifest.xml.ft",
@@ -27,9 +24,9 @@
     }
   ],
   "variables": {
+    "MODULE_NAME": "${REPOSITORY_NAME_LOWER_CASE}-repository",
     "PACKAGE_NAME": "${PACKAGE_NAME}.${MODULE_NAME_DOT_CASE}",
-    "FILE_DIRECTORY": "./${MODULE_NAME}",
-    "MODULE_NAME": "epic-repository"
+    "FILE_DIRECTORY": "./${MODULE_NAME}"
   },
   "injectors": [
     {

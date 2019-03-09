@@ -11,6 +11,7 @@ val DEFAULT_PROPS: Map<String, String>
   get() = Props().apply {
     setProperty("PACKAGE_NAME", "com.github.rougsig.filetemplateloader")
     setProperty("MODEL_NAME", "Epic")
+    setProperty("MODULE_NAME", "Epic")
     setProperty("SCREEN_NAME", "Epic")
     setProperty("FLOW_NAME", "Epic")
     setProperty("REPOSITORY_NAME", "Epic")

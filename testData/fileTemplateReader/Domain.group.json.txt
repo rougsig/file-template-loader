@@ -32,6 +32,25 @@
           "name": "CLASS_NAME"
         },
         {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [
+            "TEMPLATE_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
           "requiredProps": [],
           "name": "FILE_DIRECTORY"
         }
@@ -39,7 +58,8 @@
       "extractedProps": [
         "SIMPLE_NAME",
         "PACKAGE_NAME",
-        "MODEL_NAME"
+        "MODEL_NAME",
+        "TEMPLATE_NAME"
       ],
       "requiredProps": [
         "MODEL_NAME",
@@ -163,6 +183,25 @@
           "name": "CLASS_NAME"
         },
         {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [
+            "TEMPLATE_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
           "requiredProps": [],
           "name": "FILE_DIRECTORY"
         }
@@ -172,7 +211,8 @@
         "PACKAGE_BASE",
         "PACKAGE_NAME",
         "MODEL_SIMPLE_NAME",
-        "MODEL_NAME"
+        "MODEL_NAME",
+        "TEMPLATE_NAME"
       ],
       "requiredProps": [
         "MODEL_NAME",
@@ -300,6 +340,25 @@
             "FILE_DIRECTORY_DOT_CASE"
           ],
           "name": "PACKAGE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [
+            "TEMPLATE_NAME"
+          ],
+          "name": "SIMPLE_NAME"
         }
       ],
       "extractedProps": [
@@ -310,7 +369,8 @@
         "MODEL_CLASS_NAME",
         "MODEL_SIMPLE_NAME",
         "MODEL_NAME",
-        "FILE_DIRECTORY_DOT_CASE"
+        "FILE_DIRECTORY_DOT_CASE",
+        "TEMPLATE_NAME"
       ],
       "requiredProps": [
         "MODEL_NAME",
@@ -403,6 +463,23 @@
                   "FILE_DIRECTORY_DOT_CASE"
                 ],
                 "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "MODEL_MODULE_CLASS_NAME",
+            "requiredProps": [
+              "MODEL_MODULE_SIMPLE_NAME",
+              "MODEL_MODULE_PACKAGE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ],
+                "name": "CLASS_NAME"
               }
             }
           },
@@ -707,6 +784,23 @@
                   "FILE_DIRECTORY_DOT_CASE"
                 ],
                 "name": "PACKAGE_NAME"
+              }
+            }
+          },
+          {
+            "propName": "MODEL_MODULE_CLASS_NAME",
+            "requiredProps": [
+              "MODEL_MODULE_SIMPLE_NAME",
+              "MODEL_MODULE_PACKAGE_NAME"
+            ],
+            "propGenerator": {
+              "selfRequiredProps": [],
+              "customProp": {
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ],
+                "name": "CLASS_NAME"
               }
             }
           },

@@ -38,7 +38,8 @@ class PropScope(
   }
 
   private fun Set<ScopedPropGenerator>.generateProps(props: Props): Props {
-    val canBeGenerated = filter { it.isGenerateAvailable(props) }
+    val canBeGenerated = this
+      .filter { it.isGenerateAvailable(props) }
 
     if (canBeGenerated.isEmpty() && isNotEmpty())
       throw IllegalStateException("can't generate props: ${joinToString { it.propName }}")

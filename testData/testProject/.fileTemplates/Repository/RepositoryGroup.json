@@ -1,0 +1,24 @@
+{
+  "templates": [
+    {
+      "contentFrom": "Repository.kt.ft",
+      "variables": {
+        "SIMPLE_NAME": "${REPOSITORY_NAME}Repository"
+      }
+    },
+    {
+      "contentFrom": "RepositoryImpl.kt.ft",
+      "variables": {
+        "SIMPLE_NAME": "${REPOSITORY_NAME}RepositoryImpl"
+      }
+    },
+    {
+      "contentFrom": "RepositoryBindings.kt.ft",
+      "variables": {
+        "FILE_DIRECTORY": "di",
+        "SIMPLE_NAME": "${REPOSITORY_NAME}RepositoryBindings",
+        "PACKAGE_NAME": "${PACKAGE_NAME}.${FILE_DIRECTORY_DOT_CASE}"
+      }
+    }
+  ]
+}

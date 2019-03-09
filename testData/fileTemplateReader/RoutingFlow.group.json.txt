@@ -32,6 +32,25 @@
           "name": "CLASS_NAME"
         },
         {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [
+            "TEMPLATE_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
           "requiredProps": [],
           "name": "FILE_DIRECTORY"
         }
@@ -43,7 +62,8 @@
         "PACKAGE_BASE",
         "FLOW_MODULE_CLASS_NAME",
         "PACKAGE_NAME",
-        "REPOSITORY_NAME"
+        "REPOSITORY_NAME",
+        "TEMPLATE_NAME"
       ],
       "requiredProps": [
         "PACKAGE_BASE",
@@ -185,6 +205,25 @@
           "name": "CLASS_NAME"
         },
         {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [
+            "TEMPLATE_NAME"
+          ],
+          "name": "SIMPLE_NAME"
+        },
+        {
           "requiredProps": [],
           "name": "FILE_DIRECTORY"
         }
@@ -196,7 +235,8 @@
         "SIMPLE_NAME",
         "PACKAGE_BASE",
         "PACKAGE_NAME",
-        "REPOSITORY_NAME"
+        "REPOSITORY_NAME",
+        "TEMPLATE_NAME"
       ],
       "requiredProps": [
         "PACKAGE_BASE",
@@ -333,6 +373,25 @@
             "PACKAGE_NAME"
           ],
           "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME"
+          ],
+          "name": "FILE_NAME"
+        },
+        {
+          "requiredProps": [
+            "SIMPLE_NAME",
+            "PACKAGE_NAME"
+          ],
+          "name": "CLASS_NAME"
+        },
+        {
+          "requiredProps": [
+            "TEMPLATE_NAME"
+          ],
+          "name": "SIMPLE_NAME"
         }
       ],
       "extractedProps": [
@@ -343,7 +402,8 @@
         "PACKAGE_NAME",
         "FLOW_COORDINATOR_CLASS_NAME",
         "FILE_DIRECTORY_DOT_CASE",
-        "REPOSITORY_NAME"
+        "REPOSITORY_NAME",
+        "TEMPLATE_NAME"
       ],
       "requiredProps": [
         "FLOW_CLASS_NAME",

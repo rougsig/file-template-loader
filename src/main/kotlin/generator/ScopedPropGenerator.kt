@@ -11,9 +11,9 @@ class ScopedPropGenerator(
   override val requiredProps: Set<String> =
     propGenerator.requiredProps
       .map { propName ->
-        val isGeneraredProp = scope.propGenerators.find { it.propName == propName } != null
+        val isGeneratedProp = scope.propGenerators.find { it.propName == propName } != null
         val isSelfRequiredProp = propGenerator.selfRequiredProps.contains(propName)
-        if (isGeneraredProp && !isSelfRequiredProp) "${scope.name}_${propName}"
+        if (isGeneratedProp && !isSelfRequiredProp) "${scope.name}_$propName"
         else propName
       }
       .toSet()
