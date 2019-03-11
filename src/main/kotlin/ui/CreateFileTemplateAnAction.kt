@@ -1,7 +1,9 @@
 package com.github.rougsig.filetemplateloader.ui
 
 import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
-import com.github.rougsig.filetemplateloader.extension.generatePackageName
+import com.github.rougsig.filetemplateloader.constant.PROP_ROOT_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.extension.generatePackageNameByDirectory
+import com.github.rougsig.filetemplateloader.extension.generateRootPackageName
 import com.github.rougsig.filetemplateloader.extension.getDirectory
 import com.github.rougsig.filetemplateloader.extension.writeAction
 import com.github.rougsig.filetemplateloader.generator.filterProps
@@ -29,7 +31,8 @@ class CreateFileTemplateAnAction(
     val template = project.readFileTemplate(templateName)
 
     val config = project.readConfig()
-    config.setProperty(PROP_PACKAGE_NAME, generatePackageName(config, dir))
+    config.setProperty(PROP_ROOT_PACKAGE_NAME, generateRootPackageName(config, dir))
+    config.setProperty(PROP_PACKAGE_NAME, generatePackageNameByDirectory(config, dir))
     val requiredProps = template.requiredProps.filterProps(config)
     CrateTemplateGroupDialog(
       config,

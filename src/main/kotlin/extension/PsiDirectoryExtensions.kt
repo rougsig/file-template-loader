@@ -1,7 +1,11 @@
 package com.github.rougsig.filetemplateloader.extension
 
 import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_BASE
+import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
+import com.github.rougsig.filetemplateloader.constant.PROP_ROOT_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.generator.Props
+import com.github.rougsig.filetemplateloader.generator.requireProperty
+import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.module.ModuleUtil
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.psi.PsiDirectory
@@ -10,6 +14,7 @@ import com.intellij.psi.PsiFile
 import com.intellij.psi.util.parents
 import org.jetbrains.kotlin.idea.core.getPackage
 import org.jetbrains.kotlin.idea.util.projectStructure.module
+import java.util.*
 
 fun PsiDirectory.createSubDirectoriesByRelativePath(path: String): PsiDirectory {
   if (path.isBlank()) return this
@@ -48,9 +53,15 @@ fun PsiDirectory.createFileToDirectory(directory: String, fileName: String, cont
   return PsiDocumentManager.getInstance(project).getPsiFile(doc)!!
 }
 
-fun generatePackageName(props: Props, dir: PsiDirectory): String {
-  val packageName = StringBuilder()
+fun generateRootPackageName(props: Props, dir: PsiDirectory): String {
+  val defaultProperties = Properties()
+  FileTemplateUtil.fillDefaultProperties(defaultProperties, dir)
 
+  val defaultPackageName = (defaultProperties.getOrDefault(PROP_PACKAGE_NAME, "") as String)
+    .replace(".${dir.getPackage()?.qualifiedName}", "")
+  if (defaultPackageName.isNotBlank()) return defaultPackageName
+
+  val packageName = StringBuilder()
   val basePackageName = props.getOrDefault(PROP_PACKAGE_BASE, "")
   if (!basePackageName.isBlank()) {
     packageName.append(basePackageName)
@@ -66,6 +77,15 @@ fun generatePackageName(props: Props, dir: PsiDirectory): String {
     packageName.append(".")
     packageName.append(moduleName)
   }
+
+  return packageName.toString()
+}
+
+fun generatePackageNameByDirectory(props: Props, dir: PsiDirectory): String {
+  val packageName = StringBuilder()
+
+  val rootPackageName = props.requireProperty(PROP_ROOT_PACKAGE_NAME)
+  packageName.append(rootPackageName)
 
   val subPackage = dir.getPackage()?.qualifiedName
   if (!subPackage.isNullOrBlank()) {

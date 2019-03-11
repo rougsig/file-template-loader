@@ -1,6 +1,7 @@
 package com.github.rougsig.filetemplateloader.constant
 
 const val PROP_PACKAGE_NAME = "PACKAGE_NAME"
+const val PROP_ROOT_PACKAGE_NAME = "ROOT_PACKAGE_NAME"
 const val PROP_PACKAGE_BASE = "PACKAGE_BASE"
 const val PROP_TEMPLATE_NAME = "TEMPLATE_NAME"
 const val PROP_TEMPLATE_EXTENSION = "TEMPLATE_EXTENSION"
