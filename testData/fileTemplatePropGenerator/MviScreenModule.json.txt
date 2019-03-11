@@ -4,6 +4,7 @@ SETTING_FILE_PATH=kotlin/settings.gradle
 KEY_FACTORY_CLASS=com.github.rougsig.filetemplateloader.routing.ScreenKeyFactory
 PACKAGE_BASE=com.github.rougsig
 APP_ROUTE_CLASS=com.github.rougsig.filetemplateloader.ui.routing.AppRoute
+MAIN_ROUTING_MODULE_GRADLE_FILE_PATH=kotlin/build.gradle
 SCREEN_NAME=Epic
 ROUTE_PATH=/epic
 MVI_SCREEN_MODULE_GROUP_NAME=MviScreenModule

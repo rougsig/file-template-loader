@@ -882,7 +882,7 @@
       ]
     },
     {
-      "selector": "AppRoute CLASS_BODY LBRACE",
+      "selector": "${APP_ROUTE_NAME} CLASS_BODY LBRACE",
       "className": "${APP_ROUTE_CLASS}",
       "pathName": null,
       "requiredProps": [

@@ -42,7 +42,7 @@
     {
       "text": "\nobject ${SCREEN_NAME_UPPER_CAMEL_CASE} : ${APP_ROUTE_NAME}(\"${ROUTE_PATH}\")",
       "className": "${APP_ROUTE_CLASS}",
-      "selector": "AppRoute CLASS_BODY LBRACE"
+      "selector": "${APP_ROUTE_NAME} CLASS_BODY LBRACE"
     },
     {
       "text": "\nimport ${KEY_CLASS_NAME}",

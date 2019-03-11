@@ -885,7 +885,7 @@
           ]
         },
         {
-          "selector": "AppRoute CLASS_BODY LBRACE",
+          "selector": "${APP_ROUTE_NAME} CLASS_BODY LBRACE",
           "className": "${APP_ROUTE_CLASS}",
           "pathName": null,
           "requiredProps": [
@@ -1810,6 +1810,15 @@
         "MODULE_NAME",
         "SETTING_FILE_PATH"
       ]
+    },
+    {
+      "selector": "Method Closable Call Command Method Arguments",
+      "className": null,
+      "pathName": "${MAIN_ROUTING_MODULE_GRADLE_FILE_PATH}",
+      "requiredProps": [
+        "MODULE_NAME",
+        "MAIN_ROUTING_MODULE_GRADLE_FILE_PATH"
+      ]
     }
   ],
   "customProps": [
@@ -1851,12 +1860,14 @@
     "SCREEN_NAME_LOWER_CASE",
     "MODULE_NAME_DOT_CASE",
     "MODULE_NAME",
-    "SETTING_FILE_PATH"
+    "SETTING_FILE_PATH",
+    "MAIN_ROUTING_MODULE_GRADLE_FILE_PATH"
   ],
   "requiredProps": [
     "SETTING_FILE_PATH",
     "PACKAGE_BASE",
     "KEY_FACTORY_CLASS",
+    "MAIN_ROUTING_MODULE_GRADLE_FILE_PATH",
     "ROUTE_PATH",
     "APP_ROUTE_NAME",
     "APP_ROUTE_CLASS",

@@ -14,14 +14,17 @@ import org.jetbrains.kotlin.idea.util.projectStructure.module
 fun PsiDirectory.createSubDirectoriesByRelativePath(path: String): PsiDirectory {
   if (path.isBlank()) return this
   val projectDir = project.guessProjectDir()!!
+  val projectDirParents = manager.findDirectory(projectDir)!!.parents().toList()
+  val currentDirParent = parents().toList()
+  val parentsDiff = currentDirParent.minus(projectDirParents).reversed()
   val startDirectory = when {
     path.startsWith("./") -> {
       // Find module root
       val moduleDir = projectDir.findChild(module!!.name)
       moduleDir
         ?.let { manager.findDirectory(it)!! }
-        ?: parents().toList().reversed().getOrNull(3) as? PsiDirectory
-        ?: parents().toList().reversed().last() as PsiDirectory
+        ?: parentsDiff.firstOrNull() as? PsiDirectory
+        ?: manager.findDirectory(projectDir)!!
     }
     path.startsWith("/") -> {
       // Find project root
