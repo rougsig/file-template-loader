@@ -57,8 +57,14 @@ fun generateRootPackageName(props: Props, dir: PsiDirectory): String {
   val defaultProperties = Properties()
   FileTemplateUtil.fillDefaultProperties(defaultProperties, dir)
 
-  val defaultPackageName = (defaultProperties.getOrDefault(PROP_PACKAGE_NAME, "") as String)
-    .replace(".${dir.getPackage()?.qualifiedName}", "")
+  val qualifiedName = dir.getPackage()?.qualifiedName ?: ""
+  val defaultPackageName = (defaultProperties.getOrDefault(PROP_PACKAGE_NAME, "") as String).let {
+    if (qualifiedName.isNotBlank()) {
+      it.replace(".$qualifiedName", "")
+    } else {
+      it
+    }
+  }
   if (defaultPackageName.isNotBlank()) return defaultPackageName
 
   val packageName = StringBuilder()
