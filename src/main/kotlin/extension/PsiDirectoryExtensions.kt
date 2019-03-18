@@ -6,6 +6,7 @@ import com.github.rougsig.filetemplateloader.constant.PROP_ROOT_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.generator.requireProperty
 import com.intellij.ide.fileTemplates.FileTemplateUtil
+import com.intellij.openapi.command.undo.DocumentReferenceManager
 import com.intellij.openapi.module.ModuleUtil
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.psi.PsiDirectory
@@ -46,7 +47,9 @@ fun PsiDirectory.createSubDirectoriesByRelativePath(path: String): PsiDirectory 
 fun PsiDirectory.createFileToDirectory(directory: String, fileName: String, content: String): PsiFile {
   val targetDir = createSubDirectoriesByRelativePath(directory)
 
-  val doc = PsiDocumentManager.getInstance(project).getDocument(targetDir.createFile(fileName))!!
+  val file = targetDir.createFile(fileName)
+  val doc = DocumentReferenceManager.getInstance().create(file.virtualFile).document
+    ?: throw IllegalStateException("file creation failed: $fileName")
   doc.setText(content)
   PsiDocumentManager.getInstance(project).commitDocument(doc)
 
