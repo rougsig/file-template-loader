@@ -28,11 +28,12 @@ data class FileTemplateInjector(
 
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
     val insertTo = getInsertTo(dir.project, props).containingFile
-    val selected = insertTo.select(mergeTemplate(selector, props))!!
+    val selected = insertTo.select(mergeTemplate(selector, props))
+      ?: throw IllegalStateException("not selected by `$selector` in `$insertTo`")
     val ext = mergeTemplate(text, props)
 
     val doc = PsiDocumentManager.getInstance(dir.project).getDocument(insertTo)!!
-    doc.insertString(selected.endOffset, ext)
+    doc.insertString(doc.getLineEndOffset(doc.getLineNumber(selected.endOffset)), ext)
     PsiDocumentManager.getInstance(dir.project).commitDocument(doc)
 
     val resultFile = CodeStyleManager.getInstance(dir.manager)

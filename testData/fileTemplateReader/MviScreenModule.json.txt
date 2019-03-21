@@ -1812,7 +1812,7 @@
       ]
     },
     {
-      "selector": "Method Closable Call Command Method Arguments",
+      "selector": "implementation",
       "className": null,
       "pathName": "${MAIN_ROUTING_MODULE_GRADLE_FILE_PATH}",
       "requiredProps": [
