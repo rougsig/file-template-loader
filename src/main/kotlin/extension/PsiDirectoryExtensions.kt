@@ -1,13 +1,11 @@
 package com.github.rougsig.filetemplateloader.extension
 
-import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_BASE
 import com.github.rougsig.filetemplateloader.constant.PROP_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.constant.PROP_ROOT_PACKAGE_NAME
 import com.github.rougsig.filetemplateloader.generator.Props
 import com.github.rougsig.filetemplateloader.generator.requireProperty
 import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.command.undo.DocumentReferenceManager
-import com.intellij.openapi.module.ModuleUtil
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiDocumentManager
@@ -15,6 +13,7 @@ import com.intellij.psi.PsiFile
 import com.intellij.psi.util.parents
 import org.jetbrains.kotlin.idea.core.getPackage
 import org.jetbrains.kotlin.idea.util.projectStructure.module
+import org.jetbrains.kotlin.idea.util.sourceRoots
 import java.util.*
 
 fun PsiDirectory.createSubDirectoriesByRelativePath(path: String): PsiDirectory {
@@ -60,34 +59,19 @@ fun generateRootPackageName(props: Props, dir: PsiDirectory): String {
   val defaultProperties = Properties()
   FileTemplateUtil.fillDefaultProperties(defaultProperties, dir)
 
-  val qualifiedName = dir.getPackage()?.qualifiedName ?: ""
-  val defaultPackageName = (defaultProperties.getOrDefault(PROP_PACKAGE_NAME, "") as String).let {
-    if (qualifiedName.isNotBlank()) {
-      it.replace(".$qualifiedName", "")
-    } else {
-      it
-    }
-  }
-  if (defaultPackageName.isNotBlank()) return defaultPackageName
-
-  val packageName = StringBuilder()
-  val basePackageName = props.getOrDefault(PROP_PACKAGE_BASE, "")
-  if (!basePackageName.isBlank()) {
-    packageName.append(basePackageName)
+  val dirStr = dir.virtualFile.url
+  val sourceSetRoot = dir.module?.sourceRoots?.find { dirStr.startsWith(it.url) } ?: return ""
+  var rootPackage = sourceSetRoot
+  while (rootPackage.isDirectory && rootPackage.children.size == 1) {
+    rootPackage = rootPackage.children.first()
   }
 
-  val moduleName = dir.module
-    ?.let { ModuleUtil.getModuleDirPath(it) }
-    ?.replace("\\", "/")
-    ?.split("/")
-    ?.last()
-    ?.toDotCase()
-  if (!moduleName.isNullOrBlank()) {
-    packageName.append(".")
-    packageName.append(moduleName)
-  }
-
-  return packageName.toString()
+  return rootPackage.url
+    .replace(sourceSetRoot.url, "")
+    .replace("/", ".")
+    .removePrefix(".")
+    .takeIf { it.isNotBlank() }
+    ?: defaultProperties.getProperty(PROP_PACKAGE_NAME, "")
 }
 
 fun generatePackageNameByDirectory(props: Props, dir: PsiDirectory): String {
@@ -96,7 +80,11 @@ fun generatePackageNameByDirectory(props: Props, dir: PsiDirectory): String {
   val rootPackageName = props.requireProperty(PROP_ROOT_PACKAGE_NAME)
   packageName.append(rootPackageName)
 
-  val subPackage = dir.getPackage()?.qualifiedName
+  val subPackage = dir.getPackage()
+    ?.qualifiedName
+    ?.replace(rootPackageName, "")
+    ?.removePrefix(".")
+
   if (!subPackage.isNullOrBlank()) {
     packageName.append(".")
     packageName.append(subPackage)
