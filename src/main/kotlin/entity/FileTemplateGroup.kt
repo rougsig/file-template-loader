@@ -50,7 +50,7 @@ data class FileTemplateGroup(
   override fun create(dir: PsiDirectory, props: Props): List<PsiFile> {
     val localScopeProps = scope.copyPropsToLocalScope(props)
     val directory = localScopeProps.requireProperty(PROP_FILE_DIRECTORY)
-    println("Create GROUP: `$name` TO: `$directory`")
+    println("Create GROUP=$name\nTO=$directory\nPROPS=$localScopeProps\n")
 
     val subDirectory = dir.createSubDirectoriesByRelativePath(directory)
 

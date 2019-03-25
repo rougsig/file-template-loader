@@ -25,7 +25,6 @@ fun PsiElement.select(selector: String): PsiElement? {
           }
           builder.append("]")
           val str = builder.toString()
-          println(str)
           query.contains("*") || query.all { q -> str.contains(q, true) }
         }.toList()
       }.toList()

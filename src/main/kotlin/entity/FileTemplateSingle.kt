@@ -54,7 +54,7 @@ data class FileTemplateSingle(
 
     val fileName = localScopeProps.requireProperty(PROP_FILE_NAME)
     val directory = localScopeProps.requireProperty(PROP_FILE_DIRECTORY)
-    println("Create TEMPLATE: `$name` TO: `$directory`")
+    println("Create TEMPLATE=$name\nTO=$directory\nPROPS=$localScopeProps\n")
 
     return listOf(dir.createFileToDirectory(directory, fileName, mergedTemplate))
   }
