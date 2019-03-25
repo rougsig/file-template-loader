@@ -15,6 +15,8 @@ import com.intellij.openapi.project.ProjectManager
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
+import org.apache.velocity.app.Velocity
+import org.apache.velocity.runtime.RuntimeSingleton
 
 class FileTemplateLoaderProjectComponent : ProjectComponent {
 
@@ -63,6 +65,7 @@ class FileTemplateLoaderProjectComponent : ProjectComponent {
 
   init {
     println("Init: FileTemplateLoaderProjectComponent")
+    if (RuntimeSingleton.isInitialized()) Velocity.init()
     projects.forEach {
       it.writeAction {
         FileTypeManager.getInstance().associatePattern(PlainTextFileType.INSTANCE, "*.$FT_EXTENSION")
