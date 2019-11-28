@@ -28,6 +28,7 @@ class FileTemplatePropGeneratorTest : LightPlatformCodeInsightFixtureTestCase() 
     val generatedProps = template
       .generateProps(props)
       .map { (key, value) -> "$key=$value" }
+      .sorted()
       .joinToString("\n") { it }
 
     assertSameLinesWithFile(
