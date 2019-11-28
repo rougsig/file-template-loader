@@ -6,55 +6,51 @@ import com.github.rougsig.filetemplateloader.reader.FILE_TEMPLATE_FOLDER_NAME
 import com.github.rougsig.filetemplateloader.reader.FILE_TEMPLATE_MIXIN_EXTENSION
 import com.github.rougsig.filetemplateloader.reader.FT_EXTENSION
 import com.intellij.openapi.actionSystem.ActionManager
+import com.intellij.openapi.actionSystem.Constraints
 import com.intellij.openapi.actionSystem.DefaultActionGroup
 import com.intellij.openapi.components.ProjectComponent
 import com.intellij.openapi.fileTypes.FileTypeManager
 import com.intellij.openapi.fileTypes.PlainTextFileType
 import com.intellij.openapi.project.Project
-import com.intellij.openapi.project.ProjectManager
 import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
 import org.apache.velocity.app.Velocity
 import org.apache.velocity.runtime.RuntimeSingleton
 
-class FileTemplateLoaderProjectComponent : ProjectComponent {
-
+class FileTemplateLoaderProjectComponent(project: Project) : ProjectComponent {
   companion object {
-    private val projects: List<Project>
-      get() = ProjectManager.getInstance().openProjects.toList()
-
-    fun reloadTemplates() {
+    fun reloadTemplates(project: Project) {
       println("Init: ReloadTemplates")
-
-      val templatesGroup =
-        ActionManager.getInstance().getAction(CreateFromProjectTemplateAnAction.ID) as DefaultActionGroup
-      templatesGroup.removeAll()
+      val templatesGroup = ActionManager.getInstance().getAction("NewGroup") as DefaultActionGroup
 
       try {
-        projects.forEach { project ->
-          val fileTemplateDirectory = project
-            .guessProjectDir()!!
-            .findChild(FILE_TEMPLATE_FOLDER_NAME)
+        val fileTemplateDirectory = project
+          .guessProjectDir()!!
+          .findChild(FILE_TEMPLATE_FOLDER_NAME)
 
-          fun buildGroup(file: VirtualFile, group: DefaultActionGroup, groupName: String? = null) {
-            if (file.isDirectory) file.children.toList()
-              .filterNot {
-                it.name.endsWith(FILE_TEMPLATE_MIXIN_EXTENSION)
-                    || it.name.endsWith(FILE_TEMPLATE_CONFIG_EXTENSION)
-              }
-              .sortedByDescending { it.isDirectory }
-              .let { children ->
-                val childGroup = DefaultActionGroup(groupName ?: file.name, true)
-                group.add(childGroup)
-                children.forEach { buildGroup(it, childGroup) }
-              }
-            else group.add(CreateFileTemplateAnAction(file.name, file.nameWithoutExtension))
-          }
+        fun buildGroup(
+          file: VirtualFile,
+          group: DefaultActionGroup,
+          groupName: String? = null,
+          constraint: Constraints = Constraints.LAST
+        ) {
+          if (file.isDirectory) file.children.toList()
+            .filterNot {
+              it.name.endsWith(FILE_TEMPLATE_MIXIN_EXTENSION)
+                || it.name.endsWith(FILE_TEMPLATE_CONFIG_EXTENSION)
+            }
+            .sortedByDescending { it.isDirectory }
+            .let { children ->
+              val childGroup = DefaultActionGroup(groupName ?: file.name, true)
+              group.add(childGroup, constraint)
+              children.forEach { buildGroup(it, childGroup) }
+            }
+          else group.add(CreateFileTemplateAnAction(file.name, file.nameWithoutExtension), constraint)
+        }
 
-          if (fileTemplateDirectory != null) {
-            buildGroup(fileTemplateDirectory, templatesGroup, project.name)
-          }
+        if (fileTemplateDirectory != null) {
+          buildGroup(fileTemplateDirectory, templatesGroup, "From Project Template", Constraints.FIRST)
         }
       } catch (e: Exception) {
         val stackTrace = e.stackTrace.take(8).joinToString(separator = "\n") { "$it" }
@@ -66,18 +62,9 @@ class FileTemplateLoaderProjectComponent : ProjectComponent {
   init {
     println("Init: FileTemplateLoaderProjectComponent")
     if (RuntimeSingleton.isInitialized()) Velocity.init()
-    projects.forEach {
-      it.writeAction {
-        FileTypeManager.getInstance().associatePattern(PlainTextFileType.INSTANCE, "*.$FT_EXTENSION")
-      }
+    project.writeAction {
+      FileTypeManager.getInstance().associatePattern(PlainTextFileType.INSTANCE, "*.$FT_EXTENSION")
     }
-  }
-
-  override fun projectOpened() {
-    reloadTemplates()
-  }
-
-  override fun projectClosed() {
-    reloadTemplates()
+    reloadTemplates(project)
   }
 }

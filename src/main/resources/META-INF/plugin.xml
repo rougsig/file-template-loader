@@ -16,13 +16,6 @@
                 description="Reload Project Templates">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>
-        <group id="com.github.rougsig.filetemplateloader.CreateFromProjectTemplate"
-               class="com.github.rougsig.filetemplateloader.ui.CreateFromProjectTemplateAnAction"
-               text="From Project Template"
-               popup="true"
-               description="Create From Project Template">
-            <add-to-group group-id="NewGroup" anchor="first"/>
-        </group>
     </actions>
 
     <project-components>
