@@ -1,1 +1,0 @@
-<manifest package="com.github.rougsig.filetemplateloader.ui.epic" />

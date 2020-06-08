@@ -1,5 +1,0 @@
-package com.github.rougsig.filetemplateloader.repository
-
-import javax.inject.Inject
-
-internal class EpicRepositoryImpl @Inject constructor() : EpicRepository

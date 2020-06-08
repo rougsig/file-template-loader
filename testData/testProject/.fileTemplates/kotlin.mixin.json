@@ -1,9 +1,0 @@
-{
-  "pattern": ".*.kt.ft",
-  "variables": {
-    "FILE_NAME": "${SIMPLE_NAME}.kt",
-    "CLASS_NAME": "${PACKAGE_NAME}.${SIMPLE_NAME}",
-    "SIMPLE_NAME": "${TEMPLATE_NAME}",
-    "PACKAGE_NAME": "${PACKAGE_NAME}${FILE_DIRECTORY_APPEND_DOT_CASE}"
-  }
-}

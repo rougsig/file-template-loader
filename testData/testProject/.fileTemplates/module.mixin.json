@@ -1,7 +1,0 @@
-{
-  "pattern": ".*Module.json",
-  "variables": {
-    "PACKAGE_NAME": "${PACKAGE_BASE}.${MODULE_NAME_DOT_CASE}",
-    "FILE_DIRECTORY": "/${MODULE_NAME}"
-  }
-}
