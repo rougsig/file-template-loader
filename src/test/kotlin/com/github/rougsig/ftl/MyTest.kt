@@ -17,7 +17,7 @@ class MyTest : Assertions() {
           |import com.github.rougsig.ftl.Deps
           |
           |
-          |10 + 5
+          |10 + 5 
           """.trimMargin()) }
       .getOrElse { throw RuntimeException("Cannot load script", it) }
       .castOrError<Int>()
