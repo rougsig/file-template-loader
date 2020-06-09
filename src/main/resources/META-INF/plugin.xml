@@ -1,0 +1,14 @@
+<idea-plugin>
+    <id>com.github.rougsig.file-template-loader</id>
+    <name>FileTemplate Loader</name>
+    <vendor email="rougsig@gmail.com" url="https://github.com/rougsig/file-template-loader">Andrey Stepankov</vendor>
+    <idea-version since-build="183.0"/>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>org.intellij.groovy</depends>
+
+    <project-components>
+        <component>
+            <implementation-class>com.github.rougsig.ftl.FtlProjectModule</implementation-class>
+        </component>
+    </project-components>
+</idea-plugin>

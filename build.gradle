@@ -50,3 +50,9 @@ dependencies {
   testImplementation "org.testng:testng:6.10"
   testImplementation "org.assertj:assertj-core:3.6.2"
 }
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+  kotlinOptions {
+    jvmTarget = "1.8"
+  }
+}
