@@ -7,17 +7,15 @@ import com.intellij.openapi.module.ModuleManager
 import com.intellij.openapi.module.ModuleTypeId
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.rootManager
-import com.intellij.openapi.vfs.LocalFileSystem
 
-private const val MODULE_DIR_NAME = "ftl"
-private const val LIB_DIR_NAME = "lib"
-private const val TEMPLATE_DIR_NAME = "template"
+internal const val MODULE_DIR_NAME = "ftl"
+internal const val LIB_DIR_NAME = "lib"
+internal const val TEMPLATE_DIR_NAME = "template"
 
 internal fun createFtlModule(project: Project): Module {
-  val localFileSystem = LocalFileSystem.getInstance()
   val basePath = project.basePath ?: error("project baseDir is null")
-  val baseDir = localFileSystem.findFileByPath(basePath) ?: error("project baseDir not found")
-  val moduleDir = DirectoryImpl.find(baseDir).createDirectory(MODULE_DIR_NAME)
+  val baseDir = DirectoryImpl.find(basePath)
+  val moduleDir = baseDir.createDirectory(MODULE_DIR_NAME)
   val moduleFile = moduleDir.createFile("$MODULE_DIR_NAME.iml")
   val libDir = moduleDir.createDirectory(LIB_DIR_NAME)
   val templateDir = moduleDir.createDirectory(TEMPLATE_DIR_NAME)

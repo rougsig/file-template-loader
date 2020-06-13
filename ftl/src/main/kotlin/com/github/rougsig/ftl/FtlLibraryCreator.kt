@@ -9,8 +9,8 @@ import com.intellij.openapi.roots.libraries.Library
 import com.intellij.openapi.roots.libraries.LibraryTablesRegistrar
 import java.io.BufferedInputStream
 
-private const val FTL_LIB_NAME = "ftl"
-private val libNames = listOf("ftl-runtime.jar", "kotlin-script-runtime.jar", "kotlin-stdlib.jar")
+internal const val FTL_LIB_NAME = "ftl"
+internal val libNames = listOf("ftl-runtime.jar", "kotlin-script-runtime.jar", "kotlin-stdlib.jar")
 
 internal fun Project.createFtlLibrary(directory: Directory): Library {
   directory.toVirtualFile().children.forEach { it.delete(null) }
