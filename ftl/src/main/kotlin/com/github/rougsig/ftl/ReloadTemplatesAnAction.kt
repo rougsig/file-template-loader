@@ -8,17 +8,19 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
+import java.io.File
 
 class ReloadTemplatesAnAction : AnAction() {
   override fun actionPerformed(event: AnActionEvent) {
     try {
       val project = event.project ?: error("Project is null")
       val basePath = project.basePath ?: error("project baseDir is null")
-      val templates = DirectoryImpl.find(basePath)
+      val moduleDir = DirectoryImpl.find(basePath)
         .createDirectory(MODULE_DIR_NAME)
+      val templates = moduleDir
         .createDirectory(TEMPLATE_DIR_NAME)
         .toVirtualFile()
-      val runner = KtsRunner()
+      val runner = KtsRunner(moduleDir.createDirectory("lib").toVirtualFile().children.map { File(it.path) })
       runner.loadVirtualFile(templates)
       runner.invokeFunction("templates")
       Messages.showInfoMessage("Reloaded Successfully", "File Templates")
