@@ -1,35 +1,67 @@
 package com.github.rougsig.ftl.kts
 
-import java.io.InputStream
-import java.io.Reader
+import com.github.rougsig.ftl.io.Directory
+import com.github.rougsig.ftl.io.toVirtualFile
+import com.intellij.openapi.fileEditor.FileDocumentManager
+import com.intellij.openapi.vfs.VirtualFile
 import javax.script.Invocable
-import javax.script.ScriptEngine
-import javax.script.ScriptEngineManager
 import java.io.File as JavaFile
 
-internal class KtsRunner(private val templateClasspath: List<JavaFile>) {
+internal class KtsRunner(templateClasspath: List<JavaFile>) {
   private val ktsEngineFactory = FtlKotlinJsr223JvmLocalScriptEngineFactory(templateClasspath)
-  private val scriptEngineManager = ScriptEngineManager()
-    .apply { registerEngineExtension("kts", ktsEngineFactory) }
-  private val engine: ScriptEngine = scriptEngineManager.getEngineByExtension("kts")
+  private val engine = ktsEngineFactory.scriptEngine
 
-  fun load(script: String) {
+  fun compile(script: String) {
+    validateScript(script)
     engine.eval(script)
-  }
-
-  fun load(reader: Reader) {
-    engine.eval(reader)
-  }
-
-  fun load(inputStream: InputStream) {
-    return load(inputStream.reader())
-  }
-
-  fun loadAll(vararg inputStream: InputStream) {
-    return inputStream.forEach(::load)
   }
 
   fun invokeFunction(name: String, vararg args: Any): Any? {
     return (engine as Invocable).invokeFunction(name, *args)
+  }
+
+  private fun validateScript(script: String) {
+    val hasPackage = script.lines().any { it.startsWith("package") }
+    if (hasPackage) error("Script shouldn't have package")
+  }
+}
+
+internal fun KtsRunner.compile(templateDir: Directory) {
+  val templateFiles = mutableMapOf<String, KotlinScriptFile>()
+  templateDir.toVirtualFile().readTemplate("${templateDir.path}/", FileDocumentManager.getInstance(), templateFiles)
+  validateIncludes(templateFiles)
+  while (templateFiles.isNotEmpty()) {
+    val files = templateFiles.values.filter { it.includes.isEmpty() }
+    files.forEach { f ->
+      templateFiles.remove(f.name)
+      templateFiles.values.forEach { it.includes.remove(f.name) }
+      compile(f.text)
+    }
+    if (files.isEmpty() && templateFiles.isNotEmpty()) {
+      error("Circular dependency detected in files: ${templateFiles.values.joinToString() { it.name }}")
+    }
+  }
+}
+
+private fun validateIncludes(templateFiles: Map<String, KotlinScriptFile>) {
+  val allIncludes = templateFiles.values.map { it.includes }.flatten().toSet()
+  val includesNotFound = allIncludes.minus(templateFiles.keys)
+  if (includesNotFound.isNotEmpty()) error(includesNotFound.joinToString("\n") { "Include not found: $it" })
+}
+
+private fun VirtualFile.readTemplate(
+  templateDirPath: String,
+  documentManager: FileDocumentManager,
+  templates: MutableMap<String, KotlinScriptFile>
+) {
+  if (this.isDirectory) this.children.forEach { it.readTemplate(templateDirPath, documentManager, templates) }
+  else {
+    val name = this.path.removePrefix(templateDirPath)
+    val text = documentManager.getDocument(this)?.text ?: ""
+    val includes = text.lines()
+      .filter { it.startsWith("@file:Include") }
+      .map { it.substring(it.indexOfFirst { c -> c == '"' } + 1, it.indexOfLast { c -> c == '"' }) }
+      .toMutableList()
+    templates[name] = KotlinScriptFile(name = name, text = text, includes = includes, virtualFile = this)
   }
 }

@@ -5,6 +5,6 @@ import com.intellij.openapi.project.Project
 
 class FtlProjectModule(project: Project) {
   init {
-    val ftlModule = project.writeAction { createFtlModule(project) }
+    project.writeAction { createFtlModule(project) }
   }
 }
