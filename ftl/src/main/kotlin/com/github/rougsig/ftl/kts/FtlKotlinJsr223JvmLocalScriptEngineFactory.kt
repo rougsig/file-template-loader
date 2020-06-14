@@ -10,6 +10,11 @@ import java.io.File as JavaFile
 
 internal class FtlKotlinJsr223JvmLocalScriptEngineFactory(private val templateClasspath: List<JavaFile>) :
   KotlinJsr223JvmScriptEngineFactoryBase() {
+
+  init {
+
+  }
+
   override fun getScriptEngine() = KotlinJsr223JvmLocalScriptEngine(
     this,
     templateClasspath,

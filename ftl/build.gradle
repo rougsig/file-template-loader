@@ -22,7 +22,7 @@ intellij {
 }
 
 dependencies {
-  implementation project(":ftl-runtime")
+  implementation files('src/main/resources/ftl-runtime.jar')
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
   implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
   implementation "org.jetbrains.kotlin:kotlin-script-runtime:$kotlin_version"

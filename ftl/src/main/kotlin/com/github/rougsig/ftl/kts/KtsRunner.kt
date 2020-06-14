@@ -16,8 +16,10 @@ internal class KtsRunner(templateClasspath: List<JavaFile>) {
     engine.eval(script)
   }
 
-  fun invokeFunction(name: String, vararg args: Any): Any? {
-    return (engine as Invocable).invokeFunction(name, *args)
+  inline fun <reified T> invokeFunction(name: String, vararg args: Any): T {
+    val result = (engine as Invocable).invokeFunction(name, *args)
+    return if (Unit is T) Unit
+    else result as T
   }
 
   private fun validateScript(script: String) {

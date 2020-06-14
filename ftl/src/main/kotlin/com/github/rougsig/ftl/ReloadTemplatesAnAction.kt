@@ -16,8 +16,12 @@ class ReloadTemplatesAnAction : AnAction() {
       val project = event.project ?: error("Project is null")
       val templates = project.ftlTemplateDir
       val runner = KtsRunner(project.ftlLibDir.toVirtualFile().children.map { File(it.path) })
+
+
       runner.compile(templates)
-      runner.invokeFunction("templates")
+
+      val templatesFuns = runner.invokeFunction<Any>("templates")
+
       Messages.showInfoMessage("Reloaded Successfully", "File Templates")
     } catch (e: Exception) {
       Messages.showErrorDialog(
