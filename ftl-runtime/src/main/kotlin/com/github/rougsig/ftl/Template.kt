@@ -1,3 +1,8 @@
 package com.github.rougsig.ftl
 
-data class Template(val name: String)
+import kotlin.reflect.KFunction
+
+data class Template(
+  val name: String,
+  val func: KFunction<String>
+)

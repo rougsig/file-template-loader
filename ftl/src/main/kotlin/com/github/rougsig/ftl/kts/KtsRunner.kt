@@ -5,10 +5,9 @@ import com.github.rougsig.ftl.io.toVirtualFile
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.vfs.VirtualFile
 import javax.script.Invocable
-import java.io.File as JavaFile
 
-internal class KtsRunner(templateClasspath: List<JavaFile>) {
-  private val ktsEngineFactory = FtlKotlinJsr223JvmLocalScriptEngineFactory(templateClasspath)
+internal class KtsRunner {
+  private val ktsEngineFactory = FtlKotlinJsr223JvmLocalScriptEngineFactory()
   private val engine = ktsEngineFactory.scriptEngine
 
   fun compile(script: String) {

@@ -7,5 +7,5 @@ interface File {
   val name: String
   val path: String
   val pathName: String
-  fun write(text: String)
+  fun writeText(text: String)
 }
