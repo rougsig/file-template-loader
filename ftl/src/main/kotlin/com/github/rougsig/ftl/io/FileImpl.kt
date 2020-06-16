@@ -27,7 +27,7 @@ internal class FileImpl private constructor(private val virtualFile: VirtualFile
   override val pathName: String
     get() = virtualFile.path
 
-  override fun write(text: String) {
+  override fun writeText(text: String) {
     val document = FileDocumentManager.getInstance().getDocument(virtualFile)
       ?: error("document not found by path ${virtualFile.path}")
     document.setText(text)
