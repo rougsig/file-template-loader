@@ -2,6 +2,7 @@ package com.github.rougsig.ftl
 
 import com.github.rougsig.ftl.extenstion.ftlTemplateDir
 import com.github.rougsig.ftl.extenstion.writeAction
+import com.github.rougsig.ftl.kts.Cat
 import com.github.rougsig.ftl.kts.KtsRunner
 import com.github.rougsig.ftl.kts.compile
 import com.intellij.openapi.actionSystem.*
@@ -35,6 +36,8 @@ class FtlProjectModule(private val project: Project) {
       runner.compile(templates)
       // ScriptEngine uses another class loader. We hack this case with basic types.
       val items = runner.invokeFunction<List<Pair<String, Any>>>("buildMenu")
+      val cat = Cat(name = "123")
+      println("+100500 ${runner.invokeFunction<Cat>("getCat", cat).name}")
       ftlGroup.removeAll()
       buildMenu(ftlGroup, items)
       if (!silent) Messages.showInfoMessage("Reloaded Successfully", "File Templates")
