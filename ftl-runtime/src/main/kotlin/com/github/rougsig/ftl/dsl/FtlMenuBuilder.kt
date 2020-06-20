@@ -6,13 +6,13 @@ sealed class MenuItem {
   abstract val name: String
 
   data class Group(override val name: String, val items: List<MenuItem>) : MenuItem()
-  data class Item(override val name: String, val template: KFunction<String>) : MenuItem()
+  data class Item(override val name: String, val template: KFunction<Unit>) : MenuItem()
 }
 
 class FtlMenuBuilder {
   private val items = mutableListOf<MenuItem>()
 
-  fun item(name: String, template: KFunction<String>) {
+  fun item(name: String, template: KFunction<Unit>) {
     this.items.add(MenuItem.Item(name, template))
   }
 

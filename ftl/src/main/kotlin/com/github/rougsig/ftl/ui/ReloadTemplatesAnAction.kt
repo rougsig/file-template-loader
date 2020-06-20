@@ -1,5 +1,6 @@
-package com.github.rougsig.ftl
+package com.github.rougsig.ftl.ui
 
+import com.github.rougsig.ftl.FtlProjectModule
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 

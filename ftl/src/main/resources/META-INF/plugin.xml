@@ -7,8 +7,8 @@
     <depends>org.intellij.groovy</depends>
 
     <actions>
-        <action id="com.github.rougsig.ftl.ReloadTemplatesAnAction"
-                class="com.github.rougsig.ftl.ReloadTemplatesAnAction"
+        <action id="com.github.rougsig.ftl.ui.ReloadTemplatesAnAction"
+                class="com.github.rougsig.ftl.ui.ReloadTemplatesAnAction"
                 text="Reload Project Templates"
                 description="Reload project templates">
             <add-to-group group-id="ToolsMenu" anchor="last"/>

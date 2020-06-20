@@ -7,14 +7,17 @@ import com.github.rougsig.ftl.extenstion.writeAction
 import com.github.rougsig.ftl.io.Directory
 import com.github.rougsig.ftl.kts.KtsRunner
 import com.github.rougsig.ftl.kts.compile
-import com.intellij.openapi.actionSystem.*
+import com.github.rougsig.ftl.ui.CreateFileTemplateAnAction
+import com.intellij.openapi.actionSystem.ActionManager
+import com.intellij.openapi.actionSystem.Constraints
+import com.intellij.openapi.actionSystem.DefaultActionGroup
+import com.intellij.openapi.components.ProjectComponent
 import com.intellij.openapi.components.ServiceManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
-import kotlin.reflect.KFunction
 import kotlin.reflect.jvm.javaType
 
-class FtlProjectModule(private val project: Project) {
+class FtlProjectModule(private val project: Project): ProjectComponent {
 
   companion object {
     fun getInstance(project: Project): FtlProjectModule {
@@ -24,12 +27,16 @@ class FtlProjectModule(private val project: Project) {
 
   private val ftlGroup = DefaultActionGroup("From FTL", true)
 
-  init {
+  override fun projectOpened() {
     project.writeAction { createFtlModule(project) }
-
     val createNewGroup = ActionManager.getInstance().getAction("NewGroup") as DefaultActionGroup
     createNewGroup.add(ftlGroup, Constraints.FIRST)
     reloadTemplates()
+  }
+
+  override fun projectClosed() {
+    val createNewGroup = ActionManager.getInstance().getAction("NewGroup") as DefaultActionGroup
+    createNewGroup.remove(ftlGroup)
   }
 
   fun reloadTemplates(silent: Boolean = true) {
@@ -94,18 +101,9 @@ class FtlProjectModule(private val project: Project) {
           buildMenu(subGroup, item.items)
         }
         is MenuItem.Item -> {
-          group.add(CreateTemplateAction(item.name, item.template), Constraints.LAST)
+          group.add(CreateFileTemplateAnAction(item.name, item.template), Constraints.LAST)
         }
       }
-    }
-  }
-
-  private class CreateTemplateAction(
-    private val name: String,
-    private val template: KFunction<String>
-  ) : AnAction(name) {
-    override fun actionPerformed(e: AnActionEvent) {
-      println("+100500 $this, $name, $template")
     }
   }
 }
