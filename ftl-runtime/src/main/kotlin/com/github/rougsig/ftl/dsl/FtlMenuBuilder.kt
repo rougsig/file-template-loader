@@ -3,8 +3,10 @@ package com.github.rougsig.ftl.dsl
 import kotlin.reflect.KFunction
 
 sealed class MenuItem {
-  data class Group(val name: String, val items: List<MenuItem>) : MenuItem()
-  data class Item(val name: String, val template: KFunction<String>) : MenuItem()
+  abstract val name: String
+
+  data class Group(override val name: String, val items: List<MenuItem>) : MenuItem()
+  data class Item(override val name: String, val template: KFunction<String>) : MenuItem()
 }
 
 class FtlMenuBuilder {

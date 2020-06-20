@@ -14,7 +14,7 @@ internal const val TEMPLATE_DIR_NAME = "template"
 
 internal fun createFtlModule(project: Project): Module {
   val basePath = project.basePath ?: error("project baseDir is null")
-  val baseDir = DirectoryImpl.find(basePath)
+  val baseDir = DirectoryImpl.find(project, basePath)
   val moduleDir = baseDir.createDirectory(MODULE_DIR_NAME)
   val moduleFile = moduleDir.createFile("$MODULE_DIR_NAME.iml")
   val libDir = moduleDir.createDirectory(LIB_DIR_NAME)

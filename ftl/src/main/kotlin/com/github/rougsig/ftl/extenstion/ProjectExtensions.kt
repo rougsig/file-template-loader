@@ -17,7 +17,7 @@ internal fun <R : Any> Project.writeAction(action: () -> R): R {
 internal val Project.ftlModuleDir: Directory
   get() {
     val basePath = this.basePath ?: error("project baseDir is null")
-    return DirectoryImpl.find(basePath).createDirectory(MODULE_DIR_NAME)
+    return DirectoryImpl.find(this, basePath).createDirectory(MODULE_DIR_NAME)
   }
 
 internal val Project.ftlTemplateDir: Directory
