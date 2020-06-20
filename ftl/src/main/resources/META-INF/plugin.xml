@@ -2,7 +2,7 @@
     <id>com.github.rougsig.file-template-loader</id>
     <name>FileTemplate Loader</name>
     <vendor email="rougsig@gmail.com" url="https://github.com/rougsig/file-template-loader">Andrey Stepankov</vendor>
-    <idea-version since-build="183.0"/>
+    <idea-version since-build="171.0"/>
     <depends>org.jetbrains.kotlin</depends>
     <depends>org.intellij.groovy</depends>
 

@@ -21,6 +21,13 @@ intellij {
   plugins 'Kotlin', 'Groovy', 'properties', 'java'
 }
 
+patchPluginXml {
+  sinceBuild '171.0'
+  pluginDescription 'Improved template engine for IntelliJ IDEA to generate templates, their groups and modules.\n' +
+    'Supports the creation of multiple files organized in subdirectories, and insert code into existing files.\n' +
+    'Allows you to use the parameters you want to enter when you create a template.'
+}
+
 dependencies {
   implementation files('src/main/resources/ftl-runtime.jar')
 
