@@ -4,6 +4,7 @@ import com.github.rougsig.ftl.dsl.FtlMenuBuilder
 import com.github.rougsig.ftl.dsl.MenuItem
 import com.github.rougsig.ftl.extenstion.ftlTemplateDir
 import com.github.rougsig.ftl.extenstion.writeAction
+import com.github.rougsig.ftl.io.Directory
 import com.github.rougsig.ftl.kts.KtsRunner
 import com.github.rougsig.ftl.kts.compile
 import com.intellij.openapi.actionSystem.*
@@ -11,6 +12,7 @@ import com.intellij.openapi.components.ServiceManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 import kotlin.reflect.KFunction
+import kotlin.reflect.jvm.javaType
 
 class FtlProjectModule(private val project: Project) {
 
@@ -39,6 +41,7 @@ class FtlProjectModule(private val project: Project) {
       val menuBuilder = FtlMenuBuilder()
       runner.invokeFunction<Unit>("buildMenu", menuBuilder)
       val items = menuBuilder.build()
+      validateMenuItems(items)
 
       ftlGroup.removeAll()
       buildMenu(ftlGroup, items)
@@ -49,6 +52,37 @@ class FtlProjectModule(private val project: Project) {
         "File Templates"
       )
     }
+  }
+
+  private fun validateMenuItems(items: List<MenuItem>) {
+    fun flatItems(items: List<MenuItem>, target: MutableList<MenuItem.Item> = mutableListOf()): List<MenuItem.Item> {
+      items.forEach { item ->
+        when (item) {
+          is MenuItem.Group -> flatItems(item.items, target)
+          is MenuItem.Item -> target.add(item)
+        }
+      }
+      return target
+    }
+
+    val errors = flatItems(items).mapNotNull { item ->
+      val template = item.template
+      val params = template.parameters
+      when {
+        params.isEmpty() || params.first().type.javaType != Directory::class.java -> {
+          "first param in '${item.name}' (fun name '${template.name}') must have the 'Directory' param in first position"
+        }
+        params.drop(1).any { param -> param.annotations.find { it.annotationClass == Param::class } == null } -> {
+          "all params (except first) in '${item.name}' (fun name '${template.name}') must have the 'Param' annotation"
+        }
+        params.drop(1).any { param -> param.type.javaType != String::class.java } -> {
+          "all params (except first) in '${item.name}' (fun name '${template.name}') must have the only 'String' param type"
+        }
+        else -> null
+      }
+    }
+    if (errors.isEmpty()) return
+    error(errors.joinToString("\n"))
   }
 
   private fun buildMenu(group: DefaultActionGroup, menuItems: List<MenuItem>) {
