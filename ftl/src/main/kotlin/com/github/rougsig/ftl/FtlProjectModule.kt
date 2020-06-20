@@ -1,8 +1,9 @@
 package com.github.rougsig.ftl
 
+import com.github.rougsig.ftl.dsl.FtlMenuBuilder
+import com.github.rougsig.ftl.dsl.MenuItem
 import com.github.rougsig.ftl.extenstion.ftlTemplateDir
 import com.github.rougsig.ftl.extenstion.writeAction
-import com.github.rougsig.ftl.kts.Cat
 import com.github.rougsig.ftl.kts.KtsRunner
 import com.github.rougsig.ftl.kts.compile
 import com.intellij.openapi.actionSystem.*
@@ -34,10 +35,11 @@ class FtlProjectModule(private val project: Project) {
       val templates = project.ftlTemplateDir
       val runner = KtsRunner()
       runner.compile(templates)
-      // ScriptEngine uses another class loader. We hack this case with basic types.
-      val items = runner.invokeFunction<List<Pair<String, Any>>>("buildMenu")
-      val cat = Cat(name = "123")
-      println("+100500 ${runner.invokeFunction<Cat>("getCat", cat).name}")
+
+      val menuBuilder = FtlMenuBuilder()
+      runner.invokeFunction<Unit>("buildMenu", menuBuilder)
+      val items = menuBuilder.build()
+
       ftlGroup.removeAll()
       buildMenu(ftlGroup, items)
       if (!silent) Messages.showInfoMessage("Reloaded Successfully", "File Templates")
@@ -49,18 +51,17 @@ class FtlProjectModule(private val project: Project) {
     }
   }
 
-  private fun buildMenu(group: DefaultActionGroup, menuItems: List<Pair<String, Any>>) {
+  private fun buildMenu(group: DefaultActionGroup, menuItems: List<MenuItem>) {
     menuItems.forEach { item ->
-      when {
-        item.second is List<*> -> {
-          val subGroup = DefaultActionGroup(item.first, true)
+      when (item) {
+        is MenuItem.Group -> {
+          val subGroup = DefaultActionGroup(item.name, true)
           group.add(subGroup, Constraints.LAST)
-          buildMenu(subGroup, item.second as List<Pair<String, Any>>)
+          buildMenu(subGroup, item.items)
         }
-        item.second is KFunction<*> -> {
-          group.add(CreateTemplateAction(item.first, item.second as KFunction<String>), Constraints.LAST)
+        is MenuItem.Item -> {
+          group.add(CreateTemplateAction(item.name, item.template), Constraints.LAST)
         }
-        else -> error("unknown menu item type: $item")
       }
     }
   }

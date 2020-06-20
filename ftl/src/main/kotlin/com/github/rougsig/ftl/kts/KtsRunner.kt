@@ -6,10 +6,6 @@ import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.vfs.VirtualFile
 import javax.script.Invocable
 
-data class Cat(
-  val name: String
-)
-
 internal class KtsRunner {
   private val ktsEngineFactory = FtlScriptEngineFactory()
   private val engine = ktsEngineFactory.scriptEngine
