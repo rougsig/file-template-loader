@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-  implementation files('src/main/resources/ftl-runtime.jar')
+  implementation project(":ftl-runtime")
 
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
   implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
@@ -34,3 +34,17 @@ patchPluginXml {
     'Supports the creation of multiple files organized in subdirectories, and insert code into existing files.\n' +
     'Allows you to use the parameters you want to enter when you create a template.'
 }
+
+tasks.create("copyJarToResources", Copy) {
+  from configurations.runtimeClasspath
+    .filter { File file ->
+      file.name.contains("kotlin-script-runtime") ||
+        file.name.contains("ftl-runtime") ||
+        (file.name.contains("kotlin-stdlib") && !file.name.contains("kotlin-stdlib-common"))
+    }
+  into "src/main/resources"
+  rename { String fileName ->
+    fileName.replace("-${kotlin_version}", "")
+  }
+}
+tasks.findByName("jar").dependsOn("copyJarToResources")
