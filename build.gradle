@@ -1,47 +1,7 @@
 buildscript {
-  ext.kotlin_version = '1.3.72'
+  ext.kotlin_version = '1.4.21'
 
-  repositories {
-    mavenLocal()
-    mavenCentral()
-  }
-
-  dependencies {
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-  }
+  ext.projectGroup = 'com.github.rougsig'
+  ext.projectVersion = '2.0.0'
 }
 
-plugins {
-  id "org.jetbrains.intellij" version "0.4.21"
-}
-
-apply plugin: 'idea'
-apply plugin: 'java'
-apply plugin: 'kotlin'
-apply plugin: 'org.jetbrains.intellij'
-
-
-intellij {
-  version '2020.1.2'
-  pluginName 'FileTemplate Loader'
-  plugins 'Kotlin', 'Groovy', 'properties', 'java'
-}
-
-
-group 'com.github.rougsig'
-version '2.0.0'
-
-repositories {
-  mavenLocal()
-  mavenCentral()
-}
-
-test {
-  useTestNG()
-}
-
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
-  kotlinOptions {
-    jvmTarget = "1.8"
-  }
-}
