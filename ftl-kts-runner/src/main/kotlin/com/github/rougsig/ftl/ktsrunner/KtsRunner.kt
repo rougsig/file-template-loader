@@ -1,10 +1,12 @@
 package com.github.rougsig.ftl.ktsrunner
 
+import org.jetbrains.kotlin.mainKts.jsr223.KotlinJsr223MainKtsScriptEngineFactory
 import javax.script.Invocable
 import javax.script.ScriptEngineManager
 
 class KtsRunner {
-  private val engine by lazy { ScriptEngineManager().getEngineByExtension("main.kts")!! }
+  private val factory = KotlinJsr223MainKtsScriptEngineFactory()
+  private val engine = factory.scriptEngine
 
   fun compile(script: String) {
     engine.eval(script)

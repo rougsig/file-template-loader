@@ -8,7 +8,9 @@ repositories {
 
 dependencies {
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+
   implementation "org.jetbrains.kotlin:kotlin-main-kts:$kotlinVersion"
+  implementation "org.jetbrains.kotlin:kotlin-compiler-client-embeddable:$kotlinVersion"
   implementation "org.jetbrains.kotlin:kotlin-scripting-jsr223:$kotlinVersion"
 
   testImplementation "io.kotest:kotest-runner-junit5:$kotestVersion"

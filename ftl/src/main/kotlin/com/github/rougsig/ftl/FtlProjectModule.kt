@@ -5,18 +5,20 @@ import com.github.rougsig.ftl.dsl.MenuItem
 import com.github.rougsig.ftl.extenstion.ftlTemplateDir
 import com.github.rougsig.ftl.extenstion.writeAction
 import com.github.rougsig.ftl.io.Directory
-import com.github.rougsig.ftl.kts.KtsRunner
-import com.github.rougsig.ftl.kts.compile
+import com.github.rougsig.ftl.io.toVirtualFile
+import com.github.rougsig.ftl.ktsrunner.KtsRunner
 import com.github.rougsig.ftl.ui.CreateFileTemplateAnAction
 import com.intellij.openapi.actionSystem.ActionManager
 import com.intellij.openapi.actionSystem.Constraints
 import com.intellij.openapi.actionSystem.DefaultActionGroup
 import com.intellij.openapi.components.ProjectComponent
+import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
+import com.jetbrains.rd.util.string.printToString
 import kotlin.reflect.jvm.javaType
 
-class FtlProjectModule(private val project: Project): ProjectComponent {
+class FtlProjectModule(private val project: Project) : ProjectComponent {
 
   companion object {
     fun getInstance(project: Project): FtlProjectModule {
@@ -40,9 +42,9 @@ class FtlProjectModule(private val project: Project): ProjectComponent {
 
   fun reloadTemplates(silent: Boolean = true) {
     try {
-      val templates = project.ftlTemplateDir
+      val main = project.ftlTemplateDir.createFile("ftl.main.kts")
       val runner = KtsRunner()
-      runner.compile(templates)
+      runner.compile(java.io.File(main.pathName).readText())
 
       val menuBuilder = FtlMenuBuilder()
       runner.invokeFunction<Unit>("buildMenu", menuBuilder)
@@ -54,7 +56,7 @@ class FtlProjectModule(private val project: Project): ProjectComponent {
       if (!silent) Messages.showInfoMessage("Reloaded Successfully", "File Templates")
     } catch (e: Exception) {
       if (!silent) Messages.showErrorDialog(
-        "Load Failed\n${e.message}\n${e.stackTrace.toList().joinToString("\n")}",
+        "Load Failed\n${e.printToString()}",
         "File Templates"
       )
     }
