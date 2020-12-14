@@ -12,7 +12,6 @@ import com.intellij.openapi.actionSystem.ActionManager
 import com.intellij.openapi.actionSystem.Constraints
 import com.intellij.openapi.actionSystem.DefaultActionGroup
 import com.intellij.openapi.components.ProjectComponent
-import com.intellij.openapi.components.ServiceManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 import kotlin.reflect.jvm.javaType
@@ -21,7 +20,7 @@ class FtlProjectModule(private val project: Project): ProjectComponent {
 
   companion object {
     fun getInstance(project: Project): FtlProjectModule {
-      return ServiceManager.getService(project, FtlProjectModule::class.java)
+      return project.getComponent(FtlProjectModule::class.java)
     }
   }
 

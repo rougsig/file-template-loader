@@ -1,10 +1,10 @@
 buildscript {
-  ext.kotlin_version = '1.4.21'
+  ext.kotlinVersion = '1.4.21'
   ext.intellij_version = '0.6.5'
 }
 
 plugins {
-  id 'org.jetbrains.kotlin.jvm' version "$kotlin_version"
+  id 'org.jetbrains.kotlin.jvm' version "$kotlinVersion"
 }
 
 repositories {
@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-  implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+  implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
   implementation "org.jetbrains.intellij:org.jetbrains.intellij.gradle.plugin:$intellij_version"
 }

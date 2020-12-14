@@ -1,7 +1,17 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 buildscript {
-  ext.kotlin_version = '1.4.21'
+  ext.kotlinVersion = '1.4.21'
+  ext.kotestVersion = '4.3.2'
 
   ext.projectGroup = 'com.github.rougsig'
   ext.projectVersion = '2.0.0'
 }
 
+subprojects {
+  tasks.withType(KotlinCompile).all {
+    kotlinOptions {
+      jvmTarget = "1.8"
+    }
+  }
+}
