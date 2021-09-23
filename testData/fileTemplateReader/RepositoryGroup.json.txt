@@ -5,48 +5,48 @@
       "simpleName": "REPOSITORY",
       "customProps": [
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_NAME"
+          "name": "TEMPLATE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_EXTENSION"
+          "name": "TEMPLATE_EXTENSION",
+          "requiredProps": []
         },
         {
+          "name": "SIMPLE_NAME",
           "requiredProps": [
             "REPOSITORY_NAME"
-          ],
-          "name": "SIMPLE_NAME"
+          ]
         },
         {
+          "name": "FILE_NAME",
           "requiredProps": [
             "SIMPLE_NAME"
-          ],
-          "name": "FILE_NAME"
+          ]
         },
         {
+          "name": "CLASS_NAME",
           "requiredProps": [
             "SIMPLE_NAME",
             "PACKAGE_NAME"
-          ],
-          "name": "CLASS_NAME"
+          ]
         },
         {
+          "name": "SIMPLE_NAME",
           "requiredProps": [
             "TEMPLATE_NAME"
-          ],
-          "name": "SIMPLE_NAME"
+          ]
         },
         {
+          "name": "PACKAGE_NAME",
           "requiredProps": [
             "PACKAGE_NAME",
             "FILE_DIRECTORY_APPEND_DOT_CASE"
-          ],
-          "name": "PACKAGE_NAME"
+          ]
         },
         {
-          "requiredProps": [],
-          "name": "FILE_DIRECTORY"
+          "name": "FILE_DIRECTORY",
+          "requiredProps": []
         }
       ],
       "extractedProps": [
@@ -65,117 +65,117 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "SIMPLE_NAME",
+                "requiredProps": [
+                  "REPOSITORY_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_SIMPLE_NAME",
             "requiredProps": [
               "REPOSITORY_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "REPOSITORY_NAME"
-                ],
-                "name": "SIMPLE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_FILE_NAME",
             "requiredProps": [
               "REPOSITORY_SIMPLE_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "SIMPLE_NAME"
-                ],
-                "name": "FILE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "CLASS_NAME",
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_CLASS_NAME",
             "requiredProps": [
               "REPOSITORY_SIMPLE_NAME",
               "REPOSITORY_PACKAGE_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "SIMPLE_NAME",
-                  "PACKAGE_NAME"
-                ],
-                "name": "CLASS_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "PACKAGE_NAME",
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ]
+              },
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ]
+            },
             "propName": "REPOSITORY_PACKAGE_NAME",
             "requiredProps": [
               "PACKAGE_NAME",
               "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [
-                "PACKAGE_NAME"
-              ],
-              "customProp": {
-                "requiredProps": [
-                  "PACKAGE_NAME",
-                  "FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "name": "PACKAGE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE",
-            "requiredProps": [
-              "REPOSITORY_FILE_DIRECTORY"
-            ],
             "propGenerator": {
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY",
               "requiredProps": [
                 "FILE_DIRECTORY"
               ],
-              "selfRequiredProps": [],
-              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-              "propBaseName": "FILE_DIRECTORY"
-            }
+              "selfRequiredProps": []
+            },
+            "propName": "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "REPOSITORY_FILE_DIRECTORY"
+            ]
           }
         ]
       }
@@ -184,48 +184,48 @@
       "simpleName": "REPOSITORY_IMPL",
       "customProps": [
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_NAME"
+          "name": "TEMPLATE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_EXTENSION"
+          "name": "TEMPLATE_EXTENSION",
+          "requiredProps": []
         },
         {
+          "name": "SIMPLE_NAME",
           "requiredProps": [
             "REPOSITORY_NAME"
-          ],
-          "name": "SIMPLE_NAME"
+          ]
         },
         {
+          "name": "FILE_NAME",
           "requiredProps": [
             "SIMPLE_NAME"
-          ],
-          "name": "FILE_NAME"
+          ]
         },
         {
+          "name": "CLASS_NAME",
           "requiredProps": [
             "SIMPLE_NAME",
             "PACKAGE_NAME"
-          ],
-          "name": "CLASS_NAME"
+          ]
         },
         {
+          "name": "SIMPLE_NAME",
           "requiredProps": [
             "TEMPLATE_NAME"
-          ],
-          "name": "SIMPLE_NAME"
+          ]
         },
         {
+          "name": "PACKAGE_NAME",
           "requiredProps": [
             "PACKAGE_NAME",
             "FILE_DIRECTORY_APPEND_DOT_CASE"
-          ],
-          "name": "PACKAGE_NAME"
+          ]
         },
         {
-          "requiredProps": [],
-          "name": "FILE_DIRECTORY"
+          "name": "FILE_DIRECTORY",
+          "requiredProps": []
         }
       ],
       "extractedProps": [
@@ -246,117 +246,117 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_IMPL_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_IMPL_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "SIMPLE_NAME",
+                "requiredProps": [
+                  "REPOSITORY_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_IMPL_SIMPLE_NAME",
             "requiredProps": [
               "REPOSITORY_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "REPOSITORY_NAME"
-                ],
-                "name": "SIMPLE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_IMPL_FILE_NAME",
             "requiredProps": [
               "REPOSITORY_IMPL_SIMPLE_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "SIMPLE_NAME"
-                ],
-                "name": "FILE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "CLASS_NAME",
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_IMPL_CLASS_NAME",
             "requiredProps": [
               "REPOSITORY_IMPL_SIMPLE_NAME",
               "REPOSITORY_IMPL_PACKAGE_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "SIMPLE_NAME",
-                  "PACKAGE_NAME"
-                ],
-                "name": "CLASS_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "PACKAGE_NAME",
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ]
+              },
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ]
+            },
             "propName": "REPOSITORY_IMPL_PACKAGE_NAME",
             "requiredProps": [
               "PACKAGE_NAME",
               "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [
-                "PACKAGE_NAME"
-              ],
-              "customProp": {
-                "requiredProps": [
-                  "PACKAGE_NAME",
-                  "FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "name": "PACKAGE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_IMPL_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
-            "requiredProps": [
-              "REPOSITORY_IMPL_FILE_DIRECTORY"
-            ],
             "propGenerator": {
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY",
               "requiredProps": [
                 "FILE_DIRECTORY"
               ],
-              "selfRequiredProps": [],
-              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-              "propBaseName": "FILE_DIRECTORY"
-            }
+              "selfRequiredProps": []
+            },
+            "propName": "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "REPOSITORY_IMPL_FILE_DIRECTORY"
+            ]
           }
         ]
       }
@@ -365,48 +365,48 @@
       "simpleName": "REPOSITORY_BINDINGS",
       "customProps": [
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_NAME"
+          "name": "TEMPLATE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_EXTENSION"
+          "name": "TEMPLATE_EXTENSION",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_DIRECTORY"
+          "name": "FILE_DIRECTORY",
+          "requiredProps": []
         },
         {
+          "name": "SIMPLE_NAME",
           "requiredProps": [
             "REPOSITORY_NAME"
-          ],
-          "name": "SIMPLE_NAME"
+          ]
         },
         {
+          "name": "FILE_NAME",
           "requiredProps": [
             "SIMPLE_NAME"
-          ],
-          "name": "FILE_NAME"
+          ]
         },
         {
+          "name": "CLASS_NAME",
           "requiredProps": [
             "SIMPLE_NAME",
             "PACKAGE_NAME"
-          ],
-          "name": "CLASS_NAME"
+          ]
         },
         {
+          "name": "SIMPLE_NAME",
           "requiredProps": [
             "TEMPLATE_NAME"
-          ],
-          "name": "SIMPLE_NAME"
+          ]
         },
         {
+          "name": "PACKAGE_NAME",
           "requiredProps": [
             "PACKAGE_NAME",
             "FILE_DIRECTORY_APPEND_DOT_CASE"
-          ],
-          "name": "PACKAGE_NAME"
+          ]
         }
       ],
       "extractedProps": [
@@ -435,117 +435,117 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_BINDINGS_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_BINDINGS_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "SIMPLE_NAME",
+                "requiredProps": [
+                  "REPOSITORY_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_BINDINGS_SIMPLE_NAME",
             "requiredProps": [
               "REPOSITORY_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "REPOSITORY_NAME"
-                ],
-                "name": "SIMPLE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_BINDINGS_FILE_NAME",
             "requiredProps": [
               "REPOSITORY_BINDINGS_SIMPLE_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "SIMPLE_NAME"
-                ],
-                "name": "FILE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "CLASS_NAME",
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_BINDINGS_CLASS_NAME",
             "requiredProps": [
               "REPOSITORY_BINDINGS_SIMPLE_NAME",
               "REPOSITORY_BINDINGS_PACKAGE_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "SIMPLE_NAME",
-                  "PACKAGE_NAME"
-                ],
-                "name": "CLASS_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "PACKAGE_NAME",
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ]
+              },
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ]
+            },
             "propName": "REPOSITORY_BINDINGS_PACKAGE_NAME",
             "requiredProps": [
               "PACKAGE_NAME",
               "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [
-                "PACKAGE_NAME"
-              ],
-              "customProp": {
-                "requiredProps": [
-                  "PACKAGE_NAME",
-                  "FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "name": "PACKAGE_NAME"
-              }
-            }
+            ]
           },
           {
-            "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE",
-            "requiredProps": [
-              "REPOSITORY_BINDINGS_FILE_DIRECTORY"
-            ],
             "propGenerator": {
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY",
               "requiredProps": [
                 "FILE_DIRECTORY"
               ],
-              "selfRequiredProps": [],
-              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-              "propBaseName": "FILE_DIRECTORY"
-            }
+              "selfRequiredProps": []
+            },
+            "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "REPOSITORY_BINDINGS_FILE_DIRECTORY"
+            ]
           }
         ]
       }
@@ -554,12 +554,12 @@
   "injectors": [],
   "customProps": [
     {
-      "requiredProps": [],
-      "name": "GROUP_NAME"
+      "name": "GROUP_NAME",
+      "requiredProps": []
     },
     {
-      "requiredProps": [],
-      "name": "FILE_DIRECTORY"
+      "name": "FILE_DIRECTORY",
+      "requiredProps": []
     }
   ],
   "extractedProps": [
@@ -584,117 +584,117 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_IMPL_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_IMPL_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "SIMPLE_NAME",
+                "requiredProps": [
+                  "REPOSITORY_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_IMPL_SIMPLE_NAME",
             "requiredProps": [
               "REPOSITORY_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "REPOSITORY_NAME"
-                ],
-                "name": "SIMPLE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_IMPL_FILE_NAME",
             "requiredProps": [
               "REPOSITORY_IMPL_SIMPLE_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "SIMPLE_NAME"
-                ],
-                "name": "FILE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "CLASS_NAME",
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_IMPL_CLASS_NAME",
             "requiredProps": [
               "REPOSITORY_IMPL_SIMPLE_NAME",
               "REPOSITORY_IMPL_PACKAGE_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "SIMPLE_NAME",
-                  "PACKAGE_NAME"
-                ],
-                "name": "CLASS_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "PACKAGE_NAME",
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ]
+              },
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ]
+            },
             "propName": "REPOSITORY_IMPL_PACKAGE_NAME",
             "requiredProps": [
               "PACKAGE_NAME",
               "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [
-                "PACKAGE_NAME"
-              ],
-              "customProp": {
-                "requiredProps": [
-                  "PACKAGE_NAME",
-                  "FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "name": "PACKAGE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_IMPL_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
-            "requiredProps": [
-              "REPOSITORY_IMPL_FILE_DIRECTORY"
-            ],
             "propGenerator": {
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY",
               "requiredProps": [
                 "FILE_DIRECTORY"
               ],
-              "selfRequiredProps": [],
-              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-              "propBaseName": "FILE_DIRECTORY"
-            }
+              "selfRequiredProps": []
+            },
+            "propName": "REPOSITORY_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "REPOSITORY_IMPL_FILE_DIRECTORY"
+            ]
           }
         ]
       },
@@ -703,117 +703,117 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "SIMPLE_NAME",
+                "requiredProps": [
+                  "REPOSITORY_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_SIMPLE_NAME",
             "requiredProps": [
               "REPOSITORY_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "REPOSITORY_NAME"
-                ],
-                "name": "SIMPLE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_FILE_NAME",
             "requiredProps": [
               "REPOSITORY_SIMPLE_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "SIMPLE_NAME"
-                ],
-                "name": "FILE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "CLASS_NAME",
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_CLASS_NAME",
             "requiredProps": [
               "REPOSITORY_SIMPLE_NAME",
               "REPOSITORY_PACKAGE_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "SIMPLE_NAME",
-                  "PACKAGE_NAME"
-                ],
-                "name": "CLASS_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "PACKAGE_NAME",
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ]
+              },
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ]
+            },
             "propName": "REPOSITORY_PACKAGE_NAME",
             "requiredProps": [
               "PACKAGE_NAME",
               "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [
-                "PACKAGE_NAME"
-              ],
-              "customProp": {
-                "requiredProps": [
-                  "PACKAGE_NAME",
-                  "FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "name": "PACKAGE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE",
-            "requiredProps": [
-              "REPOSITORY_FILE_DIRECTORY"
-            ],
             "propGenerator": {
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY",
               "requiredProps": [
                 "FILE_DIRECTORY"
               ],
-              "selfRequiredProps": [],
-              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-              "propBaseName": "FILE_DIRECTORY"
-            }
+              "selfRequiredProps": []
+            },
+            "propName": "REPOSITORY_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "REPOSITORY_FILE_DIRECTORY"
+            ]
           }
         ]
       },
@@ -822,143 +822,143 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_BINDINGS_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_BINDINGS_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "SIMPLE_NAME",
+                "requiredProps": [
+                  "REPOSITORY_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_BINDINGS_SIMPLE_NAME",
             "requiredProps": [
               "REPOSITORY_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "REPOSITORY_NAME"
-                ],
-                "name": "SIMPLE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": [
+                  "SIMPLE_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_BINDINGS_FILE_NAME",
             "requiredProps": [
               "REPOSITORY_BINDINGS_SIMPLE_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "SIMPLE_NAME"
-                ],
-                "name": "FILE_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "CLASS_NAME",
+                "requiredProps": [
+                  "SIMPLE_NAME",
+                  "PACKAGE_NAME"
+                ]
+              },
+              "selfRequiredProps": []
+            },
             "propName": "REPOSITORY_BINDINGS_CLASS_NAME",
             "requiredProps": [
               "REPOSITORY_BINDINGS_SIMPLE_NAME",
               "REPOSITORY_BINDINGS_PACKAGE_NAME"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [
-                  "SIMPLE_NAME",
-                  "PACKAGE_NAME"
-                ],
-                "name": "CLASS_NAME"
-              }
-            }
+            ]
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "PACKAGE_NAME",
+                "requiredProps": [
+                  "PACKAGE_NAME",
+                  "FILE_DIRECTORY_APPEND_DOT_CASE"
+                ]
+              },
+              "selfRequiredProps": [
+                "PACKAGE_NAME"
+              ]
+            },
             "propName": "REPOSITORY_BINDINGS_PACKAGE_NAME",
             "requiredProps": [
               "PACKAGE_NAME",
               "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE"
-            ],
-            "propGenerator": {
-              "selfRequiredProps": [
-                "PACKAGE_NAME"
-              ],
-              "customProp": {
-                "requiredProps": [
-                  "PACKAGE_NAME",
-                  "FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "name": "PACKAGE_NAME"
-              }
-            }
+            ]
           },
           {
-            "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE",
-            "requiredProps": [
-              "REPOSITORY_BINDINGS_FILE_DIRECTORY"
-            ],
             "propGenerator": {
+              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+              "propBaseName": "FILE_DIRECTORY",
               "requiredProps": [
                 "FILE_DIRECTORY"
               ],
-              "selfRequiredProps": [],
-              "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-              "propBaseName": "FILE_DIRECTORY"
-            }
+              "selfRequiredProps": []
+            },
+            "propName": "REPOSITORY_BINDINGS_FILE_DIRECTORY_APPEND_DOT_CASE",
+            "requiredProps": [
+              "REPOSITORY_BINDINGS_FILE_DIRECTORY"
+            ]
           }
         ]
       }
     ],
     "scopedPropGenerators": [
       {
-        "propName": "REPOSITORY_GROUP_GROUP_NAME",
-        "requiredProps": [],
         "propGenerator": {
-          "selfRequiredProps": [],
           "customProp": {
-            "requiredProps": [],
-            "name": "GROUP_NAME"
-          }
-        }
+            "name": "GROUP_NAME",
+            "requiredProps": []
+          },
+          "selfRequiredProps": []
+        },
+        "propName": "REPOSITORY_GROUP_GROUP_NAME",
+        "requiredProps": []
       },
       {
-        "propName": "REPOSITORY_GROUP_FILE_DIRECTORY",
-        "requiredProps": [],
         "propGenerator": {
-          "selfRequiredProps": [],
           "customProp": {
-            "requiredProps": [],
-            "name": "FILE_DIRECTORY"
-          }
-        }
+            "name": "FILE_DIRECTORY",
+            "requiredProps": []
+          },
+          "selfRequiredProps": []
+        },
+        "propName": "REPOSITORY_GROUP_FILE_DIRECTORY",
+        "requiredProps": []
       }
     ]
   }
