@@ -2,20 +2,20 @@
   "simpleName": "GITIGNORE",
   "customProps": [
     {
-      "requiredProps": [],
-      "name": "TEMPLATE_NAME"
+      "name": "TEMPLATE_NAME",
+      "requiredProps": []
     },
     {
-      "requiredProps": [],
-      "name": "TEMPLATE_EXTENSION"
+      "name": "TEMPLATE_EXTENSION",
+      "requiredProps": []
     },
     {
-      "requiredProps": [],
-      "name": "FILE_NAME"
+      "name": "FILE_NAME",
+      "requiredProps": []
     },
     {
-      "requiredProps": [],
-      "name": "FILE_DIRECTORY"
+      "name": "FILE_DIRECTORY",
+      "requiredProps": []
     }
   ],
   "extractedProps": [],
@@ -25,48 +25,48 @@
     "childScopes": [],
     "scopedPropGenerators": [
       {
+        "propGenerator": {
+          "customProp": {
+            "name": "TEMPLATE_NAME",
+            "requiredProps": []
+          },
+          "selfRequiredProps": []
+        },
         "propName": "GITIGNORE_TEMPLATE_NAME",
-        "requiredProps": [],
-        "propGenerator": {
-          "selfRequiredProps": [],
-          "customProp": {
-            "requiredProps": [],
-            "name": "TEMPLATE_NAME"
-          }
-        }
+        "requiredProps": []
       },
       {
+        "propGenerator": {
+          "customProp": {
+            "name": "TEMPLATE_EXTENSION",
+            "requiredProps": []
+          },
+          "selfRequiredProps": []
+        },
         "propName": "GITIGNORE_TEMPLATE_EXTENSION",
-        "requiredProps": [],
-        "propGenerator": {
-          "selfRequiredProps": [],
-          "customProp": {
-            "requiredProps": [],
-            "name": "TEMPLATE_EXTENSION"
-          }
-        }
+        "requiredProps": []
       },
       {
+        "propGenerator": {
+          "customProp": {
+            "name": "FILE_NAME",
+            "requiredProps": []
+          },
+          "selfRequiredProps": []
+        },
         "propName": "GITIGNORE_FILE_NAME",
-        "requiredProps": [],
-        "propGenerator": {
-          "selfRequiredProps": [],
-          "customProp": {
-            "requiredProps": [],
-            "name": "FILE_NAME"
-          }
-        }
+        "requiredProps": []
       },
       {
-        "propName": "GITIGNORE_FILE_DIRECTORY",
-        "requiredProps": [],
         "propGenerator": {
-          "selfRequiredProps": [],
           "customProp": {
-            "requiredProps": [],
-            "name": "FILE_DIRECTORY"
-          }
-        }
+            "name": "FILE_DIRECTORY",
+            "requiredProps": []
+          },
+          "selfRequiredProps": []
+        },
+        "propName": "GITIGNORE_FILE_DIRECTORY",
+        "requiredProps": []
       }
     ]
   }

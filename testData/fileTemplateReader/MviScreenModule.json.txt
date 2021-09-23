@@ -8,48 +8,48 @@
           "simpleName": "CONTROLLER",
           "customProps": [
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_NAME"
+              "name": "TEMPLATE_NAME",
+              "requiredProps": []
             },
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_EXTENSION"
+              "name": "TEMPLATE_EXTENSION",
+              "requiredProps": []
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "SCREEN_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "FILE_NAME",
               "requiredProps": [
                 "SIMPLE_NAME"
-              ],
-              "name": "FILE_NAME"
+              ]
             },
             {
+              "name": "CLASS_NAME",
               "requiredProps": [
                 "SIMPLE_NAME",
                 "PACKAGE_NAME"
-              ],
-              "name": "CLASS_NAME"
+              ]
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "TEMPLATE_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "PACKAGE_NAME",
               "requiredProps": [
                 "PACKAGE_NAME",
                 "FILE_DIRECTORY_APPEND_DOT_CASE"
-              ],
-              "name": "PACKAGE_NAME"
+              ]
             },
             {
-              "requiredProps": [],
-              "name": "FILE_DIRECTORY"
+              "name": "FILE_DIRECTORY",
+              "requiredProps": []
             }
           ],
           "extractedProps": [
@@ -76,131 +76,131 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_SIMPLE_NAME",
                 "requiredProps": [
                   "SCREEN_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_FILE_NAME",
                 "requiredProps": [
                   "CONTROLLER_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_CLASS_NAME",
                 "requiredProps": [
                   "CONTROLLER_SIMPLE_NAME",
                   "CONTROLLER_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "CONTROLLER_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "CONTROLLER_ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
-                "requiredProps": [
-                  "ANDROID_LAYOUT_SIMPLE_NAME"
-                ],
                 "propGenerator": {
+                  "propName": "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+                  "propBaseName": "ANDROID_LAYOUT_SIMPLE_NAME",
                   "requiredProps": [
                     "ANDROID_LAYOUT_SIMPLE_NAME"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
-                  "propBaseName": "ANDROID_LAYOUT_SIMPLE_NAME"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "CONTROLLER_ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+                "requiredProps": [
+                  "ANDROID_LAYOUT_SIMPLE_NAME"
+                ]
               },
               {
-                "propName": "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "CONTROLLER_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "CONTROLLER_FILE_DIRECTORY"
+                ]
               }
             ]
           }
@@ -209,48 +209,48 @@
           "simpleName": "KEY",
           "customProps": [
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_NAME"
+              "name": "TEMPLATE_NAME",
+              "requiredProps": []
             },
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_EXTENSION"
+              "name": "TEMPLATE_EXTENSION",
+              "requiredProps": []
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "SCREEN_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "FILE_NAME",
               "requiredProps": [
                 "SIMPLE_NAME"
-              ],
-              "name": "FILE_NAME"
+              ]
             },
             {
+              "name": "CLASS_NAME",
               "requiredProps": [
                 "SIMPLE_NAME",
                 "PACKAGE_NAME"
-              ],
-              "name": "CLASS_NAME"
+              ]
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "TEMPLATE_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "PACKAGE_NAME",
               "requiredProps": [
                 "PACKAGE_NAME",
                 "FILE_DIRECTORY_APPEND_DOT_CASE"
-              ],
-              "name": "PACKAGE_NAME"
+              ]
             },
             {
-              "requiredProps": [],
-              "name": "FILE_DIRECTORY"
+              "name": "FILE_DIRECTORY",
+              "requiredProps": []
             }
           ],
           "extractedProps": [
@@ -273,117 +273,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_SIMPLE_NAME",
                 "requiredProps": [
                   "SCREEN_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_FILE_NAME",
                 "requiredProps": [
                   "KEY_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_CLASS_NAME",
                 "requiredProps": [
                   "KEY_SIMPLE_NAME",
                   "KEY_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "KEY_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "KEY_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "KEY_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "KEY_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "KEY_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "KEY_FILE_DIRECTORY"
+                ]
               }
             ]
           }
@@ -392,48 +392,48 @@
           "simpleName": "PRESENTER",
           "customProps": [
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_NAME"
+              "name": "TEMPLATE_NAME",
+              "requiredProps": []
             },
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_EXTENSION"
+              "name": "TEMPLATE_EXTENSION",
+              "requiredProps": []
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "SCREEN_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "FILE_NAME",
               "requiredProps": [
                 "SIMPLE_NAME"
-              ],
-              "name": "FILE_NAME"
+              ]
             },
             {
+              "name": "CLASS_NAME",
               "requiredProps": [
                 "SIMPLE_NAME",
                 "PACKAGE_NAME"
-              ],
-              "name": "CLASS_NAME"
+              ]
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "TEMPLATE_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "PACKAGE_NAME",
               "requiredProps": [
                 "PACKAGE_NAME",
                 "FILE_DIRECTORY_APPEND_DOT_CASE"
-              ],
-              "name": "PACKAGE_NAME"
+              ]
             },
             {
-              "requiredProps": [],
-              "name": "FILE_DIRECTORY"
+              "name": "FILE_DIRECTORY",
+              "requiredProps": []
             }
           ],
           "extractedProps": [
@@ -456,117 +456,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_SIMPLE_NAME",
                 "requiredProps": [
                   "SCREEN_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_FILE_NAME",
                 "requiredProps": [
                   "PRESENTER_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_CLASS_NAME",
                 "requiredProps": [
                   "PRESENTER_SIMPLE_NAME",
                   "PRESENTER_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "PRESENTER_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "PRESENTER_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "PRESENTER_FILE_DIRECTORY"
+                ]
               }
             ]
           }
@@ -575,48 +575,48 @@
           "simpleName": "SCREEN",
           "customProps": [
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_NAME"
+              "name": "TEMPLATE_NAME",
+              "requiredProps": []
             },
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_EXTENSION"
+              "name": "TEMPLATE_EXTENSION",
+              "requiredProps": []
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "SCREEN_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "FILE_NAME",
               "requiredProps": [
                 "SIMPLE_NAME"
-              ],
-              "name": "FILE_NAME"
+              ]
             },
             {
+              "name": "CLASS_NAME",
               "requiredProps": [
                 "SIMPLE_NAME",
                 "PACKAGE_NAME"
-              ],
-              "name": "CLASS_NAME"
+              ]
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "TEMPLATE_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "PACKAGE_NAME",
               "requiredProps": [
                 "PACKAGE_NAME",
                 "FILE_DIRECTORY_APPEND_DOT_CASE"
-              ],
-              "name": "PACKAGE_NAME"
+              ]
             },
             {
-              "requiredProps": [],
-              "name": "FILE_DIRECTORY"
+              "name": "FILE_DIRECTORY",
+              "requiredProps": []
             }
           ],
           "extractedProps": [
@@ -637,117 +637,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_SIMPLE_NAME",
                 "requiredProps": [
                   "SCREEN_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_FILE_NAME",
                 "requiredProps": [
                   "SCREEN_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_CLASS_NAME",
                 "requiredProps": [
                   "SCREEN_SIMPLE_NAME",
                   "SCREEN_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "SCREEN_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "SCREEN_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "SCREEN_FILE_DIRECTORY"
+                ]
               }
             ]
           }
@@ -756,28 +756,28 @@
           "simpleName": "ANDROID_LAYOUT",
           "customProps": [
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_NAME"
+              "name": "TEMPLATE_NAME",
+              "requiredProps": []
             },
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_EXTENSION"
+              "name": "TEMPLATE_EXTENSION",
+              "requiredProps": []
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "SCREEN_NAME_LOWER_SNAKE_CASE"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "FILE_NAME",
               "requiredProps": [
                 "SIMPLE_NAME"
-              ],
-              "name": "FILE_NAME"
+              ]
             },
             {
-              "requiredProps": [],
-              "name": "FILE_DIRECTORY"
+              "name": "FILE_DIRECTORY",
+              "requiredProps": []
             }
           ],
           "extractedProps": [
@@ -792,81 +792,81 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME_LOWER_SNAKE_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_SIMPLE_NAME",
                 "requiredProps": [
                   "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME_LOWER_SNAKE_CASE"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_FILE_NAME",
                 "requiredProps": [
                   "ANDROID_LAYOUT_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE",
-                "requiredProps": [
-                  "SCREEN_NAME"
-                ],
                 "propGenerator": {
+                  "propName": "SCREEN_NAME_LOWER_SNAKE_CASE",
+                  "propBaseName": "SCREEN_NAME",
                   "requiredProps": [
                     "SCREEN_NAME"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "SCREEN_NAME_LOWER_SNAKE_CASE",
-                  "propBaseName": "SCREEN_NAME"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE",
+                "requiredProps": [
+                  "SCREEN_NAME"
+                ]
               }
             ]
           }
@@ -907,12 +907,12 @@
       ],
       "customProps": [
         {
-          "requiredProps": [],
-          "name": "GROUP_NAME"
+          "name": "GROUP_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_DIRECTORY"
+          "name": "FILE_DIRECTORY",
+          "requiredProps": []
         }
       ],
       "extractedProps": [
@@ -948,81 +948,81 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME_LOWER_SNAKE_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_SIMPLE_NAME",
                 "requiredProps": [
                   "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME_LOWER_SNAKE_CASE"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_FILE_NAME",
                 "requiredProps": [
                   "ANDROID_LAYOUT_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE",
-                "requiredProps": [
-                  "SCREEN_NAME"
-                ],
                 "propGenerator": {
+                  "propName": "SCREEN_NAME_LOWER_SNAKE_CASE",
+                  "propBaseName": "SCREEN_NAME",
                   "requiredProps": [
                     "SCREEN_NAME"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "SCREEN_NAME_LOWER_SNAKE_CASE",
-                  "propBaseName": "SCREEN_NAME"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE",
+                "requiredProps": [
+                  "SCREEN_NAME"
+                ]
               }
             ]
           },
@@ -1031,131 +1031,131 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_SIMPLE_NAME",
                 "requiredProps": [
                   "SCREEN_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_FILE_NAME",
                 "requiredProps": [
                   "CONTROLLER_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_CLASS_NAME",
                 "requiredProps": [
                   "CONTROLLER_SIMPLE_NAME",
                   "CONTROLLER_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "CONTROLLER_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "CONTROLLER_ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
-                "requiredProps": [
-                  "ANDROID_LAYOUT_SIMPLE_NAME"
-                ],
                 "propGenerator": {
+                  "propName": "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+                  "propBaseName": "ANDROID_LAYOUT_SIMPLE_NAME",
                   "requiredProps": [
                     "ANDROID_LAYOUT_SIMPLE_NAME"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
-                  "propBaseName": "ANDROID_LAYOUT_SIMPLE_NAME"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "CONTROLLER_ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+                "requiredProps": [
+                  "ANDROID_LAYOUT_SIMPLE_NAME"
+                ]
               },
               {
-                "propName": "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "CONTROLLER_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "CONTROLLER_FILE_DIRECTORY"
+                ]
               }
             ]
           },
@@ -1164,117 +1164,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_SIMPLE_NAME",
                 "requiredProps": [
                   "SCREEN_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_FILE_NAME",
                 "requiredProps": [
                   "SCREEN_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_CLASS_NAME",
                 "requiredProps": [
                   "SCREEN_SIMPLE_NAME",
                   "SCREEN_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "SCREEN_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "SCREEN_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "SCREEN_FILE_DIRECTORY"
+                ]
               }
             ]
           },
@@ -1283,117 +1283,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_SIMPLE_NAME",
                 "requiredProps": [
                   "SCREEN_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_FILE_NAME",
                 "requiredProps": [
                   "PRESENTER_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_CLASS_NAME",
                 "requiredProps": [
                   "PRESENTER_SIMPLE_NAME",
                   "PRESENTER_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "PRESENTER_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "PRESENTER_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "PRESENTER_FILE_DIRECTORY"
+                ]
               }
             ]
           },
@@ -1402,157 +1402,157 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_SIMPLE_NAME",
                 "requiredProps": [
                   "SCREEN_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_FILE_NAME",
                 "requiredProps": [
                   "KEY_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_CLASS_NAME",
                 "requiredProps": [
                   "KEY_SIMPLE_NAME",
                   "KEY_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "KEY_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "KEY_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "KEY_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "KEY_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "KEY_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "KEY_FILE_DIRECTORY"
+                ]
               }
             ]
           }
         ],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "GROUP_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "MVI_SCREEN_GROUP_GROUP_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "GROUP_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "MVI_SCREEN_GROUP_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "MVI_SCREEN_GROUP_SCREEN_NAME_UPPER_CAMEL_CASE",
-            "requiredProps": [
-              "SCREEN_NAME"
-            ],
             "propGenerator": {
+              "propName": "SCREEN_NAME_UPPER_CAMEL_CASE",
+              "propBaseName": "SCREEN_NAME",
               "requiredProps": [
                 "SCREEN_NAME"
               ],
-              "selfRequiredProps": [],
-              "propName": "SCREEN_NAME_UPPER_CAMEL_CASE",
-              "propBaseName": "SCREEN_NAME"
-            }
+              "selfRequiredProps": []
+            },
+            "propName": "MVI_SCREEN_GROUP_SCREEN_NAME_UPPER_CAMEL_CASE",
+            "requiredProps": [
+              "SCREEN_NAME"
+            ]
           }
         ]
       }
@@ -1561,20 +1561,20 @@
       "simpleName": "MVI_SCREEN_BUILD",
       "customProps": [
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_NAME"
+          "name": "TEMPLATE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_EXTENSION"
+          "name": "TEMPLATE_EXTENSION",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_NAME"
+          "name": "FILE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_DIRECTORY"
+          "name": "FILE_DIRECTORY",
+          "requiredProps": []
         }
       ],
       "extractedProps": [
@@ -1590,62 +1590,62 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "MVI_SCREEN_BUILD_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "MVI_SCREEN_BUILD_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "MVI_SCREEN_BUILD_FILE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "MVI_SCREEN_BUILD_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "MVI_SCREEN_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
-            "requiredProps": [
-              "PROJECT_NAME"
-            ],
             "propGenerator": {
+              "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
+              "propBaseName": "PROJECT_NAME",
               "requiredProps": [
                 "PROJECT_NAME"
               ],
-              "selfRequiredProps": [],
-              "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
-              "propBaseName": "PROJECT_NAME"
-            }
+              "selfRequiredProps": []
+            },
+            "propName": "MVI_SCREEN_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
+            "requiredProps": [
+              "PROJECT_NAME"
+            ]
           }
         ]
       }
@@ -1654,20 +1654,20 @@
       "simpleName": "GITIGNORE",
       "customProps": [
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_NAME"
+          "name": "TEMPLATE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_EXTENSION"
+          "name": "TEMPLATE_EXTENSION",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_NAME"
+          "name": "FILE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_DIRECTORY"
+          "name": "FILE_DIRECTORY",
+          "requiredProps": []
         }
       ],
       "extractedProps": [],
@@ -1677,48 +1677,48 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "GITIGNORE_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "GITIGNORE_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "GITIGNORE_FILE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "GITIGNORE_FILE_DIRECTORY",
-            "requiredProps": [],
             "propGenerator": {
-              "selfRequiredProps": [],
               "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
+            "propName": "GITIGNORE_FILE_DIRECTORY",
+            "requiredProps": []
           }
         ]
       }
@@ -1727,20 +1727,20 @@
       "simpleName": "ANDROID_MANIFEST",
       "customProps": [
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_NAME"
+          "name": "TEMPLATE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_EXTENSION"
+          "name": "TEMPLATE_EXTENSION",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_NAME"
+          "name": "FILE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_DIRECTORY"
+          "name": "FILE_DIRECTORY",
+          "requiredProps": []
         }
       ],
       "extractedProps": [
@@ -1754,48 +1754,48 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "ANDROID_MANIFEST_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "ANDROID_MANIFEST_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "ANDROID_MANIFEST_FILE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "ANDROID_MANIFEST_FILE_DIRECTORY",
-            "requiredProps": [],
             "propGenerator": {
-              "selfRequiredProps": [],
               "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
+            "propName": "ANDROID_MANIFEST_FILE_DIRECTORY",
+            "requiredProps": []
           }
         ]
       }
@@ -1823,28 +1823,28 @@
   ],
   "customProps": [
     {
-      "requiredProps": [],
-      "name": "GROUP_NAME"
+      "name": "GROUP_NAME",
+      "requiredProps": []
     },
     {
+      "name": "MODULE_NAME",
       "requiredProps": [
         "PROJECT_NAME_LOWER_KEBAB_CASE",
         "SCREEN_NAME_LOWER_CASE"
-      ],
-      "name": "MODULE_NAME"
+      ]
     },
     {
+      "name": "PACKAGE_NAME",
       "requiredProps": [
         "MODULE_NAME_DOT_CASE",
         "PACKAGE_BASE"
-      ],
-      "name": "PACKAGE_NAME"
+      ]
     },
     {
+      "name": "FILE_DIRECTORY",
       "requiredProps": [
         "MODULE_NAME"
-      ],
-      "name": "FILE_DIRECTORY"
+      ]
     }
   ],
   "extractedProps": [
@@ -1882,62 +1882,62 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "MVI_SCREEN_BUILD_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "MVI_SCREEN_BUILD_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "MVI_SCREEN_BUILD_FILE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "MVI_SCREEN_BUILD_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "MVI_SCREEN_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
-            "requiredProps": [
-              "PROJECT_NAME"
-            ],
             "propGenerator": {
+              "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
+              "propBaseName": "PROJECT_NAME",
               "requiredProps": [
                 "PROJECT_NAME"
               ],
-              "selfRequiredProps": [],
-              "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
-              "propBaseName": "PROJECT_NAME"
-            }
+              "selfRequiredProps": []
+            },
+            "propName": "MVI_SCREEN_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
+            "requiredProps": [
+              "PROJECT_NAME"
+            ]
           }
         ]
       },
@@ -1949,81 +1949,81 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME_LOWER_SNAKE_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_SIMPLE_NAME",
                 "requiredProps": [
                   "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME_LOWER_SNAKE_CASE"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_FILE_NAME",
                 "requiredProps": [
                   "ANDROID_LAYOUT_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "ANDROID_LAYOUT_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE",
-                "requiredProps": [
-                  "SCREEN_NAME"
-                ],
                 "propGenerator": {
+                  "propName": "SCREEN_NAME_LOWER_SNAKE_CASE",
+                  "propBaseName": "SCREEN_NAME",
                   "requiredProps": [
                     "SCREEN_NAME"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "SCREEN_NAME_LOWER_SNAKE_CASE",
-                  "propBaseName": "SCREEN_NAME"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "ANDROID_LAYOUT_SCREEN_NAME_LOWER_SNAKE_CASE",
+                "requiredProps": [
+                  "SCREEN_NAME"
+                ]
               }
             ]
           },
@@ -2032,131 +2032,131 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_SIMPLE_NAME",
                 "requiredProps": [
                   "SCREEN_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_FILE_NAME",
                 "requiredProps": [
                   "CONTROLLER_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_CLASS_NAME",
                 "requiredProps": [
                   "CONTROLLER_SIMPLE_NAME",
                   "CONTROLLER_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "CONTROLLER_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "CONTROLLER_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "CONTROLLER_ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
-                "requiredProps": [
-                  "ANDROID_LAYOUT_SIMPLE_NAME"
-                ],
                 "propGenerator": {
+                  "propName": "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+                  "propBaseName": "ANDROID_LAYOUT_SIMPLE_NAME",
                   "requiredProps": [
                     "ANDROID_LAYOUT_SIMPLE_NAME"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
-                  "propBaseName": "ANDROID_LAYOUT_SIMPLE_NAME"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "CONTROLLER_ANDROID_LAYOUT_SIMPLE_NAME_LOWER_SNAKE_CASE",
+                "requiredProps": [
+                  "ANDROID_LAYOUT_SIMPLE_NAME"
+                ]
               },
               {
-                "propName": "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "CONTROLLER_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "CONTROLLER_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "CONTROLLER_FILE_DIRECTORY"
+                ]
               }
             ]
           },
@@ -2165,117 +2165,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_SIMPLE_NAME",
                 "requiredProps": [
                   "SCREEN_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_FILE_NAME",
                 "requiredProps": [
                   "SCREEN_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_CLASS_NAME",
                 "requiredProps": [
                   "SCREEN_SIMPLE_NAME",
                   "SCREEN_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "SCREEN_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "SCREEN_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "SCREEN_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "SCREEN_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "SCREEN_FILE_DIRECTORY"
+                ]
               }
             ]
           },
@@ -2284,117 +2284,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_SIMPLE_NAME",
                 "requiredProps": [
                   "SCREEN_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_FILE_NAME",
                 "requiredProps": [
                   "PRESENTER_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_CLASS_NAME",
                 "requiredProps": [
                   "PRESENTER_SIMPLE_NAME",
                   "PRESENTER_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "PRESENTER_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "PRESENTER_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "PRESENTER_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "PRESENTER_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "PRESENTER_FILE_DIRECTORY"
+                ]
               }
             ]
           },
@@ -2403,157 +2403,157 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "SCREEN_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_SIMPLE_NAME",
                 "requiredProps": [
                   "SCREEN_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SCREEN_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_FILE_NAME",
                 "requiredProps": [
                   "KEY_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_CLASS_NAME",
                 "requiredProps": [
                   "KEY_SIMPLE_NAME",
                   "KEY_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "KEY_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "KEY_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "KEY_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "KEY_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "KEY_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "KEY_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "KEY_FILE_DIRECTORY"
+                ]
               }
             ]
           }
         ],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "GROUP_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "MVI_SCREEN_GROUP_GROUP_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "GROUP_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "MVI_SCREEN_GROUP_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "MVI_SCREEN_GROUP_SCREEN_NAME_UPPER_CAMEL_CASE",
-            "requiredProps": [
-              "SCREEN_NAME"
-            ],
             "propGenerator": {
+              "propName": "SCREEN_NAME_UPPER_CAMEL_CASE",
+              "propBaseName": "SCREEN_NAME",
               "requiredProps": [
                 "SCREEN_NAME"
               ],
-              "selfRequiredProps": [],
-              "propName": "SCREEN_NAME_UPPER_CAMEL_CASE",
-              "propBaseName": "SCREEN_NAME"
-            }
+              "selfRequiredProps": []
+            },
+            "propName": "MVI_SCREEN_GROUP_SCREEN_NAME_UPPER_CAMEL_CASE",
+            "requiredProps": [
+              "SCREEN_NAME"
+            ]
           }
         ]
       },
@@ -2562,48 +2562,48 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "ANDROID_MANIFEST_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "ANDROID_MANIFEST_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "ANDROID_MANIFEST_FILE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "ANDROID_MANIFEST_FILE_DIRECTORY",
-            "requiredProps": [],
             "propGenerator": {
-              "selfRequiredProps": [],
               "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
+            "propName": "ANDROID_MANIFEST_FILE_DIRECTORY",
+            "requiredProps": []
           }
         ]
       },
@@ -2612,154 +2612,154 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "GITIGNORE_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "GITIGNORE_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "GITIGNORE_FILE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "GITIGNORE_FILE_DIRECTORY",
-            "requiredProps": [],
             "propGenerator": {
-              "selfRequiredProps": [],
               "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
+            "propName": "GITIGNORE_FILE_DIRECTORY",
+            "requiredProps": []
           }
         ]
       }
     ],
     "scopedPropGenerators": [
       {
-        "propName": "MVI_SCREEN_MODULE_GROUP_NAME",
-        "requiredProps": [],
         "propGenerator": {
-          "selfRequiredProps": [],
           "customProp": {
-            "requiredProps": [],
-            "name": "GROUP_NAME"
-          }
-        }
+            "name": "GROUP_NAME",
+            "requiredProps": []
+          },
+          "selfRequiredProps": []
+        },
+        "propName": "MVI_SCREEN_MODULE_GROUP_NAME",
+        "requiredProps": []
       },
       {
+        "propGenerator": {
+          "customProp": {
+            "name": "MODULE_NAME",
+            "requiredProps": [
+              "PROJECT_NAME_LOWER_KEBAB_CASE",
+              "SCREEN_NAME_LOWER_CASE"
+            ]
+          },
+          "selfRequiredProps": []
+        },
         "propName": "MVI_SCREEN_MODULE_MODULE_NAME",
         "requiredProps": [
           "MVI_SCREEN_MODULE_PROJECT_NAME_LOWER_KEBAB_CASE",
           "MVI_SCREEN_MODULE_SCREEN_NAME_LOWER_CASE"
-        ],
-        "propGenerator": {
-          "selfRequiredProps": [],
-          "customProp": {
-            "requiredProps": [
-              "PROJECT_NAME_LOWER_KEBAB_CASE",
-              "SCREEN_NAME_LOWER_CASE"
-            ],
-            "name": "MODULE_NAME"
-          }
-        }
+        ]
       },
       {
+        "propGenerator": {
+          "customProp": {
+            "name": "PACKAGE_NAME",
+            "requiredProps": [
+              "MODULE_NAME_DOT_CASE",
+              "PACKAGE_BASE"
+            ]
+          },
+          "selfRequiredProps": []
+        },
         "propName": "MVI_SCREEN_MODULE_PACKAGE_NAME",
         "requiredProps": [
           "MVI_SCREEN_MODULE_MODULE_NAME_DOT_CASE",
           "PACKAGE_BASE"
-        ],
-        "propGenerator": {
-          "selfRequiredProps": [],
-          "customProp": {
-            "requiredProps": [
-              "MODULE_NAME_DOT_CASE",
-              "PACKAGE_BASE"
-            ],
-            "name": "PACKAGE_NAME"
-          }
-        }
+        ]
       },
       {
+        "propGenerator": {
+          "customProp": {
+            "name": "FILE_DIRECTORY",
+            "requiredProps": [
+              "MODULE_NAME"
+            ]
+          },
+          "selfRequiredProps": []
+        },
         "propName": "MVI_SCREEN_MODULE_FILE_DIRECTORY",
         "requiredProps": [
           "MVI_SCREEN_MODULE_MODULE_NAME"
-        ],
-        "propGenerator": {
-          "selfRequiredProps": [],
-          "customProp": {
-            "requiredProps": [
-              "MODULE_NAME"
-            ],
-            "name": "FILE_DIRECTORY"
-          }
-        }
+        ]
       },
       {
-        "propName": "MVI_SCREEN_MODULE_PROJECT_NAME_LOWER_KEBAB_CASE",
-        "requiredProps": [
-          "PROJECT_NAME"
-        ],
         "propGenerator": {
+          "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
+          "propBaseName": "PROJECT_NAME",
           "requiredProps": [
             "PROJECT_NAME"
           ],
-          "selfRequiredProps": [],
-          "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
-          "propBaseName": "PROJECT_NAME"
-        }
+          "selfRequiredProps": []
+        },
+        "propName": "MVI_SCREEN_MODULE_PROJECT_NAME_LOWER_KEBAB_CASE",
+        "requiredProps": [
+          "PROJECT_NAME"
+        ]
       },
       {
-        "propName": "MVI_SCREEN_MODULE_SCREEN_NAME_LOWER_CASE",
-        "requiredProps": [
-          "SCREEN_NAME"
-        ],
         "propGenerator": {
+          "propName": "SCREEN_NAME_LOWER_CASE",
+          "propBaseName": "SCREEN_NAME",
           "requiredProps": [
             "SCREEN_NAME"
           ],
-          "selfRequiredProps": [],
-          "propName": "SCREEN_NAME_LOWER_CASE",
-          "propBaseName": "SCREEN_NAME"
-        }
+          "selfRequiredProps": []
+        },
+        "propName": "MVI_SCREEN_MODULE_SCREEN_NAME_LOWER_CASE",
+        "requiredProps": [
+          "SCREEN_NAME"
+        ]
       },
       {
-        "propName": "MVI_SCREEN_MODULE_MODULE_NAME_DOT_CASE",
-        "requiredProps": [
-          "MVI_SCREEN_MODULE_MODULE_NAME"
-        ],
         "propGenerator": {
+          "propName": "MODULE_NAME_DOT_CASE",
+          "propBaseName": "MODULE_NAME",
           "requiredProps": [
             "MODULE_NAME"
           ],
-          "selfRequiredProps": [],
-          "propName": "MODULE_NAME_DOT_CASE",
-          "propBaseName": "MODULE_NAME"
-        }
+          "selfRequiredProps": []
+        },
+        "propName": "MVI_SCREEN_MODULE_MODULE_NAME_DOT_CASE",
+        "requiredProps": [
+          "MVI_SCREEN_MODULE_MODULE_NAME"
+        ]
       }
     ]
   }

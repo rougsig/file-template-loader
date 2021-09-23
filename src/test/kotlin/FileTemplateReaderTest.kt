@@ -2,6 +2,7 @@ package com.github.rougsig.filetemplateloader
 
 import com.github.rougsig.filetemplateloader.reader.readFileTemplate
 import com.intellij.testFramework.fixtures.LightPlatformCodeInsightFixtureTestCase
+import java.io.File
 
 class FileTemplateReaderTest : LightPlatformCodeInsightFixtureTestCase() {
   private val gson = createUnitTestGson()

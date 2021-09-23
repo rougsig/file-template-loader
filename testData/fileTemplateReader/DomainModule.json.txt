@@ -8,48 +8,48 @@
           "simpleName": "MODEL",
           "customProps": [
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_NAME"
+              "name": "TEMPLATE_NAME",
+              "requiredProps": []
             },
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_EXTENSION"
+              "name": "TEMPLATE_EXTENSION",
+              "requiredProps": []
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "MODEL_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "FILE_NAME",
               "requiredProps": [
                 "SIMPLE_NAME"
-              ],
-              "name": "FILE_NAME"
+              ]
             },
             {
+              "name": "CLASS_NAME",
               "requiredProps": [
                 "SIMPLE_NAME",
                 "PACKAGE_NAME"
-              ],
-              "name": "CLASS_NAME"
+              ]
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "TEMPLATE_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "PACKAGE_NAME",
               "requiredProps": [
                 "PACKAGE_NAME",
                 "FILE_DIRECTORY_APPEND_DOT_CASE"
-              ],
-              "name": "PACKAGE_NAME"
+              ]
             },
             {
-              "requiredProps": [],
-              "name": "FILE_DIRECTORY"
+              "name": "FILE_DIRECTORY",
+              "requiredProps": []
             }
           ],
           "extractedProps": [
@@ -68,117 +68,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "MODEL_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_SIMPLE_NAME",
                 "requiredProps": [
                   "MODEL_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "MODEL_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_FILE_NAME",
                 "requiredProps": [
                   "MODEL_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_CLASS_NAME",
                 "requiredProps": [
                   "MODEL_SIMPLE_NAME",
                   "MODEL_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "MODEL_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "MODEL_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "MODEL_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "MODEL_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "MODEL_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "MODEL_FILE_DIRECTORY"
+                ]
               }
             ]
           }
@@ -187,48 +187,48 @@
           "simpleName": "MODEL_IMPL",
           "customProps": [
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_NAME"
+              "name": "TEMPLATE_NAME",
+              "requiredProps": []
             },
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_EXTENSION"
+              "name": "TEMPLATE_EXTENSION",
+              "requiredProps": []
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "MODEL_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "FILE_NAME",
               "requiredProps": [
                 "SIMPLE_NAME"
-              ],
-              "name": "FILE_NAME"
+              ]
             },
             {
+              "name": "CLASS_NAME",
               "requiredProps": [
                 "SIMPLE_NAME",
                 "PACKAGE_NAME"
-              ],
-              "name": "CLASS_NAME"
+              ]
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "TEMPLATE_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "PACKAGE_NAME",
               "requiredProps": [
                 "PACKAGE_NAME",
                 "FILE_DIRECTORY_APPEND_DOT_CASE"
-              ],
-              "name": "PACKAGE_NAME"
+              ]
             },
             {
-              "requiredProps": [],
-              "name": "FILE_DIRECTORY"
+              "name": "FILE_DIRECTORY",
+              "requiredProps": []
             }
           ],
           "extractedProps": [
@@ -251,117 +251,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "MODEL_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_SIMPLE_NAME",
                 "requiredProps": [
                   "MODEL_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "MODEL_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_FILE_NAME",
                 "requiredProps": [
                   "MODEL_IMPL_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_CLASS_NAME",
                 "requiredProps": [
                   "MODEL_IMPL_SIMPLE_NAME",
                   "MODEL_IMPL_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "MODEL_IMPL_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "MODEL_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "MODEL_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "MODEL_IMPL_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "MODEL_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "MODEL_IMPL_FILE_DIRECTORY"
+                ]
               }
             ]
           }
@@ -370,48 +370,48 @@
           "simpleName": "MODEL_MODULE",
           "customProps": [
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_NAME"
+              "name": "TEMPLATE_NAME",
+              "requiredProps": []
             },
             {
-              "requiredProps": [],
-              "name": "TEMPLATE_EXTENSION"
+              "name": "TEMPLATE_EXTENSION",
+              "requiredProps": []
             },
             {
-              "requiredProps": [],
-              "name": "FILE_DIRECTORY"
+              "name": "FILE_DIRECTORY",
+              "requiredProps": []
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "MODEL_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "FILE_NAME",
               "requiredProps": [
                 "SIMPLE_NAME"
-              ],
-              "name": "FILE_NAME"
+              ]
             },
             {
+              "name": "CLASS_NAME",
               "requiredProps": [
                 "SIMPLE_NAME",
                 "PACKAGE_NAME"
-              ],
-              "name": "CLASS_NAME"
+              ]
             },
             {
+              "name": "SIMPLE_NAME",
               "requiredProps": [
                 "TEMPLATE_NAME"
-              ],
-              "name": "SIMPLE_NAME"
+              ]
             },
             {
+              "name": "PACKAGE_NAME",
               "requiredProps": [
                 "PACKAGE_NAME",
                 "FILE_DIRECTORY_APPEND_DOT_CASE"
-              ],
-              "name": "PACKAGE_NAME"
+              ]
             }
           ],
           "extractedProps": [
@@ -438,117 +438,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "MODEL_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_SIMPLE_NAME",
                 "requiredProps": [
                   "MODEL_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "MODEL_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_FILE_NAME",
                 "requiredProps": [
                   "MODEL_MODULE_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_CLASS_NAME",
                 "requiredProps": [
                   "MODEL_MODULE_SIMPLE_NAME",
                   "MODEL_MODULE_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "MODEL_MODULE_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "MODEL_MODULE_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
-                "propName": "MODEL_MODULE_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "MODEL_MODULE_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "MODEL_MODULE_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "MODEL_MODULE_FILE_DIRECTORY"
+                ]
               }
             ]
           }
@@ -557,12 +557,12 @@
       "injectors": [],
       "customProps": [
         {
-          "requiredProps": [],
-          "name": "GROUP_NAME"
+          "name": "GROUP_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_DIRECTORY"
+          "name": "FILE_DIRECTORY",
+          "requiredProps": []
         }
       ],
       "extractedProps": [
@@ -587,117 +587,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "MODEL_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_SIMPLE_NAME",
                 "requiredProps": [
                   "MODEL_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "MODEL_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_FILE_NAME",
                 "requiredProps": [
                   "MODEL_IMPL_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_CLASS_NAME",
                 "requiredProps": [
                   "MODEL_IMPL_SIMPLE_NAME",
                   "MODEL_IMPL_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "MODEL_IMPL_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "MODEL_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "MODEL_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "MODEL_IMPL_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "MODEL_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "MODEL_IMPL_FILE_DIRECTORY"
+                ]
               }
             ]
           },
@@ -706,117 +706,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "MODEL_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_SIMPLE_NAME",
                 "requiredProps": [
                   "MODEL_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "MODEL_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_FILE_NAME",
                 "requiredProps": [
                   "MODEL_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_CLASS_NAME",
                 "requiredProps": [
                   "MODEL_SIMPLE_NAME",
                   "MODEL_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "MODEL_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "MODEL_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "MODEL_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "MODEL_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "MODEL_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "MODEL_FILE_DIRECTORY"
+                ]
               }
             ]
           },
@@ -825,143 +825,143 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "MODEL_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_SIMPLE_NAME",
                 "requiredProps": [
                   "MODEL_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "MODEL_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_FILE_NAME",
                 "requiredProps": [
                   "MODEL_MODULE_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_CLASS_NAME",
                 "requiredProps": [
                   "MODEL_MODULE_SIMPLE_NAME",
                   "MODEL_MODULE_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "MODEL_MODULE_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "MODEL_MODULE_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
-                "propName": "MODEL_MODULE_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "MODEL_MODULE_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "MODEL_MODULE_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "MODEL_MODULE_FILE_DIRECTORY"
+                ]
               }
             ]
           }
         ],
         "scopedPropGenerators": [
           {
-            "propName": "DOMAIN_GROUP_GROUP_NAME",
-            "requiredProps": [],
             "propGenerator": {
-              "selfRequiredProps": [],
               "customProp": {
-                "requiredProps": [],
-                "name": "GROUP_NAME"
-              }
-            }
+                "name": "GROUP_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
+            "propName": "DOMAIN_GROUP_GROUP_NAME",
+            "requiredProps": []
           },
           {
-            "propName": "DOMAIN_GROUP_FILE_DIRECTORY",
-            "requiredProps": [],
             "propGenerator": {
-              "selfRequiredProps": [],
               "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
+            "propName": "DOMAIN_GROUP_FILE_DIRECTORY",
+            "requiredProps": []
           }
         ]
       }
@@ -970,20 +970,20 @@
       "simpleName": "DOMAIN_MODULE_BUILD",
       "customProps": [
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_NAME"
+          "name": "TEMPLATE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_EXTENSION"
+          "name": "TEMPLATE_EXTENSION",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_NAME"
+          "name": "FILE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_DIRECTORY"
+          "name": "FILE_DIRECTORY",
+          "requiredProps": []
         }
       ],
       "extractedProps": [
@@ -999,62 +999,62 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "DOMAIN_MODULE_BUILD_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "DOMAIN_MODULE_BUILD_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "DOMAIN_MODULE_BUILD_FILE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "DOMAIN_MODULE_BUILD_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "DOMAIN_MODULE_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
-            "requiredProps": [
-              "PROJECT_NAME"
-            ],
             "propGenerator": {
+              "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
+              "propBaseName": "PROJECT_NAME",
               "requiredProps": [
                 "PROJECT_NAME"
               ],
-              "selfRequiredProps": [],
-              "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
-              "propBaseName": "PROJECT_NAME"
-            }
+              "selfRequiredProps": []
+            },
+            "propName": "DOMAIN_MODULE_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
+            "requiredProps": [
+              "PROJECT_NAME"
+            ]
           }
         ]
       }
@@ -1063,20 +1063,20 @@
       "simpleName": "GITIGNORE",
       "customProps": [
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_NAME"
+          "name": "TEMPLATE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_EXTENSION"
+          "name": "TEMPLATE_EXTENSION",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_NAME"
+          "name": "FILE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_DIRECTORY"
+          "name": "FILE_DIRECTORY",
+          "requiredProps": []
         }
       ],
       "extractedProps": [],
@@ -1086,48 +1086,48 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "GITIGNORE_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "GITIGNORE_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "GITIGNORE_FILE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "GITIGNORE_FILE_DIRECTORY",
-            "requiredProps": [],
             "propGenerator": {
-              "selfRequiredProps": [],
               "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
+            "propName": "GITIGNORE_FILE_DIRECTORY",
+            "requiredProps": []
           }
         ]
       }
@@ -1136,20 +1136,20 @@
       "simpleName": "ANDROID_MANIFEST",
       "customProps": [
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_NAME"
+          "name": "TEMPLATE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "TEMPLATE_EXTENSION"
+          "name": "TEMPLATE_EXTENSION",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_NAME"
+          "name": "FILE_NAME",
+          "requiredProps": []
         },
         {
-          "requiredProps": [],
-          "name": "FILE_DIRECTORY"
+          "name": "FILE_DIRECTORY",
+          "requiredProps": []
         }
       ],
       "extractedProps": [
@@ -1163,48 +1163,48 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "ANDROID_MANIFEST_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "ANDROID_MANIFEST_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "ANDROID_MANIFEST_FILE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "ANDROID_MANIFEST_FILE_DIRECTORY",
-            "requiredProps": [],
             "propGenerator": {
-              "selfRequiredProps": [],
               "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
+            "propName": "ANDROID_MANIFEST_FILE_DIRECTORY",
+            "requiredProps": []
           }
         ]
       }
@@ -1223,28 +1223,28 @@
   ],
   "customProps": [
     {
-      "requiredProps": [],
-      "name": "GROUP_NAME"
+      "name": "GROUP_NAME",
+      "requiredProps": []
     },
     {
+      "name": "MODULE_NAME",
       "requiredProps": [
         "PROJECT_NAME_LOWER_KEBAB_CASE",
         "MODEL_NAME_LOWER_CASE"
-      ],
-      "name": "MODULE_NAME"
+      ]
     },
     {
+      "name": "PACKAGE_NAME",
       "requiredProps": [
         "MODULE_NAME_DOT_CASE",
         "PACKAGE_BASE"
-      ],
-      "name": "PACKAGE_NAME"
+      ]
     },
     {
+      "name": "FILE_DIRECTORY",
       "requiredProps": [
         "MODULE_NAME"
-      ],
-      "name": "FILE_DIRECTORY"
+      ]
     }
   ],
   "extractedProps": [
@@ -1272,62 +1272,62 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "DOMAIN_MODULE_BUILD_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "DOMAIN_MODULE_BUILD_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "DOMAIN_MODULE_BUILD_FILE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "DOMAIN_MODULE_BUILD_FILE_DIRECTORY",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "DOMAIN_MODULE_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
-            "requiredProps": [
-              "PROJECT_NAME"
-            ],
             "propGenerator": {
+              "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
+              "propBaseName": "PROJECT_NAME",
               "requiredProps": [
                 "PROJECT_NAME"
               ],
-              "selfRequiredProps": [],
-              "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
-              "propBaseName": "PROJECT_NAME"
-            }
+              "selfRequiredProps": []
+            },
+            "propName": "DOMAIN_MODULE_BUILD_PROJECT_NAME_LOWER_KEBAB_CASE",
+            "requiredProps": [
+              "PROJECT_NAME"
+            ]
           }
         ]
       },
@@ -1339,117 +1339,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "MODEL_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_SIMPLE_NAME",
                 "requiredProps": [
                   "MODEL_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "MODEL_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_FILE_NAME",
                 "requiredProps": [
                   "MODEL_IMPL_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_CLASS_NAME",
                 "requiredProps": [
                   "MODEL_IMPL_SIMPLE_NAME",
                   "MODEL_IMPL_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "MODEL_IMPL_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "MODEL_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_IMPL_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "MODEL_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "MODEL_IMPL_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "MODEL_IMPL_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "MODEL_IMPL_FILE_DIRECTORY"
+                ]
               }
             ]
           },
@@ -1458,117 +1458,117 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "MODEL_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_SIMPLE_NAME",
                 "requiredProps": [
                   "MODEL_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "MODEL_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_FILE_NAME",
                 "requiredProps": [
                   "MODEL_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_CLASS_NAME",
                 "requiredProps": [
                   "MODEL_SIMPLE_NAME",
                   "MODEL_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "MODEL_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "MODEL_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
-                "propName": "MODEL_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "MODEL_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "MODEL_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "MODEL_FILE_DIRECTORY"
+                ]
               }
             ]
           },
@@ -1577,143 +1577,143 @@
             "childScopes": [],
             "scopedPropGenerators": [
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_NAME",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_TEMPLATE_NAME",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_NAME"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "TEMPLATE_EXTENSION",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_TEMPLATE_EXTENSION",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "TEMPLATE_EXTENSION"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_DIRECTORY",
+                    "requiredProps": []
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_FILE_DIRECTORY",
-                "requiredProps": [],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [],
-                    "name": "FILE_DIRECTORY"
-                  }
-                }
+                "requiredProps": []
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "SIMPLE_NAME",
+                    "requiredProps": [
+                      "MODEL_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_SIMPLE_NAME",
                 "requiredProps": [
                   "MODEL_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "MODEL_NAME"
-                    ],
-                    "name": "SIMPLE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "FILE_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_FILE_NAME",
                 "requiredProps": [
                   "MODEL_MODULE_SIMPLE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME"
-                    ],
-                    "name": "FILE_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "CLASS_NAME",
+                    "requiredProps": [
+                      "SIMPLE_NAME",
+                      "PACKAGE_NAME"
+                    ]
+                  },
+                  "selfRequiredProps": []
+                },
                 "propName": "MODEL_MODULE_CLASS_NAME",
                 "requiredProps": [
                   "MODEL_MODULE_SIMPLE_NAME",
                   "MODEL_MODULE_PACKAGE_NAME"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [],
-                  "customProp": {
-                    "requiredProps": [
-                      "SIMPLE_NAME",
-                      "PACKAGE_NAME"
-                    ],
-                    "name": "CLASS_NAME"
-                  }
-                }
+                ]
               },
               {
+                "propGenerator": {
+                  "customProp": {
+                    "name": "PACKAGE_NAME",
+                    "requiredProps": [
+                      "PACKAGE_NAME",
+                      "FILE_DIRECTORY_APPEND_DOT_CASE"
+                    ]
+                  },
+                  "selfRequiredProps": [
+                    "PACKAGE_NAME"
+                  ]
+                },
                 "propName": "MODEL_MODULE_PACKAGE_NAME",
                 "requiredProps": [
                   "PACKAGE_NAME",
                   "MODEL_MODULE_FILE_DIRECTORY_APPEND_DOT_CASE"
-                ],
-                "propGenerator": {
-                  "selfRequiredProps": [
-                    "PACKAGE_NAME"
-                  ],
-                  "customProp": {
-                    "requiredProps": [
-                      "PACKAGE_NAME",
-                      "FILE_DIRECTORY_APPEND_DOT_CASE"
-                    ],
-                    "name": "PACKAGE_NAME"
-                  }
-                }
+                ]
               },
               {
-                "propName": "MODEL_MODULE_FILE_DIRECTORY_APPEND_DOT_CASE",
-                "requiredProps": [
-                  "MODEL_MODULE_FILE_DIRECTORY"
-                ],
                 "propGenerator": {
+                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
+                  "propBaseName": "FILE_DIRECTORY",
                   "requiredProps": [
                     "FILE_DIRECTORY"
                   ],
-                  "selfRequiredProps": [],
-                  "propName": "FILE_DIRECTORY_APPEND_DOT_CASE",
-                  "propBaseName": "FILE_DIRECTORY"
-                }
+                  "selfRequiredProps": []
+                },
+                "propName": "MODEL_MODULE_FILE_DIRECTORY_APPEND_DOT_CASE",
+                "requiredProps": [
+                  "MODEL_MODULE_FILE_DIRECTORY"
+                ]
               }
             ]
           }
         ],
         "scopedPropGenerators": [
           {
-            "propName": "DOMAIN_GROUP_GROUP_NAME",
-            "requiredProps": [],
             "propGenerator": {
-              "selfRequiredProps": [],
               "customProp": {
-                "requiredProps": [],
-                "name": "GROUP_NAME"
-              }
-            }
+                "name": "GROUP_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
+            "propName": "DOMAIN_GROUP_GROUP_NAME",
+            "requiredProps": []
           },
           {
-            "propName": "DOMAIN_GROUP_FILE_DIRECTORY",
-            "requiredProps": [],
             "propGenerator": {
-              "selfRequiredProps": [],
               "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
+            "propName": "DOMAIN_GROUP_FILE_DIRECTORY",
+            "requiredProps": []
           }
         ]
       },
@@ -1722,48 +1722,48 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "ANDROID_MANIFEST_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "ANDROID_MANIFEST_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "ANDROID_MANIFEST_FILE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "ANDROID_MANIFEST_FILE_DIRECTORY",
-            "requiredProps": [],
             "propGenerator": {
-              "selfRequiredProps": [],
               "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
+            "propName": "ANDROID_MANIFEST_FILE_DIRECTORY",
+            "requiredProps": []
           }
         ]
       },
@@ -1772,154 +1772,154 @@
         "childScopes": [],
         "scopedPropGenerators": [
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "GITIGNORE_TEMPLATE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "TEMPLATE_EXTENSION",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "GITIGNORE_TEMPLATE_EXTENSION",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "TEMPLATE_EXTENSION"
-              }
-            }
+            "requiredProps": []
           },
           {
+            "propGenerator": {
+              "customProp": {
+                "name": "FILE_NAME",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
             "propName": "GITIGNORE_FILE_NAME",
-            "requiredProps": [],
-            "propGenerator": {
-              "selfRequiredProps": [],
-              "customProp": {
-                "requiredProps": [],
-                "name": "FILE_NAME"
-              }
-            }
+            "requiredProps": []
           },
           {
-            "propName": "GITIGNORE_FILE_DIRECTORY",
-            "requiredProps": [],
             "propGenerator": {
-              "selfRequiredProps": [],
               "customProp": {
-                "requiredProps": [],
-                "name": "FILE_DIRECTORY"
-              }
-            }
+                "name": "FILE_DIRECTORY",
+                "requiredProps": []
+              },
+              "selfRequiredProps": []
+            },
+            "propName": "GITIGNORE_FILE_DIRECTORY",
+            "requiredProps": []
           }
         ]
       }
     ],
     "scopedPropGenerators": [
       {
-        "propName": "DOMAIN_MODULE_GROUP_NAME",
-        "requiredProps": [],
         "propGenerator": {
-          "selfRequiredProps": [],
           "customProp": {
-            "requiredProps": [],
-            "name": "GROUP_NAME"
-          }
-        }
+            "name": "GROUP_NAME",
+            "requiredProps": []
+          },
+          "selfRequiredProps": []
+        },
+        "propName": "DOMAIN_MODULE_GROUP_NAME",
+        "requiredProps": []
       },
       {
+        "propGenerator": {
+          "customProp": {
+            "name": "MODULE_NAME",
+            "requiredProps": [
+              "PROJECT_NAME_LOWER_KEBAB_CASE",
+              "MODEL_NAME_LOWER_CASE"
+            ]
+          },
+          "selfRequiredProps": []
+        },
         "propName": "DOMAIN_MODULE_MODULE_NAME",
         "requiredProps": [
           "DOMAIN_MODULE_PROJECT_NAME_LOWER_KEBAB_CASE",
           "DOMAIN_MODULE_MODEL_NAME_LOWER_CASE"
-        ],
-        "propGenerator": {
-          "selfRequiredProps": [],
-          "customProp": {
-            "requiredProps": [
-              "PROJECT_NAME_LOWER_KEBAB_CASE",
-              "MODEL_NAME_LOWER_CASE"
-            ],
-            "name": "MODULE_NAME"
-          }
-        }
+        ]
       },
       {
+        "propGenerator": {
+          "customProp": {
+            "name": "PACKAGE_NAME",
+            "requiredProps": [
+              "MODULE_NAME_DOT_CASE",
+              "PACKAGE_BASE"
+            ]
+          },
+          "selfRequiredProps": []
+        },
         "propName": "DOMAIN_MODULE_PACKAGE_NAME",
         "requiredProps": [
           "DOMAIN_MODULE_MODULE_NAME_DOT_CASE",
           "PACKAGE_BASE"
-        ],
-        "propGenerator": {
-          "selfRequiredProps": [],
-          "customProp": {
-            "requiredProps": [
-              "MODULE_NAME_DOT_CASE",
-              "PACKAGE_BASE"
-            ],
-            "name": "PACKAGE_NAME"
-          }
-        }
+        ]
       },
       {
+        "propGenerator": {
+          "customProp": {
+            "name": "FILE_DIRECTORY",
+            "requiredProps": [
+              "MODULE_NAME"
+            ]
+          },
+          "selfRequiredProps": []
+        },
         "propName": "DOMAIN_MODULE_FILE_DIRECTORY",
         "requiredProps": [
           "DOMAIN_MODULE_MODULE_NAME"
-        ],
-        "propGenerator": {
-          "selfRequiredProps": [],
-          "customProp": {
-            "requiredProps": [
-              "MODULE_NAME"
-            ],
-            "name": "FILE_DIRECTORY"
-          }
-        }
+        ]
       },
       {
-        "propName": "DOMAIN_MODULE_PROJECT_NAME_LOWER_KEBAB_CASE",
-        "requiredProps": [
-          "PROJECT_NAME"
-        ],
         "propGenerator": {
+          "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
+          "propBaseName": "PROJECT_NAME",
           "requiredProps": [
             "PROJECT_NAME"
           ],
-          "selfRequiredProps": [],
-          "propName": "PROJECT_NAME_LOWER_KEBAB_CASE",
-          "propBaseName": "PROJECT_NAME"
-        }
+          "selfRequiredProps": []
+        },
+        "propName": "DOMAIN_MODULE_PROJECT_NAME_LOWER_KEBAB_CASE",
+        "requiredProps": [
+          "PROJECT_NAME"
+        ]
       },
       {
-        "propName": "DOMAIN_MODULE_MODEL_NAME_LOWER_CASE",
-        "requiredProps": [
-          "MODEL_NAME"
-        ],
         "propGenerator": {
+          "propName": "MODEL_NAME_LOWER_CASE",
+          "propBaseName": "MODEL_NAME",
           "requiredProps": [
             "MODEL_NAME"
           ],
-          "selfRequiredProps": [],
-          "propName": "MODEL_NAME_LOWER_CASE",
-          "propBaseName": "MODEL_NAME"
-        }
+          "selfRequiredProps": []
+        },
+        "propName": "DOMAIN_MODULE_MODEL_NAME_LOWER_CASE",
+        "requiredProps": [
+          "MODEL_NAME"
+        ]
       },
       {
-        "propName": "DOMAIN_MODULE_MODULE_NAME_DOT_CASE",
-        "requiredProps": [
-          "DOMAIN_MODULE_MODULE_NAME"
-        ],
         "propGenerator": {
+          "propName": "MODULE_NAME_DOT_CASE",
+          "propBaseName": "MODULE_NAME",
           "requiredProps": [
             "MODULE_NAME"
           ],
-          "selfRequiredProps": [],
-          "propName": "MODULE_NAME_DOT_CASE",
-          "propBaseName": "MODULE_NAME"
-        }
+          "selfRequiredProps": []
+        },
+        "propName": "DOMAIN_MODULE_MODULE_NAME_DOT_CASE",
+        "requiredProps": [
+          "DOMAIN_MODULE_MODULE_NAME"
+        ]
       }
     ]
   }
